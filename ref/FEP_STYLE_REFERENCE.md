@@ -1,9 +1,9 @@
-# 🎨 FEP - Guia de Referência de Estilos e Layout
+# 🍌 Nano Banana - Guia de Referência de Estilos e Layout
 
-> **Fundamentos e Engenharia de Prompt**
+> **Supercurso Nano Banana**
 > Sistema de Design Completo para Desenvolvimento de Interfaces
 
-**Versão:** 1.0 | **Data:** 2025-11-04 | **Autor:** FEP Team
+**Versão:** 2.0 | **Data:** 2025-12-26 | **Autor:** Nano Banana Team
 
 ---
 
@@ -13,6 +13,7 @@
 - [Dark Mode](#dark-mode)
 - [Identidade Visual](#identidade-visual)
 - [Sistema de Cores](#sistema-de-cores)
+- [Navegação Global](#navegação-global)
 - [Tipografia](#tipografia)
 - [Espaçamento e Grid](#espaçamento-e-grid)
 - [Componentes](#componentes)
@@ -26,12 +27,12 @@
 
 ### Sobre o Projeto
 
-**FEP** é um curso de **Engenharia de Prompt** com 3 níveis progressivos de aprendizado.
+**Supercurso Nano Banana** é um curso de **Engenharia de Prompts para Geração de Imagens e Vídeos com IA** com 3 trilhas progressivas de aprendizado.
 
 ### Princípios de Design
 
 1. ✅ **Clareza** - Interface limpa e fácil de navegar
-2. ✅ **Progressão Visual** - Cada nível tem sua identidade
+2. ✅ **Progressão Visual** - Cada trilha tem sua identidade de cor
 3. ✅ **Acessibilidade** - WCAG 2.1 AA compliant
 4. ✅ **Performance** - Animações suaves
 5. ✅ **Mobile-First** - Design responsivo
@@ -138,10 +139,11 @@ themeToggleBtn.addEventListener('click', function() {
 ### Logo e Marca
 
 ```
-Nome:     FEP
+Nome:     Nano Banana
+Emoji:    🍌
 Fonte:    Inter Bold (700)
-Cor:      Blue 600 (#3B82F6)
-Tagline:  "Engenharia de Prompt"
+Cor:      Yellow 400 (#FACC15)
+Tagline:  "Engenharia de Prompts para IA"
 ```
 
 ### Personalidade
@@ -152,15 +154,120 @@ Tagline:  "Engenharia de Prompt"
 
 ---
 
+## 🧭 Navegação Global
+
+### Menu Global (Todas as Páginas)
+
+O menu global aparece em **todas as páginas** do curso, fixo no topo (sticky):
+
+```html
+<!-- Navigation Global -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-14">
+      <!-- Logo -->
+      <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+        <span class="text-2xl">🍌</span>
+        <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+      </a>
+
+      <!-- Trilhas + Theme Toggle -->
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          <span class="hidden sm:inline">Trilha </span>1
+        </a>
+        <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+          <span class="hidden sm:inline">Trilha </span>2
+        </a>
+        <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+          <span class="hidden sm:inline">Trilha </span>3
+        </a>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+```
+
+### Propriedades do Menu Global
+
+| Propriedade | Valor |
+|------------|-------|
+| Posição | `sticky top-0` |
+| Z-index | `50` |
+| Altura | `h-14` (56px) |
+| Background | `bg-dark-900/95 backdrop-blur-sm` |
+| Borda | `border-b border-dark-600` |
+| Logo | 🍌 + "Nano Banana" (yellow-400) |
+
+### Estados dos Links de Trilha
+
+| Estado | Classes |
+|--------|---------|
+| **Trilha 1 Ativa** | `bg-emerald-500/20 text-emerald-400 border border-emerald-500/30` |
+| **Trilha 2 Ativa** | `bg-blue-500/20 text-blue-400 border border-blue-500/30` |
+| **Trilha 3 Ativa** | `bg-purple-500/20 text-purple-400 border border-purple-500/30` |
+| **Trilha Inativa** | `text-neutral-400 hover:text-[COR]-400 hover:bg-[COR]-500/10` |
+
+### Responsividade do Menu
+
+- **Mobile**: Mostra apenas "1", "2", "3" nos links
+- **Desktop (sm+)**: Mostra "Trilha 1", "Trilha 2", "Trilha 3"
+- **Logo**: Emoji sempre visível, texto "Nano Banana" apenas em `sm+`
+
+### Caminhos Relativos por Localização
+
+| Página | Caminho para Root | Caminho para Trilhas |
+|--------|-------------------|---------------------|
+| `index.html` (root) | `index.html` | `curso/trilha1/` |
+| `curso/trilha1/index.html` | `../../index.html` | `../trilha1/`, `../trilha2/`, `../trilha3/` |
+| `curso/trilha1/modulo-X-X.html` | `../../index.html` | `../trilha1/`, `../trilha2/`, `../trilha3/` |
+
+---
+
 ## 🌈 Sistema de Cores
 
-### Cores por Nível (PRINCIPAL)
+### Cores por Trilha (PRINCIPAL)
 
 ```css
-/* 3 Níveis de Aprendizado */
-🌟 Nível Iniciante:   #10B981  /* Verde Emerald 500 */
-⚡ Nível Técnico:      #3B82F6  /* Azul Blue 500 */
-👑 Nível Masterclass:  #8B5CF6  /* Roxo Purple 500 */
+/* 3 Trilhas de Aprendizado */
+🎯 Trilha 1 (Fundamentos):      #10B981  /* Verde Emerald 500 */
+📚 Trilha 2 (Nano Banana):      #3B82F6  /* Azul Blue 500 */
+🎬 Trilha 3 (Filmmaking):       #8B5CF6  /* Roxo Purple 500 */
+```
+
+### Classes por Trilha
+
+```css
+/* Trilha 1 - Fundamentos (Emerald) */
+Badge:      bg-emerald-500/20 text-emerald-400
+Borda:      border-emerald-500/30
+Gradiente:  from-emerald-900/30 to-dark-800
+Texto:      text-emerald-400
+Hover:      hover:border-emerald-400
+
+/* Trilha 2 - Nano Banana (Blue) */
+Badge:      bg-blue-500/20 text-blue-400
+Borda:      border-blue-500/30
+Gradiente:  from-blue-900/30 to-dark-800
+Texto:      text-blue-400
+Hover:      hover:border-blue-400
+
+/* Trilha 3 - Filmmaking (Purple) */
+Badge:      bg-purple-500/20 text-purple-400
+Borda:      border-purple-500/30
+Gradiente:  from-purple-900/30 to-dark-800
+Texto:      text-purple-400
+Hover:      hover:border-purple-400
 ```
 
 ### Paleta Completa

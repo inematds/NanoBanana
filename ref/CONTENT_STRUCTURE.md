@@ -1,4 +1,4 @@
-# Content Structure - TikTok Shop Academy 2025
+# Content Structure - Supercurso Nano Banana
 
 Documentação da estrutura e metodologia de criação de conteúdo para os módulos do curso.
 

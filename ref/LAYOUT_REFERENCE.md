@@ -1,4 +1,4 @@
-# Layout Reference - TikTok Shop Academy 2025
+# Layout Reference - Supercurso Nano Banana
 
 Documentação do sistema de layout e design utilizado nas páginas de conteúdo do curso.
 
@@ -101,22 +101,52 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 
 ## 3. Componentes de Layout
 
-### 3.1 Navigation (Sticky Top)
+### 3.1 Navigation Global (Sticky Top)
+
+O menu global aparece em **todas as páginas** com logo, links para trilhas e toggle de tema:
+
 ```html
+<!-- Navigation Global -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <a href="../index.html" class="flex items-center space-x-2 text-neutral-400 hover:text-primary transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-        <span>Voltar para Trilha</span>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-14">
+      <!-- Logo -->
+      <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+        <span class="text-2xl">🍌</span>
+        <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
       </a>
-      <span class="text-primary font-semibold">Módulo XX</span>
+
+      <!-- Trilhas + Theme Toggle -->
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <!-- Trilha ativa: adicionar bg-[COR]-500/20 border border-[COR]-500/30 -->
+        <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          <span class="hidden sm:inline">Trilha </span>1
+        </a>
+        <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+          <span class="hidden sm:inline">Trilha </span>2
+        </a>
+        <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+          <span class="hidden sm:inline">Trilha </span>3
+        </a>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+          <!-- SVG icons para dark/light mode -->
+        </button>
+      </div>
     </div>
   </div>
 </nav>
 ```
+
+**Propriedades:**
+- Posição: `sticky top-0`
+- Z-index: `50`
+- Altura: `h-14` (56px)
+- Background: `bg-dark-900/95 backdrop-blur-sm`
+- Logo: 🍌 Nano Banana (yellow-400)
+- Trilha ativa: fundo e borda coloridos
+- Responsivo: texto compacto em mobile
 
 ### 3.2 Header do Módulo
 ```html
