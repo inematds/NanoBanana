@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.2 - Text-to-Video Masterclass | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+    <!-- Navegação Sticky -->
+    <nav class="sticky top-0 z-50 bg-dark-800 border-b border-dark-600 backdrop-blur-sm bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../../index.html" class="text-xl font-bold hover:text-purple-400 transition-colors">
+                    🍌 Nano Banana
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="../trilha1/" class="text-neutral-300 hover:text-neutral-100 transition-colors">Trilha 1</a>
+                    <a href="../trilha2/" class="text-neutral-300 hover:text-neutral-100 transition-colors">Trilha 2</a>
+                    <a href="../trilha3/" class="text-purple-400 font-semibold">Trilha 3</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                        <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Cabeçalho do Módulo -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full text-sm font-semibold mb-4">
+                Trilha 3 - Módulo 3.2
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-neutral-100">Text-to-Video Masterclass</h1>
+            <p class="text-xl text-neutral-300">Domine a arte de criar vídeos com IA através de prompts otimizados e controle técnico avançado</p>
+        </div>
+
+        <!-- Seções do Conteúdo -->
+        <div class="space-y-12">
+            <!-- Introdução -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">Introdução</h2>
+                <p class="text-neutral-200 leading-relaxed mb-4">
+                    Criar vídeos com IA é fundamentalmente diferente de gerar imagens estáticas. Enquanto uma imagem captura um momento,
+                    um vídeo precisa transmitir movimento, tempo e narrativa. Neste módulo, você aprenderá as técnicas específicas para
+                    criar prompts que geram vídeos impressionantes e profissionais.
+                </p>
+                <p class="text-neutral-200 leading-relaxed">
+                    Vamos explorar desde os fundamentos de como descrever ação e movimento até o controle técnico avançado de câmera,
+                    parâmetros de renderização e reprodutibilidade de resultados.
+                </p>
+            </section>
+
+            <!-- Prompts Otimizados para Vídeo -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Prompts Otimizados para Vídeo</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Diferenças entre Imagem e Vídeo</h3>
+                        <div class="bg-dark-700 rounded-lg p-6 space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-2">Prompts para Imagem:</h4>
+                                <p class="text-neutral-300 italic">"Um gato laranja sentado em uma janela ao pôr do sol"</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-2">Prompts para Vídeo:</h4>
+                                <p class="text-neutral-300 italic">"Um gato laranja caminhando lentamente em direção à janela, parando para olhar o pôr do sol enquanto sua cauda balança suavemente"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Elementos Essenciais de um Bom Prompt de Vídeo</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-purple-400 font-bold">•</span>
+                                <div>
+                                    <strong class="text-neutral-100">Ação Clara:</strong>
+                                    <span class="text-neutral-300"> Descreva o que está acontecendo, não apenas o que existe</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-purple-400 font-bold">•</span>
+                                <div>
+                                    <strong class="text-neutral-100">Direção de Movimento:</strong>
+                                    <span class="text-neutral-300"> Especifique para onde as coisas se movem (esquerda/direita, perto/longe)</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-purple-400 font-bold">•</span>
+                                <div>
+                                    <strong class="text-neutral-100">Velocidade:</strong>
+                                    <span class="text-neutral-300"> Use adjetivos como "lentamente", "rapidamente", "suavemente"</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-purple-400 font-bold">•</span>
+                                <div>
+                                    <strong class="text-neutral-100">Sequência:</strong>
+                                    <span class="text-neutral-300"> Descreva o início, meio e fim da ação</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movimento Descritivo e Ação Temporal -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Movimento Descritivo e Ação Temporal</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Tipos de Movimento</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-300 mb-2">Movimento de Sujeito</h4>
+                                <p class="text-neutral-300 text-sm">Objetos ou pessoas se movendo na cena: "uma pessoa caminhando", "folhas caindo", "água fluindo"</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-300 mb-2">Movimento de Câmera</h4>
+                                <p class="text-neutral-300 text-sm">A perspectiva mudando: "câmera se aproximando", "rotação orbital", "seguindo o personagem"</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-300 mb-2">Movimento Ambiental</h4>
+                                <p class="text-neutral-300 text-sm">Elementos de fundo em movimento: "nuvens passando", "chuva caindo", "fumaça subindo"</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-300 mb-2">Movimento Sutil</h4>
+                                <p class="text-neutral-300 text-sm">Detalhes pequenos: "cabelo balançando ao vento", "reflexos tremulando na água"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Vocabulário de Ação Temporal</h3>
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-purple-300 mb-2">Velocidade</h4>
+                                    <ul class="text-sm text-neutral-300 space-y-1">
+                                        <li>• Lentamente</li>
+                                        <li>• Gradualmente</li>
+                                        <li>• Suavemente</li>
+                                        <li>• Rapidamente</li>
+                                        <li>• Explosivamente</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-purple-300 mb-2">Transição</h4>
+                                    <ul class="text-sm text-neutral-300 space-y-1">
+                                        <li>• Começando a</li>
+                                        <li>• Continuando a</li>
+                                        <li>• Parando de</li>
+                                        <li>• Transformando-se em</li>
+                                        <li>• Emergindo</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-purple-300 mb-2">Direção</h4>
+                                    <ul class="text-sm text-neutral-300 space-y-1">
+                                        <li>• Para frente/trás</li>
+                                        <li>• Para cima/baixo</li>
+                                        <li>• Para a esquerda/direita</li>
+                                        <li>• Em espiral</li>
+                                        <li>• Em círculos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Controle de Câmera -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Controle de Câmera: Pan, Tilt, Zoom, Dolly, Tracking</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-purple-500 bg-opacity-10 border border-purple-500 border-opacity-30 rounded-lg p-4">
+                        <p class="text-neutral-200">
+                            <strong class="text-purple-300">Importante:</strong> Dominar os movimentos de câmera é essencial para criar vídeos profissionais.
+                            Cada movimento transmite uma sensação e intenção diferentes.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Pan (Panorâmica)</h3>
+                            <p class="text-neutral-300 mb-3">Movimento horizontal da câmera, girando da esquerda para direita ou vice-versa.</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Uma floresta enevoada, câmera fazendo pan lentamente da esquerda para direita, revelando árvores antigas cobertas de musgo"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Tilt (Inclinação)</h3>
+                            <p class="text-neutral-300 mb-3">Movimento vertical da câmera, de cima para baixo ou de baixo para cima.</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Vista começando nos pés de um arranha-céu, câmera fazendo tilt up lentamente até o topo que desaparece nas nuvens"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Zoom</h3>
+                            <p class="text-neutral-300 mb-3">Aproximação ou afastamento óptico do sujeito.</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Um relógio antigo na parede, zoom in lento focando nos ponteiros em movimento, revelando detalhes intrincados do mecanismo"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Dolly (Travelling)</h3>
+                            <p class="text-neutral-300 mb-3">Movimento físico da câmera para frente ou para trás (diferente do zoom).</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Câmera se movendo para frente através de um corredor gótico iluminado por velas, passando por pilares de pedra enquanto avança"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Tracking (Seguimento)</h3>
+                            <p class="text-neutral-300 mb-3">Câmera segue um sujeito em movimento, mantendo-o no enquadramento.</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Câmera seguindo lateralmente um corredor atravessando uma floresta tropical, mantendo-o centralizado enquanto a vegetação passa rapidamente ao fundo"</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">Orbital / Rotate</h3>
+                            <p class="text-neutral-300 mb-3">Câmera gira ao redor do sujeito.</p>
+                            <div class="bg-dark-800 rounded p-3">
+                                <p class="text-sm text-neutral-400 mb-1">Exemplo de prompt:</p>
+                                <p class="text-neutral-200 italic">"Câmera orbitando lentamente ao redor de uma escultura de mármore em um museu vazio, luz natural entrando por janelas laterais"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parâmetros Avançados -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Parâmetros Avançados: FPS, Duration, Motion Amount</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">FPS (Frames Per Second)</h3>
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <p class="text-neutral-300 mb-4">Controla quantos quadros são exibidos por segundo, afetando a suavidade e o estilo do vídeo.</p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-dark-800 rounded p-4">
+                                    <h4 class="font-semibold text-purple-300 mb-2">24 FPS</h4>
+                                    <p class="text-sm text-neutral-300">Padrão cinematográfico, sensação de filme profissional</p>
+                                </div>
+                                <div class="bg-dark-800 rounded p-4">
+                                    <h4 class="font-semibold text-purple-300 mb-2">30 FPS</h4>
+                                    <p class="text-sm text-neutral-300">Padrão de TV e web, movimento natural e suave</p>
+                                </div>
+                                <div class="bg-dark-800 rounded p-4">
+                                    <h4 class="font-semibold text-purple-300 mb-2">60 FPS</h4>
+                                    <p class="text-sm text-neutral-300">Ultra suave, ideal para ação rápida e esportes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Duration (Duração)</h3>
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <p class="text-neutral-300 mb-4">Define o comprimento do vídeo gerado. A duração afeta diretamente o tipo de ação que você pode incluir.</p>
+                            <ul class="space-y-2 text-neutral-300">
+                                <li><strong class="text-purple-300">2-3 segundos:</strong> Ideal para loops, ações simples e transições</li>
+                                <li><strong class="text-purple-300">4-6 segundos:</strong> Permite ações mais complexas e movimentos de câmera completos</li>
+                                <li><strong class="text-purple-300">8-10 segundos:</strong> Possibilita narrativas curtas e sequências de múltiplas ações</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Motion Amount (Quantidade de Movimento)</h3>
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <p class="text-neutral-300 mb-4">Controla a intensidade geral de movimento no vídeo. Valores típicos variam de 0 a 100 ou Low/Medium/High.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded text-sm font-semibold">Low (0-30)</span>
+                                    <p class="text-neutral-300 text-sm flex-1">Movimentos sutis, ideais para cenas contemplativas, retratos, natureza morta</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded text-sm font-semibold">Medium (40-60)</span>
+                                    <p class="text-neutral-300 text-sm flex-1">Equilíbrio entre estabilidade e dinamismo, ideal para a maioria das cenas</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded text-sm font-semibold">High (70-100)</span>
+                                    <p class="text-neutral-300 text-sm flex-1">Movimento intenso, perfeito para ação, esportes, efeitos dramáticos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Parâmetros Adicionais</h3>
+                        <div class="bg-dark-700 rounded-lg p-6 space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Aspect Ratio</h4>
+                                <p class="text-neutral-300 text-sm">16:9 (widescreen), 9:16 (vertical/stories), 1:1 (quadrado), 21:9 (cinemático)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Resolution</h4>
+                                <p class="text-neutral-300 text-sm">720p, 1080p (Full HD), 4K - maior resolução = mais detalhes, mas processamento mais lento</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Style</h4>
+                                <p class="text-neutral-300 text-sm">Realistic, Cinematic, Animated, Artistic - define a estética visual geral</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seed e Reprodutibilidade -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Seed e Reprodutibilidade em Vídeo</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">O que é Seed?</h3>
+                        <p class="text-neutral-300 mb-4">
+                            O seed é um número que serve como ponto de partida para o gerador aleatório da IA. Usar o mesmo seed com
+                            o mesmo prompt e parâmetros deve produzir resultados idênticos ou muito similares.
+                        </p>
+                        <div class="bg-dark-700 rounded-lg p-6">
+                            <h4 class="font-semibold text-purple-300 mb-3">Como usar Seeds efetivamente:</h4>
+                            <ul class="space-y-2 text-neutral-300">
+                                <li><strong>1.</strong> Gere um vídeo sem especificar seed (a IA usa um aleatório)</li>
+                                <li><strong>2.</strong> Se gostar do resultado, anote o seed usado</li>
+                                <li><strong>3.</strong> Use esse seed para variações mantendo o mesmo "estilo" visual</li>
+                                <li><strong>4.</strong> Altere apenas partes específicas do prompt para mudanças controladas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-neutral-100">Casos de Uso de Seeds</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-dark-700 rounded-lg p-5">
+                                <h4 class="font-semibold text-purple-300 mb-2">Consistência de Personagem</h4>
+                                <p class="text-neutral-300 text-sm">Use o mesmo seed para manter a aparência de um personagem consistente em múltiplos vídeos</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-5">
+                                <h4 class="font-semibold text-purple-300 mb-2">Variações de Ângulo</h4>
+                                <p class="text-neutral-300 text-sm">Mantenha seed e cena, mude apenas o movimento de câmera para diferentes perspectivas</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-5">
+                                <h4 class="font-semibold text-purple-300 mb-2">Iteração Criativa</h4>
+                                <p class="text-neutral-300 text-sm">Refine gradualmente um vídeo mantendo o seed e alterando detalhes do prompt</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-5">
+                                <h4 class="font-semibold text-purple-300 mb-2">Produção em Série</h4>
+                                <p class="text-neutral-300 text-sm">Crie uma série de vídeos com estética visual consistente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500 bg-opacity-10 border border-purple-500 border-opacity-30 rounded-lg p-5">
+                        <h4 class="font-semibold text-purple-300 mb-2">Dica Profissional:</h4>
+                        <p class="text-neutral-200">
+                            Mantenha um registro (planilha ou documento) dos seus melhores vídeos com: seed usado, prompt completo,
+                            parâmetros (FPS, duration, motion), e notas sobre o resultado. Isso cria uma biblioteca de referência valiosa
+                            para projetos futuros.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exemplos Práticos -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-6 text-purple-400">Exemplos Práticos de Prompts que Funcionam</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <div class="flex items-start gap-4 mb-3">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Exemplo 1</span>
+                            <span class="text-neutral-400 text-sm">Natureza Contemplativa</span>
+                        </div>
+                        <div class="bg-dark-800 rounded p-4 mb-3">
+                            <p class="text-neutral-200 font-mono text-sm leading-relaxed">
+                                "Uma floresta de bambu japonesa ao amanhecer, névoa suave flutuando entre as hastes verdes,
+                                câmera fazendo dolly forward lentamente pelo caminho estreito, luz dourada filtrando através
+                                das folhas criando raios de luz visíveis, movimento muito suave e contemplativo, 24fps,
+                                motion amount: low"
+                            </p>
+                        </div>
+                        <p class="text-neutral-300 text-sm"><strong>Por que funciona:</strong> Descreve movimento de câmera específico,
+                        qualidade da luz, atmosfera, e define parâmetros técnicos apropriados para o mood desejado.</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <div class="flex items-start gap-4 mb-3">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Exemplo 2</span>
+                            <span class="text-neutral-400 text-sm">Ação Dinâmica</span>
+                        </div>
+                        <div class="bg-dark-800 rounded p-4 mb-3">
+                            <p class="text-neutral-200 font-mono text-sm leading-relaxed">
+                                "Um skatista executando um kickflip em câmera lenta, close-up do skate girando no ar,
+                                câmera tracking seguindo o movimento lateralmente, fundo desfocado de uma pista urbana
+                                com grafites coloridos, pôr do sol alaranjado, 60fps, motion amount: high, duração: 4 segundos"
+                            </p>
+                        </div>
+                        <p class="text-neutral-300 text-sm"><strong>Por que funciona:</strong> Combina ação específica com movimento de
+                        câmera complementar, usa FPS alto para capturar detalhes da ação rápida, e especifica duração apropriada.</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <div class="flex items-start gap-4 mb-3">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Exemplo 3</span>
+                            <span class="text-neutral-400 text-sm">Atmosfera Cinematográfica</span>
+                        </div>
+                        <div class="bg-dark-800 rounded p-4 mb-3">
+                            <p class="text-neutral-200 font-mono text-sm leading-relaxed">
+                                "Interior de um café parisiense à noite, vista da janela com chuva escorrendo pelo vidro,
+                                pessoas borradas passando na rua iluminada por luzes neon, câmera estática focando nas gotas
+                                de chuva em primeiro plano com bokeh das luzes da cidade ao fundo, reflexos coloridos dançando
+                                no vidro molhado, cinematic mood, 24fps, motion amount: low"
+                            </p>
+                        </div>
+                        <p class="text-neutral-300 text-sm"><strong>Por que funciona:</strong> Cria profundidade através de múltiplas
+                        camadas (primeiro plano, plano médio, fundo), combina movimento sutil com elementos estáticos, e usa
+                        vocabulário cinematográfico (bokeh, mood).</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <div class="flex items-start gap-4 mb-3">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Exemplo 4</span>
+                            <span class="text-neutral-400 text-sm">Produto/Comercial</span>
+                        </div>
+                        <div class="bg-dark-800 rounded p-4 mb-3">
+                            <p class="text-neutral-200 font-mono text-sm leading-relaxed">
+                                "Relógio de luxo com pulseira de couro marrom sobre superfície de mármore preto, câmera
+                                orbitando lentamente ao redor do relógio em sentido horário, luz dramática lateral criando
+                                reflexos brilhantes no vidro e metal, ponteiros em movimento suave, gotas de água caindo
+                                em slow motion ao redor do produto, fundo gradiente escuro, estilo comercial high-end,
+                                30fps, duração: 6 segundos"
+                            </p>
+                        </div>
+                        <p class="text-neutral-300 text-sm"><strong>Por que funciona:</strong> Movimento de câmera orbital é perfeito
+                        para produto, adiciona elementos de produção (gotas de água), descreve iluminação específica, e define
+                        estilo visual comercial.</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <div class="flex items-start gap-4 mb-3">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Exemplo 5</span>
+                            <span class="text-neutral-400 text-sm">Fantasia/Abstrato</span>
+                        </div>
+                        <div class="bg-dark-800 rounded p-4 mb-3">
+                            <p class="text-neutral-200 font-mono text-sm leading-relaxed">
+                                "Partículas de energia luminosa flutuando em um espaço escuro infinito, formando
+                                gradualmente a silhueta de uma fênix, cores vibrantes transitando de azul elétrico
+                                para laranja fogo, câmera zoom in lento em direção ao centro da formação, rastros de
+                                luz deixados pelas partículas em movimento, explosão suave de brilho quando a forma
+                                se completa, estilo visual futurista, 30fps, motion amount: medium-high, duração: 8 segundos"
+                            </p>
+                        </div>
+                        <p class="text-neutral-300 text-sm"><strong>Por que funciona:</strong> Descreve transformação e progressão
+                        temporal, usa cores específicas, combina múltiplos elementos de movimento (partículas + câmera),
+                        e aloca duração suficiente para a narrativa visual se desenvolver.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-purple-500 bg-opacity-10 border border-purple-500 border-opacity-30 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-purple-300 mb-3">Padrão Universal de Prompts Efetivos:</h3>
+                    <div class="bg-dark-800 rounded p-4 font-mono text-sm text-neutral-200 space-y-2">
+                        <p>[Sujeito/Cena Principal] + [Ação/Movimento do Sujeito] +</p>
+                        <p>[Movimento de Câmera] + [Detalhes Ambientais/Atmosfera] +</p>
+                        <p>[Iluminação] + [Estilo Visual] + [Parâmetros Técnicos]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercício Prático -->
+            <section class="bg-gradient-to-br from-purple-900 to-purple-800 rounded-xl p-8 border border-purple-500">
+                <h2 class="text-2xl font-bold mb-4 text-white">Exercício Prático</h2>
+                <p class="text-purple-100 mb-6">
+                    Agora é sua vez de aplicar tudo que aprendeu! Complete este desafio para dominar os movimentos de câmera.
+                </p>
+
+                <div class="bg-dark-900 bg-opacity-50 rounded-lg p-6 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-purple-300 mb-3">Criar 3 Vídeos com Diferentes Estilos de Câmera</h3>
+                        <p class="text-purple-100 mb-4">Escolha UM tema (ex: floresta, cidade, oceano) e crie três vídeos do mesmo tema usando movimentos de câmera diferentes:</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-dark-800 rounded-lg p-5">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+                                <h4 class="font-semibold text-purple-300">Vídeo Estático/Pan/Tilt</h4>
+                            </div>
+                            <p class="text-neutral-300 text-sm ml-11">
+                                Crie um vídeo usando apenas câmera estática OU movimento de pan OU tilt.
+                                Foque em movimento dentro da cena (sujeitos, elementos ambientais).
+                            </p>
+                            <div class="ml-11 mt-3 text-sm">
+                                <p class="text-neutral-400">Parâmetros sugeridos:</p>
+                                <p class="text-neutral-300">• Duração: 4-5 segundos</p>
+                                <p class="text-neutral-300">• Motion amount: Low a Medium</p>
+                                <p class="text-neutral-300">• FPS: 24 ou 30</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 rounded-lg p-5">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+                                <h4 class="font-semibold text-purple-300">Vídeo com Dolly/Zoom</h4>
+                            </div>
+                            <p class="text-neutral-300 text-sm ml-11">
+                                Mesmo tema, mas agora use movimento dolly (para frente ou trás) OU zoom.
+                                Experimente criar profundidade e sensação de imersão.
+                            </p>
+                            <div class="ml-11 mt-3 text-sm">
+                                <p class="text-neutral-400">Parâmetros sugeridos:</p>
+                                <p class="text-neutral-300">• Duração: 5-6 segundos</p>
+                                <p class="text-neutral-300">• Motion amount: Medium</p>
+                                <p class="text-neutral-300">• FPS: 24 ou 30</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 rounded-lg p-5">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
+                                <h4 class="font-semibold text-purple-300">Vídeo com Tracking/Orbital</h4>
+                            </div>
+                            <p class="text-neutral-300 text-sm ml-11">
+                                Ainda o mesmo tema, use movimento tracking (seguindo algo) OU orbital (ao redor de algo).
+                                Este é o mais dinâmico dos três!
+                            </p>
+                            <div class="ml-11 mt-3 text-sm">
+                                <p class="text-neutral-400">Parâmetros sugeridos:</p>
+                                <p class="text-neutral-300">• Duração: 6-8 segundos</p>
+                                <p class="text-neutral-300">• Motion amount: Medium a High</p>
+                                <p class="text-neutral-300">• FPS: 30 ou 60</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500 bg-opacity-20 border border-purple-400 border-opacity-30 rounded-lg p-5 mt-6">
+                        <h4 class="font-semibold text-purple-300 mb-2">Objetivos do Exercício:</h4>
+                        <ul class="text-purple-100 text-sm space-y-1">
+                            <li>✓ Entender como diferentes movimentos de câmera mudam a narrativa</li>
+                            <li>✓ Praticar a estruturação de prompts com parâmetros técnicos</li>
+                            <li>✓ Comparar o impacto visual de cada estilo no mesmo tema</li>
+                            <li>✓ Desenvolver seu vocabulário de descrição de movimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-lg p-5 mt-4">
+                        <h4 class="font-semibold text-purple-300 mb-2">Bonus Challenge:</h4>
+                        <p class="text-neutral-300 text-sm">
+                            Após criar os três vídeos, tente usar o mesmo seed nos três para ver como o mesmo "estilo visual"
+                            se comporta com diferentes movimentos de câmera. Anote suas observações!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusão -->
+            <section class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">Conclusão</h2>
+                <p class="text-neutral-200 leading-relaxed mb-4">
+                    Dominar a criação de vídeos com IA vai muito além de escrever um prompt simples. Você aprendeu a pensar
+                    cinematograficamente, descrevendo não apenas o que deve aparecer, mas como deve se mover, de que ângulo
+                    deve ser filmado, e com qual intensidade de ação.
+                </p>
+                <p class="text-neutral-200 leading-relaxed mb-4">
+                    Os movimentos de câmera profissionais (pan, tilt, zoom, dolly, tracking, orbital) são ferramentas narrativas
+                    poderosas. Cada um transmite uma sensação diferente e serve a propósitos narrativos específicos. Combine
+                    isso com controle técnico sobre FPS, duração, e quantidade de movimento, e você terá controle criativo
+                    completo sobre suas produções.
+                </p>
+                <p class="text-neutral-200 leading-relaxed">
+                    Continue praticando, experimentando, e documentando seus resultados. A maestria vem da iteração constante
+                    e da construção de uma biblioteca pessoal de técnicas e seeds que funcionam. No próximo módulo, vamos
+                    explorar técnicas ainda mais avançadas de edição e pós-produção de vídeos gerados por IA.
+                </p>
+            </section>
+        </div>
+
+        <!-- Navegação entre Módulos -->
+        <div class="flex justify-between items-center mt-16 pt-8 border-t border-dark-600">
+            <a href="modulo-3-1.html" class="group flex items-center gap-2 bg-dark-800 hover:bg-dark-700 px-6 py-3 rounded-lg border border-dark-600 hover:border-purple-500 transition-all">
+                <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <div class="text-left">
+                    <div class="text-sm text-neutral-400">Anterior</div>
+                    <div class="font-semibold text-neutral-200">Módulo 3.1</div>
+                </div>
+            </a>
+
+            <a href="modulo-3-3.html" class="group flex items-center gap-2 bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg transition-all">
+                <div class="text-right">
+                    <div class="text-sm text-purple-100">Próximo</div>
+                    <div class="font-semibold text-white">Módulo 3.3</div>
+                </div>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 border-t border-dark-600 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <p class="text-center text-neutral-400">
+                © 2024 Supercurso Nano Banana - Trilha 3: Vídeo com IA
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script do Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+
+            // Salvar preferência
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Carregar preferência salva
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

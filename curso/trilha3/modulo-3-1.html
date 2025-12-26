@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.1 - Introdução ao Vídeo com IA | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-neutral-100 font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark-800/95 backdrop-blur-sm border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../../index.html" class="text-xl font-bold hover:text-purple-400 transition-colors">
+                        🍌 Nano Banana
+                    </a>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="../trilha1/" class="px-3 py-2 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-all">
+                            Trilha 1
+                        </a>
+                        <a href="../trilha2/" class="px-3 py-2 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-all">
+                            Trilha 2
+                        </a>
+                        <a href="../trilha3/" class="px-3 py-2 rounded-lg bg-purple-500/20 text-purple-400 border border-purple-500/30 transition-all">
+                            Trilha 3
+                        </a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <!-- Module Header -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-purple-500/20 text-purple-400 rounded-full border border-purple-500/30">
+                Trilha 3 - Módulo 3.1
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-purple-400">
+                Introdução ao Vídeo com IA
+            </h1>
+            <p class="text-xl text-neutral-300">
+                Descubra o fascinante mundo da criação de vídeos com inteligência artificial e domine as ferramentas que estão revolucionando a produção audiovisual.
+            </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">O Novo Paradigma da Criação Audiovisual</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-4 leading-relaxed">
+                    A criação de vídeos sempre foi uma das formas mais poderosas de comunicação, mas também uma das mais complexas e custosas. Tradicionalmente, produzir um vídeo profissional exigia equipes especializadas, equipamentos caros, locações, atores, editores e muito tempo.
+                </p>
+                <p class="text-neutral-200 mb-4 leading-relaxed">
+                    A inteligência artificial está democratizando radicalmente esse processo. Agora, qualquer pessoa com uma ideia pode criar vídeos impressionantes usando apenas texto ou imagens como ponto de partida. Não é mais necessário saber operar câmeras, iluminação ou software de edição complexo.
+                </p>
+                <div class="bg-dark-800 border border-dark-700 rounded-lg p-6 my-6">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">O Que Mudou?</h3>
+                    <ul class="space-y-2 text-neutral-200">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>Custo:</strong> De milhares de reais para alguns dólares por vídeo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>Tempo:</strong> De semanas para minutos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>Acessibilidade:</strong> De estúdios profissionais para qualquer computador</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>Criatividade:</strong> De limitações físicas para imaginação ilimitada</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="text-neutral-200 mb-4 leading-relaxed">
+                    Essa transformação não elimina a necessidade de criatividade ou visão artística - na verdade, ela amplifica essas qualidades. O que muda é que agora a barreira de entrada é apenas a sua imaginação e capacidade de comunicar ideias através de prompts efetivos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">A Era do Vídeo Generativo</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    A IA generativa para vídeo funciona em três modalidades principais, cada uma com suas aplicações específicas:
+                </p>
+
+                <div class="grid md:grid-cols-1 gap-6 mb-6">
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-400">Text-to-Video</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Crie vídeos completamente do zero usando apenas descrições textuais. É a forma mais pura de geração, onde você descreve uma cena e a IA a materializa em movimento.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4 mb-3">
+                            <code class="text-sm text-purple-300">
+                                Prompt: "Um astronauta caminhando em um deserto de sal ao pôr do sol, câmera cinematográfica, 4K"
+                            </code>
+                        </div>
+                        <p class="text-neutral-300 text-sm">
+                            <strong>Melhor para:</strong> Conceitos originais, cenas impossíveis, visualização de ideias abstratas
+                        </p>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-400">Image-to-Video</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Transforme imagens estáticas em vídeos animados. Você fornece uma imagem e a IA adiciona movimento, criando uma sequência de vídeo coerente.
+                        </p>
+                        <p class="text-neutral-300 mb-3">
+                            Essa modalidade é especialmente útil quando você já tem uma composição visual perfeita (seja uma foto, ilustração ou imagem gerada por IA) e quer dar vida a ela.
+                        </p>
+                        <p class="text-neutral-300 text-sm">
+                            <strong>Melhor para:</strong> Animar ilustrações, dar vida a fotografias, criar motion graphics
+                        </p>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-400">Video-to-Video</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Transforme vídeos existentes aplicando novos estilos, alterando elementos ou modificando completamente a estética mantendo a estrutura de movimento.
+                        </p>
+                        <p class="text-neutral-300 mb-3">
+                            Por exemplo, você pode filmar uma pessoa caminhando normalmente e transformá-la em um personagem de anime, ou mudar o ambiente de uma cena urbana para um cenário de ficção científica.
+                        </p>
+                        <p class="text-neutral-300 text-sm">
+                            <strong>Melhor para:</strong> Estilização, efeitos especiais, transformação de conteúdo existente
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 my-6">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Possibilidades Híbridas</h3>
+                    <p class="text-neutral-200 mb-3">
+                        O verdadeiro poder surge quando você combina essas modalidades em workflows criativos:
+                    </p>
+                    <ol class="space-y-2 text-neutral-200 list-decimal list-inside">
+                        <li>Gere uma imagem perfeita com Midjourney ou DALL-E</li>
+                        <li>Anime essa imagem com image-to-video</li>
+                        <li>Refine o resultado com video-to-video para ajustar estilo</li>
+                        <li>Combine múltiplos clipes em uma narrativa completa</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Ferramentas Disponíveis em 2025</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    O mercado de vídeo com IA evoluiu rapidamente. Aqui estão as principais plataformas disponíveis em 2025:
+                </p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold text-purple-400">Runway Gen-3</h3>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded-full border border-purple-500/30">Líder de Mercado</span>
+                        </div>
+                        <p class="text-neutral-200 mb-4">
+                            Pioneira no espaço de vídeo generativo, a Runway continua liderando com sua terceira geração. Oferece controle preciso, qualidade consistente e uma interface intuitiva.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Recursos Principais:</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Text-to-video até 10 segundos</li>
+                                    <li>• Image-to-video com controle de movimento</li>
+                                    <li>• Video-to-video com estilização</li>
+                                    <li>• Motion brush para controle preciso</li>
+                                    <li>• Resolução até 4K (upscaling)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Preços (2025):</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Plano Basic: $12/mês (125 créditos)</li>
+                                    <li>• Plano Standard: $28/mês (625 créditos)</li>
+                                    <li>• Plano Pro: $76/mês (2250 créditos)</li>
+                                    <li>• ~$0.05 por segundo gerado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold text-purple-400">Pika 2.0</h3>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full border border-green-500/30">Mais Acessível</span>
+                        </div>
+                        <p class="text-neutral-200 mb-4">
+                            Focada em democratizar o acesso ao vídeo com IA, a Pika oferece excelente custo-benefício com qualidade surpreendente. Ideal para iniciantes e projetos em volume.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Recursos Principais:</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Vídeos até 5 segundos (gratuito)</li>
+                                    <li>• Extend para vídeos mais longos</li>
+                                    <li>• Sound effects com IA</li>
+                                    <li>• Lip sync automático</li>
+                                    <li>• Modificação de elementos específicos</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Preços (2025):</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Plano Gratuito: 30 vídeos/mês</li>
+                                    <li>• Plano Standard: $8/mês (700 vídeos)</li>
+                                    <li>• Plano Pro: $28/mês (2000 vídeos)</li>
+                                    <li>• Melhor custo por geração</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold text-purple-400">Kling AI</h3>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full border border-blue-500/30">Vídeos Longos</span>
+                        </div>
+                        <p class="text-neutral-200 mb-4">
+                            Desenvolvida pela Kuaishou (China), a Kling se destaca pela capacidade de gerar vídeos mais longos com física realista e movimentos complexos.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Recursos Principais:</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Vídeos até 2 minutos</li>
+                                    <li>• Física e movimentos realistas</li>
+                                    <li>• Ótima para cenas de ação</li>
+                                    <li>• Simulação de fluidos e tecidos</li>
+                                    <li>• 1080p nativo</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Preços (2025):</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Plano Gratuito: 66 créditos/dia</li>
+                                    <li>• Plano Standard: $10/mês</li>
+                                    <li>• Plano Pro: $30/mês</li>
+                                    <li>• Competitivo para vídeos longos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold text-purple-400">OpenAI Sora</h3>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full border border-orange-500/30">Acesso Limitado</span>
+                        </div>
+                        <p class="text-neutral-200 mb-4">
+                            O modelo da OpenAI impressiona pela compreensão de física e capacidade narrativa, mas ainda possui acesso restrito. Quando disponível, promete revolucionar o mercado.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Recursos Principais:</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Vídeos até 1 minuto (demonstrado)</li>
+                                    <li>• Compreensão superior de física</li>
+                                    <li>• Coerência narrativa excepcional</li>
+                                    <li>• Múltiplos personagens consistentes</li>
+                                    <li>• Qualidade cinematográfica</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Status (2025):</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Acesso via ChatGPT Plus/Pro</li>
+                                    <li>• Fila de espera para novos usuários</li>
+                                    <li>• Preços ainda não finalizados</li>
+                                    <li>• Expansão gradual prevista</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold text-purple-400">Google Veo 2</h3>
+                            <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full border border-red-500/30">Maior Resolução</span>
+                        </div>
+                        <p class="text-neutral-200 mb-4">
+                            A resposta do Google ao mercado de vídeo IA, integrada ao ecossistema Google. Destaca-se pela resolução superior e integração com outras ferramentas Google.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Recursos Principais:</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Resolução até 4K nativa</li>
+                                    <li>• Integração com Google Workspace</li>
+                                    <li>• Compreensão avançada de prompts</li>
+                                    <li>• Edição posterior facilitada</li>
+                                    <li>• Vídeos até 2 minutos</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-neutral-100 mb-2">Preços (2025):</h4>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li>• Acesso via Google AI Studio</li>
+                                    <li>• Incluído no Google One AI Premium</li>
+                                    <li>• $20/mês (pacote completo)</li>
+                                    <li>• Créditos adicionais disponíveis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Comparativo de Recursos e Preços</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    Para ajudá-lo a escolher a ferramenta ideal para suas necessidades, aqui está um comparativo direto:
+                </p>
+
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-dark-800 border-b border-dark-700">
+                            <tr>
+                                <th class="px-4 py-3 text-purple-400 font-semibold">Ferramenta</th>
+                                <th class="px-4 py-3 text-purple-400 font-semibold">Duração Máx.</th>
+                                <th class="px-4 py-3 text-purple-400 font-semibold">Resolução</th>
+                                <th class="px-4 py-3 text-purple-400 font-semibold">Preço Entrada</th>
+                                <th class="px-4 py-3 text-purple-400 font-semibold">Melhor Para</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-dark-700">
+                            <tr class="bg-dark-800/50">
+                                <td class="px-4 py-3 font-medium text-neutral-100">Runway Gen-3</td>
+                                <td class="px-4 py-3 text-neutral-300">10s</td>
+                                <td class="px-4 py-3 text-neutral-300">4K (upscale)</td>
+                                <td class="px-4 py-3 text-neutral-300">$12/mês</td>
+                                <td class="px-4 py-3 text-neutral-300">Controle preciso, qualidade</td>
+                            </tr>
+                            <tr class="bg-dark-800/30">
+                                <td class="px-4 py-3 font-medium text-neutral-100">Pika 2.0</td>
+                                <td class="px-4 py-3 text-neutral-300">5s base</td>
+                                <td class="px-4 py-3 text-neutral-300">1080p</td>
+                                <td class="px-4 py-3 text-neutral-300">Gratuito</td>
+                                <td class="px-4 py-3 text-neutral-300">Iniciantes, volume</td>
+                            </tr>
+                            <tr class="bg-dark-800/50">
+                                <td class="px-4 py-3 font-medium text-neutral-100">Kling AI</td>
+                                <td class="px-4 py-3 text-neutral-300">120s</td>
+                                <td class="px-4 py-3 text-neutral-300">1080p</td>
+                                <td class="px-4 py-3 text-neutral-300">Gratuito</td>
+                                <td class="px-4 py-3 text-neutral-300">Vídeos longos, física</td>
+                            </tr>
+                            <tr class="bg-dark-800/30">
+                                <td class="px-4 py-3 font-medium text-neutral-100">OpenAI Sora</td>
+                                <td class="px-4 py-3 text-neutral-300">60s</td>
+                                <td class="px-4 py-3 text-neutral-300">1080p+</td>
+                                <td class="px-4 py-3 text-neutral-300">ChatGPT Plus</td>
+                                <td class="px-4 py-3 text-neutral-300">Narrativa, coerência</td>
+                            </tr>
+                            <tr class="bg-dark-800/50">
+                                <td class="px-4 py-3 font-medium text-neutral-100">Google Veo 2</td>
+                                <td class="px-4 py-3 text-neutral-300">120s</td>
+                                <td class="px-4 py-3 text-neutral-300">4K nativo</td>
+                                <td class="px-4 py-3 text-neutral-300">$20/mês</td>
+                                <td class="px-4 py-3 text-neutral-300">Resolução, integração</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-dark-800 border border-dark-700 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Recomendações por Perfil</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-100 mb-2">Iniciante / Experimentação:</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Comece com <strong>Pika</strong> (plano gratuito) para aprender os conceitos sem custo. Depois teste <strong>Kling AI</strong> para vídeos mais longos.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-100 mb-2">Profissional / Agência:</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Invista em <strong>Runway Gen-3</strong> para controle e qualidade consistente. Considere <strong>Veo 2</strong> se precisa de resolução 4K.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-100 mb-2">Criador de Conteúdo:</h4>
+                            <p class="text-neutral-300 text-sm">
+                                <strong>Pika</strong> oferece o melhor custo-benefício para produção em volume. Combine com <strong>Kling</strong> para cenas específicas.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-100 mb-2">Artista / Experimental:</h4>
+                            <p class="text-neutral-300 text-sm">
+                                <strong>Runway</strong> para controle criativo máximo. <strong>Sora</strong> (quando disponível) para resultados cinematográficos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Limitações Atuais</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    Apesar dos avanços impressionantes, é crucial entender as limitações atuais da tecnologia para usá-la de forma eficaz e realista:
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">1. Duração Limitada</h3>
+                        <p class="text-neutral-200 mb-3">
+                            A maioria das ferramentas gera apenas 3-10 segundos por vez. Vídeos mais longos exigem múltiplas gerações e edição manual para manter coerência.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Planeje cenas curtas e impactantes</li>
+                                <li>• Use transições criativas entre clipes</li>
+                                <li>• Aproveite recursos de "extend" quando disponíveis</li>
+                                <li>• Pense em narrativas episódicas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">2. Resolução e Qualidade</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Embora algumas ferramentas prometam 4K, a maioria gera nativamente em 720p ou 1080p. Upscaling pode introduzir artefatos.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Use ferramentas de upscaling especializadas (Topaz Video AI)</li>
+                                <li>• Planeje para formatos menores (social media)</li>
+                                <li>• Aceite limitações como parte da estética</li>
+                                <li>• Combine com filmagens reais em alta qualidade</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">3. Física e Movimento</h3>
+                        <p class="text-neutral-200 mb-3">
+                            A IA ainda comete erros em física complexa: objetos que desaparecem, gravidade inconsistente, movimentos não naturais, especialmente em mãos e dedos.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Problemas Comuns:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Mãos com dedos extras ou faltando</li>
+                                <li>• Objetos que "morph" ou mudam de forma</li>
+                                <li>• Fluidos com comportamento estranho</li>
+                                <li>• Proporções que mudam entre frames</li>
+                            </ul>
+                            <p class="text-neutral-300 text-sm mt-3"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Evite close-ups de mãos/faces em movimento complexo</li>
+                                <li>• Use ângulos de câmera que escondem imperfeições</li>
+                                <li>• Gere múltiplas versões e escolha a melhor</li>
+                                <li>• Aceite imperfeições menores como parte do estilo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">4. Consistência de Personagens</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Manter o mesmo personagem consistente através de múltiplas cenas é extremamente desafiador. Características podem mudar entre gerações.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Use image-to-video com a mesma imagem base</li>
+                                <li>• Crie um "character sheet" detalhado</li>
+                                <li>• Mantenha prompts muito consistentes</li>
+                                <li>• Use máscaras ou outros personagens estrategicamente</li>
+                                <li>• Trabalhe com personagens de perfil ou de costas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">5. Texto em Vídeo</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Assim como nas imagens, texto gerado pela IA frequentemente sai distorcido, ilegível ou com erros ortográficos.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Evite texto importante gerado pela IA</li>
+                                <li>• Adicione texto na pós-produção</li>
+                                <li>• Use texto como elemento estético desfocado</li>
+                                <li>• Planeje cenas sem necessidade de texto legível</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">6. Controle Limitado</h3>
+                        <p class="text-neutral-200 mb-3">
+                            Diferente de software de animação tradicional, você não tem controle frame-by-frame. A IA interpreta seus prompts de forma probabilística.
+                        </p>
+                        <div class="bg-dark-900 rounded p-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Workaround:</strong></p>
+                            <ul class="text-neutral-300 text-sm space-y-1">
+                                <li>• Gere múltiplas versões (batch generation)</li>
+                                <li>• Use ferramentas com motion brush quando possível</li>
+                                <li>• Combine com animação tradicional para controle</li>
+                                <li>• Aceite elementos de aleatoriedade como criatividade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 my-6">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Mindset Importante</h3>
+                    <p class="text-neutral-200 mb-3">
+                        As limitações atuais não devem ser vistas como impedimentos, mas como parte do processo criativo. Assim como fotógrafos trabalham dentro das limitações de luz e lentes, criadores de vídeo IA aprendem a trabalhar dentro dessas restrições.
+                    </p>
+                    <p class="text-neutral-200">
+                        Muitas vezes, as "imperfeições" da IA criam resultados únicos e artísticos que seriam impossíveis de alcançar de outra forma. A chave é entender as limitações e criar dentro delas, não contra elas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Possibilidades e Casos de Uso</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    Apesar das limitações, o vídeo com IA já está sendo usado em aplicações reais e comerciais. Aqui estão alguns casos de uso comprovados:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Marketing e Publicidade</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Anúncios para redes sociais em alta escala</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Testes A/B de conceitos visuais rapidamente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Product demos sem necessidade de filmagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Backgrounds dinâmicos para apresentações</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Conceitos criativos para pitches de clientes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Conteúdo para Redes Sociais</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>B-roll para YouTube e TikTok</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Intros e outros visuais impactantes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Animações de texto e motion graphics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Conteúdo viral e experimental</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Visualizações de histórias e narrativas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Educação e Treinamento</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Visualizações de conceitos abstratos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Recriações históricas sem custos de produção</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Demonstrações de processos científicos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Cenários de treinamento simulados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Material didático mais engajador</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Cinema e Entretenimento</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Pre-visualização de cenas para diretores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Efeitos visuais e composições</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Storyboards animados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Filmes experimentais e videoarte</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Clipes musicais conceituais</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Design e Arquitetura</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Walkthroughs virtuais de projetos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Apresentações de conceitos para clientes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Animações de produtos em desenvolvimento</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Visualização de espaços antes da construção</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Simulações de uso e interação</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Arte e Expressão Pessoal</h3>
+                        <ul class="space-y-2 text-neutral-200 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Videoarte e instalações</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Animações de poemas e textos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Visualização de sonhos e imaginação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Experimentação estética sem limitações</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Memorias e histórias pessoais animadas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 border border-dark-700 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Casos de Sucesso Real</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-neutral-100 mb-2">Campanha "Impossible Things"</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                Uma marca de moda usou vídeos IA para criar uma campanha inteira mostrando roupas em ambientes impossíveis (underwater fashion show, desfiles no espaço), economizando mais de $200,000 em produção.
+                            </p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-neutral-100 mb-2">Canal de Educação Científica</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                Um educador aumentou sua produção de vídeos de 1 por semana para 5 por semana usando IA para criar visualizações de conceitos complexos, crescendo de 50k para 500k inscritos em 6 meses.
+                            </p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-neutral-100 mb-2">Curta-Metragem Experimental</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                "The Frost" - um curta totalmente gerado por IA que foi aceito em festivais de cinema, demonstrando que a tecnologia já pode criar arte cinematográfica legítima.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Exercício Prático: Seu Primeiro Vídeo com IA</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-neutral-200 mb-6 leading-relaxed">
+                    Vamos colocar a mão na massa! Este exercício guiado vai levá-lo do zero até seu primeiro vídeo gerado por IA.
+                </p>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Objetivo do Exercício</h3>
+                    <p class="text-neutral-200 mb-3">
+                        Criar um vídeo curto (3-5 segundos) usando a plataforma Pika (gratuita) explorando os três tipos de geração: text-to-video, image-to-video, e um conceito simples de edição.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Passo 1: Configuração (5 minutos)</h3>
+                        <ol class="space-y-3 text-neutral-200">
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">1.</span>
+                                <div>
+                                    <p class="mb-2">Acesse <a href="https://pika.art" class="text-purple-400 hover:underline" target="_blank">pika.art</a> e crie uma conta gratuita</p>
+                                    <p class="text-neutral-300 text-sm">Use seu email ou conta Google para acesso rápido</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">2.</span>
+                                <div>
+                                    <p class="mb-2">Familiarize-se com a interface</p>
+                                    <p class="text-neutral-300 text-sm">Explore a galeria de exemplos para inspiração</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">3.</span>
+                                <div>
+                                    <p class="mb-2">Verifique seus créditos gratuitos</p>
+                                    <p class="text-neutral-300 text-sm">A conta gratuita oferece 30 gerações por mês</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Passo 2: Text-to-Video (10 minutos)</h3>
+                        <p class="text-neutral-200 mb-4">Vamos criar seu primeiro vídeo a partir de texto!</p>
+
+                        <div class="bg-dark-900 rounded-lg p-4 mb-4">
+                            <p class="text-neutral-300 text-sm mb-2"><strong>Prompt Sugerido:</strong></p>
+                            <code class="text-purple-300 text-sm">
+                                Uma xícara de café fumegante em uma mesa de madeira, luz suave da manhã entrando pela janela, câmera lenta, cinematográfico
+                            </code>
+                        </div>
+
+                        <ol class="space-y-3 text-neutral-200">
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">1.</span>
+                                <div>
+                                    <p class="mb-2">Cole o prompt acima no campo de texto</p>
+                                    <p class="text-neutral-300 text-sm">Ou crie seu próprio prompt seguindo a estrutura: [objeto] + [ação] + [ambiente] + [estilo]</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">2.</span>
+                                <div>
+                                    <p class="mb-2">Clique em "Generate" e aguarde (30-60 segundos)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">3.</span>
+                                <div>
+                                    <p class="mb-2">Analise o resultado:</p>
+                                    <ul class="text-neutral-300 text-sm mt-2 space-y-1 ml-4">
+                                        <li>• O movimento ficou natural?</li>
+                                        <li>• A iluminação corresponde ao prompt?</li>
+                                        <li>• Há algum artefato ou glitch visível?</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">4.</span>
+                                <div>
+                                    <p class="mb-2">Experimente variações do prompt</p>
+                                    <p class="text-neutral-300 text-sm">Mude um elemento por vez para entender o impacto de cada palavra</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Passo 3: Image-to-Video (15 minutos)</h3>
+                        <p class="text-neutral-200 mb-4">Agora vamos animar uma imagem!</p>
+
+                        <ol class="space-y-3 text-neutral-200">
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">1.</span>
+                                <div>
+                                    <p class="mb-2">Escolha uma imagem:</p>
+                                    <ul class="text-neutral-300 text-sm mt-2 space-y-1 ml-4">
+                                        <li>• Use uma foto sua (paisagem, retrato, objeto)</li>
+                                        <li>• Ou gere uma imagem com DALL-E/Midjourney</li>
+                                        <li>• Ou use uma imagem de stock gratuita</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">2.</span>
+                                <div>
+                                    <p class="mb-2">No Pika, clique no ícone de imagem e faça upload</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">3.</span>
+                                <div>
+                                    <p class="mb-2">Adicione um prompt descrevendo o movimento desejado:</p>
+                                    <div class="bg-dark-900 rounded-lg p-3 mt-2">
+                                        <code class="text-purple-300 text-sm">
+                                            câmera fazendo um zoom in suave, folhas balançando levemente ao vento
+                                        </code>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">4.</span>
+                                <div>
+                                    <p class="mb-2">Gere e compare com a imagem original</p>
+                                    <p class="text-neutral-300 text-sm">Observe como a IA interpretou seu comando de movimento</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Passo 4: Refinamento e Extend (10 minutos)</h3>
+                        <p class="text-neutral-200 mb-4">Aprenda a melhorar e estender seus vídeos.</p>
+
+                        <ol class="space-y-3 text-neutral-200">
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">1.</span>
+                                <div>
+                                    <p class="mb-2">Escolha seu melhor vídeo dos passos anteriores</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">2.</span>
+                                <div>
+                                    <p class="mb-2">Use o botão "Extend" para adicionar mais 3 segundos</p>
+                                    <p class="text-neutral-300 text-sm">A IA tentará continuar o movimento de forma coerente</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">3.</span>
+                                <div>
+                                    <p class="mb-2">Experimente o botão "Retry" se não gostar do resultado</p>
+                                    <p class="text-neutral-300 text-sm">Cada geração é diferente devido à natureza probabilística da IA</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-semibold text-purple-400 mr-3">4.</span>
+                                <div>
+                                    <p class="mb-2">Baixe seu vídeo final</p>
+                                    <p class="text-neutral-300 text-sm">Formato MP4, pronto para compartilhar</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800 border border-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Passo 5: Análise e Reflexão (10 minutos)</h3>
+                        <p class="text-neutral-200 mb-4">Documente seu aprendizado.</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-semibold text-neutral-100 mb-2">Perguntas para reflexão:</p>
+                                <ul class="space-y-2 text-neutral-300 text-sm ml-4">
+                                    <li>• Qual modalidade (text-to-video ou image-to-video) gerou resultados mais próximos da sua expectativa?</li>
+                                    <li>• Que tipo de imperfeições ou artefatos você notou?</li>
+                                    <li>• Como você descreveria a "personalidade" ou estilo da IA do Pika?</li>
+                                    <li>• Quais palavras no prompt tiveram mais impacto no resultado?</li>
+                                    <li>• Que tipo de projetos você imagina criar com essa tecnologia?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Desafio Extra</h3>
+                    <p class="text-neutral-200 mb-4">
+                        Para quem quer ir além:
+                    </p>
+                    <ul class="space-y-2 text-neutral-200">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">1.</span>
+                            <span>Crie uma sequência de 3 vídeos que contam uma mini-história</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">2.</span>
+                            <span>Experimente estilos visuais diferentes (anime, filme noir, pintura a óleo)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">3.</span>
+                            <span>Teste criar o mesmo conceito em Pika e depois em Runway ou Kling para comparar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">4.</span>
+                            <span>Combine seus vídeos IA com footage real usando um editor simples (CapCut, iMovie)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 border border-dark-700 rounded-lg p-6 mt-6">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Próximos Passos</h3>
+                    <p class="text-neutral-200 mb-3">
+                        Após completar este exercício, você terá uma compreensão prática fundamental de como funciona a geração de vídeo com IA. Nos próximos módulos, vamos aprofundar em:
+                    </p>
+                    <ul class="space-y-1 text-neutral-300">
+                        <li>• Técnicas avançadas de prompting para vídeo</li>
+                        <li>• Workflows profissionais combinando múltiplas ferramentas</li>
+                        <li>• Pós-produção e refinamento de vídeos IA</li>
+                        <li>• Casos de uso comerciais e monetização</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-16 pt-8 border-t border-dark-700">
+            <a href="../trilha3/" class="inline-flex items-center px-6 py-3 bg-dark-800 hover:bg-dark-700 text-neutral-300 rounded-lg transition-all border border-dark-700">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Voltar para Trilha 3
+            </a>
+            <a href="modulo-3-2.html" class="inline-flex items-center px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-all">
+                Próximo Módulo
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-dark-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+            <div class="text-center text-neutral-400 text-sm">
+                <p>&copy; 2025 Supercurso Nano Banana. Todos os direitos reservados.</p>
+                <p class="mt-2">Aprenda IA Generativa de forma prática e divertida.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.6 - Áudio e Música com IA | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-100 dark:bg-dark-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-dark-800 shadow-lg border-b-4 border-purple-500">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <span class="text-4xl">🍌</span>
+                    <div>
+                        <h1 class="text-2xl font-bold text-purple-500">Supercurso Nano Banana</h1>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Trilha 3 - Módulo 3.6</p>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-neutral-200 dark:bg-dark-700 hover:bg-neutral-300 dark:hover:bg-dark-600 transition-colors">
+                    <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                    <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <div class="inline-block px-4 py-2 bg-purple-500 text-white rounded-full text-sm font-semibold mb-4">
+                Trilha 3: Vídeo e Audiovisual
+            </div>
+            <h2 class="text-5xl font-bold mb-4 text-purple-500">Áudio e Música com IA</h2>
+            <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+                Domine a criação de trilhas sonoras, vozes e efeitos sonoros com inteligência artificial
+            </p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mb-16 bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg">
+            <h3 class="text-3xl font-bold mb-6 text-purple-500">Introdução</h3>
+            <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                O áudio é metade da experiência audiovisual. Uma trilha sonora bem escolhida, narração profissional e efeitos sonoros precisos podem transformar completamente a percepção do seu vídeo. Neste módulo, você aprenderá a criar áudio profissional usando IA, eliminando custos com royalties, músicos e estúdios de gravação.
+            </p>
+            <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                Das ferramentas de música generativa às tecnologias de clonagem de voz, você terá controle total sobre a camada sonora dos seus projetos.
+            </p>
+        </section>
+
+        <!-- Música Generativa -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Música Generativa com IA</h3>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold mb-3 text-purple-400">Suno</h4>
+                    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                        Plataforma líder em criação de músicas completas com letras. Gere canções profissionais apenas descrevendo o estilo desejado.
+                    </p>
+                    <ul class="space-y-2 text-neutral-600 dark:text-neutral-400">
+                        <li>• Músicas com letra e voz</li>
+                        <li>• Múltiplos gêneros musicais</li>
+                        <li>• Até 4 minutos de duração</li>
+                        <li>• Personalização de estrutura</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold mb-3 text-purple-400">Udio</h4>
+                    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                        Concorrente direto do Suno com foco em qualidade sonora superior e controle refinado sobre os elementos musicais.
+                    </p>
+                    <ul class="space-y-2 text-neutral-600 dark:text-neutral-400">
+                        <li>• Alta fidelidade de áudio</li>
+                        <li>• Controle por seções</li>
+                        <li>• Remix e variações</li>
+                        <li>• Extensão de músicas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold mb-3 text-purple-400">Mubert</h4>
+                    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                        Ideal para música de fundo e trilhas instrumentais. Gere tracks de qualquer duração para seus vídeos.
+                    </p>
+                    <ul class="space-y-2 text-neutral-600 dark:text-neutral-400">
+                        <li>• Música instrumental</li>
+                        <li>• Duração customizável</li>
+                        <li>• Licença para uso comercial</li>
+                        <li>• Geração em tempo real</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-purple-500 bg-opacity-10 dark:bg-purple-500 dark:bg-opacity-20 rounded-xl p-6 border-l-4 border-purple-500">
+                <h4 class="text-xl font-bold mb-4 text-purple-500">Criando Trilhas Sonoras Originais Sem Royalties</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Estilos Musicais</h5>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li><strong>Corporativo:</strong> "upbeat corporate music, inspiring, piano and strings"</li>
+                            <li><strong>Épico:</strong> "cinematic epic orchestral, dramatic, powerful"</li>
+                            <li><strong>Eletrônico:</strong> "electronic ambient, chill, atmospheric synths"</li>
+                            <li><strong>Acústico:</strong> "acoustic folk, gentle guitar, warm and peaceful"</li>
+                            <li><strong>Energético:</strong> "energetic rock, electric guitar, uplifting drums"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Controle de Duração</h5>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li><strong>Loops curtos:</strong> 15-30 segundos para intros</li>
+                            <li><strong>Músicas médias:</strong> 1-2 minutos para vídeos</li>
+                            <li><strong>Trilhas longas:</strong> 3-5 minutos para documentários</li>
+                            <li><strong>Extensão:</strong> Use recursos de extensão para aumentar</li>
+                            <li><strong>Cortes:</strong> Edite para sincronizar com o vídeo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voz e Narração -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Voz e Narração com IA</h3>
+
+            <div class="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-lg mb-6">
+                <h4 class="text-2xl font-bold mb-6 text-purple-400">ElevenLabs - Síntese de Voz Premium</h4>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h5 class="font-bold mb-4 text-neutral-800 dark:text-neutral-200">Recursos Principais</h5>
+                        <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">▸</span>
+                                <span><strong>Vozes Naturais:</strong> Biblioteca com centenas de vozes em diversos idiomas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">▸</span>
+                                <span><strong>Clonagem de Voz:</strong> Crie uma cópia digital da sua voz ou de qualquer pessoa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">▸</span>
+                                <span><strong>Controle de Emoção:</strong> Ajuste tom, velocidade e expressividade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">▸</span>
+                                <span><strong>Multilíngue:</strong> Suporte para mais de 29 idiomas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-4 text-neutral-800 dark:text-neutral-200">Casos de Uso</h5>
+                        <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">✓</span>
+                                <span>Narrações para vídeos explicativos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">✓</span>
+                                <span>Audiobooks e podcasts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">✓</span>
+                                <span>Dublagem e localização</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">✓</span>
+                                <span>Personagens para animações</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">✓</span>
+                                <span>Assistentes virtuais e IVR</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 dark:bg-dark-700 rounded-lg p-6">
+                    <h5 class="font-bold mb-4 text-neutral-800 dark:text-neutral-200">Como Clonar Sua Voz</h5>
+                    <ol class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                        <li><strong>1. Gravação:</strong> Grave 1-3 minutos de áudio em ambiente silencioso</li>
+                        <li><strong>2. Upload:</strong> Envie o arquivo para o ElevenLabs</li>
+                        <li><strong>3. Processamento:</strong> A IA analisa timbre, entonação e características</li>
+                        <li><strong>4. Geração:</strong> Use a voz clonada para criar novas narrações</li>
+                        <li><strong>5. Refinamento:</strong> Ajuste configurações para melhor resultado</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="bg-purple-500 bg-opacity-10 dark:bg-purple-500 dark:bg-opacity-20 rounded-xl p-6 border-l-4 border-purple-500">
+                <h4 class="text-xl font-bold mb-4 text-purple-500">Emoção e Expressividade na Síntese de Voz</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Tom Emocional</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Alegre e entusiasmado</li>
+                            <li>• Sério e profissional</li>
+                            <li>• Calmo e relaxante</li>
+                            <li>• Dramático e intenso</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Velocidade</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Lenta: reflexiva e clara</li>
+                            <li>• Normal: conversacional</li>
+                            <li>• Rápida: energética</li>
+                            <li>• Variável: dinâmica</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Pausas</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Use vírgulas e pontos</li>
+                            <li>• ... para pausas longas</li>
+                            <li>• Ênfase em palavras</li>
+                            <li>• Respiração natural</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sound Design -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Sound Design e Efeitos Sonoros</h3>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Foley e Efeitos</h4>
+                    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                        Foley são sons do dia a dia que dão realismo às cenas: passos, portas, objetos, movimentos.
+                    </p>
+                    <div class="bg-neutral-100 dark:bg-dark-700 rounded-lg p-4">
+                        <h5 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Ferramentas de IA</h5>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li><strong>AudioGen (Meta):</strong> Gera efeitos sonoros por texto</li>
+                            <li><strong>Soundraw:</strong> Biblioteca + geração de SFX</li>
+                            <li><strong>Adobe Enhance:</strong> Melhora qualidade de áudio</li>
+                            <li><strong>Freesound + IA:</strong> Busca inteligente de efeitos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Ambiência Sonora</h4>
+                    <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                        Sons de fundo que criam atmosfera e contexto para suas cenas.
+                    </p>
+                    <div class="bg-neutral-100 dark:bg-dark-700 rounded-lg p-4">
+                        <h5 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Exemplos de Ambiência</h5>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li>• <strong>Natureza:</strong> pássaros, vento, chuva, oceano</li>
+                            <li>• <strong>Urbano:</strong> tráfego, multidão, construção</li>
+                            <li>• <strong>Interior:</strong> escritório, café, restaurante</li>
+                            <li>• <strong>Espacial:</strong> reverb, eco, profundidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-lg">
+                <h4 class="text-2xl font-bold mb-6 text-purple-400">Camadas de Áudio Profissional</h4>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                        <div>
+                            <h5 class="font-bold text-neutral-800 dark:text-neutral-200">Diálogo/Narração</h5>
+                            <p class="text-neutral-700 dark:text-neutral-300">Camada principal de voz, sempre mais alta que música e efeitos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                        <div>
+                            <h5 class="font-bold text-neutral-800 dark:text-neutral-200">Música de Fundo</h5>
+                            <p class="text-neutral-700 dark:text-neutral-300">Trilha sonora em volume médio-baixo, criando clima sem competir com voz</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                        <div>
+                            <h5 class="font-bold text-neutral-800 dark:text-neutral-200">Efeitos Sonoros</h5>
+                            <p class="text-neutral-700 dark:text-neutral-300">Sons pontuais sincronizados com ações visuais (cliques, swooshes, impacts)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">4</span>
+                        <div>
+                            <h5 class="font-bold text-neutral-800 dark:text-neutral-200">Ambiência</h5>
+                            <p class="text-neutral-700 dark:text-neutral-300">Sons sutis de ambiente em volume baixo, preenchendo o espaço sonoro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sincronização -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Sincronização Áudio e Vídeo</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Timing Perfeito</h4>
+                    <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Markers:</strong> Use marcadores para pontos importantes do vídeo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Beat Sync:</strong> Alinhe cortes com batidas da música</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Hit Points:</strong> Efeitos sonoros exatamente no frame da ação</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Fade In/Out:</strong> Transições suaves entre cenas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Mixagem e Masterização</h4>
+                    <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Níveis:</strong> Voz: -6dB, Música: -20dB, SFX: -12dB</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>EQ:</strong> Equalize frequências para clareza</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Compressão:</strong> Uniformize dinâmica do áudio</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▸</span>
+                            <span><strong>Limiter:</strong> Evite distorção e clipping</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-purple-500 bg-opacity-10 dark:bg-purple-500 dark:bg-opacity-20 rounded-xl p-6 border-l-4 border-purple-500">
+                <h4 class="text-xl font-bold mb-4 text-purple-500">Ferramentas de Edição de Áudio</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Gratuitas</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Audacity</li>
+                            <li>• DaVinci Resolve (Fairlight)</li>
+                            <li>• GarageBand (Mac)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Profissionais</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Adobe Audition</li>
+                            <li>• Logic Pro</li>
+                            <li>• Pro Tools</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-dark-800 rounded-lg p-4">
+                        <h5 class="font-bold mb-2 text-purple-400">Online</h5>
+                        <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                            <li>• Adobe Podcast</li>
+                            <li>• Kapwing</li>
+                            <li>• TwistedWave</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercício Prático -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Exercício Prático</h3>
+
+            <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 text-white shadow-xl">
+                <h4 class="text-2xl font-bold mb-6">Criar Trilha Sonora Completa para um Vídeo</h4>
+
+                <div class="bg-white bg-opacity-20 rounded-xl p-6 mb-6">
+                    <h5 class="text-xl font-bold mb-4">Objetivo</h5>
+                    <p class="mb-4">
+                        Produza a camada de áudio completa para um vídeo de 60 segundos, incluindo música, narração e efeitos sonoros.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h5 class="font-bold mb-3 text-lg">Passo 1: Escolha ou Crie um Vídeo</h5>
+                        <ul class="space-y-2 ml-4">
+                            <li>• Use um vídeo que você criou nos módulos anteriores</li>
+                            <li>• Ou grave um vídeo simples com o celular (produto, tutorial, vlog)</li>
+                            <li>• Ou baixe um vídeo sem áudio do Pexels/Pixabay</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold mb-3 text-lg">Passo 2: Crie a Música de Fundo</h5>
+                        <ul class="space-y-2 ml-4">
+                            <li>• Use Suno, Udio ou Mubert para gerar uma trilha instrumental</li>
+                            <li>• Escolha um estilo adequado ao tema do vídeo</li>
+                            <li>• Gere uma música de 60-90 segundos</li>
+                            <li>• Baixe em alta qualidade (WAV ou MP3 320kbps)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold mb-3 text-lg">Passo 3: Grave ou Gere a Narração</h5>
+                        <ul class="space-y-2 ml-4">
+                            <li>• Escreva um roteiro de 100-150 palavras descrevendo o vídeo</li>
+                            <li>• Use ElevenLabs para gerar a narração com IA</li>
+                            <li>• Ou grave sua própria voz e use Adobe Enhance para melhorar</li>
+                            <li>• Ajuste emoção e velocidade conforme necessário</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold mb-3 text-lg">Passo 4: Adicione Efeitos Sonoros</h5>
+                        <ul class="space-y-2 ml-4">
+                            <li>• Identifique 3-5 momentos que precisam de SFX</li>
+                            <li>• Busque ou gere efeitos sonoros apropriados</li>
+                            <li>• Exemplos: transições (swoosh), ações (click), impactos</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold mb-3 text-lg">Passo 5: Mixagem Final</h5>
+                        <ul class="space-y-2 ml-4">
+                            <li>• Importe tudo em um editor de vídeo (DaVinci, Premiere, CapCut)</li>
+                            <li>• Ajuste níveis: Narração alta, Música baixa, SFX média</li>
+                            <li>• Sincronize efeitos sonoros com ações visuais</li>
+                            <li>• Adicione fades in/out suaves</li>
+                            <li>• Exporte o vídeo final com áudio masterizado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-20 rounded-xl p-6 mt-6">
+                    <h5 class="font-bold mb-3 text-lg">Critérios de Sucesso</h5>
+                    <ul class="space-y-2">
+                        <li>✓ Música de fundo adequada ao tema e ritmo do vídeo</li>
+                        <li>✓ Narração clara, audível e expressiva</li>
+                        <li>✓ Efeitos sonoros sincronizados perfeitamente</li>
+                        <li>✓ Níveis de áudio balanceados (voz sempre compreensível)</li>
+                        <li>✓ Transições suaves entre seções</li>
+                        <li>✓ Vídeo final profissional e agradável de assistir</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos Adicionais -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-purple-500">Recursos e Ferramentas</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Plataformas de Música com IA</h4>
+                    <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>• <strong>Suno AI:</strong> suno.ai</li>
+                        <li>• <strong>Udio:</strong> udio.com</li>
+                        <li>• <strong>Mubert:</strong> mubert.com</li>
+                        <li>• <strong>Soundraw:</strong> soundraw.io</li>
+                        <li>• <strong>Boomy:</strong> boomy.com</li>
+                        <li>• <strong>AIVA:</strong> aiva.ai</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Síntese de Voz</h4>
+                    <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>• <strong>ElevenLabs:</strong> elevenlabs.io</li>
+                        <li>• <strong>Play.ht:</strong> play.ht</li>
+                        <li>• <strong>Murf AI:</strong> murf.ai</li>
+                        <li>• <strong>Resemble AI:</strong> resemble.ai</li>
+                        <li>• <strong>Descript Overdub:</strong> descript.com</li>
+                        <li>• <strong>Azure Speech:</strong> Microsoft Azure</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Efeitos Sonoros</h4>
+                    <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>• <strong>Freesound:</strong> freesound.org (grátis)</li>
+                        <li>• <strong>Epidemic Sound:</strong> epidemicsound.com</li>
+                        <li>• <strong>AudioJungle:</strong> audiojungle.net</li>
+                        <li>• <strong>Zapsplat:</strong> zapsplat.com (grátis)</li>
+                        <li>• <strong>BBC Sound Effects:</strong> Biblioteca gratuita</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-lg">
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Melhoramento de Áudio</h4>
+                    <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>• <strong>Adobe Podcast Enhance:</strong> Gratuito</li>
+                        <li>• <strong>Krisp:</strong> Remoção de ruído</li>
+                        <li>• <strong>Auphonic:</strong> Masterização automática</li>
+                        <li>• <strong>iZotope RX:</strong> Limpeza profissional</li>
+                        <li>• <strong>Descript Studio Sound:</strong> Qualidade de estúdio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dicas Profissionais -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-lg border-t-4 border-purple-500">
+                <h3 class="text-2xl font-bold mb-6 text-purple-500">Dicas Profissionais</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Música</h4>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li>• Música deve complementar, não competir com a narração</li>
+                            <li>• Reduza volume da música quando há fala (ducking)</li>
+                            <li>• Escolha instrumentais para vídeos com narração</li>
+                            <li>• Músicas energéticas para intros, calmas para outros</li>
+                            <li>• Sempre verifique direitos de uso comercial</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Voz</h4>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li>• Use Adobe Podcast Enhance para melhorar gravações</li>
+                            <li>• Teste diferentes vozes até encontrar a ideal</li>
+                            <li>• Adicione pausas naturais no roteiro (...)</li>
+                            <li>• Voz humana sempre melhor que IA para projetos premium</li>
+                            <li>• Clone sua voz para consistência em série de vídeos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Efeitos</h4>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li>• Menos é mais: use SFX apenas onde necessário</li>
+                            <li>• Sincronize perfeitamente com ação visual</li>
+                            <li>• Varie volume de efeitos para naturalidade</li>
+                            <li>• Use reverb para dar profundidade espacial</li>
+                            <li>• Crie biblioteca pessoal de efeitos favoritos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Mixagem</h4>
+                        <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                            <li>• Use fones de ouvido para mixagem precisa</li>
+                            <li>• Teste em diferentes dispositivos (celular, TV, fones)</li>
+                            <li>• Mantenha áudio entre -6dB e -3dB para evitar clipping</li>
+                            <li>• Normalize áudio final para broadcast standard</li>
+                            <li>• Exporte em WAV 48kHz para vídeo profissional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumo -->
+        <section class="mb-16 bg-purple-500 bg-opacity-10 dark:bg-purple-500 dark:bg-opacity-20 rounded-2xl p-8 border-l-4 border-purple-500">
+            <h3 class="text-3xl font-bold mb-6 text-purple-500">Resumo do Módulo</h3>
+            <div class="grid md:grid-cols-2 gap-6 text-neutral-700 dark:text-neutral-300">
+                <div>
+                    <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">O que você aprendeu:</h4>
+                    <ul class="space-y-2">
+                        <li>• Criar músicas originais com Suno, Udio e Mubert</li>
+                        <li>• Gerar narrações profissionais com ElevenLabs</li>
+                        <li>• Clonar vozes e controlar expressividade</li>
+                        <li>• Adicionar efeitos sonoros e ambiência</li>
+                        <li>• Sincronizar áudio com vídeo perfeitamente</li>
+                        <li>• Mixar e masterizar áudio profissionalmente</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 text-neutral-800 dark:text-neutral-200">Principais conclusões:</h4>
+                    <ul class="space-y-2">
+                        <li>• Áudio é 50% da experiência audiovisual</li>
+                        <li>• IA democratizou produção musical profissional</li>
+                        <li>• Vozes sintéticas atingiram qualidade indistinguível</li>
+                        <li>• Layering de áudio cria profundidade e profissionalismo</li>
+                        <li>• Sincronização perfeita é essencial para qualidade</li>
+                        <li>• Sempre teste áudio em múltiplos dispositivos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center pt-8 border-t border-neutral-300 dark:border-dark-700">
+            <a href="modulo-3-5.html" class="inline-flex items-center px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Módulo Anterior
+            </a>
+            <a href="modulo-3-7.html" class="inline-flex items-center px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors shadow-lg">
+                Próximo Módulo
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-dark-800 border-t border-neutral-300 dark:border-dark-700 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8 text-center text-neutral-600 dark:text-neutral-400">
+            <p>Supercurso Nano Banana - Trilha 3: Vídeo e Audiovisual</p>
+            <p class="mt-2">Módulo 3.6: Áudio e Música com IA</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

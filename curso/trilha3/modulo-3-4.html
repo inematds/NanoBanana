@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.4 - Motion Design com IA | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-dark-800 border-b border-dark-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🍌</span>
+                    <div>
+                        <div class="text-xl font-bold text-purple-400">Supercurso Nano Banana</div>
+                        <div class="text-sm text-neutral-400">Trilha 3 - Módulo 3.4</div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold mb-4">
+                Trilha 3 - Conteúdo Audiovisual com IA
+            </div>
+            <h1 class="text-5xl font-bold mb-4 text-purple-400">Módulo 3.4 - Motion Design com IA</h1>
+            <p class="text-xl text-neutral-300">Aprenda a criar animações profissionais combinando princípios clássicos de motion design com ferramentas de IA</p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="mb-16">
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">Sobre este Módulo</h2>
+                <p class="text-neutral-300 leading-relaxed mb-4">
+                    Motion design é a arte de dar vida a elementos visuais através da animação. Neste módulo, você vai aprender os fundamentos atemporais do motion design e como potencializá-los com inteligência artificial, criando animações profissionais de forma mais rápida e eficiente.
+                </p>
+                <p class="text-neutral-300 leading-relaxed">
+                    Vamos explorar desde os 12 princípios clássicos de animação até workflows híbridos que combinam IA com softwares tradicionais como After Effects e DaVinci Resolve, preparando você para criar motion graphics que se destacam no mercado.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Fundamentos de Motion Design</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Os 12 Princípios de Animação</h3>
+                <p class="text-neutral-300 mb-6">
+                    Criados pelos animadores da Disney, esses princípios são a base de qualquer boa animação:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">1. Squash and Stretch</h4>
+                        <p class="text-neutral-300 text-sm">Deformação que dá peso e flexibilidade aos objetos</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">2. Anticipation</h4>
+                        <p class="text-neutral-300 text-sm">Movimento preparatório que antecipa a ação principal</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">3. Staging</h4>
+                        <p class="text-neutral-300 text-sm">Apresentação clara da ideia principal</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">4. Straight Ahead & Pose to Pose</h4>
+                        <p class="text-neutral-300 text-sm">Técnicas de animação quadro a quadro</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">5. Follow Through & Overlapping</h4>
+                        <p class="text-neutral-300 text-sm">Continuidade do movimento após a ação principal</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">6. Slow In & Slow Out</h4>
+                        <p class="text-neutral-300 text-sm">Aceleração e desaceleração natural do movimento</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">7. Arc</h4>
+                        <p class="text-neutral-300 text-sm">Movimentos seguem trajetórias curvas e naturais</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">8. Secondary Action</h4>
+                        <p class="text-neutral-300 text-sm">Ações secundárias que enriquecem a animação</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">9. Timing</h4>
+                        <p class="text-neutral-300 text-sm">Número de frames determina velocidade e peso</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">10. Exaggeration</h4>
+                        <p class="text-neutral-300 text-sm">Exagero para maior impacto e clareza</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">11. Solid Drawing</h4>
+                        <p class="text-neutral-300 text-sm">Volume, peso e balanço em cada pose</p>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-400 mb-3">12. Appeal</h4>
+                        <p class="text-neutral-300 text-sm">Carisma e atratividade visual</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Conceitos Essenciais</h3>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Easing (Curvas de Aceleração)</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Controla como a animação acelera e desacelera. Tipos principais:
+                        </p>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li><strong class="text-purple-400">Ease In:</strong> Começa devagar e acelera</li>
+                            <li><strong class="text-purple-400">Ease Out:</strong> Começa rápido e desacelera</li>
+                            <li><strong class="text-purple-400">Ease In-Out:</strong> Começa devagar, acelera no meio, desacelera no final</li>
+                            <li><strong class="text-purple-400">Linear:</strong> Velocidade constante (use com moderação)</li>
+                            <li><strong class="text-purple-400">Custom Curves:</strong> Curvas personalizadas para efeitos únicos</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Timing</h4>
+                        <p class="text-neutral-300">
+                            O timing determina a personalidade da animação. Movimentos rápidos (6-12 frames) transmitem energia e urgência, enquanto movimentos lentos (24-48 frames) sugerem peso e importância. O timing também estabelece hierarquia visual e guia a atenção do espectador.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Anticipation (Antecipação)</h4>
+                        <p class="text-neutral-300">
+                            Movimento preparatório que torna ações mais compreensíveis e impactantes. Por exemplo, antes de um objeto saltar para cima, ele se comprime para baixo. Isso prepara o espectador e torna a animação mais satisfatória.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Follow-Through (Continuidade)</h4>
+                        <p class="text-neutral-300">
+                            Partes do objeto continuam em movimento após a ação principal parar. Isso adiciona realismo e fluidez. Exemplos: cabelos que balançam, roupas que flutuam, elementos que oscilam antes de se estabilizar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Motion Design para Negócios</h2>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Logos Animados</h3>
+                    <p class="text-neutral-300 text-sm mb-4">
+                        Transforme marcas estáticas em experiências dinâmicas e memoráveis
+                    </p>
+                    <ul class="text-neutral-300 text-sm space-y-2">
+                        <li>• Reveal animations</li>
+                        <li>• Morphing transitions</li>
+                        <li>• Particle effects</li>
+                        <li>• Sound design integration</li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Infográficos Animados</h3>
+                    <p class="text-neutral-300 text-sm mb-4">
+                        Visualize dados complexos de forma envolvente e compreensível
+                    </p>
+                    <ul class="text-neutral-300 text-sm space-y-2">
+                        <li>• Gráficos e charts dinâmicos</li>
+                        <li>• Transições de dados</li>
+                        <li>• Storytelling visual</li>
+                        <li>• Hierarquia de informação</li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Social Media Ads</h3>
+                    <p class="text-neutral-300 text-sm mb-4">
+                        Capture atenção em feeds lotados com animações impactantes
+                    </p>
+                    <ul class="text-neutral-300 text-sm space-y-2">
+                        <li>• 3-5 segundos de impacto</li>
+                        <li>• Formatos vertical e quadrado</li>
+                        <li>• Texto animado e CTAs</li>
+                        <li>• Loops perfeitos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Aplicações Profissionais</h3>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Vídeos Explicativos</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Simplifique conceitos complexos através de animações claras e didáticas. Ideal para onboarding, tutoriais de produtos e conteúdo educacional.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">30-90 segundos</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Narração</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Personagens</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Apresentações Corporativas</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Eleve suas apresentações com transições suaves, gráficos animados e elementos visuais profissionais que mantêm a audiência engajada.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Templates</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Lower thirds</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Dados animados</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">UI/UX Animations</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Micro-interações e animações de interface que melhoram a experiência do usuário, tornando produtos digitais mais intuitivos e agradáveis.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Feedback visual</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Transições</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Loading states</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">IA e Software Tradicional</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Integrando IA com After Effects</h3>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Geração de Assets com IA</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Use ferramentas como Runway ML, Midjourney ou DALL-E para criar elementos visuais que serão animados no After Effects:
+                        </p>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Backgrounds e texturas procedurais</li>
+                            <li>Elementos gráficos e ícones customizados</li>
+                            <li>Personagens e objetos para animação</li>
+                            <li>Máscaras e mattes gerados por IA</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Rotoscopia Automática</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Ferramentas de IA como Runway ML e Unscreen automatizam processos que antes levavam horas:
+                        </p>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Remoção de fundo em tempo real</li>
+                            <li>Tracking de objetos e pessoas</li>
+                            <li>Separação de layers automática</li>
+                            <li>Refinamento de máscaras</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Motion Tracking Aprimorado</h4>
+                        <p class="text-neutral-300">
+                            Combine o tracking nativo do After Effects com IA para resultados mais precisos e estáveis, especialmente em cenas complexas com oclusão, movimento rápido ou câmera instável.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">DaVinci Resolve e IA</h3>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Fusion: Motion Graphics Nativos</h4>
+                        <p class="text-neutral-300 mb-4">
+                            O Fusion, integrado ao DaVinci Resolve, é uma poderosa ferramenta de motion graphics que se beneficia de recursos de IA:
+                        </p>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li><strong>Magic Mask:</strong> Rotoscopia inteligente com IA</li>
+                            <li><strong>Object Removal:</strong> Remoção de objetos indesejados</li>
+                            <li><strong>Face Refinement:</strong> Ajustes faciais automatizados</li>
+                            <li><strong>Speed Warp:</strong> Retiming com compensação de movimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Workflow Integrado</h4>
+                        <p class="text-neutral-300 mb-4">
+                            DaVinci Resolve permite um workflow completo: edição, color grading, motion graphics e áudio em um único software:
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-dark-800 p-4 rounded">
+                                <div class="font-semibold text-purple-400 mb-2">1. Edit Page</div>
+                                <p class="text-neutral-300 text-sm">Montagem e timing inicial</p>
+                            </div>
+                            <div class="bg-dark-800 p-4 rounded">
+                                <div class="font-semibold text-purple-400 mb-2">2. Fusion Page</div>
+                                <p class="text-neutral-300 text-sm">Motion graphics e VFX</p>
+                            </div>
+                            <div class="bg-dark-800 p-4 rounded">
+                                <div class="font-semibold text-purple-400 mb-2">3. Color Page</div>
+                                <p class="text-neutral-300 text-sm">Grading com IA</p>
+                            </div>
+                            <div class="bg-dark-800 p-4 rounded">
+                                <div class="font-semibold text-purple-400 mb-2">4. Deliver Page</div>
+                                <p class="text-neutral-300 text-sm">Export otimizado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Workflows Híbridos IA + Tradicional</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Pipeline de Produção Otimizado</h3>
+
+                <div class="space-y-8">
+                    <div class="relative">
+                        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-500/30"></div>
+
+                        <div class="relative pl-20 pb-8">
+                            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                            <div class="bg-dark-700 rounded-lg p-6">
+                                <h4 class="font-semibold text-lg mb-2 text-purple-400">Conceito e Storyboard</h4>
+                                <p class="text-neutral-300 mb-3">
+                                    Use IA para acelerar a fase de conceituação:
+                                </p>
+                                <ul class="list-disc list-inside text-neutral-300 space-y-1 ml-4">
+                                    <li>ChatGPT/Claude para brainstorming e scripts</li>
+                                    <li>Midjourney para mood boards e style frames</li>
+                                    <li>Ferramentas de storyboard com IA</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-20 pb-8">
+                            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                            <div class="bg-dark-700 rounded-lg p-6">
+                                <h4 class="font-semibold text-lg mb-2 text-purple-400">Criação de Assets</h4>
+                                <p class="text-neutral-300 mb-3">
+                                    Combine criação manual e IA:
+                                </p>
+                                <ul class="list-disc list-inside text-neutral-300 space-y-1 ml-4">
+                                    <li>Ilustrações base com Midjourney/DALL-E</li>
+                                    <li>Refinamento no Illustrator/Photoshop</li>
+                                    <li>Texturas e backgrounds procedurais com IA</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-20 pb-8">
+                            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                            <div class="bg-dark-700 rounded-lg p-6">
+                                <h4 class="font-semibold text-lg mb-2 text-purple-400">Animação</h4>
+                                <p class="text-neutral-300 mb-3">
+                                    Workflow híbrido no After Effects:
+                                </p>
+                                <ul class="list-disc list-inside text-neutral-300 space-y-1 ml-4">
+                                    <li>Keyframes manuais para controle criativo</li>
+                                    <li>Plugins com IA para motion automatizado</li>
+                                    <li>Expressões e scripts para eficiência</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-20 pb-8">
+                            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                            <div class="bg-dark-700 rounded-lg p-6">
+                                <h4 class="font-semibold text-lg mb-2 text-purple-400">Pós-Produção</h4>
+                                <p class="text-neutral-300 mb-3">
+                                    Finalize com ferramentas de IA:
+                                </p>
+                                <ul class="list-disc list-inside text-neutral-300 space-y-1 ml-4">
+                                    <li>Upscaling com Topaz Video AI</li>
+                                    <li>Color grading assistido por IA (DaVinci)</li>
+                                    <li>Sound design com ferramentas de IA</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-20">
+                            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                            <div class="bg-dark-700 rounded-lg p-6">
+                                <h4 class="font-semibold text-lg mb-2 text-purple-400">Entrega e Variações</h4>
+                                <p class="text-neutral-300 mb-3">
+                                    Otimize a entrega final:
+                                </p>
+                                <ul class="list-disc list-inside text-neutral-300 space-y-1 ml-4">
+                                    <li>Renderização em múltiplos formatos</li>
+                                    <li>Variações automáticas com templates</li>
+                                    <li>Legendas automáticas com IA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Ferramentas Essenciais</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Software Tradicional</h4>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Adobe After Effects:</strong> Padrão da indústria para motion graphics
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>DaVinci Resolve:</strong> Solução completa gratuita
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Cinema 4D:</strong> 3D motion graphics profissional
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Blender:</strong> 3D gratuito e poderoso
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Ferramentas de IA</h4>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Runway ML:</strong> Suite completa de IA para vídeo
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Topaz Video AI:</strong> Upscaling e enhancement
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>EbSynth:</strong> Style transfer para vídeo
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">▸</span>
+                                <div>
+                                    <strong>Luma AI:</strong> 3D capture e interpolação
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Templates e Presets Reutilizáveis</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Construindo uma Biblioteca de Assets</h3>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Estrutura de Projeto Modular</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Organize seus projetos para máxima reutilização:
+                        </p>
+                        <div class="bg-dark-700 rounded p-4 font-mono text-sm text-neutral-300">
+                            <div>📁 Motion_Library/</div>
+                            <div class="ml-4">📁 Logos/</div>
+                            <div class="ml-8">📄 Reveal_Template_01.aep</div>
+                            <div class="ml-8">📄 Reveal_Template_02.aep</div>
+                            <div class="ml-4">📁 Lower_Thirds/</div>
+                            <div class="ml-8">📄 Corporate_LT_01.aep</div>
+                            <div class="ml-8">📄 Social_LT_01.aep</div>
+                            <div class="ml-4">📁 Transitions/</div>
+                            <div class="ml-8">📄 Seamless_Transitions.aep</div>
+                            <div class="ml-4">📁 Text_Animations/</div>
+                            <div class="ml-8">📄 Kinetic_Typography.aep</div>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-2 text-purple-400">Criando Templates Eficientes</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Melhores práticas para templates reutilizáveis:
+                        </p>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li><strong>Essential Graphics:</strong> Use painéis de controle no After Effects</li>
+                            <li><strong>Naming Conventions:</strong> Nomes claros e consistentes para layers</li>
+                            <li><strong>Color Coding:</strong> Organize visualmente por tipo de layer</li>
+                            <li><strong>Markers e Guides:</strong> Indique áreas editáveis</li>
+                            <li><strong>Documentação:</strong> Inclua instruções no projeto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Animation Presets</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Text Animation Presets</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Fade in/out com tracking
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Typewriter effect
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Bounce in por caractere
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Glitch effects
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                3D rotation reveals
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Shape Animation Presets</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Morph transitions
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Path animations
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Trim paths reveal
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Elastic bounces
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Particle bursts
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Camera Animation Presets</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Smooth dolly moves
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Orbit rotations
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Zoom transitions
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Shake effects
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Focus pulls
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Color & Effects Presets</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Gradient ramps
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Glow animations
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Color pulse effects
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Chromatic aberration
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                Light leaks
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-500">Recursos para Templates</h3>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h4 class="font-semibold mb-2 text-purple-400">Marketplaces</h4>
+                        <p class="text-neutral-300 text-sm">Envato Elements, Motion Array, VideoHive</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🆓</div>
+                        <h4 class="font-semibold mb-2 text-purple-400">Recursos Gratuitos</h4>
+                        <p class="text-neutral-300 text-sm">Motion Design School, Mt. Mograph, SonduckFilm</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🎓</div>
+                        <h4 class="font-semibold mb-2 text-purple-400">Comunidades</h4>
+                        <p class="text-neutral-300 text-sm">Reddit r/MotionDesign, Discord servers, Creative COW</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Exercício Prático</h2>
+
+            <div class="bg-gradient-to-br from-purple-500/20 to-dark-800 rounded-xl p-8 border border-purple-500/30">
+                <div class="flex items-start space-x-4 mb-6">
+                    <div class="text-4xl">🎬</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 text-purple-400">Criar um Logo Animado com IA</h3>
+                        <p class="text-neutral-300">
+                            Neste exercício, você vai criar uma animação de logo profissional usando um workflow híbrido de IA e software tradicional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-800/50 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Parte 1: Preparação (IA)</h4>
+                        <ol class="list-decimal list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Escolha uma marca (real ou fictícia) para trabalhar</li>
+                            <li>Use ChatGPT/Claude para gerar 3 conceitos de animação para o logo</li>
+                            <li>Use Midjourney ou DALL-E para criar mood boards dos conceitos</li>
+                            <li>Selecione o conceito mais forte e refine com a IA</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Parte 2: Criação de Assets</h4>
+                        <ol class="list-decimal list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Se o logo não existe, crie elementos visuais com IA generativa</li>
+                            <li>Importe os assets no Illustrator/Photoshop para vetorização</li>
+                            <li>Separe elementos em layers individuais para animação</li>
+                            <li>Exporte como arquivos .ai ou .psd preservando layers</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Parte 3: Animação (After Effects ou DaVinci Resolve)</h4>
+                        <ol class="list-decimal list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Importe o logo em layers separadas</li>
+                            <li>Crie uma composição de 5-7 segundos</li>
+                            <li>Aplique os 12 princípios de animação:
+                                <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                    <li>Use anticipation no início</li>
+                                    <li>Aplique ease in/out nas keyframes</li>
+                                    <li>Adicione follow-through nos elementos</li>
+                                    <li>Trabalhe com arcs naturais</li>
+                                    <li>Adicione secondary action (brilhos, partículas)</li>
+                                </ul>
+                            </li>
+                            <li>Sincronize com um sound effect (use bibliotecas de IA se desejar)</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Parte 4: Finalização</h4>
+                        <ol class="list-decimal list-inside text-neutral-300 space-y-2 ml-4">
+                            <li>Adicione color grading (manual ou com IA)</li>
+                            <li>Aplique motion blur para suavizar movimentos rápidos</li>
+                            <li>Se necessário, use upscaling com IA para qualidade 4K</li>
+                            <li>Renderize em múltiplos formatos (MP4 para web, ProRes para arquivo)</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Entregáveis</h4>
+                        <ul class="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                            <li><strong>Vídeo final:</strong> Logo animation de 5-7 segundos</li>
+                            <li><strong>Breakdown:</strong> Documento explicando:
+                                <ul class="list-disc list-inside ml-6 mt-2">
+                                    <li>Processo criativo e ferramentas de IA usadas</li>
+                                    <li>Princípios de animação aplicados</li>
+                                    <li>Decisões de timing e easing</li>
+                                </ul>
+                            </li>
+                            <li><strong>Template:</strong> Salve o projeto como template reutilizável</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/20 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-400">Desafio Extra</h4>
+                        <p class="text-neutral-300">
+                            Crie 3 variações do logo animado para diferentes contextos (vertical para Stories, quadrado para feed, horizontal para YouTube) usando o mesmo projeto base. Configure um painel de Essential Graphics para permitir troca rápida entre formatos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Principais Aprendizados</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Fundamentos Primeiro</h3>
+                    <p class="text-neutral-300">
+                        Os 12 princípios de animação são atemporais. IA acelera execução, mas compreensão de timing, easing e antecipação é essencial para qualidade.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Workflows Híbridos</h3>
+                    <p class="text-neutral-300">
+                        A combinação de IA para geração/automação com controle manual para refinamento criativo produz os melhores resultados.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Biblioteca de Assets</h3>
+                    <p class="text-neutral-300">
+                        Construir templates e presets reutilizáveis economiza tempo em projetos futuros e garante consistência visual.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <div class="text-3xl mb-4">💼</div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Aplicação Comercial</h3>
+                    <p class="text-neutral-300">
+                        Motion design para negócios (logos, ads, infográficos) tem alta demanda. Domine esses formatos para oportunidades profissionais.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Recursos Adicionais</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Tutoriais e Cursos</h3>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>School of Motion - Animation Bootcamp</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Mt. Mograph - Motion Design tutorials</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Ben Marriott - Character Animation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>ECAbrams - After Effects tutorials</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Ferramentas e Plugins</h3>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Runway ML - IA para vídeo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Element 3D - 3D no After Effects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Saber - Light effects plugin</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Animation Composer - Presets gratuitos</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Inspiração</h3>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Motionographer - Motion design showcase</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Vimeo Motion Graphics - Curadoria</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Behance - Motion Design projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Dribbble - Micro-animations</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Comunidades</h3>
+                        <ul class="space-y-3 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>r/MotionDesign - Reddit community</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Motion Design Artists - Facebook</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Creative COW - Fóruns técnicos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Discord servers - Várias comunidades ativas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center pt-8 border-t border-dark-700">
+            <a href="modulo-3-3.html" class="inline-flex items-center px-6 py-3 bg-dark-800 hover:bg-dark-700 text-purple-400 rounded-lg transition-colors border border-dark-700">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Módulo Anterior
+            </a>
+
+            <a href="modulo-3-5.html" class="inline-flex items-center px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-colors">
+                Próximo Módulo
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-dark-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-neutral-400">
+                <p>&copy; 2024 Supercurso Nano Banana. Todos os direitos reservados.</p>
+                <p class="mt-2">Trilha 3 - Conteúdo Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

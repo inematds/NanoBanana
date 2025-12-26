@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.5 - Composição e VFX com IA | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark-800/95 backdrop-blur-sm border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🍌</span>
+                    <div>
+                        <div class="text-lg font-bold text-purple-400">Supercurso Nano Banana</div>
+                        <div class="text-xs text-neutral-400">Trilha 3 - Módulo 3.5</div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium mb-4">
+                Trilha 3: Produção Audiovisual
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-neutral-100">
+                Módulo 3.5: Composição e VFX com IA
+            </h1>
+            <p class="text-xl text-neutral-300">
+                Domine técnicas avançadas de efeitos visuais e composição usando inteligência artificial para criar produções cinematográficas impressionantes
+            </p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="mb-16">
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">Introdução aos VFX com IA</h2>
+                <p class="text-neutral-300 mb-4">
+                    Os efeitos visuais (VFX) com IA estão revolucionando a produção audiovisual, permitindo que criadores individuais realizem trabalhos que antes exigiam equipes inteiras de especialistas. Neste módulo, você aprenderá a combinar técnicas tradicionais de composição com ferramentas de IA para criar efeitos visuais profissionais.
+                </p>
+                <p class="text-neutral-300">
+                    Das técnicas fundamentais de compositing até a criação de efeitos especiais complexos, você dominará o processo completo de integração de elementos gerados por IA em footage real.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1: Fundamentos de VFX -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Fundamentos de VFX</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Compositing</h3>
+                    <p class="text-neutral-300 mb-4">
+                        A arte de combinar múltiplas camadas de imagens para criar uma cena final coesa e realista.
+                    </p>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Modos de mesclagem e transparência</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Trabalho com canais alpha</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Ajuste de cores e matching</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Integração de elementos com IA</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Keying</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Técnicas avançadas de remoção de fundo, potencializadas por algoritmos de IA para resultados mais precisos.
+                    </p>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Chroma keying tradicional vs. IA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Refinamento de bordas automático</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Preservação de detalhes finos (cabelo, transparências)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Correção de spill e aberrações</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Rotoscoping</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Processo de isolamento de elementos frame a frame, agora acelerado com assistência de IA.
+                    </p>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Rotoscoping assistido por IA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Propagação automática de máscaras</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Segmentação de objetos e pessoas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Otimização de workflow</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Tracking</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Rastreamento de movimento para integrar elementos 2D e 3D em footage com câmera em movimento.
+                    </p>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Point tracking e planar tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Camera tracking 3D com IA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Estabilização inteligente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Match moving para elementos gerados</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+                <h4 class="text-lg font-semibold mb-3 text-purple-400">Ferramentas Essenciais</h4>
+                <div class="grid md:grid-cols-3 gap-4 text-neutral-300">
+                    <div>
+                        <strong class="text-neutral-100">After Effects + IA:</strong> RunwayML, Rotobrush 2.0
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">DaVinci Resolve:</strong> Magic Mask, Smart Reframe
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Standalone:</strong> Topaz Video AI, Remove.bg
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Ambientes e Cenários -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Ambientes e Cenários com IA</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Background Replacement</h3>
+                <p class="text-neutral-300 mb-6">
+                    Substitua e transforme fundos completamente usando IA, criando ambientes impossíveis ou economizando em custos de produção.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Técnicas de Substituição</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Remoção automática de fundo com IA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Geração de backgrounds com Stable Diffusion/Midjourney</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Matching de perspectiva e iluminação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Integração de sombras e reflexos</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Workflow Recomendado</h4>
+                        <ol class="space-y-2 text-neutral-400 list-decimal list-inside">
+                            <li>Análise da iluminação do footage original</li>
+                            <li>Geração do background ideal com IA</li>
+                            <li>Ajuste de perspectiva e escala</li>
+                            <li>Color grading para matching</li>
+                            <li>Adição de elementos de integração</li>
+                            <li>Refinamento final e detalhes</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                    <h4 class="font-semibold mb-2 text-purple-400">Dica Profissional</h4>
+                    <p class="text-neutral-300">
+                        Use múltiplas camadas de profundidade (foreground, midground, background) ao criar ambientes complexos. Isso adiciona realismo e permite efeitos de paralaxe natural quando a câmera se move.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Set Extension</h3>
+                <p class="text-neutral-300 mb-6">
+                    Expanda sets físicos limitados em ambientes épicos e grandiosos usando extensão digital assistida por IA.
+                </p>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Aplicações Práticas</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-neutral-400">
+                            <div>
+                                <strong class="text-purple-400">Arquitetura:</strong>
+                                <p class="text-sm mt-1">Adicione andares, alas ou estruturas completas a edifícios reais</p>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Paisagens:</strong>
+                                <p class="text-sm mt-1">Estenda horizontes, adicione montanhas, cidades ou elementos naturais</p>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Interiores:</strong>
+                                <p class="text-sm mt-1">Expanda salas pequenas em halls grandiosos ou palácios</p>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Sci-fi/Fantasy:</strong>
+                                <p class="text-sm mt-1">Crie mundos fantásticos a partir de locações simples</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Ferramentas de Set Extension</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong>Photoshop Generative Fill:</strong> Extensão inteligente de imagens</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong>Stable Diffusion Outpainting:</strong> Criação de áreas além do frame</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong>RunwayML Gen-2:</strong> Extensão e modificação de vídeo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong>Blender + IA:</strong> Modelagem 3D híbrida para extensões complexas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Matte Painting -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Matte Painting Digital com IA</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <p class="text-neutral-300 mb-6">
+                    O matte painting tradicional era uma arte que levava dias ou semanas. Com IA, você pode criar paisagens épicas e ambientes detalhados em horas, mantendo qualidade cinematográfica.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h3 class="text-lg font-semibold mb-3 text-purple-400">Fase 1: Conceito</h3>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Sketching e composição inicial</li>
+                            <li>• Geração de conceitos com IA</li>
+                            <li>• Seleção de paleta de cores</li>
+                            <li>• Definição de perspectiva</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h3 class="text-lg font-semibold mb-3 text-purple-400">Fase 2: Construção</h3>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Camadas de profundidade</li>
+                            <li>• Geração de elementos com IA</li>
+                            <li>• Fotobashing tradicional</li>
+                            <li>• Detalhamento e texturas</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h3 class="text-lg font-semibold mb-3 text-purple-400">Fase 3: Finalização</h3>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Iluminação e atmosfera</li>
+                            <li>• Color grading unificado</li>
+                            <li>• Efeitos de profundidade</li>
+                            <li>• Integração com footage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-dark-700 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Técnicas Avançadas</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2 text-neutral-100">Fotobashing com IA</h4>
+                            <p class="text-neutral-400 text-sm mb-3">
+                                Combine fotos reais com elementos gerados por IA para criar matte paintings híbridos ultra-realistas.
+                            </p>
+                            <ul class="space-y-1 text-neutral-400 text-sm">
+                                <li>→ Biblioteca de photo stocks + gerações IA</li>
+                                <li>→ Blending inteligente com Generative Fill</li>
+                                <li>→ Correção de perspectiva automática</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-neutral-100">Paralaxe e Projeção 3D</h4>
+                            <p class="text-neutral-400 text-sm mb-3">
+                                Transforme matte paintings estáticos em ambientes com movimento de câmera.
+                            </p>
+                            <ul class="space-y-1 text-neutral-400 text-sm">
+                                <li>→ Separação de camadas de profundidade</li>
+                                <li>→ Projeção em geometria 3D simples</li>
+                                <li>→ Camera mapping em After Effects/Nuke</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+                <h4 class="text-lg font-semibold mb-3 text-purple-400">Ferramentas Recomendadas</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-neutral-300">
+                    <div>
+                        <strong class="text-neutral-100">Geração:</strong> Midjourney, Stable Diffusion XL, DALL-E 3
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Composição:</strong> Photoshop + Generative Fill, Affinity Photo
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">3D Projection:</strong> After Effects, Nuke, Blender
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Upscaling:</strong> Topaz Gigapixel AI, Magnific AI
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Efeitos Especiais -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Efeitos Especiais com IA</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Partículas e Simulações</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Crie sistemas de partículas realistas e simulações físicas complexas com assistência de IA.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Poeira e Névoa</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Geração de atmospheric particles com distribuição natural</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Chuva e Neve</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Sistemas climáticos realistas com física correta</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Faíscas e Centelhas</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Efeitos de energia e eletricidade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Fogo e Fumaça</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Elementos pirotécnicos e atmosféricos são complexos de simular, mas IA facilita a geração e integração.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Chamas Realistas</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Geração de fogo com comportamento físico correto</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Fumaça e Vapor</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Simulações volumétricas adaptativas</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Integração de Luz</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Matching automático de iluminação do fogo no ambiente</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Água e Líquidos</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Simulações de fluidos são computacionalmente intensas, mas ferramentas IA tornam o processo mais acessível.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Ondas e Respingos</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Simulação de interação água com objetos</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Reflexos e Refração</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Propriedades ópticas realistas da água</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Chuva e Gotículas</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Elementos de água em pequena escala</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700 hover:border-purple-500/50 transition-all">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Explosões e Destruição</h3>
+                    <p class="text-neutral-300 mb-4">
+                        Efeitos pirotécnicos e de destruição podem ser gerados e integrados de forma segura e econômica.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Explosões Volumétricas</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Geração de explosões com biblioteca + IA</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Debris e Fragmentos</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Sistemas de partículas de destroços</p>
+                        </div>
+                        <div class="bg-dark-700 rounded p-3">
+                            <strong class="text-neutral-100 text-sm">Shockwaves</strong>
+                            <p class="text-neutral-400 text-sm mt-1">Ondas de impacto e distorção atmosférica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Efeitos de Magia e Fantasia</h3>
+                <p class="text-neutral-300 mb-6">
+                    IA é particularmente poderosa para criar efeitos impossíveis que não existem na realidade.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Energia Mágica</h4>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Raios e relâmpagos coloridos</li>
+                            <li>• Auras e campos de energia</li>
+                            <li>• Portais e vórtices</li>
+                            <li>• Runas e símbolos brilhantes</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Transformações</h4>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Morphing de criaturas</li>
+                            <li>• Dissoluções mágicas</li>
+                            <li>• Teleporte e aparições</li>
+                            <li>• Envelhecimento/rejuvenescimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Elementos Fantásticos</h4>
+                        <ul class="space-y-2 text-neutral-400 text-sm">
+                            <li>• Criaturas místicas</li>
+                            <li>• Objetos encantados brilhantes</li>
+                            <li>• Ambientes sobrenaturais</li>
+                            <li>• Efeitos de levitação</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Integração de IA em Footage Real -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Integrando Elementos Gerados por IA em Footage Real</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <p class="text-neutral-300 mb-6">
+                    A chave para VFX convincente é a integração perfeita. Elementos gerados por IA precisam se comportar exatamente como se fizessem parte da filmagem original.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Matching de Câmera</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Perspectiva e Ângulo</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li>→ Análise de ponto de fuga da cena</li>
+                                    <li>→ Matching de focal length e distorção de lente</li>
+                                    <li>→ Altura e ângulo de câmera corretos</li>
+                                    <li>→ Uso de camera tracking 3D quando necessário</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Movimento e Shake</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li>→ Motion tracking de elementos gerados</li>
+                                    <li>→ Aplicação de camera shake natural</li>
+                                    <li>→ Motion blur matching</li>
+                                    <li>→ Sincronização de movimentos complexos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Matching de Iluminação</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Análise de Luz</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li>→ Identificação de direção da luz principal</li>
+                                    <li>→ Análise de temperatura de cor</li>
+                                    <li>→ Mapeamento de fontes de luz múltiplas</li>
+                                    <li>→ Estudo de sombras e highlights</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Aplicação nos Elementos IA</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li>→ Relit de elementos gerados para matching</li>
+                                    <li>→ Criação de sombras coerentes</li>
+                                    <li>→ Adição de oclusão ambiental</li>
+                                    <li>→ Reflexos e interações de luz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Integração de Cor e Atmosfera</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Color Matching</h4>
+                                <p class="text-neutral-400 text-sm mb-2">
+                                    Elementos gerados por IA frequentemente têm paletas de cores diferentes do footage real.
+                                </p>
+                                <ul class="space-y-1 text-neutral-400 text-sm">
+                                    <li>• Análise de curvas de cor do footage original</li>
+                                    <li>• Aplicação de LUTs e ajustes de cor</li>
+                                    <li>• Matching de contraste e saturação</li>
+                                    <li>• Unificação de grading final</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2 text-neutral-100">Atmosfera e Profundidade</h4>
+                                <p class="text-neutral-400 text-sm mb-2">
+                                    Adicione elementos atmosféricos para vender a integração.
+                                </p>
+                                <ul class="space-y-1 text-neutral-400 text-sm">
+                                    <li>• Atmospheric haze baseado em distância</li>
+                                    <li>• Partículas de ar (poeira, névoa)</li>
+                                    <li>• Degradação de cor com profundidade</li>
+                                    <li>• Aberrações cromáticas e lens effects</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Interações Físicas</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-dark-600 rounded p-4">
+                                <strong class="text-neutral-100">Sombras:</strong>
+                                <p class="text-neutral-400 text-sm mt-1">Elementos gerados devem projetar sombras realistas no ambiente</p>
+                            </div>
+                            <div class="bg-dark-600 rounded p-4">
+                                <strong class="text-neutral-100">Reflexos:</strong>
+                                <p class="text-neutral-400 text-sm mt-1">Superfícies reflexivas devem mostrar elementos adicionados</p>
+                            </div>
+                            <div class="bg-dark-600 rounded p-4">
+                                <strong class="text-neutral-100">Oclusão:</strong>
+                                <p class="text-neutral-400 text-sm mt-1">Objetos reais podem bloquear elementos gerados e vice-versa</p>
+                            </div>
+                            <div class="bg-dark-600 rounded p-4">
+                                <strong class="text-neutral-100">Interação de Luz:</strong>
+                                <p class="text-neutral-400 text-sm mt-1">Elementos luminosos devem iluminar o ambiente real</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+                <h4 class="text-lg font-semibold mb-3 text-purple-400">Checklist de Integração</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-neutral-300">
+                    <div>
+                        <strong class="text-neutral-100">Técnico:</strong>
+                        <ul class="text-sm mt-2 space-y-1">
+                            <li>✓ Perspectiva e tracking corretos</li>
+                            <li>✓ Motion blur e grain matching</li>
+                            <li>✓ Resolução e sharpness consistentes</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Artístico:</strong>
+                        <ul class="text-sm mt-2 space-y-1">
+                            <li>✓ Iluminação e sombras coerentes</li>
+                            <li>✓ Cores e contraste unificados</li>
+                            <li>✓ Atmosfera e profundidade naturais</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Green Screen e Remoção de Fundo -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Green Screen e Remoção de Fundo com IA</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Keying Tradicional vs. IA</h3>
+                <p class="text-neutral-300 mb-6">
+                    Enquanto green screens tradicionais ainda têm seu lugar, ferramentas de IA revolucionaram a remoção de fundo, tornando-a mais acessível e, em muitos casos, superior.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Green Screen Tradicional</h4>
+                        <div class="mb-4">
+                            <strong class="text-purple-400">Vantagens:</strong>
+                            <ul class="space-y-1 text-neutral-400 text-sm mt-2">
+                                <li>• Controle preciso em produção</li>
+                                <li>• Ideal para movimento rápido</li>
+                                <li>• Padrão da indústria profissional</li>
+                                <li>• Resultados previsíveis</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-purple-400">Desvantagens:</strong>
+                            <ul class="space-y-1 text-neutral-400 text-sm mt-2">
+                                <li>• Requer setup físico elaborado</li>
+                                <li>• Spill de cor verde em sujeito</li>
+                                <li>• Difícil com cabelo e detalhes finos</li>
+                                <li>• Limitações de espaço</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Remoção de Fundo com IA</h4>
+                        <div class="mb-4">
+                            <strong class="text-purple-400">Vantagens:</strong>
+                            <ul class="space-y-1 text-neutral-400 text-sm mt-2">
+                                <li>• Funciona com qualquer fundo</li>
+                                <li>• Excelente com cabelo e transparências</li>
+                                <li>• Não requer setup especial</li>
+                                <li>• Pode melhorar footage existente</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-purple-400">Desvantagens:</strong>
+                            <li>• Pode ter erros com movimento rápido</li>
+                            <li>• Requer processamento pesado</li>
+                            <li>• Menos controle em tempo real</li>
+                            <li>• Resultados podem variar</li>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                    <h4 class="font-semibold mb-2 text-purple-400">Melhor Prática</h4>
+                    <p class="text-neutral-300">
+                        Use green screen quando possível para máximo controle, mas aproveite IA para refinar bordas, recuperar detalhes finos, ou trabalhar com footage sem green screen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Ferramentas de IA para Remoção de Fundo</h3>
+
+                <div class="space-y-4">
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h4 class="font-semibold text-neutral-100">RunwayML Green Screen</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Premium</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-3">
+                            Remoção de fundo em vídeo usando modelos de segmentação avançados. Excelente para footage sem green screen.
+                        </p>
+                        <div class="text-neutral-400 text-sm">
+                            <strong class="text-neutral-100">Melhor para:</strong> Vídeos de pessoas, footage sem green screen, refinamento de bordas
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h4 class="font-semibold text-neutral-100">Unscreen</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Freemium</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-3">
+                            Serviço online especializado em remoção automática de fundo de vídeo. Simples e eficaz.
+                        </p>
+                        <div class="text-neutral-400 text-sm">
+                            <strong class="text-neutral-100">Melhor para:</strong> Vídeos curtos, processamento rápido, usuários iniciantes
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h4 class="font-semibold text-neutral-100">After Effects Rotobrush 2.0</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Adobe CC</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-3">
+                            Ferramenta de rotoscoping assistida por IA integrada ao After Effects. Aprende com seu input inicial.
+                        </p>
+                        <div class="text-neutral-400 text-sm">
+                            <strong class="text-neutral-100">Melhor para:</strong> Isolamento de objetos complexos, footage desafiador, workflow profissional
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h4 class="font-semibold text-neutral-100">DaVinci Resolve Magic Mask</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Grátis/Studio</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-3">
+                            Sistema de mascaramento inteligente que rastreia pessoas e objetos automaticamente.
+                        </p>
+                        <div class="text-neutral-400 text-sm">
+                            <strong class="text-neutral-100">Melhor para:</strong> Color grading seletivo, masks rápidos, workflow all-in-one
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h4 class="font-semibold text-neutral-100">Remove.bg Video</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Freemium</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-3">
+                            Versão em vídeo do popular remove.bg. API disponível para integração em workflows.
+                        </p>
+                        <div class="text-neutral-400 text-sm">
+                            <strong class="text-neutral-100">Melhor para:</strong> Automação, processamento em lote, integração via API
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Workflow Otimizado de Keying</h3>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Passo 1: Preparação do Footage</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">1.</span>
+                                <span>Análise da qualidade do fundo (uniformidade, iluminação, contraste)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">2.</span>
+                                <span>Correção de cor preliminar se necessário</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">3.</span>
+                                <span>Estabilização se houver shake excessivo</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Passo 2: Remoção Inicial</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">1.</span>
+                                <span>Aplicar ferramenta de IA de primeira escolha</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">2.</span>
+                                <span>Avaliar resultado, especialmente em áreas problemáticas (cabelo, bordas, motion blur)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">3.</span>
+                                <span>Experimentar com diferentes ferramentas se necessário</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Passo 3: Refinamento</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">1.</span>
+                                <span>Refine manualmente áreas problemáticas com rotoscoping tradicional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">2.</span>
+                                <span>Ajuste edge feathering para transições naturais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">3.</span>
+                                <span>Corrija spill se houver resíduo de cor do fundo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">4.</span>
+                                <span>Adicione light wrap para integração realista</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100">Passo 4: Integração com Novo Fundo</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">1.</span>
+                                <span>Posicione o novo background (real ou gerado por IA)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">2.</span>
+                                <span>Faça color matching entre sujeito e fundo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">3.</span>
+                                <span>Adicione sombras se necessário</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">4.</span>
+                                <span>Aplique grain matching e atmospheric effects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">5.</span>
+                                <span>Grading final unificado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Exercício Prático -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Exercício Prático: Composição VFX Simples</h2>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Projeto: "Portal Mágico"</h3>
+                <p class="text-neutral-300 mb-6">
+                    Crie uma composição VFX onde uma pessoa abre um portal mágico, revela um mundo fantástico através dele, e elementos do outro mundo começam a vazar para a realidade.
+                </p>
+
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-8">
+                    <h4 class="font-semibold mb-3 text-purple-400">Objetivos de Aprendizado</h4>
+                    <ul class="grid md:grid-cols-2 gap-2 text-neutral-300">
+                        <li>✓ Remoção de fundo ou green screen</li>
+                        <li>✓ Criação de ambiente fantástico com IA</li>
+                        <li>✓ Geração de efeitos de energia mágica</li>
+                        <li>✓ Integração de elementos 2D em 3D</li>
+                        <li>✓ Matching de iluminação e cor</li>
+                        <li>✓ Adição de partículas e atmosfera</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">1</span>
+                            Planejamento e Filmagem
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Filmagem:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Filme você ou ator fazendo gestos de "abrir" algo invisível</li>
+                                    <li>• Use fundo simples ou green screen se possível</li>
+                                    <li>• Marque posição onde o portal aparecerá</li>
+                                    <li>• Filme em 24/30fps, 1080p mínimo</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Conceito:</strong>
+                                <p class="text-neutral-400 text-sm mt-1">
+                                    Decida que tipo de mundo estará além do portal (fantasia, sci-fi, horror, etc.)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">2</span>
+                            Criação do Mundo do Portal
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Geração com IA:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Use Midjourney/Stable Diffusion para criar landscape fantástico</li>
+                                    <li>• Prompt exemplo: "mystical fantasy landscape, glowing crystals, floating islands, magical atmosphere, cinematic"</li>
+                                    <li>• Gere variações até encontrar a perfeita</li>
+                                    <li>• Upscale para alta resolução</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Preparação:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Separe elementos em camadas (céu, montanhas, primeiro plano)</li>
+                                    <li>• Isso permitirá efeito de paralaxe</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">3</span>
+                            Remoção de Fundo
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Processo:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Importe footage para After Effects/DaVinci Resolve</li>
+                                    <li>• Use Rotobrush 2.0 (AE) ou Magic Mask (Resolve) se não usou green screen</li>
+                                    <li>• Se usou green screen, aplique Keylight ou similar</li>
+                                    <li>• Refine bordas cuidadosamente</li>
+                                    <li>• Salve alpha channel para uso posterior</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">4</span>
+                            Criação do Portal
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Forma do Portal:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Crie máscara oval ou circular onde o portal aparecerá</li>
+                                    <li>• Anime a máscara "abrindo" sincronizado com gestos do ator</li>
+                                    <li>• Aplique feather nas bordas</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Efeitos de Energia:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Adicione borda brilhante com glow (use CC Light Burst ou similar)</li>
+                                    <li>• Crie partículas circulando as bordas</li>
+                                    <li>• Adicione distorção de calor/energia (CC Lens ou Turbulent Displace)</li>
+                                    <li>• Lightning effects opcionais (Trapcode Particular ou similar)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">5</span>
+                            Integração do Mundo Fantástico
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Composição:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Posicione o mundo gerado atrás do portal mask</li>
+                                    <li>• Adicione leve movimento (parallax, drift) para vida</li>
+                                    <li>• Ajuste cores para parecer "mágico" vs. mundo real</li>
+                                    <li>• Adicione glow e atmospheric haze</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Iluminação:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Luz do portal deve iluminar o ator</li>
+                                    <li>• Crie layer de luz colorida sobre o ator (use blend modes)</li>
+                                    <li>• Adicione sombra falsa nas bordas para depth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">6</span>
+                            Elementos Vazando do Portal
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Partículas Mágicas:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Partículas flutuantes saindo do portal</li>
+                                    <li>• Use Particular, Stardust ou particle system nativo</li>
+                                    <li>• Faça-as reagir levemente ao movimento do ar</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Elementos Opcionais:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Pequeno objeto/criatura saindo do portal</li>
+                                    <li>• Vapor/névoa mística</li>
+                                    <li>• Runas ou símbolos flutuantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">7</span>
+                            Finalização
+                        </h4>
+                        <div class="ml-11 space-y-3">
+                            <div>
+                                <strong class="text-purple-400">Polimento:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Color grading final para unificar tudo</li>
+                                    <li>• Adicione grain matching se necessário</li>
+                                    <li>• Vinheta sutil para direcionar atenção</li>
+                                    <li>• Ajuste de contraste e saturação</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Som (opcional mas recomendado):</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Som whoosh quando portal abre</li>
+                                    <li>• Humming mágico constante</li>
+                                    <li>• Ambiente do outro mundo vazando</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong class="text-purple-400">Export:</strong>
+                                <ul class="text-neutral-400 text-sm mt-1 space-y-1">
+                                    <li>• Exporte em 1080p ou 4K</li>
+                                    <li>• H.264 para web, ProRes para arquivo</li>
+                                    <li>• Duração: 5-15 segundos é ideal para este exercício</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-700 mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-400">Critérios de Avaliação</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3 text-neutral-100">Técnico (50%)</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Qualidade do keying/remoção de fundo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Precisão de tracking e animação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Integração de iluminação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Consistência de cor e grading</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3 text-neutral-100">Criativo (50%)</h4>
+                        <ul class="space-y-2 text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Originalidade do conceito</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Qualidade dos elementos gerados por IA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Coesão narrativa e visual</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Impacto visual final</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+                <h4 class="text-lg font-semibold mb-3 text-purple-400">Dicas de Sucesso</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-neutral-300">
+                    <div>
+                        <strong class="text-neutral-100">Mantenha simples:</strong>
+                        <p class="text-sm mt-1">Melhor executar bem elementos básicos do que falhar com complexidade excessiva.</p>
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Referências:</strong>
+                        <p class="text-sm mt-1">Estude portais em filmes (Doctor Strange, Avengers) para inspiração.</p>
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Iteração:</strong>
+                        <p class="text-sm mt-1">Faça múltiplas versões, experimentando diferentes efeitos e ajustes.</p>
+                    </div>
+                    <div>
+                        <strong class="text-neutral-100">Feedback:</strong>
+                        <p class="text-sm mt-1">Mostre para outras pessoas e ajuste baseado nas reações delas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos Adicionais -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-neutral-100">Recursos Adicionais</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Tutoriais Recomendados</h3>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>Video Copilot: Action Movie Essentials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>RunwayML Academy: Green Screen AI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>Ben Marriott: After Effects VFX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>Corridor Digital: VFX Artists React</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-700">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Assets Gratuitos</h3>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>ActionVFX (free section): elementos VFX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>Footagecrate: green screen footage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>Mixkit: particles e effects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">→</span>
+                            <span>ProductionCrate: VFX stock footage</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusão -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-purple-500/10 to-dark-800 rounded-xl p-8 border border-purple-500/30">
+                <h2 class="text-3xl font-bold mb-4 text-neutral-100">Conclusão</h2>
+                <p class="text-neutral-300 mb-4">
+                    VFX e composição com IA abrem possibilidades criativas que antes eram exclusivas de grandes estúdios. Com as técnicas aprendidas neste módulo, você pode criar efeitos visuais profissionais que elevam drasticamente a qualidade de suas produções.
+                </p>
+                <p class="text-neutral-300 mb-4">
+                    Lembre-se: os melhores VFX são aqueles que servem à história. Use efeitos especiais para contar melhores histórias, não apenas para impressionar tecnicamente. A integração perfeita é mais importante que a complexidade.
+                </p>
+                <p class="text-neutral-300">
+                    No próximo módulo, exploraremos <strong class="text-purple-400">Distribuição e Publicação de Conteúdo</strong>, onde você aprenderá a otimizar e distribuir suas criações para diferentes plataformas e audiências.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center pt-8 border-t border-dark-700">
+            <a href="modulo-3-4.html" class="flex items-center space-x-2 px-6 py-3 bg-dark-800 hover:bg-dark-700 rounded-lg border border-dark-700 hover:border-purple-500/50 transition-all group">
+                <svg class="w-5 h-5 text-purple-400 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <div class="text-left">
+                    <div class="text-xs text-neutral-400">Anterior</div>
+                    <div class="text-sm font-semibold text-neutral-200">Módulo 3.4: Edição de Vídeo</div>
+                </div>
+            </a>
+
+            <a href="modulo-3-6.html" class="flex items-center space-x-2 px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg transition-all group">
+                <div class="text-right">
+                    <div class="text-xs text-purple-100">Próximo</div>
+                    <div class="text-sm font-semibold text-white">Módulo 3.6: Distribuição e Publicação</div>
+                </div>
+                <svg class="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-dark-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-neutral-400">
+                <p>&copy; 2024 Supercurso Nano Banana. Todos os direitos reservados.</p>
+                <p class="text-sm mt-2">Trilha 3: Produção Audiovisual - Módulo 3.5</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

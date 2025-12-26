@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.3 - Image-to-Video Avançado | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-900 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-neutral-800/95 backdrop-blur-sm border-b border-neutral-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🍌</span>
+                    <div>
+                        <h1 class="text-lg font-bold text-neutral-100">Supercurso Nano Banana</h1>
+                        <p class="text-xs text-purple-400">Trilha 3 - Módulo 3.3</p>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-neutral-700 hover:bg-neutral-600 transition-colors">
+                    <svg class="w-5 h-5 text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium mb-4">
+                Trilha 3: Vídeo com IA
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-neutral-100">
+                Image-to-Video Avançado
+            </h2>
+            <p class="text-xl text-neutral-300 leading-relaxed">
+                Domine técnicas avançadas para transformar imagens estáticas em vídeos dinâmicos com controle total sobre movimento, estilo e narrativa visual.
+            </p>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="space-y-8">
+            <!-- Section 1 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Preparando Imagens para Animação</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    A qualidade da animação começa na preparação da imagem. Uma boa imagem-base pode transformar completamente o resultado final do vídeo.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Resolução e Aspect Ratio</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Mínimo recomendado:</strong> 1024x576 para animações suaves</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Ideal:</strong> 1920x1080 para máxima qualidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Formats:</strong> 16:9 para horizontal, 9:16 para vertical, 1:1 para social</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Evite imagens muito pequenas - causam artefatos ao animar</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Composição Visual</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Regra dos terços:</strong> posicione elementos principais nos pontos de interesse</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Profundidade:</strong> tenha elementos em primeiro, médio e último plano</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Contraste:</strong> separe bem o subject do background</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Direção de olhar:</strong> personagens devem ter espaço para "olhar"</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Espaço para Movimento</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Margem de segurança:</strong> deixe 10-15% de espaço nas bordas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Elementos soltos:</strong> cabelos, roupas, folhas devem ter espaço para flutuar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Direção de ação:</strong> reserve espaço para a direção do movimento pretendido</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Evite cortar elementos importantes nas bordas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-300">
+                            <strong class="text-purple-200">Dica Pro:</strong> Se sua imagem não tem espaço suficiente, use técnicas de outpainting para expandir as bordas antes de animar. Ferramentas como DALL-E ou Stable Diffusion Inpainting funcionam bem para isso.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Tipos de Animação Image-to-Video</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    Diferentes tipos de movimento exigem diferentes abordagens e ferramentas. Conheça as principais categorias:
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">1. Parallax / Camera Movement</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Cria profundidade através do movimento da câmera, com diferentes camadas se movendo em velocidades diferentes.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Melhor para:</strong> paisagens, cenários, establishing shots</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Ferramentas:</strong> Runway Gen-3 Alpha, Pika Labs, CapCut</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Prompt example:</strong> "slow camera push in, parallax effect, cinematic"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Resultado:</strong> sensação de 3D a partir de imagem 2D</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">2. Morphing / Transformation</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Transforma elementos da imagem gradualmente, criando metamorfoses surreais ou realistas.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Melhor para:</strong> transições, efeitos mágicos, storytelling visual</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Ferramentas:</strong> Runway Gen-3, Pika 1.5, Haiper AI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Prompt example:</strong> "the character transforms into golden particles"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Resultado:</strong> mudanças visuais dramáticas e impactantes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">3. Character Animation</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Anima personagens com movimentos naturais: expressões faciais, gestos, caminhada, etc.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Melhor para:</strong> retratos, personagens, talking heads</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Ferramentas:</strong> Kling AI, Runway, Pika (motion brush)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Prompt example:</strong> "character smiles and waves, natural movement"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Resultado:</strong> personagens ganham vida e personalidade</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">4. Ambiente Vivo (Living Environment)</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Adiciona movimento sutil ao ambiente: nuvens, água, fumaça, vegetação balançando.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Melhor para:</strong> cenas de natureza, atmosfera, ambientação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Ferramentas:</strong> Pika Labs, Luma AI, Runway</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Prompt example:</strong> "gentle breeze, clouds moving slowly, water flowing"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Resultado:</strong> cenas estáticas ganham vida e dinamismo</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Fluxo Nano Banana → Vídeo</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    Workflow completo para transformar suas criações Nano Banana em vídeos profissionais.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">1</span>
+                            Gerar Imagem Base
+                        </h4>
+                        <ul class="space-y-2 text-neutral-300 ml-11">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Use FLUX Pro via Nano Banana para imagem de alta qualidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Especifique aspect ratio de acordo com uso final (16:9, 9:16, 1:1)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Inclua detalhes sobre composição e profundidade no prompt</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Gere múltiplas variações para escolher a melhor</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">2</span>
+                            Refinar e Ajustar
+                        </h4>
+                        <ul class="space-y-2 text-neutral-300 ml-11">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Upscale:</strong> aumente a resolução se necessário (Magnific AI, Topaz Gigapixel)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Outpainting:</strong> expanda bordas para dar espaço ao movimento</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Inpainting:</strong> corrija detalhes problemáticos que atrapalham animação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Color grading:</strong> ajuste cores para mood desejado</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">3</span>
+                            Animar com IA
+                        </h4>
+                        <ul class="space-y-2 text-neutral-300 ml-11">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Escolha ferramenta adequada ao tipo de animação desejado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Faça upload da imagem refinada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Escreva prompt de movimento claro e específico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Gere múltiplas takes (4-6) para ter opções</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Ajuste parâmetros de motion intensity conforme necessário</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100 flex items-center">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">4</span>
+                            Pós-Produção
+                        </h4>
+                        <ul class="space-y-2 text-neutral-300 ml-11">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Trim:</strong> corte início/fim para remover frames ruins</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Speed control:</strong> ajuste velocidade para timing perfeito</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Smooth:</strong> aplique frame interpolation se necessário</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Export:</strong> renderize em alta qualidade (H.264, alta bitrate)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-300">
+                            <strong class="text-purple-200">Workflow Pro:</strong> Para projetos complexos, crie uma pasta dedicada com subpastas: 1-originals, 2-refined, 3-animated, 4-final. Isso facilita iterações e permite voltar a etapas anteriores se necessário.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Controlando Quantidade de Movimento</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    O controle de movimento é crucial para criar vídeos naturais e com a intensidade adequada para cada projeto.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Níveis de Movimento</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-neutral-200 font-medium mb-2">Movimento Mínimo (Subtle)</p>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Uso:</strong> retratos profissionais, produtos de luxo</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Palavras-chave:</strong> "subtle", "gentle", "barely moving", "slow"</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Exemplo:</strong> cabelo balançando levemente, respiração suave</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="text-neutral-200 font-medium mb-2">Movimento Moderado (Natural)</p>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Uso:</strong> narrativa visual, personagens, storytelling</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Palavras-chave:</strong> "natural movement", "smooth", "flowing"</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Exemplo:</strong> caminhar, gestos naturais, vento moderado</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="text-neutral-200 font-medium mb-2">Movimento Intenso (Dynamic)</p>
+                                <ul class="space-y-1 text-neutral-300 text-sm">
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Uso:</strong> ação, impacto visual, efeitos dramáticos</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Palavras-chave:</strong> "dynamic", "energetic", "fast", "dramatic"</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-400 mr-2">•</span>
+                                        <span><strong>Exemplo:</strong> corrida, transformações, explosões</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Técnicas de Controle</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Motion Strength Slider:</strong> ferramentas como Pika e Kling têm controles numéricos (0-10)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Prompt engineering:</strong> use adjetivos específicos (gentle, subtle, dramatic)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Motion brush:</strong> pinte apenas áreas que devem se mover</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Negative prompts:</strong> "no excessive movement, no distortion"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Frame rate control:</strong> 24fps para cinemático, 30fps para natural</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Problemas Comuns e Soluções</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-neutral-200 font-medium">Movimento excessivo / distorção</p>
+                                <p class="text-neutral-400 text-sm mt-1">Solução: Reduza motion strength, adicione "stable" ao prompt, use imagem de maior qualidade</p>
+                            </div>
+                            <div>
+                                <p class="text-neutral-200 font-medium">Movimento muito lento / quase estático</p>
+                                <p class="text-neutral-400 text-sm mt-1">Solução: Aumente motion strength, seja mais específico no prompt sobre o tipo de movimento</p>
+                            </div>
+                            <div>
+                                <p class="text-neutral-200 font-medium">Movimento inconsistente entre frames</p>
+                                <p class="text-neutral-400 text-sm mt-1">Solução: Use ferramentas com melhor temporal consistency (Runway Gen-3, Kling), aplique smoothing</p>
+                            </div>
+                            <div>
+                                <p class="text-neutral-200 font-medium">Partes erradas se movendo</p>
+                                <p class="text-neutral-400 text-sm mt-1">Solução: Use motion brush para isolar movimento, seja explícito no prompt sobre o que NÃO deve mover</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-300">
+                            <strong class="text-purple-200">Golden Rule:</strong> Comece sempre com movimento moderado (5/10) e ajuste gradualmente. É mais fácil aumentar movimento do que recuperar de uma animação distorcida.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Mantendo Consistência Visual</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    A consistência é o que separa vídeos amadores de produções profissionais. Aprenda a manter qualidade do início ao fim.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Temporal Consistency</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Garantir que frames adjacentes sejam coerentes entre si, sem "pulos" ou mudanças abruptas.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Escolha ferramentas estáveis:</strong> Runway Gen-3 e Kling AI têm melhor temporal consistency</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Evite cortes secos:</strong> use transições suaves entre clips</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Motion coherence:</strong> movimento deve ter direção e velocidade consistentes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Frame blending:</strong> use em pós se houver frames problemáticos</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Style Consistency</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Manter o estilo visual uniforme ao longo de toda a animação.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Mesma ferramenta:</strong> use o mesmo modelo para todos os clips do projeto</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Settings fixos:</strong> mantenha motion strength e outros parâmetros constantes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Color grading:</strong> aplique LUT consistente em todos os clips</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Lighting direction:</strong> mantenha fonte de luz consistente</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Character Consistency</h4>
+                        <p class="text-neutral-300 mb-3">
+                            Especialmente importante em séries ou vídeos com múltiplos shots do mesmo personagem.
+                        </p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Reference image:</strong> use a mesma imagem base sempre que possível</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Consistent prompt:</strong> mantenha descrição do personagem idêntica</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Face preservation:</strong> ferramentas como Kling têm modo de preservação facial</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Outfit/style lock:</strong> detalhes como roupas devem permanecer iguais</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Quality Consistency</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Mesma resolução:</strong> todos os clips no mesmo tamanho (1080p, 4K, etc)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Mesmo frame rate:</strong> 24fps ou 30fps consistente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Bitrate uniforme:</strong> exports com mesma qualidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span><strong class="text-neutral-200">Noise level:</strong> aplique denoise de forma consistente</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-300">
+                            <strong class="text-purple-200">Checklist de Consistência:</strong> Antes de finalizar, assista todo o vídeo de uma vez e observe: movimento parece natural? Cores são uniformes? Personagens se mantêm iguais? Não há "jumps" entre frames? Se sim para tudo, está pronto!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-4 text-purple-400">Ferramentas Recomendadas por Tipo</h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    Cada ferramenta tem seus pontos fortes. Saiba qual escolher para cada situação.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Runway Gen-3 Alpha</h4>
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium mr-2">Melhor Overall</span>
+                            <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">Alta Qualidade</span>
+                        </div>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Excelente para:</strong> movimentos complexos, character animation, temporal consistency</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Pontos fortes:</strong> menos artefatos, movimento natural, controle preciso</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Limitações:</strong> mais caro, pode ser lento, créditos limitados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Use quando:</strong> precisar de qualidade máxima, projetos profissionais</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Pika Labs 1.5</h4>
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-medium mr-2">Mais Versátil</span>
+                            <span class="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-medium">Controle Fino</span>
+                        </div>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Excelente para:</strong> efeitos específicos, motion brush, ambiente vivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Pontos fortes:</strong> motion brush preciso, efeitos criativos, boa velocidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Limitações:</strong> pode ter menos consistência que Runway</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Use quando:</strong> precisar controlar áreas específicas de movimento</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Kling AI</h4>
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-medium mr-2">Melhor Personagens</span>
+                            <span class="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs font-medium">Face Preservation</span>
+                        </div>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Excelente para:</strong> retratos, expressões faciais, character consistency</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Pontos fortes:</strong> preserva identidade facial, expressões naturais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Limitações:</strong> menos versátil para outros tipos de movimento</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Use quando:</strong> animar rostos, talking heads, personagens principais</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Luma AI Dream Machine</h4>
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium mr-2">Rápido</span>
+                            <span class="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">Acessível</span>
+                        </div>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Excelente para:</strong> protótipos rápidos, testes, volume alto</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Pontos fortes:</strong> geração rápida, bom custo-benefício, fácil de usar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Limitações:</strong> qualidade inferior às premium, menos controle</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Use quando:</strong> testar ideias, projetos com orçamento limitado</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-700">
+                        <h4 class="text-lg font-semibold mb-3 text-neutral-100">Haiper AI</h4>
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-xs font-medium mr-2">Efeitos Criativos</span>
+                            <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-medium">Stylized</span>
+                        </div>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Excelente para:</strong> morphing, transformações, efeitos surreais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Pontos fortes:</strong> efeitos únicos, bom para arte experimental</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Limitações:</strong> menos realista, pode ser imprevisível</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">✓</span>
+                                <span><strong class="text-neutral-200">Use quando:</strong> quiser efeitos artísticos, não precisa realismo</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-300">
+                            <strong class="text-purple-200">Estratégia Multi-Tool:</strong> Use Luma para testes iniciais rápidos, Pika para refinamento com motion brush, e Runway para o take final de alta qualidade. Isso otimiza custo e tempo.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7 - Exercício -->
+            <section class="bg-gradient-to-br from-purple-900/30 to-purple-800/20 rounded-xl p-8 border border-purple-500/30">
+                <h3 class="text-2xl font-bold mb-4 text-purple-300">Exercício Prático</h3>
+                <h4 class="text-xl font-semibold mb-4 text-neutral-100">Animar uma Imagem do Nano Banana</h4>
+
+                <div class="space-y-6">
+                    <div class="bg-neutral-900/50 p-6 rounded-lg border border-purple-500/20">
+                        <h5 class="font-semibold mb-3 text-neutral-100">Parte 1: Criar Imagem Base</h5>
+                        <ol class="space-y-2 text-neutral-300 list-decimal list-inside">
+                            <li>Abra o Nano Banana e use FLUX Pro</li>
+                            <li>Prompt: "A magical banana character in a mystical forest, standing on mossy ground surrounded by glowing fireflies, cinematic lighting, depth of field, fantasy art style, detailed environment, 16:9 aspect ratio"</li>
+                            <li>Gere 3-4 variações</li>
+                            <li>Escolha a que tem melhor composição e profundidade</li>
+                            <li>Salve em alta resolução</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-neutral-900/50 p-6 rounded-lg border border-purple-500/20">
+                        <h5 class="font-semibold mb-3 text-neutral-100">Parte 2: Preparar para Animação</h5>
+                        <ol class="space-y-2 text-neutral-300 list-decimal list-inside">
+                            <li>Verifique se há espaço ao redor do personagem (15% de margem)</li>
+                            <li>Se necessário, use outpainting para expandir bordas</li>
+                            <li>Faça upscale para pelo menos 1920x1080</li>
+                            <li>Ajuste cores e contraste se necessário</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-neutral-900/50 p-6 rounded-lg border border-purple-500/20">
+                        <h5 class="font-semibold mb-3 text-neutral-100">Parte 3: Criar 3 Versões Animadas</h5>
+
+                        <div class="space-y-4 ml-4">
+                            <div>
+                                <p class="text-purple-300 font-medium mb-2">Versão A - Ambiente Vivo (Pika Labs)</p>
+                                <p class="text-sm text-neutral-400 mb-2">Prompt: "Gentle breeze moving through the forest, fireflies floating slowly, magical particles drifting, subtle camera push in, ambient movement only"</p>
+                                <p class="text-sm text-neutral-400">Motion strength: 4/10</p>
+                            </div>
+
+                            <div>
+                                <p class="text-purple-300 font-medium mb-2">Versão B - Character Animation (Kling AI)</p>
+                                <p class="text-sm text-neutral-400 mb-2">Prompt: "The banana character looks around curiously and waves gently, natural movement, maintaining character consistency"</p>
+                                <p class="text-sm text-neutral-400">Motion strength: 6/10</p>
+                            </div>
+
+                            <div>
+                                <p class="text-purple-300 font-medium mb-2">Versão C - Efeito Mágico (Runway Gen-3)</p>
+                                <p class="text-sm text-neutral-400 mb-2">Prompt: "Magical energy emanating from the character, glowing aura expanding, mystical transformation effect, cinematic"</p>
+                                <p class="text-sm text-neutral-400">Motion strength: 7/10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/50 p-6 rounded-lg border border-purple-500/20">
+                        <h5 class="font-semibold mb-3 text-neutral-100">Parte 4: Análise e Comparação</h5>
+                        <p class="text-neutral-300 mb-3">Compare os três resultados e observe:</p>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Qual ferramenta deu melhor resultado para cada tipo de movimento?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>A consistência visual foi mantida?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>O movimento ficou natural ou exagerado?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Houve artefatos ou distorções?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">•</span>
+                                <span>Qual versão você usaria em um projeto profissional?</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/20 border border-purple-400/30 rounded-lg p-5">
+                        <p class="text-sm text-purple-200">
+                            <strong>Desafio Extra:</strong> Combine as três versões em uma sequência única usando um editor de vídeo. Adicione transições suaves entre elas e crie uma narrativa visual de 15-20 segundos.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section class="bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+                <h3 class="text-2xl font-bold mb-6 text-purple-400">Pontos-Chave deste Módulo</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-neutral-900 p-5 rounded-lg border border-neutral-700">
+                        <h4 class="font-semibold mb-2 text-neutral-100">Preparação é Fundamental</h4>
+                        <p class="text-sm text-neutral-300">Imagens bem preparadas (resolução, composição, espaço) resultam em animações muito melhores</p>
+                    </div>
+                    <div class="bg-neutral-900 p-5 rounded-lg border border-neutral-700">
+                        <h4 class="font-semibold mb-2 text-neutral-100">Escolha a Ferramenta Certa</h4>
+                        <p class="text-sm text-neutral-300">Cada tipo de animação tem uma ferramenta ideal - use Runway para qualidade, Pika para controle, Kling para rostos</p>
+                    </div>
+                    <div class="bg-neutral-900 p-5 rounded-lg border border-neutral-700">
+                        <h4 font-semibold mb-2 text-neutral-100">Controle de Movimento</h4>
+                        <p class="text-sm text-neutral-300">Comece moderado (5/10) e ajuste - movimento excessivo causa distorções</p>
+                    </div>
+                    <div class="bg-neutral-900 p-5 rounded-lg border border-neutral-700">
+                        <h4 class="font-semibold mb-2 text-neutral-100">Consistência é Profissionalismo</h4>
+                        <p class="text-sm text-neutral-300">Mantenha estilo, qualidade e personagens consistentes ao longo de todo o projeto</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="mt-12 flex justify-between items-center">
+            <a href="modulo-3-2.html" class="group flex items-center space-x-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-100 px-6 py-3 rounded-lg border border-neutral-700 transition-all">
+                <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span>Módulo Anterior</span>
+            </a>
+            <a href="modulo-3-4.html" class="group flex items-center space-x-2 bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg transition-all">
+                <span>Próximo Módulo</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 border-t border-neutral-700 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-neutral-400 text-sm">
+                <p>Supercurso Nano Banana - Trilha 3: Vídeo com IA</p>
+                <p class="mt-2">Módulo 3.3: Image-to-Video Avançado</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.10 - Projeto Final: Produção Audiovisual Completa | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .gradient-celebration {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark-800/95 backdrop-blur-sm border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="../trilha3/" class="text-2xl hover:scale-110 transition-transform">🍌</a>
+                    <div>
+                        <div class="text-sm text-neutral-400">Trilha 3 - Produção Audiovisual</div>
+                        <div class="font-semibold gradient-text">Módulo 3.10 - Projeto Final</div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-celebration py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-6xl mb-4">🎬🏆</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Projeto Final
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-2">
+                Produção Audiovisual Completa
+            </p>
+            <p class="text-lg text-white/80">
+                Demonstre todo seu conhecimento em um projeto profissional
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Introduction -->
+        <section class="mb-16">
+            <div class="bg-dark-800 rounded-xl p-8 border border-purple-500/30">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">🎯 Sobre o Projeto Final</h2>
+                <div class="space-y-4 text-neutral-200">
+                    <p class="text-lg">
+                        Chegou o momento de aplicar tudo o que você aprendeu nas três trilhas do Supercurso Nano Banana!
+                        Este projeto final é sua oportunidade de demonstrar maestria em produção audiovisual com IA.
+                    </p>
+                    <p>
+                        Você criará uma produção audiovisual completa, do conceito à entrega final, utilizando
+                        todas as técnicas e ferramentas que dominou ao longo do curso.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Briefing -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">📋 Briefing do Projeto</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h3 class="text-2xl font-semibold mb-4 text-purple-300">Objetivo</h3>
+                <p class="text-neutral-200 mb-6">
+                    Criar um <strong>curta-metragem</strong> ou <strong>vídeo comercial</strong> de 30 a 60 segundos
+                    que demonstre qualidade profissional e narrativa coesa.
+                </p>
+
+                <h3 class="text-2xl font-semibold mb-4 text-purple-300">Escolha seu Formato</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-dark-700 rounded-lg p-6 border border-purple-500/20">
+                        <div class="text-3xl mb-3">🎭</div>
+                        <h4 class="text-xl font-semibold mb-3 text-purple-300">Curta-Metragem</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• História narrativa completa</li>
+                            <li>• Arco dramático definido</li>
+                            <li>• Personagens e ambientação</li>
+                            <li>• Emoção e impacto</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-6 border border-pink-500/20">
+                        <div class="text-3xl mb-3">📺</div>
+                        <h4 class="text-xl font-semibold mb-3 text-pink-300">Vídeo Comercial</h4>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• Produto ou serviço (real ou fictício)</li>
+                            <li>• Mensagem clara e objetiva</li>
+                            <li>• Identidade visual consistente</li>
+                            <li>• Call-to-action efetivo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-6 border border-purple-500/30">
+                    <h4 class="text-lg font-semibold mb-3 text-purple-200">💡 Dica de Ouro</h4>
+                    <p class="text-neutral-300">
+                        Escolha um tema que você domine ou tenha interesse genuíno. A paixão pelo projeto
+                        transparece no resultado final e torna o processo mais prazeroso e criativo!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requisitos Técnicos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">✅ Requisitos Técnicos Obrigatórios</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🎬</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Múltiplas Cenas</h4>
+                                <p class="text-neutral-300 text-sm">Mínimo de 3 cenas diferentes, com transições suaves</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🎵</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Áudio Completo</h4>
+                                <p class="text-neutral-300 text-sm">Música, efeitos sonoros e/ou narração sincronizados</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🎨</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Pós-Produção</h4>
+                                <p class="text-neutral-300 text-sm">Correção de cor, efeitos visuais e edição profissional</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">📝</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Legendas/Texto</h4>
+                                <p class="text-neutral-300 text-sm">Créditos e/ou textos informativos bem formatados</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🎭</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Consistência Visual</h4>
+                                <p class="text-neutral-300 text-sm">Estilo coeso entre todas as cenas geradas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">⚡</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Ritmo e Timing</h4>
+                                <p class="text-neutral-300 text-sm">Duração apropriada de cada cena, sem arrastar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🎯</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Mensagem Clara</h4>
+                                <p class="text-neutral-300 text-sm">Narrativa compreensível e impactante</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-2xl">🏆</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-300 mb-1">Qualidade Técnica</h4>
+                                <p class="text-neutral-300 text-sm">Exportação em alta resolução (mín. 1080p)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline de Produção -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">🔄 Pipeline de Produção Completo</h2>
+            <div class="space-y-4">
+                <!-- Step 1 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-purple-500">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+                        <h3 class="text-xl font-semibold text-purple-300">Desenvolvimento do Roteiro</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Defina o conceito central e mensagem principal</li>
+                        <li>• Escreva o roteiro detalhado com descrição de cada cena</li>
+                        <li>• Determine diálogos, narração ou texto on-screen</li>
+                        <li>• Planeje o arco narrativo (início, meio, fim)</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-purple-400">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-purple-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+                        <h3 class="text-xl font-semibold text-purple-300">Storyboard e Pré-Visualização</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Crie storyboard visual (sketches ou frames de referência)</li>
+                        <li>• Defina enquadramentos e movimentos de câmera</li>
+                        <li>• Planeje transições entre cenas</li>
+                        <li>• Estabeleça paleta de cores e mood visual</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-pink-500">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+                        <h3 class="text-xl font-semibold text-pink-300">Geração de Vídeos com IA</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Gere cada cena usando RunwayML, Pika ou Kling AI</li>
+                        <li>• Utilize prompts refinados para consistência visual</li>
+                        <li>• Gere múltiplas versões e selecione as melhores</li>
+                        <li>• Aplique técnicas de img2video para maior controle</li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-pink-400">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-pink-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</div>
+                        <h3 class="text-xl font-semibold text-pink-300">Edição e Montagem</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Importe todos os clipes no CapCut, DaVinci ou Premiere</li>
+                        <li>• Organize timeline e faça cortes precisos</li>
+                        <li>• Adicione transições suaves e efeitos visuais</li>
+                        <li>• Corrija cor e ajuste exposição/contraste</li>
+                        <li>• Insira textos, legendas e créditos</li>
+                    </ul>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-purple-300">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-purple-300 text-dark-900 w-8 h-8 rounded-full flex items-center justify-center font-bold">5</div>
+                        <h3 class="text-xl font-semibold text-purple-300">Design de Áudio</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Selecione ou gere música de fundo (Suno AI, Udio)</li>
+                        <li>• Adicione efeitos sonoros apropriados</li>
+                        <li>• Grave ou gere narração (ElevenLabs, PlayHT)</li>
+                        <li>• Mixe áudio com níveis balanceados</li>
+                        <li>• Sincronize áudio perfeitamente com vídeo</li>
+                    </ul>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="bg-dark-800 rounded-xl p-6 border-l-4 border-pink-300">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-pink-300 text-dark-900 w-8 h-8 rounded-full flex items-center justify-center font-bold">6</div>
+                        <h3 class="text-xl font-semibold text-pink-300">Finalização e Export</h3>
+                    </div>
+                    <ul class="ml-11 space-y-2 text-neutral-300">
+                        <li>• Revise projeto completo múltiplas vezes</li>
+                        <li>• Ajuste detalhes finais de timing e áudio</li>
+                        <li>• Exporte em 1080p ou 4K (H.264, MP4)</li>
+                        <li>• Teste em diferentes dispositivos</li>
+                        <li>• Crie versões alternativas se necessário</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checklist de Qualidade -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">🎯 Checklist de Qualidade Profissional</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <p class="text-neutral-200 mb-6">
+                    Antes de considerar seu projeto finalizado, verifique cada item desta lista:
+                </p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-purple-300 mb-3">📹 Vídeo</h3>
+                        <div class="space-y-2 ml-4">
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Todas as cenas têm qualidade visual consistente</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Sem artefatos visíveis ou glitches indesejados</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Transições suaves e apropriadas ao contexto</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Correção de cor aplicada uniformemente</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Textos legíveis e bem posicionados</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-purple-300 mb-3">🎵 Áudio</h3>
+                        <div class="space-y-2 ml-4">
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Música de fundo em volume apropriado</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Narração clara e bem articulada (se aplicável)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Efeitos sonoros sincronizados com ações visuais</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Sem clipping ou distorção de áudio</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Fade in/out suaves no início e fim</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-purple-300 mb-3">📖 Narrativa</h3>
+                        <div class="space-y-2 ml-4">
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>História clara e compreensível</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Estrutura narrativa com começo, meio e fim</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Ritmo adequado sem momentos vazios</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Mensagem/objetivo claro do projeto</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Impacto emocional ou call-to-action efetivo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-purple-300 mb-3">⚙️ Técnico</h3>
+                        <div class="space-y-2 ml-4">
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Resolução mínima 1080p (1920x1080)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Taxa de quadros consistente (24/30/60fps)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Formato MP4 com codec H.264</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Duração entre 30 e 60 segundos</span>
+                            </label>
+                            <label class="flex items-center space-x-3 text-neutral-300 hover:text-neutral-100 cursor-pointer">
+                                <input type="checkbox" class="w-5 h-5 rounded border-dark-600">
+                                <span>Créditos finais incluídos</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentação do Processo -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">📸 Documentação do Processo (Making Of)</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <p class="text-neutral-200 mb-6">
+                    Além do vídeo final, documente seu processo criativo! Isso demonstra profissionalismo e
+                    ajuda outros criadores a aprenderem com sua experiência.
+                </p>
+
+                <h3 class="text-xl font-semibold mb-4 text-purple-300">O que documentar:</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-300 mb-3">📝 Conceito e Planejamento</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li>• Inspiração e referências visuais</li>
+                            <li>• Esboços do storyboard</li>
+                            <li>• Roteiro original (e iterações)</li>
+                            <li>• Mood board e paleta de cores</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-300 mb-3">⚙️ Ferramentas e Técnicas</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li>• IAs utilizadas e por quê</li>
+                            <li>• Prompts principais (texto ou imagem)</li>
+                            <li>• Softwares de edição empregados</li>
+                            <li>• Técnicas especiais aplicadas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-300 mb-3">🎬 Produção</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li>• Screenshots do processo de geração</li>
+                            <li>• Comparação entre versões</li>
+                            <li>• Challenges e soluções encontradas</li>
+                            <li>• Timeline da edição</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-purple-300 mb-3">💡 Aprendizados</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li>• O que funcionou bem</li>
+                            <li>• Dificuldades enfrentadas</li>
+                            <li>• Como você resolveu problemas</li>
+                            <li>• O que faria diferente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-6 border border-purple-500/30">
+                    <h4 class="text-lg font-semibold mb-3 text-purple-200">📱 Formatos de Documentação</h4>
+                    <ul class="space-y-2 text-neutral-300">
+                        <li>• <strong>Documento PDF:</strong> Apresentação visual do processo</li>
+                        <li>• <strong>Video Making Of:</strong> Gravação de tela ou vlog explicativo</li>
+                        <li>• <strong>Post de Blog:</strong> Artigo detalhado com imagens</li>
+                        <li>• <strong>Thread no Twitter/LinkedIn:</strong> Compartilhe o processo passo a passo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formato de Entrega -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">📦 Formato de Entrega e Apresentação</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <h3 class="text-xl font-semibold mb-4 text-purple-300">Itens Obrigatórios para Entrega</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start space-x-3 bg-dark-700 rounded-lg p-4">
+                        <div class="text-2xl">🎬</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-purple-300 mb-1">1. Vídeo Final</h4>
+                            <p class="text-neutral-300 text-sm mb-2">Arquivo MP4, 1080p+, 30-60 segundos</p>
+                            <p class="text-neutral-400 text-xs">Nome do arquivo: ProjetoFinal_[SeuNome].mp4</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-dark-700 rounded-lg p-4">
+                        <div class="text-2xl">📄</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-purple-300 mb-1">2. Documentação Técnica</h4>
+                            <p class="text-neutral-300 text-sm mb-2">PDF ou documento descrevendo:</p>
+                            <ul class="text-neutral-400 text-xs space-y-1 ml-4">
+                                <li>- Conceito e objetivo do projeto</li>
+                                <li>- Ferramentas de IA utilizadas</li>
+                                <li>- Principais prompts (3-5 exemplos)</li>
+                                <li>- Desafios e soluções</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-dark-700 rounded-lg p-4">
+                        <div class="text-2xl">🎨</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-purple-300 mb-1">3. Material de Apoio (Opcional mas Recomendado)</h4>
+                            <p class="text-neutral-300 text-sm mb-2">Pode incluir:</p>
+                            <ul class="text-neutral-400 text-xs space-y-1 ml-4">
+                                <li>- Storyboard original</li>
+                                <li>- Roteiro escrito</li>
+                                <li>- Making of ou video log</li>
+                                <li>- Screenshots do processo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 text-purple-300">Como Apresentar seu Projeto</h3>
+                <div class="bg-dark-700 rounded-lg p-6">
+                    <ol class="space-y-3 text-neutral-300">
+                        <li class="flex items-start space-x-3">
+                            <span class="font-bold text-purple-400">1.</span>
+                            <span><strong>Contexto:</strong> Explique brevemente a ideia e objetivo (30 segundos)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="font-bold text-purple-400">2.</span>
+                            <span><strong>Exibição:</strong> Mostre o vídeo final completo</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="font-bold text-purple-400">3.</span>
+                            <span><strong>Processo:</strong> Compartilhe insights sobre produção (1-2 minutos)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="font-bold text-purple-400">4.</span>
+                            <span><strong>Técnicas:</strong> Destaque ferramentas de IA e técnicas especiais usadas</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="font-bold text-purple-400">5.</span>
+                            <span><strong>Aprendizados:</strong> O que você aprendeu e levará para próximos projetos</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="mt-6 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-6 border border-purple-500/30">
+                    <h4 class="text-lg font-semibold mb-3 text-purple-200">🌐 Compartilhe com o Mundo!</h4>
+                    <p class="text-neutral-300 mb-3">
+                        Publique seu projeto nas redes sociais e marque o Supercurso Nano Banana!
+                        Adoraríamos ver e compartilhar seu trabalho incrível.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-dark-800 px-3 py-1 rounded-full text-sm text-purple-300">#NanoBanana</span>
+                        <span class="bg-dark-800 px-3 py-1 rounded-full text-sm text-purple-300">#IAGenerativa</span>
+                        <span class="bg-dark-800 px-3 py-1 rounded-full text-sm text-purple-300">#ProducaoAudiovisual</span>
+                        <span class="bg-dark-800 px-3 py-1 rounded-full text-sm text-purple-300">#ProjetoFinal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos Passos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">🚀 Próximos Passos Após o Curso</h2>
+            <div class="bg-dark-800 rounded-xl p-8 border border-dark-600">
+                <p class="text-neutral-200 mb-6">
+                    Parabéns por chegar até aqui! Mas sua jornada na produção audiovisual com IA está
+                    apenas começando. Aqui estão suas próximas possibilidades:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-dark-700 rounded-lg p-6 border border-purple-500/20">
+                        <div class="text-3xl mb-3">💼</div>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-300">Carreira Profissional</h3>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• Ofereça serviços de produção de vídeo</li>
+                            <li>• Trabalhe com marketing digital</li>
+                            <li>• Crie conteúdo para redes sociais</li>
+                            <li>• Desenvolva comerciais para empresas</li>
+                            <li>• Consultor em IA para audiovisual</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6 border border-pink-500/20">
+                        <div class="text-3xl mb-3">🎨</div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-300">Criação Artística</h3>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• Desenvolva seu portfólio criativo</li>
+                            <li>• Experimente com arte experimental</li>
+                            <li>• Participe de festivais de cinema</li>
+                            <li>• Crie série de conteúdo autoral</li>
+                            <li>• Colabore com outros artistas</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6 border border-purple-500/20">
+                        <div class="text-3xl mb-3">📚</div>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-300">Educação e Comunidade</h3>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• Ensine o que aprendeu para outros</li>
+                            <li>• Crie tutoriais e cursos</li>
+                            <li>• Participe de comunidades de IA</li>
+                            <li>• Contribua em fóruns e redes sociais</li>
+                            <li>• Mentore iniciantes na área</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-700 rounded-lg p-6 border border-pink-500/20">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-300">Inovação e Pesquisa</h3>
+                        <ul class="space-y-2 text-neutral-300">
+                            <li>• Explore novas ferramentas de IA</li>
+                            <li>• Teste técnicas experimentais</li>
+                            <li>• Desenvolva workflows inovadores</li>
+                            <li>• Combine múltiplas IAs criativas</li>
+                            <li>• Fique atualizado com tendências</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-6 border border-purple-500/40">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">🌟 Continue Aprendendo</h3>
+                    <p class="text-neutral-200 mb-4">
+                        O campo da IA generativa está em constante evolução. Para se manter relevante:
+                    </p>
+                    <ul class="space-y-2 text-neutral-300 mb-4">
+                        <li>• Siga atualizações das principais ferramentas (RunwayML, Midjourney, OpenAI)</li>
+                        <li>• Assista canais especializados em IA e produção audiovisual</li>
+                        <li>• Experimente novas ferramentas assim que lançarem</li>
+                        <li>• Participe de comunidades no Discord, Reddit e LinkedIn</li>
+                        <li>• Leia artigos e papers sobre avanços em IA generativa</li>
+                    </ul>
+                    <p class="text-neutral-300 italic">
+                        "A melhor forma de prever o futuro é criá-lo. Continue criando, experimentando e inovando!"
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificação -->
+        <section class="mb-16">
+            <div class="gradient-celebration rounded-xl p-8 text-center">
+                <div class="text-6xl mb-4">🏆</div>
+                <h2 class="text-3xl font-bold text-white mb-4">Certificação Expert em Produção Audiovisual com IA</h2>
+                <p class="text-xl text-white/90 mb-6">
+                    Ao completar este projeto final com qualidade profissional, você demonstra domínio
+                    completo de todas as trilhas do Supercurso Nano Banana!
+                </p>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6 inline-block">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Você conquistou habilidades em:</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-left">
+                        <div>
+                            <div class="text-yellow-300 font-semibold mb-2">⭐ Trilha 1 - Fundamentos</div>
+                            <ul class="text-white/90 text-sm space-y-1">
+                                <li>• Prompting efetivo</li>
+                                <li>• Geração de imagens</li>
+                                <li>• Ferramentas essenciais</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-blue-300 font-semibold mb-2">🎨 Trilha 2 - Design Visual</div>
+                            <ul class="text-white/90 text-sm space-y-1">
+                                <li>• Composição avançada</li>
+                                <li>• Identidade visual</li>
+                                <li>• Motion design</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-pink-300 font-semibold mb-2">🎬 Trilha 3 - Audiovisual</div>
+                            <ul class="text-white/90 text-sm space-y-1">
+                                <li>• Geração de vídeo</li>
+                                <li>• Edição profissional</li>
+                                <li>• Produção completa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 inline-block">
+                    <p class="text-white font-semibold text-lg mb-2">
+                        🎓 Você agora é um Expert Certificado em Produção Audiovisual com IA!
+                    </p>
+                    <p class="text-white/80 text-sm">
+                        Compartilhe sua conquista nas redes sociais e em seu portfólio profissional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensagem Final -->
+        <section class="mb-16">
+            <div class="bg-dark-800 rounded-xl p-8 border border-purple-500/30 text-center">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Uma Última Mensagem</h2>
+                <div class="max-w-3xl mx-auto space-y-4 text-neutral-200">
+                    <p class="text-lg">
+                        Parabéns por completar o Supercurso Nano Banana! Você embarcou em uma jornada
+                        transformadora pelo mundo da produção audiovisual com inteligência artificial.
+                    </p>
+                    <p>
+                        Do primeiro prompt até este projeto final, você desenvolveu habilidades que poucos
+                        profissionais no mercado dominam. Você aprendeu não apenas a usar ferramentas, mas a
+                        pensar criativamente, resolver problemas e criar narrativas visuais impactantes.
+                    </p>
+                    <p>
+                        Lembre-se: as ferramentas vão mudar, novas IAs vão surgir, mas os fundamentos que você
+                        aprendeu — storytelling, composição, ritmo, design — são eternos. Use-os como base
+                        para explorar tudo que vier pela frente.
+                    </p>
+                    <p class="text-xl font-semibold gradient-text pt-4">
+                        O futuro da criação audiovisual está em suas mãos. Vá e crie coisas incríveis! 🚀
+                    </p>
+                    <div class="text-5xl pt-6">🍌✨</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+            <a href="modulo-3-9.html" class="inline-flex items-center px-6 py-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors">
+                <span class="mr-2">←</span>
+                <span>Módulo 3.9: Distribuição</span>
+            </a>
+            <a href="../trilha3/" class="inline-flex items-center px-6 py-3 gradient-celebration hover:opacity-90 rounded-lg transition-opacity text-white font-semibold">
+                <span>🏆 Voltar à Trilha 3</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-dark-600 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-400">
+            <p class="gradient-text font-semibold text-lg mb-2">Supercurso Nano Banana</p>
+            <p>Produção Audiovisual com IA Generativa</p>
+            <p class="mt-4 text-sm">Trilha 3 - Módulo 3.10: Projeto Final - Produção Audiovisual Completa</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

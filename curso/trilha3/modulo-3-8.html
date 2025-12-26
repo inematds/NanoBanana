@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3.8 - Ética e Direitos Autorais | Supercurso Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-dark-800 border-b border-dark-600 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🍌</span>
+                    <div>
+                        <div class="text-lg font-bold text-purple-400">Supercurso Nano Banana</div>
+                        <div class="text-xs text-neutral-400">Trilha 3 - Módulo 3.8</div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium mb-4">
+                Trilha 3: Criação de Conteúdo com IA
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-neutral-100">
+                Ética e Direitos Autorais
+            </h1>
+            <p class="text-xl text-neutral-300">
+                Navegando responsabilmente pelo novo território legal e ético da IA
+            </p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="mb-12 bg-dark-800 rounded-xl p-8 border border-dark-600">
+            <h2 class="text-2xl font-bold mb-4 text-purple-400">Introdução</h2>
+            <p class="text-neutral-300 mb-4">
+                A criação de conteúdo com IA levanta questões importantes sobre propriedade intelectual, ética e responsabilidade.
+                Este módulo explora os desafios legais e éticos atuais, preparando você para usar essas ferramentas de forma
+                responsável e profissional.
+            </p>
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                <p class="text-purple-300 text-sm">
+                    <strong>⚠️ Importante:</strong> As leis e regulamentações sobre IA estão em constante evolução.
+                    Mantenha-se atualizado sobre as mudanças em sua jurisdição e área de atuação.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1: Propriedade Intelectual -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Quem é Dono do Que a IA Gera?</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">🏛️ O Debate Legal Atual</h3>
+                    <ul class="space-y-3 text-neutral-300">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>EUA:</strong> Copyright Office não reconhece autoria de IA pura, mas aceita obras com intervenção humana significativa</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>União Europeia:</strong> AI Act em desenvolvimento, foco em transparência e responsabilidade</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span><strong>Brasil:</strong> Discussões em andamento, sem legislação específica ainda</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Casos judiciais definem precedentes (Getty vs. Stability AI, artistas vs. Midjourney)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">⚖️ Posições Divergentes</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Argumentos Pró-Copyright IA:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>Usuário fornece criatividade via prompt</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>Similar a usar ferramenta como Photoshop</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>Incentiva inovação e criatividade</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Argumentos Contra:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>IA treinou com obras protegidas sem autorização</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>Falta de contribuição criativa humana direta</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">→</span>
+                                    <span>Desvaloriza trabalho de artistas originais</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">📋 Na Prática Atual</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-2">Posição Conservadora</h4>
+                        <p class="text-neutral-300 text-sm">
+                            Conteúdo 100% gerado por IA não pode ser registrado para copyright em muitas jurisdições
+                        </p>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-2">Zona Cinzenta</h4>
+                        <p class="text-neutral-300 text-sm">
+                            Obras híbridas (IA + edição humana significativa) podem ter proteção parcial
+                        </p>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-2">Evolução Legal</h4>
+                        <p class="text-neutral-300 text-sm">
+                            Leis estão sendo discutidas e atualizadas; cenário mudará nos próximos anos
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Termos de Uso -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Termos de Uso das Principais Ferramentas</h2>
+
+            <div class="space-y-4 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-purple-400">ChatGPT / OpenAI</h3>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Atualizado 2024</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">✅ Você pode:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Usar output comercialmente (exceto Free tier)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Reter direitos sobre seu input</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Usar output conforme permitido por lei</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">❌ Você não pode:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">✗</span>
+                                    <span>Representar output como totalmente criado por humano se não for</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">✗</span>
+                                    <span>Usar para desinformação ou conteúdo ilegal</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">✗</span>
+                                    <span>Fazer engenharia reversa dos modelos</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-purple-400">Midjourney</h3>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Importante</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">✅ Assinantes Pagos:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Licença comercial completa</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Propriedade das imagens geradas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Modo stealth disponível (Pro/Mega)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">⚠️ Limitações:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2">!</span>
+                                    <span>Free trial: apenas uso não-comercial</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2">!</span>
+                                    <span>Empresas >$1M/ano: licença corporativa necessária</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2">!</span>
+                                    <span>Imagens públicas por padrão (exceto stealth)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-purple-400">Adobe Firefly</h3>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Comercialmente Seguro</span>
+                    </div>
+                    <div class="space-y-3 text-neutral-300">
+                        <p class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Treinado apenas com conteúdo licenciado (Adobe Stock, domínio público)</span>
+                        </p>
+                        <p class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Uso comercial permitido para assinantes Creative Cloud</span>
+                        </p>
+                        <p class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            <span>Adobe oferece indenização legal em alguns casos de violação de IP</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-purple-400">Outros Serviços</h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">Stable Diffusion</h4>
+                            <p class="text-neutral-300">Open source, mas depende da licença do modelo específico. CreativeML permite uso comercial com atribuição.</p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">DALL-E 3</h4>
+                            <p class="text-neutral-300">Assinantes pagos têm direitos comerciais. Imagens sujeitas às políticas de uso da OpenAI.</p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">Claude (Anthropic)</h4>
+                            <p class="text-neutral-300">Usuário retém direitos sobre output. Uso comercial permitido conforme plano contratado.</p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">ElevenLabs</h4>
+                            <p class="text-neutral-300">Uso comercial permitido. Responsabilidade do usuário garantir consentimento para clonagem de voz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                <p class="text-yellow-300 text-sm">
+                    <strong>💡 Dica Importante:</strong> Sempre leia os termos de serviço atualizados antes de usar conteúdo gerado por IA comercialmente.
+                    As políticas mudam frequentemente e variam entre planos gratuitos e pagos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Licenciamento -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Licenciamento e Uso Comercial</h2>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">📊 Checklist de Uso Comercial</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-2xl mr-4">1️⃣</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Verifique seu plano de assinatura</h4>
+                            <p class="text-neutral-300 text-sm">Planos gratuitos geralmente não permitem uso comercial. Confirme se sua assinatura cobre uso empresarial.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-2xl mr-4">2️⃣</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Leia os termos específicos da ferramenta</h4>
+                            <p class="text-neutral-300 text-sm">Cada plataforma tem regras diferentes. Não assuma que todas funcionam igual.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-2xl mr-4">3️⃣</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Documente o processo de criação</h4>
+                            <p class="text-neutral-300 text-sm">Guarde prompts, versões intermediárias e edições. Pode ser crucial em disputas legais.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-2xl mr-4">4️⃣</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Adicione contribuição humana significativa</h4>
+                            <p class="text-neutral-300 text-sm">Edição, curadoria e modificação aumentam chances de proteção legal e valor percebido.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-2xl mr-4">5️⃣</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Considere seguro ou consultoria jurídica</h4>
+                            <p class="text-neutral-300 text-sm">Para projetos de alto valor, consulte advogado especializado em propriedade intelectual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">✅ Cenários Geralmente Seguros</h3>
+                    <ul class="space-y-3 text-neutral-300">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>Uso interno em empresa (apresentações, brainstorms)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>Rascunhos e protótipos para desenvolvimento posterior</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>Base para criação com edição humana substancial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>Ferramentas comercialmente licenciadas (Adobe Firefly, etc.)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">⚠️ Zonas de Risco</h3>
+                    <ul class="space-y-3 text-neutral-300">
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">✗</span>
+                            <span>Output direto sem edição em produtos finais</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">✗</span>
+                            <span>Uso de planos gratuitos para fins comerciais</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">✗</span>
+                            <span>Conteúdo que imita estilo de artista específico</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">✗</span>
+                            <span>Venda de obras puramente geradas por IA como "arte original"</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Questões Éticas -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Questões Éticas Fundamentais</h2>
+
+            <div class="space-y-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">🎭 Deepfakes e Manipulação</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-3">Riscos e Preocupações:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">•</span>
+                                    <span><strong>Desinformação política:</strong> Vídeos falsos de líderes políticos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">•</span>
+                                    <span><strong>Fraudes financeiras:</strong> Clonagem de voz de executivos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">•</span>
+                                    <span><strong>Assédio e intimidação:</strong> Criação de conteúdo falso comprometedor</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-400 mr-2">•</span>
+                                    <span><strong>Erosão da confiança:</strong> Dificuldade em distinguir real de falso</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-3">Diretrizes Éticas:</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Sempre rotular conteúdo sintético claramente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Obter consentimento explícito para usar likeness de pessoas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Nunca criar conteúdo com intenção de enganar</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span>Usar tecnologia para fins educacionais/artísticos legítimos</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                        <p class="text-red-300 text-sm">
+                            <strong>⚠️ Atenção Legal:</strong> Criação de deepfakes sem consentimento pode ser crime em muitas jurisdições,
+                            especialmente para pornografia não consensual ou fraude.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">📰 Desinformação e Integridade</h3>
+                    <div class="space-y-4">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">O Problema:</h4>
+                            <p class="text-neutral-300 text-sm mb-3">
+                                IA pode gerar texto convincente e imagens realistas em escala, facilitando campanhas de desinformação
+                                massivas e personalizadas.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-3 text-xs">
+                                <div class="bg-dark-800 rounded p-3">
+                                    <div class="font-semibold text-neutral-200 mb-1">Notícias Falsas</div>
+                                    <div class="text-neutral-400">Artigos gerados por IA indistinguíveis de jornalismo real</div>
+                                </div>
+                                <div class="bg-dark-800 rounded p-3">
+                                    <div class="font-semibold text-neutral-200 mb-1">Manipulação Social</div>
+                                    <div class="text-neutral-400">Bots conversacionais influenciando opiniões em massa</div>
+                                </div>
+                                <div class="bg-dark-800 rounded p-3">
+                                    <div class="font-semibold text-neutral-200 mb-1">Propaganda</div>
+                                    <div class="text-neutral-400">Campanhas automatizadas de influência política</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-3">Sua Responsabilidade:</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div>
+                                    <ul class="space-y-2 text-neutral-300 text-sm">
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Fact-check informações geradas por IA</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Não use IA para criar conteúdo jornalístico falso</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Seja transparente sobre uso de IA em conteúdo informativo</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="space-y-2 text-neutral-300 text-sm">
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Adicione disclaimers em conteúdo satírico/paródia</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Eduque audiência sobre capacidades e limitações da IA</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-purple-400 mr-2">→</span>
+                                            <span>Reporte uso malicioso quando detectar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">💼 Impacto no Emprego e Trabalho Criativo</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-3">Profissões Mais Impactadas:</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-dark-700 rounded p-3">
+                                    <div class="font-semibold text-neutral-200">Ilustradores e Artistas Digitais</div>
+                                    <div class="text-neutral-400 text-xs mt-1">Concorrência de ferramentas de geração de imagem</div>
+                                </div>
+                                <div class="bg-dark-700 rounded p-3">
+                                    <div class="font-semibold text-neutral-200">Redatores de Conteúdo</div>
+                                    <div class="text-neutral-400 text-xs mt-1">Automação de artigos, descrições de produtos</div>
+                                </div>
+                                <div class="bg-dark-700 rounded p-3">
+                                    <div class="font-semibold text-neutral-200">Tradutores</div>
+                                    <div class="text-neutral-400 text-xs mt-1">IA cada vez mais precisa em tradução</div>
+                                </div>
+                                <div class="bg-dark-700 rounded p-3">
+                                    <div class="font-semibold text-neutral-200">Designers de UI/UX (parcial)</div>
+                                    <div class="text-neutral-400 text-xs mt-1">Automação de layouts e protótipos básicos</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-3">Perspectivas e Adaptação:</h4>
+                            <div class="space-y-3 text-neutral-300 text-sm">
+                                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                                    <div class="font-semibold text-purple-300 mb-1">Visão Otimista</div>
+                                    <p>IA como ferramenta que aumenta produtividade, liberando criativos para trabalho de maior valor.
+                                    Novas profissões emergindo (prompt engineering, curadoria de IA, etc.)</p>
+                                </div>
+                                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
+                                    <div class="font-semibold text-yellow-300 mb-1">Realidade Atual</div>
+                                    <p>Deslocamento real em alguns setores, com corrida de adaptação. Freelancers enfrentando
+                                    pressão de preços e concorrência de conteúdo gerado por IA.</p>
+                                </div>
+                                <div class="bg-dark-700 border border-dark-600 rounded-lg p-3">
+                                    <div class="font-semibold text-neutral-200 mb-1">Consideração Ética</div>
+                                    <p>Ao usar IA, considere impacto em profissionais. Sempre que possível, combine IA com
+                                    trabalho humano, especialmente de artistas/escritores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">🌍 Outras Questões Éticas</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">⚡ Impacto Ambiental</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                Treinamento de modelos grandes consome energia equivalente a milhares de lares por meses.
+                            </p>
+                            <p class="text-neutral-400 text-xs">
+                                Considere: usar modelos eficientes, reutilizar gerações, evitar desperdício.
+                            </p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">⚖️ Viés e Discriminação</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                IAs podem perpetuar preconceitos presentes em dados de treinamento.
+                            </p>
+                            <p class="text-neutral-400 text-xs">
+                                Considere: revisar outputs para estereótipos, diversificar representações.
+                            </p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">🔒 Privacidade</h4>
+                            <p class="text-neutral-300 text-sm mb-2">
+                                Dados inseridos em IAs podem ser usados para treinamento ou vazados.
+                            </p>
+                            <p class="text-neutral-400 text-xs">
+                                Considere: não compartilhar informações confidenciais, usar opções de privacidade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Transparência e Disclosure -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Transparência: Quando e Como Divulgar Uso de IA</h2>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">🎯 Matriz de Decisão: Divulgar ou Não?</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left p-3 text-neutral-200">Situação</th>
+                                <th class="text-center p-3 text-neutral-200">Divulgar?</th>
+                                <th class="text-left p-3 text-neutral-200">Como/Por quê</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-neutral-300">
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Artigo de blog/conteúdo editorial</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">SIM</span>
+                                </td>
+                                <td class="p-3 text-xs">Nota no final: "Este artigo foi desenvolvido com assistência de IA"</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Imagem gerada por IA em publicação</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">SIM</span>
+                                </td>
+                                <td class="p-3 text-xs">Legenda: "Imagem gerada por IA" ou watermark discreto</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Código gerado por IA em projeto open-source</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-xs">RECOMENDADO</span>
+                                </td>
+                                <td class="p-3 text-xs">Comentário no código: "AI-assisted" (boa prática, não obrigatório)</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Trabalho acadêmico/científico</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">SIM</span>
+                                </td>
+                                <td class="p-3 text-xs">Seção de metodologia detalhando exatamente como IA foi usada</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Atendimento ao cliente com chatbot</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">SIM</span>
+                                </td>
+                                <td class="p-3 text-xs">Obrigatório: usuário deve saber que está falando com IA, não humano</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Brainstorming interno em empresa</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-neutral-500/20 text-neutral-400 px-2 py-1 rounded text-xs">OPCIONAL</span>
+                                </td>
+                                <td class="p-3 text-xs">Uso interno, sem necessidade de disclosure público</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="p-3">Design editado/refinado com IA</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-xs">DEPENDE</span>
+                                </td>
+                                <td class="p-3 text-xs">Se IA foi apenas ferramenta auxiliar, não obrigatório. Se gerou base, sim.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Música/arte vendida como NFT</td>
+                                <td class="text-center p-3">
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">SIM</span>
+                                </td>
+                                <td class="p-3 text-xs">Transparência esperada pela comunidade; afeta valor percebido</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">✅ Boas Práticas de Disclosure</h3>
+                    <div class="space-y-3 text-neutral-300 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-green-400 mr-2 text-lg">✓</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Seja específico</div>
+                                <div class="text-neutral-400 text-xs">"Imagens geradas com Midjourney" > "Criado com IA"</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-400 mr-2 text-lg">✓</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Explique o processo</div>
+                                <div class="text-neutral-400 text-xs">"IA gerou rascunho, editado e refinado por humano"</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-400 mr-2 text-lg">✓</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Use tom neutro/positivo</div>
+                                <div class="text-neutral-400 text-xs">Não se desculpe; IA é ferramenta legítima quando usada eticamente</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-400 mr-2 text-lg">✓</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Posicionamento visível</div>
+                                <div class="text-neutral-400 text-xs">Não esconda em texto minúsculo; coloque onde audiência possa ver</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">❌ O Que Evitar</h3>
+                    <div class="space-y-3 text-neutral-300 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-red-400 mr-2 text-lg">✗</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Ocultar intencionalmente</div>
+                                <div class="text-neutral-400 text-xs">Representar conteúdo de IA como 100% humano quando não é</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-400 mr-2 text-lg">✗</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Disclosure vago demais</div>
+                                <div class="text-neutral-400 text-xs">"Algumas ferramentas foram usadas" não é suficiente</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-400 mr-2 text-lg">✗</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Enterrar informação</div>
+                                <div class="text-neutral-400 text-xs">Disclosure deve ser razoavelmente acessível, não em rodapé microscópico</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-red-400 mr-2 text-lg">✗</span>
+                            <div>
+                                <div class="font-semibold text-neutral-200">Mentir sobre contribuição humana</div>
+                                <div class="text-neutral-400 text-xs">Não infle seu papel se IA fez maior parte do trabalho</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">📝 Exemplos de Disclosure</h3>
+                <div class="space-y-4">
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <div class="text-xs text-neutral-400 mb-2">Para artigo de blog:</div>
+                        <div class="bg-dark-800 rounded p-3 text-neutral-300 text-sm italic border-l-4 border-purple-500">
+                            "Este artigo foi desenvolvido com assistência de ChatGPT para pesquisa e estruturação inicial.
+                            Todo conteúdo foi revisado, editado e verificado por nosso time editorial."
+                        </div>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <div class="text-xs text-neutral-400 mb-2">Para imagem em redes sociais:</div>
+                        <div class="bg-dark-800 rounded p-3 text-neutral-300 text-sm italic border-l-4 border-purple-500">
+                            "🤖 Imagem gerada com Midjourney v6 | Prompt: [descrição básica]"
+                        </div>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <div class="text-xs text-neutral-400 mb-2">Para trabalho acadêmico:</div>
+                        <div class="bg-dark-800 rounded p-3 text-neutral-300 text-sm italic border-l-4 border-purple-500">
+                            "Na preparação deste trabalho, o autor utilizou Claude (Anthropic) para auxiliar na revisão gramatical
+                            e sugerir estruturação de argumentos. Todas as ideias, análises e conclusões são de responsabilidade do autor."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Boas Práticas Profissionais -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Boas Práticas Profissionais</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">💼 Para Freelancers e Agências</h3>
+                    <div class="space-y-4">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">1. Comunicação com Cliente</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Seja transparente sobre uso de IA desde o início</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Explique como IA aumenta valor (mais iterações, exploração rápida)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Deixe claro que você adiciona expertise, curadoria e refinamento</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">2. Precificação Ética</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Não cobre como se fosse 100% trabalho manual se IA fez parte</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Considere valor entregue, não apenas horas trabalhadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Seja honesto sobre timeline (IA pode acelerar muito)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">3. Contratos e Acordos</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Inclua cláusula mencionando possível uso de ferramentas de IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Esclareça propriedade dos outputs (quem retém direitos)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Defina responsabilidade sobre verificação de plágio/accuracy</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">🏢 Para Empresas e Marcas</h3>
+                    <div class="space-y-4">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">1. Política Interna de IA</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Estabeleça diretrizes claras sobre quando/como usar IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Defina níveis de aprovação para conteúdo gerado por IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Treine equipe sobre uso responsável e limitações</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">2. Proteção de Dados</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Não insira informações confidenciais em IAs públicas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Use versões enterprise com garantias de privacidade</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Revise termos de uso sobre retenção de dados</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">3. Qualidade e Consistência</h4>
+                            <ul class="space-y-2 text-neutral-300 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Sempre tenha revisão humana antes de publicação</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Mantenha brand voice mesmo com conteúdo assistido por IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2">•</span>
+                                    <span>Fact-check rigoroso em informações geradas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">📚 Para Educadores e Estudantes</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-3">Uso Apropriado</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-green-400 mr-2">✓</span>
+                                <span>Brainstorming de ideias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-400 mr-2">✓</span>
+                                <span>Revisão gramatical</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-400 mr-2">✓</span>
+                                <span>Explicação de conceitos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-400 mr-2">✓</span>
+                                <span>Criação de exemplos</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-3">Uso Problemático</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">✗</span>
+                                <span>Gerar trabalho inteiro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">✗</span>
+                                <span>Copiar respostas sem entender</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">✗</span>
+                                <span>Não divulgar uso quando exigido</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">✗</span>
+                                <span>Burlar detectores de IA</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-700 rounded-lg p-4">
+                        <h4 class="font-semibold text-neutral-200 mb-3">Recomendações</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Sempre pergunte ao professor sobre política</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Documente como IA foi usada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Use como ferramenta de aprendizado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-400 mr-2">→</span>
+                                <span>Desenvolva pensamento crítico</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Consentimento e Likeness -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Consentimento e Uso de Likeness</h2>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">👤 Direito de Imagem e Personalidade</h3>
+                <p class="text-neutral-300 mb-4">
+                    Mesmo com capacidade técnica de clonar vozes, criar deepfakes ou gerar imagens de pessoas,
+                    <strong class="text-purple-400">você PRECISA de autorização</strong> para usar a aparência ou voz de alguém.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-neutral-200 mb-3">Quando Consentimento é OBRIGATÓRIO:</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">⚠️</span>
+                                <span><strong>Uso comercial:</strong> Qualquer uso que gere lucro ou promova produto/serviço</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">⚠️</span>
+                                <span><strong>Figuras públicas:</strong> Mesmo celebridades têm direitos de personalidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">⚠️</span>
+                                <span><strong>Clonagem de voz:</strong> Uso de voz sintética imitando pessoa real</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">⚠️</span>
+                                <span><strong>Deepfakes realistas:</strong> Vídeos/imagens que aparentam ser reais</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-neutral-200 mb-3">Exceções Limitadas (variam por jurisdição):</h4>
+                        <ul class="space-y-2 text-neutral-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">!</span>
+                                <span><strong>Paródia/Sátira:</strong> Uso transformativo para comentário social (mas arriscado)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">!</span>
+                                <span><strong>Jornalismo:</strong> Reportagem de interesse público (com limitações)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">!</span>
+                                <span><strong>Uso educacional:</strong> Fins acadêmicos não-comerciais (área cinzenta)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">!</span>
+                                <span><strong>Figuras históricas falecidas:</strong> Dependendo de tempo e jurisdição</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">📋 Como Obter Consentimento Adequado</h3>
+                    <div class="space-y-3">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">1. Seja Explícito</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Não use linguagem vaga. Especifique que será usado IA para criar conteúdo sintético
+                                usando a likeness da pessoa.
+                            </p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">2. Detalhe o Uso</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Onde será usado? Por quanto tempo? Pode ser modificado depois? Será usado em marketing?
+                                Quanto mais claro, melhor.
+                            </p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">3. Por Escrito</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Sempre documente consentimento por escrito (contrato, email, formulário assinado).
+                                Consentimento verbal não é suficiente.
+                            </p>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">4. Direito de Revogação</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Considere incluir opção de pessoa retirar consentimento no futuro (dependendo do contexto).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">⚖️ Casos Específicos</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">Clonagem de Voz para Dublagem</h4>
+                            <div class="text-neutral-300 space-y-1">
+                                <p><strong>Cenário:</strong> Usar ElevenLabs para clonar voz de dublador</p>
+                                <p class="text-neutral-400 text-xs">
+                                    ✓ Contrato explícito com dublador<br>
+                                    ✓ Compensação financeira acordada<br>
+                                    ✓ Limitação de uso (ex: apenas episódios Temporada 2)<br>
+                                    ✓ Crédito ao dublador original
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">Imagem de CEO em Material de Marketing</h4>
+                            <div class="text-neutral-300 space-y-1">
+                                <p><strong>Cenário:</strong> Gerar imagens de IA do CEO para campanha</p>
+                                <p class="text-neutral-400 text-xs">
+                                    ✓ Autorização do CEO (mesmo que seja você!)<br>
+                                    ✓ Aprovação das imagens geradas antes de publicar<br>
+                                    ✓ Disclosure que são imagens geradas por IA<br>
+                                    ✓ Política sobre quanto tempo serão usadas
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-neutral-200 mb-2">Deepfake Educacional</h4>
+                            <div class="text-neutral-300 space-y-1">
+                                <p><strong>Cenário:</strong> Vídeo de figura histórica para aula</p>
+                                <p class="text-neutral-400 text-xs">
+                                    ✓ Figuras já falecidas há muito tempo: geralmente OK<br>
+                                    ✓ Disclosure MUITO claro que é recriação digital<br>
+                                    ✓ Uso estritamente educacional, não comercial<br>
+                                    ! Cuidado com herdeiros de direitos (ex: Martin Luther King Jr.)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-6">
+                <h4 class="font-semibold text-red-300 mb-3 flex items-center">
+                    <span class="text-2xl mr-2">🚨</span>
+                    NUNCA faça isso sem consentimento:
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3 text-sm text-neutral-300">
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Pornografia deepfake (ilegal em muitos lugares, extremamente antiético)</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Vídeos falsos para manipulação política</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Clonagem de voz para fraude ou golpe</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Endorsement falso de celebridade para produto</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Criação de conteúdo difamatório ou constrangedor</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-400 mr-2">✗</span>
+                        <span>Uso comercial de imagem/voz sem autorização</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Guidelines para Uso Responsável -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-purple-400">Guidelines para Uso Responsável</h2>
+
+            <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">📜 Código de Conduta Sugerido</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">🎯</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 1: Transparência</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Seja honesto sobre o uso de IA. Divulgue quando e como ferramentas foram usadas,
+                                especialmente em contextos onde autenticidade importa.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">✋</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 2: Não Causar Dano</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Não use IA para enganar, manipular, difamar ou prejudicar pessoas. Considere impactos
+                                potenciais em indivíduos e comunidades antes de publicar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">⚖️</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 3: Respeito por Direitos</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Respeite propriedade intelectual, direitos de imagem e privacidade. Obtenha consentimento
+                                quando necessário e siga leis aplicáveis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">🔍</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 4: Verificação e Qualidade</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Sempre revise e verifique conteúdo gerado por IA. Não publique informações sem checagem,
+                                especialmente factuais ou técnicas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">🤝</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 5: Equidade e Inclusão</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Esteja atento a vieses em outputs de IA. Trabalhe ativamente para criar conteúdo diverso
+                                e inclusivo, desafiando estereótipos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-700 rounded-lg p-4">
+                        <span class="text-3xl mr-4">📚</span>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-2">Princípio 6: Aprendizado Contínuo</h4>
+                            <p class="text-neutral-300 text-sm">
+                                Mantenha-se atualizado sobre desenvolvimentos legais, técnicos e éticos. Adapte práticas
+                                conforme normas evoluem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">✅ Checklist Antes de Publicar</h3>
+                    <div class="space-y-2 text-sm">
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Verifiquei fatos e informações</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Adicionei disclosure apropriado</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Revisei termos de uso da ferramenta</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Tenho consentimento se usando likeness</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Considerei possíveis interpretações erradas</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Não há estereótipos ou vieses problemáticos</span>
+                        </label>
+                        <label class="flex items-start text-neutral-300 cursor-pointer">
+                            <input type="checkbox" class="mt-1 mr-3">
+                            <span>Não inclui informações confidenciais</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">🚦 Sistema de Semáforo</h3>
+                    <div class="space-y-3">
+                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">🟢</span>
+                                <span class="font-semibold text-green-300">VERDE - Vá em frente</span>
+                            </div>
+                            <p class="text-neutral-300 text-xs">
+                                Uso interno, rascunhos, ideias, com disclosure apropriado e revisão humana
+                            </p>
+                        </div>
+                        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">🟡</span>
+                                <span class="font-semibold text-yellow-300">AMARELO - Proceda com cautela</span>
+                            </div>
+                            <p class="text-neutral-300 text-xs">
+                                Uso comercial, conteúdo público, necessita verificação extra e possivelmente consultoria legal
+                            </p>
+                        </div>
+                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">🔴</span>
+                                <span class="font-semibold text-red-300">VERMELHO - Pare</span>
+                            </div>
+                            <p class="text-neutral-300 text-xs">
+                                Uso de likeness sem consentimento, desinformação intencional, violação de termos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">📞 Recursos e Suporte</h3>
+                    <div class="space-y-3 text-sm text-neutral-300">
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-1">Dúvidas Legais?</h4>
+                            <p class="text-xs text-neutral-400">
+                                Consulte advogado especializado em propriedade intelectual ou direito digital
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-1">Incerteza Ética?</h4>
+                            <p class="text-xs text-neutral-400">
+                                Pergunte-se: "Eu me sentiria confortável se isso fosse feito comigo?" e "Isto poderia causar dano?"
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-1">Organizações de Referência:</h4>
+                            <p class="text-xs text-neutral-400">
+                                Partnership on AI, AI Ethics Lab, IEEE Global Initiative on Ethics of AI
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-200 mb-1">Quando em Dúvida:</h4>
+                            <p class="text-xs text-neutral-400">
+                                Escolha o caminho mais conservador e transparente. É melhor divulgar demais do que de menos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12 bg-purple-500/10 border border-purple-500/30 rounded-xl p-8">
+            <h2 class="text-2xl font-bold mb-4 text-purple-400">Conclusão: Criando um Futuro Responsável</h2>
+            <div class="space-y-4 text-neutral-300">
+                <p>
+                    A IA generativa é uma ferramenta poderosa que democratiza criação de conteúdo, mas com grande poder
+                    vem grande responsabilidade. O campo legal ainda está se desenvolvendo, e você está entre os pioneiros
+                    estabelecendo normas e práticas.
+                </p>
+                <p>
+                    <strong class="text-purple-400">Suas escolhas importam.</strong> Cada vez que você divulga uso de IA,
+                    obtém consentimento, ou se recusa a criar conteúdo enganoso, você contribui para uma cultura mais ética
+                    em torno dessas tecnologias.
+                </p>
+                <p>
+                    Não tenha medo de usar IA - use-a com sabedoria, transparência e respeito. Seja parte da solução,
+                    não do problema. E lembre-se: quando em dúvida, sempre escolha o caminho que você defenderia publicamente.
+                </p>
+                <div class="bg-dark-800 rounded-lg p-4 mt-6">
+                    <p class="text-sm text-neutral-400 italic">
+                        "A tecnologia não é boa nem má; nem é neutra." - Melvin Kranzberg
+                    </p>
+                    <p class="text-sm text-neutral-300 mt-2">
+                        O modo como escolhemos usar IA define seu impacto no mundo. Faça escolhas que você terá orgulho de defender.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+            <a href="modulo-3-7.html" class="flex items-center space-x-2 px-6 py-3 bg-dark-800 hover:bg-dark-700 rounded-lg transition-colors border border-dark-600">
+                <span>←</span>
+                <span>Módulo 3.7: Vídeo e Motion</span>
+            </a>
+            <a href="modulo-3-9.html" class="flex items-center space-x-2 px-6 py-3 bg-purple-500 hover:bg-purple-400 rounded-lg transition-colors text-dark-900 font-medium">
+                <span>Módulo 3.9: Projeto Prático</span>
+                <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-800 border-t border-dark-600 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-neutral-400 text-sm">
+                <p>Supercurso Nano Banana - Trilha 3: Criação de Conteúdo com IA</p>
+                <p class="mt-2">Desenvolvendo habilidades criativas com responsabilidade e ética</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>
