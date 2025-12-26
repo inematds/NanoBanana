@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2.9 - Pós-processamento Profissional | Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Menu Global -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="text-2xl font-bold text-gray-800">
+                        🍌 Nano Banana
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../trilha1/index.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                        Trilha 1
+                    </a>
+                    <a href="index.html" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Trilha 2
+                    </a>
+                    <a href="../trilha3/index.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                        Trilha 3
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header do Módulo -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center mb-4">
+                <span class="bg-blue-400 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold">
+                    MÓDULO 2.9 - FINALIZAÇÃO
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">
+                🎨 Pós-processamento Profissional
+            </h1>
+            <p class="text-xl text-center text-blue-100 max-w-3xl mx-auto">
+                Transforme suas imagens de IA em obras profissionais com técnicas avançadas de edição e refinamento
+            </p>
+        </div>
+    </header>
+
+    <!-- Stats Banner -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">~35 min</div>
+                        <div class="text-sm text-gray-600">Duração estimada</div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">5 Ferramentas</div>
+                        <div class="text-sm text-gray-600">Software profissional</div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">Acabamento Pro</div>
+                        <div class="text-sm text-gray-600">Qualidade final</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Introdução -->
+        <section class="mb-16">
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Por que Pós-processar?</h2>
+                <p class="text-gray-700 mb-4">
+                    Mesmo as melhores IAs de geração de imagens produzem resultados que podem ser significativamente melhorados com pós-processamento. Esta etapa final é o que separa imagens amadoras de trabalhos profissionais.
+                </p>
+                <p class="text-gray-700">
+                    Neste módulo, você aprenderá técnicas profissionais para elevar suas imagens ao próximo nível, corrigindo imperfeições, melhorando detalhes e preparando arquivos para uso profissional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 1: Upscaling -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
+                        1
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Upscaling Inteligente</h2>
+                </div>
+
+                <div class="prose max-w-none">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">O que é Upscaling?</h3>
+                    <p class="text-gray-700 mb-6">
+                        Upscaling é o processo de aumentar a resolução de uma imagem mantendo ou melhorando a qualidade. Com IA, podemos reconstruir detalhes que não existiam na imagem original.
+                    </p>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ferramentas de Upscaling</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">Topaz Gigapixel AI</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Melhor qualidade do mercado</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Upscale até 600%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Preservação de detalhes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Processamento em lote</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Pago (~$99)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">Upscayl (Gratuito)</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Open source e gratuito</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Vários modelos de IA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Interface simples</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Processamento local</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Windows, Mac, Linux</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">Real-ESRGAN</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Integrado em muitas ferramentas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Especializado em rostos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Restauração de detalhes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Código aberto</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Disponível no Automatic1111</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">Adobe Super Resolution</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Integrado no Lightroom/Camera Raw</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Dobra a resolução</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Mantém formato RAW</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Excelente para fotos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">•</span>
+                                    <span>Requer assinatura Adobe</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="text-lg font-semibold text-yellow-900 mb-2">Dica Profissional</h4>
+                        <p class="text-yellow-800">
+                            Para melhores resultados, faça o upscaling ANTES de outras edições. Trabalhe sempre com a maior resolução possível desde o início do processo.
+                        </p>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Melhores Práticas</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">1.</span>
+                                <span><strong>Escolha o modelo certo:</strong> Use modelos específicos para anime, fotos, arte, etc.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">2.</span>
+                                <span><strong>Não exagere:</strong> 2-4x geralmente é suficiente. Mais pode criar artefatos.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">3.</span>
+                                <span><strong>Compare resultados:</strong> Teste diferentes ferramentas na mesma imagem.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">4.</span>
+                                <span><strong>Preserve detalhes:</strong> Ajuste as configurações para manter texturas originais.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">5.</span>
+                                <span><strong>Formato de saída:</strong> Use PNG ou TIFF para evitar perda de qualidade.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Correção de Cores -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
+                        2
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Correção de Cores</h2>
+                </div>
+
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 mb-6">
+                        Imagens geradas por IA frequentemente apresentam cores desequilibradas, saturação excessiva ou falta de contraste. A correção de cores é essencial para um resultado profissional.
+                    </p>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ferramentas Recomendadas</h3>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">Adobe Photoshop</h4>
+                            <p class="text-gray-700 text-sm mb-3">Padrão da indústria</p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Curvas e níveis</li>
+                                <li>• Camera Raw Filter</li>
+                                <li>• Camadas de ajuste</li>
+                                <li>• Máscaras precisas</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">DaVinci Resolve</h4>
+                            <p class="text-gray-700 text-sm mb-3">Grading profissional</p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Color wheels avançadas</li>
+                                <li>• LUTs profissionais</li>
+                                <li>• Versão gratuita potente</li>
+                                <li>• Qualidade cinematográfica</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">GIMP (Gratuito)</h4>
+                            <p class="text-gray-700 text-sm mb-3">Alternativa open source</p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Curvas e níveis</li>
+                                <li>• Balanço de cores</li>
+                                <li>• Totalmente gratuito</li>
+                                <li>• Multiplataforma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ajustes Principais</h3>
+
+                    <div class="space-y-6 mb-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">1. Balanço de Brancos</h4>
+                            <p class="text-gray-700 mb-3">
+                                Corrija dominantes de cor (imagens muito quentes/frias).
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Use pipeta em áreas que deveriam ser neutras (cinza/branco)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Ajuste temperatura e tint manualmente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Compare antes/depois para não exagerar</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">2. Exposição e Contraste</h4>
+                            <p class="text-gray-700 mb-3">
+                                Ajuste o brilho geral e a diferença entre claros e escuros.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Verifique o histograma para evitar clipping</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Ajuste highlights e shadows separadamente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Use curvas para controle preciso</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">3. Vibrance e Saturação</h4>
+                            <p class="text-gray-700 mb-3">
+                                Controle a intensidade das cores de forma inteligente.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span><strong>Vibrance:</strong> Aumenta cores menos saturadas (mais natural)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span><strong>Saturação:</strong> Aumenta todas as cores igualmente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>IAs tendem a supersaturar - considere reduzir</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">4. Correção Seletiva de Cores</h4>
+                            <p class="text-gray-700 mb-3">
+                                Ajuste cores específicas sem afetar o resto da imagem.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Corrija tons de pele (crucial em retratos)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Uniformize céus e fundos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">→</span>
+                                    <span>Destaque cores principais da composição</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                        <h4 class="text-lg font-semibold text-blue-900 mb-2">Workflow Recomendado</h4>
+                        <ol class="space-y-2 text-blue-800">
+                            <li>1. Ajuste exposição básica e contraste</li>
+                            <li>2. Corrija balanço de brancos</li>
+                            <li>3. Trabalhe curvas para tonalidade geral</li>
+                            <li>4. Ajuste saturação/vibrance global</li>
+                            <li>5. Correções seletivas de cores específicas</li>
+                            <li>6. Ajustes finais e comparação com original</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Remoção de Artefatos -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
+                        3
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Remoção de Artefatos</h2>
+                </div>
+
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 mb-6">
+                        IAs de geração frequentemente criam artefatos visuais - imperfeições, distorções, elementos estranhos. Aprender a removê-los é essencial para resultados profissionais.
+                    </p>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tipos Comuns de Artefatos</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 border border-red-200 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-red-900 mb-3">Artefatos Estruturais</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Mãos/dedos mal formados</li>
+                                <li>• Membros extras ou faltando</li>
+                                <li>• Simetria incorreta</li>
+                                <li>• Perspectiva distorcida</li>
+                                <li>• Elementos duplicados</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-orange-50 border border-orange-200 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-orange-900 mb-3">Artefatos de Textura</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Ruído e grain inconsistente</li>
+                                <li>• Padrões repetitivos estranhos</li>
+                                <li>• Borrões em áreas erradas</li>
+                                <li>• Transições abruptas</li>
+                                <li>• Manchas de cor</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-yellow-900 mb-3">Artefatos de Detalhe</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Texto ilegível/nonsense</li>
+                                <li>• Logos mal formados</li>
+                                <li>• Olhos assimétricos</li>
+                                <li>• Dentes estranhos</li>
+                                <li>• Joias/acessórios deformados</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 border border-purple-200 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-purple-900 mb-3">Artefatos de Borda</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Vinhetas indesejadas</li>
+                                <li>• Bordas mal definidas</li>
+                                <li>• Bleeding de cores</li>
+                                <li>• Halos ao redor de objetos</li>
+                                <li>• Transições de fundo ruins</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ferramentas de Remoção</h3>
+
+                    <div class="space-y-6 mb-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">1. Photoshop - Content-Aware Fill</h4>
+                            <p class="text-gray-700 mb-3">
+                                A ferramenta mais poderosa para remover elementos indesejados.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Selecione o artefato com lasso ou seleção rápida</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Edit > Content-Aware Fill (Shift+F5)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Ajuste área de amostragem para melhor resultado</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Use Clone Stamp para refinamentos</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">2. Topaz Photo AI</h4>
+                            <p class="text-gray-700 mb-3">
+                                IA especializada em correção automática de problemas.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Remove noise e grain automaticamente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Sharpening inteligente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Correção de face (olhos, dentes, pele)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Integração com Photoshop</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">3. ClipDrop Cleanup</h4>
+                            <p class="text-gray-700 mb-3">
+                                Ferramenta online gratuita e eficaz.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Pinte sobre artefatos para remover</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Processamento rápido</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Versão gratuita disponível</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Funciona no navegador</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-3">4. Inpainting com IA</h4>
+                            <p class="text-gray-700 mb-3">
+                                Use a própria IA geradora para corrigir problemas.
+                            </p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Estável Diffusion Inpainting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>DALL-E Outpainting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Midjourney Vary (Region)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">✓</span>
+                                    <span>Mantém estilo da imagem original</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Técnicas Manuais</h3>
+
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Clone Stamp e Healing Brush</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <span><strong>Clone Stamp (S):</strong> Copia pixels exatamente de uma área para outra. Use para texturas e padrões.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <span><strong>Healing Brush (J):</strong> Mistura área copiada com destino. Melhor para pele e transições suaves.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <span><strong>Patch Tool:</strong> Arraste seleção para área similar. Rápido para áreas maiores.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <span><strong>Spot Healing:</strong> Um clique para pequenas imperfeições. Use em manchas e pontos.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                        <h4 class="text-lg font-semibold text-yellow-900 mb-2">Importante!</h4>
+                        <p class="text-yellow-800 mb-2">
+                            Sempre trabalhe em camadas não-destrutivas:
+                        </p>
+                        <ul class="space-y-1 text-yellow-800 text-sm">
+                            <li>• Crie uma nova camada para cada correção</li>
+                            <li>• Use máscaras em vez de apagar pixels</li>
+                            <li>• Mantenha camada original intacta</li>
+                            <li>• Salve versões .PSD/.XCF com todas as camadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Ajustes Finais -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
+                        4
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Ajustes Finais</h2>
+                </div>
+
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 mb-6">
+                        Os toques finais são o que separa uma imagem boa de uma excelente. Estes ajustes sutis elevam a qualidade profissional do resultado.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">1. Sharpening Seletivo</h4>
+                            <p class="text-gray-700 mb-3">
+                                Aumente nitidez apenas onde necessário.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Sharpen olhos e detalhes faciais</li>
+                                <li>• Evite sharpen em pele e fundos</li>
+                                <li>• Use máscaras para controle preciso</li>
+                                <li>• High Pass Filter para sharpening profissional</li>
+                                <li>• Não exagere - fica artificial</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">2. Dodge and Burn</h4>
+                            <p class="text-gray-700 mb-3">
+                                Esculpa luz e sombra para mais dimensão.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Clareia (dodge) highlights naturais</li>
+                                <li>• Escureça (burn) sombras</li>
+                                <li>• Use em camada Gray 50% em Overlay</li>
+                                <li>• Pincele suavemente com opacidade baixa</li>
+                                <li>• Adiciona profundidade e volume</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">3. Vinheta Sutil</h4>
+                            <p class="text-gray-700 mb-3">
+                                Direcione atenção para o centro.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Escureça bordas muito sutilmente</li>
+                                <li>• Use gradiente radial em camada</li>
+                                <li>• Modo Multiply, opacidade 10-20%</li>
+                                <li>• Não exagere - deve ser imperceptível</li>
+                                <li>• Ajuste para cada composição</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">4. Grain/Texture</h4>
+                            <p class="text-gray-700 mb-3">
+                                Adicione textura para look mais orgânico.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Imagens IA podem parecer "plásticas"</li>
+                                <li>• Adicione grain sutil (2-5%)</li>
+                                <li>• Simula grão de filme</li>
+                                <li>• Unifica diferentes elementos</li>
+                                <li>• Esconde pequenas imperfeições</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">5. Color Grading</h4>
+                            <p class="text-gray-700 mb-3">
+                                Adicione mood através de tons de cor.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Teal and Orange (cinema)</li>
+                                <li>• Warmth para retratos</li>
+                                <li>• Cool tones para tech/sci-fi</li>
+                                <li>• Split toning (shadows e highlights)</li>
+                                <li>• Use LUTs como ponto de partida</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                            <h4 class="text-xl font-semibold text-blue-900 mb-4">6. Detalhamento de Borda</h4>
+                            <p class="text-gray-700 mb-3">
+                                Refine transições e contornos.
+                            </p>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Suavize bordas muito duras</li>
+                                <li>• Defina melhor separação fundo/sujeito</li>
+                                <li>• Corrija halos se houver</li>
+                                <li>• Use Select and Mask para refinamento</li>
+                                <li>• Blur seletivo em fundos se necessário</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Checklist de Qualidade Final</h3>
+
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Zoom 100%:</strong> Verifique artefatos em resolução real</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Simetria:</strong> Faces e elementos devem ser simétricos quando apropriado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Anatomia:</strong> Conte dedos, verifique proporções corporais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Texto:</strong> Remova ou corrija qualquer texto nonsense</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Cores:</strong> Balanço natural, sem super-saturação</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Foco:</strong> Áreas importantes devem estar nítidas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Iluminação:</strong> Consistente e lógica na cena</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Bordas:</strong> Limpas, sem halos ou artefatos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-bold mr-3">✓</span>
+                                <span><strong>Comparação:</strong> Compare com original - melhorou ou piorou?</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                        <h4 class="text-lg font-semibold text-blue-900 mb-2">Regra de Ouro</h4>
+                        <p class="text-blue-800">
+                            <strong>Menos é mais.</strong> Ajustes sutis e profissionais são sempre melhores que edições exageradas e óbvias. Se alguém notar a edição, você provavelmente exagerou.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Ferramentas Recomendadas -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">
+                        5
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Ferramentas Recomendadas</h2>
+                </div>
+
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 mb-6">
+                        Um guia completo das melhores ferramentas para pós-processamento, organizadas por função e orçamento.
+                    </p>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Softwares Completos</h3>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4">
+                                <h4 class="text-xl font-bold">Adobe Photoshop</h4>
+                                <p class="text-sm text-blue-100">Padrão da indústria - US$ 54.99/mês (Creative Cloud)</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h5 class="font-semibold text-green-700 mb-2">Prós</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• Mais poderoso e completo</li>
+                                            <li>• Integrações com outras ferramentas</li>
+                                            <li>• Recursos de IA (Neural Filters)</li>
+                                            <li>• Suporte extensivo e tutoriais</li>
+                                            <li>• Fluxo de trabalho profissional</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-red-700 mb-2">Contras</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• Caro (assinatura mensal)</li>
+                                            <li>• Curva de aprendizado íngreme</li>
+                                            <li>• Requer hardware potente</li>
+                                            <li>• Pode ser complexo demais para iniciantes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded">
+                                    <p class="text-sm text-blue-900"><strong>Melhor para:</strong> Profissionais e quem quer o máximo de controle e recursos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-4">
+                                <h4 class="text-xl font-bold">GIMP</h4>
+                                <p class="text-sm text-green-100">Open Source - Totalmente Gratuito</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h5 class="font-semibold text-green-700 mb-2">Prós</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• 100% gratuito e open source</li>
+                                            <li>• Multiplataforma (Win/Mac/Linux)</li>
+                                            <li>• Recursos semelhantes ao Photoshop</li>
+                                            <li>• Comunidade ativa</li>
+                                            <li>• Extensível com plugins</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-red-700 mb-2">Contras</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• Interface menos polida</li>
+                                            <li>• Alguns recursos avançados faltando</li>
+                                            <li>• Menos tutoriais disponíveis</li>
+                                            <li>• Performance pode ser inferior</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded">
+                                    <p class="text-sm text-green-900"><strong>Melhor para:</strong> Quem quer recursos profissionais sem custo, ou usa Linux.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4">
+                                <h4 class="text-xl font-bold">Affinity Photo</h4>
+                                <p class="text-sm text-purple-100">Compra única - US$ 69.99</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h5 class="font-semibold text-green-700 mb-2">Prós</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• Pagamento único (não assinatura)</li>
+                                            <li>• Interface moderna e intuitiva</li>
+                                            <li>• Performance excelente</li>
+                                            <li>• Compatível com arquivos .PSD</li>
+                                            <li>• Recursos profissionais completos</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-red-700 mb-2">Contras</h5>
+                                        <ul class="space-y-1 text-sm text-gray-700">
+                                            <li>• Menos plugins que Photoshop</li>
+                                            <li>• Comunidade menor</li>
+                                            <li>• Algumas incompatibilidades com PS</li>
+                                            <li>• Updates maiores são pagos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded">
+                                    <p class="text-sm text-purple-900"><strong>Melhor para:</strong> Quem quer alternativa profissional ao Photoshop sem assinatura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ferramentas Especializadas</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
+                            <h4 class="text-xl font-semibold text-orange-900 mb-2">Topaz Labs Suite</h4>
+                            <p class="text-sm text-gray-600 mb-4">US$ 199-299 por software</p>
+                            <ul class="space-y-2 text-gray-700 text-sm mb-4">
+                                <li><strong>Gigapixel AI:</strong> Melhor upscaling do mercado</li>
+                                <li><strong>Photo AI:</strong> Sharpening, denoise, face recovery</li>
+                                <li><strong>DeNoise AI:</strong> Remoção de ruído profissional</li>
+                                <li><strong>Sharpen AI:</strong> Nitidez inteligente</li>
+                            </ul>
+                            <div class="bg-orange-200 p-3 rounded text-sm text-orange-900">
+                                <strong>Recomendação:</strong> Essenciais para trabalho profissional. Investimento que vale a pena.
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg border border-teal-200">
+                            <h4 class="text-xl font-semibold text-teal-900 mb-2">DaVinci Resolve</h4>
+                            <p class="text-sm text-gray-600 mb-4">Versão gratuita disponível</p>
+                            <ul class="space-y-2 text-gray-700 text-sm mb-4">
+                                <li><strong>Color Grading:</strong> Melhor do mercado</li>
+                                <li><strong>Fusion:</strong> Compositing e VFX</li>
+                                <li><strong>Fairlight:</strong> Áudio profissional</li>
+                                <li><strong>Edição:</strong> Timeline completa</li>
+                            </ul>
+                            <div class="bg-teal-200 p-3 rounded text-sm text-teal-900">
+                                <strong>Recomendação:</strong> Grátis e profissional. Excelente para color grading de imagens estáticas.
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-lg border border-pink-200">
+                            <h4 class="text-xl font-semibold text-pink-900 mb-2">ClipDrop by Stability AI</h4>
+                            <p class="text-sm text-gray-600 mb-4">Freemium - Pro a partir de $9/mês</p>
+                            <ul class="space-y-2 text-gray-700 text-sm mb-4">
+                                <li><strong>Cleanup:</strong> Remoção de objetos</li>
+                                <li><strong>Remove Background:</strong> IA para fundos</li>
+                                <li><strong>Upscale:</strong> 2x ou 4x</li>
+                                <li><strong>Relight:</strong> Relighting de objetos</li>
+                            </ul>
+                            <div class="bg-pink-200 p-3 rounded text-sm text-pink-900">
+                                <strong>Recomendação:</strong> Ótimo para tarefas rápidas online. Versão gratuita é útil.
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200">
+                            <h4 class="text-xl font-semibold text-indigo-900 mb-2">Upscayl</h4>
+                            <p class="text-sm text-gray-600 mb-4">100% Gratuito e Open Source</p>
+                            <ul class="space-y-2 text-gray-700 text-sm mb-4">
+                                <li><strong>Vários modelos:</strong> Real-ESRGAN, etc</li>
+                                <li><strong>Batch processing:</strong> Múltiplas imagens</li>
+                                <li><strong>Multiplataforma:</strong> Win/Mac/Linux</li>
+                                <li><strong>GPU acelerado:</strong> Rápido e eficiente</li>
+                            </ul>
+                            <div class="bg-indigo-200 p-3 rounded text-sm text-indigo-900">
+                                <strong>Recomendação:</strong> Melhor opção gratuita para upscaling. Resultados surpreendentes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ferramentas Online Úteis</h3>
+
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <div>
+                                    <strong>Remove.bg:</strong> Remoção automática de fundo. Gratuito para baixa resolução.
+                                    <span class="text-sm text-gray-600 block">→ https://www.remove.bg</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <div>
+                                    <strong>Photopea:</strong> Editor tipo Photoshop no navegador. Totalmente gratuito.
+                                    <span class="text-sm text-gray-600 block">→ https://www.photopea.com</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <div>
+                                    <strong>Pixlr:</strong> Editor online com versão gratuita robusta.
+                                    <span class="text-sm text-gray-600 block">→ https://pixlr.com</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <div>
+                                    <strong>Cleanup.pictures:</strong> Remoção de objetos gratuita e simples.
+                                    <span class="text-sm text-gray-600 block">→ https://cleanup.pictures</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 font-bold mr-3">•</span>
+                                <div>
+                                    <strong>TinyPNG:</strong> Compressão inteligente de imagens sem perda visível.
+                                    <span class="text-sm text-gray-600 block">→ https://tinypng.com</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Stack Recomendado por Orçamento</h3>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6">
+                            <h4 class="text-xl font-bold text-green-900 mb-4">Orçamento Zero</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>✓ GIMP (edição)</li>
+                                <li>✓ Upscayl (upscaling)</li>
+                                <li>✓ DaVinci Resolve (color)</li>
+                                <li>✓ Photopea (online)</li>
+                                <li>✓ ClipDrop (cleanup)</li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-green-200">
+                                <p class="text-sm font-semibold text-green-900">Custo: R$ 0</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-2 border-blue-500 rounded-lg p-6">
+                            <h4 class="text-xl font-bold text-blue-900 mb-4">Orçamento Médio</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>✓ Affinity Photo</li>
+                                <li>✓ Topaz Gigapixel AI</li>
+                                <li>✓ DaVinci Resolve</li>
+                                <li>✓ ClipDrop Pro</li>
+                                <li>✓ Upscayl (backup)</li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-blue-200">
+                                <p class="text-sm font-semibold text-blue-900">Custo: ~$300 inicial</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 border-2 border-purple-500 rounded-lg p-6">
+                            <h4 class="text-xl font-bold text-purple-900 mb-4">Setup Profissional</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>✓ Adobe Creative Cloud</li>
+                                <li>✓ Topaz Labs Suite</li>
+                                <li>✓ DaVinci Resolve Studio</li>
+                                <li>✓ ClipDrop Pro</li>
+                                <li>✓ Capture One</li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-purple-200">
+                                <p class="text-sm font-semibold text-purple-900">Custo: $50-100/mês + $600 inicial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercício Prático -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-lg p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6">Exercício Prático</h2>
+                <div class="bg-blue-800 bg-opacity-50 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Projeto: Pós-processamento Completo</h3>
+                    <p class="mb-4">
+                        Pegue uma imagem gerada por IA (de preferência uma com alguns artefatos visíveis) e aplique todo o workflow de pós-processamento:
+                    </p>
+                    <ol class="space-y-2 ml-6">
+                        <li>1. Faça upscaling da imagem para pelo menos 2x</li>
+                        <li>2. Corrija cores e balanço de brancos</li>
+                        <li>3. Identifique e remova pelo menos 3 artefatos</li>
+                        <li>4. Aplique sharpening seletivo</li>
+                        <li>5. Faça dodge and burn para adicionar dimensão</li>
+                        <li>6. Adicione vinheta sutil e grain</li>
+                        <li>7. Faça color grading final</li>
+                        <li>8. Compare lado a lado com o original</li>
+                    </ol>
+                </div>
+                <div class="bg-blue-800 bg-opacity-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-3">Critérios de Sucesso:</h4>
+                    <ul class="space-y-2">
+                        <li>• Imagem final tem qualidade visivelmente superior ao original</li>
+                        <li>• Artefatos foram removidos de forma imperceptível</li>
+                        <li>• Cores parecem naturais e balanceadas</li>
+                        <li>• Edições são sutis, não exageradas</li>
+                        <li>• Imagem parece profissional e "acabada"</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumo -->
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Resumo do Módulo</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-600 mb-4">O que você aprendeu:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Técnicas de upscaling com IA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Correção profissional de cores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Identificação e remoção de artefatos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Ajustes finais para acabamento profissional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Melhores ferramentas do mercado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Workflow completo de pós-processamento</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Principais conclusões:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Pós-processamento é essencial para qualidade profissional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Sutileza é a chave - menos é mais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Upscaling deve ser feito primeiro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Trabalhe sempre em camadas não-destrutivas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Compare frequentemente com original</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">→</span>
+                                <span>Invista em boas ferramentas se for profissional</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação -->
+        <nav class="flex justify-between items-center pt-8 border-t border-gray-200">
+            <a href="modulo-2-8.html" class="flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Módulo Anterior: Photoshop e Edição Básica
+            </a>
+            <a href="modulo-2-10.html" class="flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                Próximo Módulo: Portfolio e Apresentação
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🍌 Nano Banana</h3>
+                    <p class="text-gray-400">
+                        Dominando a arte da geração de imagens com IA
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Trilha 2</h4>
+                    <p class="text-gray-400">
+                        Técnicas Intermediárias
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Progresso</h4>
+                    <p class="text-gray-400">
+                        Módulo 2.9 de 2.10
+                    </p>
+                    <div class="mt-2 bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nano Banana. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

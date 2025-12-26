@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2.7 - Inpainting e Outpainting | Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+        }
+
+        .mask-demo {
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59, 130, 246, 0.1) 10px, rgba(59, 130, 246, 0.1) 20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Menu Global -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../../index.html" class="text-2xl font-bold text-blue-600">
+                        🍌 Nano Banana
+                    </a>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="../trilha1/modulo-1-1.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition">
+                            Trilha 1
+                        </a>
+                        <a href="modulo-2-1.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">
+                            Trilha 2
+                        </a>
+                        <a href="../trilha3/modulo-3-1.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition">
+                            Trilha 3
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Progresso: 70%</span>
+                    <div class="w-32 bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="bg-blue-900 bg-opacity-50 text-blue-100 px-4 py-1 rounded-full text-sm font-semibold">
+                    MÓDULO 2.7 - EDIÇÃO
+                </span>
+            </div>
+            <h1 class="text-5xl font-bold mb-4">✨ Inpainting e Outpainting</h1>
+            <p class="text-xl text-blue-100 max-w-3xl">
+                Domine as técnicas avançadas de edição com IA: modifique partes específicas das suas imagens
+                com Inpainting e expanda suas criações além dos limites originais com Outpainting.
+            </p>
+        </div>
+    </header>
+
+    <!-- Stats Banner -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Duração</p>
+                        <p class="text-lg font-semibold text-gray-900">~40 minutos</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Técnicas</p>
+                        <p class="text-lg font-semibold text-gray-900">6 Técnicas</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Nível</p>
+                        <p class="text-lg font-semibold text-gray-900">Edição Pro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Introdução -->
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">🎨 O Poder da Edição Seletiva</h2>
+            <p class="text-gray-700 mb-4">
+                Inpainting e Outpainting são técnicas revolucionárias que permitem editar e expandir imagens
+                de forma inteligente. Enquanto o Inpainting substitui partes específicas da imagem mantendo
+                o contexto, o Outpainting cria conteúdo além das bordas originais.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-white rounded-lg p-6 border border-blue-200">
+                    <h3 class="font-semibold text-blue-900 mb-2">✏️ Inpainting</h3>
+                    <p class="text-sm text-gray-600">
+                        Edite áreas específicas: remova objetos indesejados, troque elementos,
+                        corrija imperfeições mantendo a harmonia visual.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg p-6 border border-blue-200">
+                    <h3 class="font-semibold text-blue-900 mb-2">🖼️ Outpainting</h3>
+                    <p class="text-sm text-gray-600">
+                        Expanda suas imagens: adicione mais cenário, estenda composições,
+                        crie panoramas mantendo o estilo original.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção 1: Inpainting Explicado -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    1
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Inpainting Explicado</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">📝 O Que É Inpainting?</h3>
+                <p class="text-gray-700 mb-6">
+                    Inpainting é o processo de preencher ou modificar áreas selecionadas de uma imagem de forma
+                    inteligente, mantendo coerência com o contexto ao redor. A IA analisa o que está em volta
+                    da área marcada e gera conteúdo que se integra perfeitamente.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card-hover bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <h4 class="font-semibold text-blue-900 mb-3 flex items-center">
+                            <span class="bg-blue-200 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">✓</span>
+                            Como Funciona
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">1.</span>
+                                <span>Selecione a área para editar usando máscara</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">2.</span>
+                                <span>A IA analisa o contexto ao redor da área</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">3.</span>
+                                <span>Gera novo conteúdo baseado no prompt</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">4.</span>
+                                <span>Integra perfeitamente com a imagem original</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-hover bg-green-50 rounded-lg p-6 border border-green-200">
+                        <h4 class="font-semibold text-green-900 mb-3 flex items-center">
+                            <span class="bg-green-200 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">🎯</span>
+                            Casos de Uso
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">•</span>
+                                <span>Remover objetos ou pessoas indesejadas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">•</span>
+                                <span>Trocar elementos (ex: mudar roupa, objetos)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">•</span>
+                                <span>Corrigir imperfeições e defeitos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">•</span>
+                                <span>Adicionar novos elementos à cena</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">•</span>
+                                <span>Restaurar áreas danificadas de fotos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🔍 Tipos de Inpainting</h3>
+
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">🗑️ Remoção de Objetos</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            Elimine elementos indesejados da cena. A IA preenche automaticamente com conteúdo
+                            que combina com o fundo.
+                        </p>
+                        <p class="text-xs text-gray-600 italic">
+                            Dica: Deixe o prompt vazio ou descreva apenas o que deve ficar visível
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 bg-purple-50 p-4 rounded-r-lg">
+                        <h4 class="font-semibold text-purple-900 mb-2">🔄 Substituição de Elementos</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            Troque um objeto por outro mantendo o contexto. Ideal para experimentar variações
+                            sem refazer toda a imagem.
+                        </p>
+                        <p class="text-xs text-gray-600 italic">
+                            Dica: Seja específico no prompt sobre o que deseja no lugar
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 bg-green-50 p-4 rounded-r-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">➕ Adição Criativa</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            Adicione novos elementos à cena existente. Perfeito para enriquecer composições
+                            e criar versões alternativas.
+                        </p>
+                        <p class="text-xs text-gray-600 italic">
+                            Dica: Descreva detalhadamente o novo elemento e como ele se relaciona com a cena
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
+                        <h4 class="font-semibold text-orange-900 mb-2">🔧 Correção e Refinamento</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            Corrija detalhes específicos como texturas, iluminação ou pequenos defeitos mantendo
+                            o restante intacto.
+                        </p>
+                        <p class="text-xs text-gray-600 italic">
+                            Dica: Use máscaras precisas e ajuste o "denoising strength" para controlar a mudança
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Outpainting Explicado -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    2
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Outpainting Explicado</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🖼️ O Que É Outpainting?</h3>
+                <p class="text-gray-700 mb-6">
+                    Outpainting expande os limites da sua imagem, criando conteúdo novo além das bordas originais.
+                    A IA continua a cena de forma coerente, respeitando perspectiva, iluminação e estilo.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
+                        <div class="text-2xl mb-2">⬅️</div>
+                        <h4 class="font-semibold text-indigo-900 mb-1">Expansão Lateral</h4>
+                        <p class="text-sm text-gray-600">Adicione mais espaço aos lados</p>
+                    </div>
+                    <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
+                        <div class="text-2xl mb-2">⬆️</div>
+                        <h4 class="font-semibold text-indigo-900 mb-1">Expansão Vertical</h4>
+                        <p class="text-sm text-gray-600">Estenda para cima ou para baixo</p>
+                    </div>
+                    <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
+                        <div class="text-2xl mb-2">↗️</div>
+                        <h4 class="font-semibold text-indigo-900 mb-1">Expansão Total</h4>
+                        <p class="text-sm text-gray-600">Cresça em todas as direções</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 border border-purple-200">
+                    <h4 class="font-semibold text-purple-900 mb-3">💡 Aplicações do Outpainting</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">📐</span>
+                                <span>Mudar aspect ratio (quadrado → paisagem)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">🌄</span>
+                                <span>Criar panoramas e vistas amplas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">🎬</span>
+                                <span>Adaptar para diferentes formatos (16:9, 4:3)</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">🖼️</span>
+                                <span>Adicionar mais contexto à cena</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">✨</span>
+                                <span>Criar variações compositivas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-2">🎨</span>
+                                <span>Corrigir enquadramento limitado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🎯 Estratégias de Outpainting</h3>
+
+                <div class="space-y-6">
+                    <div class="card-hover border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 text-blue-600 rounded-full p-3 text-xl">1️⃣</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 mb-2">Expansão Incremental</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Expanda a imagem aos poucos, em etapas. Cada expansão mantém mais contexto
+                                    e produz resultados mais coerentes.
+                                </p>
+                                <div class="bg-gray-50 rounded p-3 text-xs text-gray-600">
+                                    <strong>Melhor para:</strong> Expansões grandes, panoramas complexos, quando
+                                    precisa de máximo controle sobre o resultado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-hover border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 text-purple-600 rounded-full p-3 text-xl">2️⃣</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 mb-2">Expansão Direcional</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Escolha especificamente para qual direção expandir baseado na composição desejada.
+                                    Considere a regra dos terços e elementos principais.
+                                </p>
+                                <div class="bg-gray-50 rounded p-3 text-xs text-gray-600">
+                                    <strong>Melhor para:</strong> Mudar proporção, adicionar céu/chão específico,
+                                    criar espaço para elementos importantes
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-hover border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 text-green-600 rounded-full p-3 text-xl">3️⃣</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 mb-2">Outpainting com Prompt Guiado</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Use prompts específicos para orientar o que deve aparecer na área expandida.
+                                    Descreva elementos, atmosfera e continuidade desejada.
+                                </p>
+                                <div class="bg-gray-50 rounded p-3 text-xs text-gray-600">
+                                    <strong>Melhor para:</strong> Adicionar elementos específicos, manter estilo
+                                    artístico consistente, criar transições narrativas
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Criando Máscaras -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    3
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Criando Máscaras</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🎨 Fundamentos de Máscaras</h3>
+                <p class="text-gray-700 mb-6">
+                    Máscaras são fundamentais para Inpainting preciso. Elas definem exatamente qual área da imagem
+                    será modificada pela IA. A qualidade da máscara impacta diretamente no resultado final.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="mask-demo rounded-lg p-6 border-2 border-blue-300">
+                        <h4 class="font-semibold text-blue-900 mb-3">⚪ Área Branca (Máscara)</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            A região pintada de branco será modificada pela IA. É onde a mágica acontece.
+                        </p>
+                        <ul class="space-y-1 text-xs text-gray-600">
+                            <li>• Será completamente regenerada</li>
+                            <li>• Segue o prompt fornecido</li>
+                            <li>• Analisa contexto ao redor</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg p-6 border-2 border-gray-300">
+                        <h4 class="font-semibold text-gray-900 mb-3">⚫ Área Preta (Preservada)</h4>
+                        <p class="text-sm text-gray-700 mb-2">
+                            A região não pintada permanece intacta. É o contexto que guia a IA.
+                        </p>
+                        <ul class="space-y-1 text-xs text-gray-600">
+                            <li>• Mantém pixels originais</li>
+                            <li>• Fornece contexto visual</li>
+                            <li>• Define limites da edição</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-yellow-900 mb-2 flex items-center">
+                        <span class="mr-2">⚠️</span> Regra de Ouro
+                    </h4>
+                    <p class="text-sm text-gray-700">
+                        Sempre deixe uma <strong>margem de contexto</strong> ao redor da área que deseja modificar.
+                        A IA precisa ver o entorno para criar transições suaves e realistas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🖌️ Técnicas de Pintura de Máscaras</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                            <h4 class="font-semibold text-blue-900 mb-2">🖱️ Pincel Manual</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Pinte diretamente sobre a imagem com ferramentas de brush.
+                            </p>
+                            <div class="text-xs text-gray-600 space-y-1">
+                                <p><strong>Vantagens:</strong> Controle total, precisão em detalhes</p>
+                                <p><strong>Use para:</strong> Edições pequenas, objetos complexos</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-purple-200 rounded-lg p-4 bg-purple-50">
+                            <h4 class="font-semibold text-purple-900 mb-2">🎯 Seleção Automática</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Use ferramentas de detecção automática de objetos.
+                            </p>
+                            <div class="text-xs text-gray-600 space-y-1">
+                                <p><strong>Vantagens:</strong> Rápido, bordas precisas</p>
+                                <p><strong>Use para:</strong> Objetos bem definidos, fundos simples</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-green-200 rounded-lg p-4 bg-green-50">
+                            <h4 class="font-semibold text-green-900 mb-2">✏️ Formas Geométricas</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Desenhe retângulos, círculos ou outras formas simples.
+                            </p>
+                            <div class="text-xs text-gray-600 space-y-1">
+                                <p><strong>Vantagens:</strong> Muito rápido, máscaras limpas</p>
+                                <p><strong>Use para:</strong> Áreas grandes, testes rápidos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg p-6 border border-indigo-200">
+                            <h4 class="font-semibold text-indigo-900 mb-3">💎 Dicas de Ouro para Máscaras</h4>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-indigo-600 mr-2 font-bold">1.</span>
+                                    <span><strong>Bordas suaves:</strong> Use feathering/blur nas bordas da máscara
+                                    para transições mais naturais</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-600 mr-2 font-bold">2.</span>
+                                    <span><strong>Contexto suficiente:</strong> Deixe pelo menos 10-20% de área
+                                    visível ao redor da máscara</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-600 mr-2 font-bold">3.</span>
+                                    <span><strong>Tamanho adequado:</strong> Máscaras muito pequenas podem não ter
+                                    contexto suficiente</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-600 mr-2 font-bold">4.</span>
+                                    <span><strong>Teste iterativo:</strong> Comece com máscaras conservadoras e
+                                    ajuste conforme necessário</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-indigo-600 mr-2 font-bold">5.</span>
+                                    <span><strong>Respeite limites:</strong> Máscaras que seguem bordas naturais
+                                    (objetos, linhas) dão melhores resultados</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-900 mb-2">🚫 Erros Comuns</h4>
+                            <ul class="space-y-1 text-xs text-gray-700">
+                                <li>• Máscaras muito próximas das bordas da imagem</li>
+                                <li>• Sem contexto suficiente ao redor</li>
+                                <li>• Bordas muito duras/retas em áreas orgânicas</li>
+                                <li>• Máscaras muito complexas para a primeira tentativa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🛠️ Ferramentas de Máscara</h3>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="card-hover border border-gray-200 rounded-lg p-5">
+                        <div class="text-3xl mb-3">🖌️</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Brush (Pincel)</h4>
+                        <p class="text-xs text-gray-600 mb-3">
+                            Pinte manualmente a área. Ajuste tamanho, dureza e opacidade.
+                        </p>
+                        <div class="bg-gray-50 rounded p-2 text-xs">
+                            <strong>Controles:</strong> Size, Hardness, Opacity
+                        </div>
+                    </div>
+
+                    <div class="card-hover border border-gray-200 rounded-lg p-5">
+                        <div class="text-3xl mb-3">🔲</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Selection Tools</h4>
+                        <p class="text-xs text-gray-600 mb-3">
+                            Crie seleções geométricas ou à mão livre para converter em máscara.
+                        </p>
+                        <div class="bg-gray-50 rounded p-2 text-xs">
+                            <strong>Tipos:</strong> Rectangle, Lasso, Polygon
+                        </div>
+                    </div>
+
+                    <div class="card-hover border border-gray-200 rounded-lg p-5">
+                        <div class="text-3xl mb-3">🪄</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Magic Wand</h4>
+                        <p class="text-xs text-gray-600 mb-3">
+                            Selecione automaticamente baseado em cor e tonalidade similares.
+                        </p>
+                        <div class="bg-gray-50 rounded p-2 text-xs">
+                            <strong>Ajuste:</strong> Tolerance, Contiguous
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Técnicas Avançadas -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    4
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Técnicas Avançadas</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-600 rounded-lg p-2 mr-3">🎚️</span>
+                        Denoising Strength
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-4">
+                        Controla o quanto a IA vai modificar a área mascarada. É o parâmetro mais importante
+                        para balancear criatividade e fidelidade.
+                    </p>
+
+                    <div class="space-y-3">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-3 rounded">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-semibold text-green-900">Baixo (0.1 - 0.3)</span>
+                                <span class="text-xs text-green-700">Conservador</span>
+                            </div>
+                            <p class="text-xs text-gray-700">
+                                Mudanças sutis, mantém muito da imagem original. Use para correções pequenas.
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-semibold text-blue-900">Médio (0.4 - 0.6)</span>
+                                <span class="text-xs text-blue-700">Balanceado</span>
+                            </div>
+                            <p class="text-xs text-gray-700">
+                                Equilíbrio entre criatividade e contexto. Ideal para a maioria dos casos.
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-semibold text-purple-900">Alto (0.7 - 1.0)</span>
+                                <span class="text-xs text-purple-700">Criativo</span>
+                            </div>
+                            <p class="text-xs text-gray-700">
+                                Liberdade máxima. A IA ignora quase tudo da área mascarada. Use com cuidado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                        <span class="bg-purple-100 text-purple-600 rounded-lg p-2 mr-3">🔍</span>
+                        Inpaint Area Control
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-4">
+                        Define como a IA processa a região mascarada em relação à imagem inteira.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="border border-purple-200 bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2 flex items-center">
+                                <span class="mr-2">🖼️</span> Whole Picture
+                            </h4>
+                            <p class="text-xs text-gray-700 mb-2">
+                                Processa a imagem inteira, mantendo máximo contexto global.
+                            </p>
+                            <div class="bg-white rounded p-2 text-xs">
+                                <strong>Use quando:</strong> A área mascarada precisa se relacionar com toda a composição
+                            </div>
+                        </div>
+
+                        <div class="border border-indigo-200 bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-indigo-900 mb-2 flex items-center">
+                                <span class="mr-2">🎯</span> Only Masked
+                            </h4>
+                            <p class="text-xs text-gray-700 mb-2">
+                                Foca apenas na área mascarada, com zoom para mais detalhes.
+                            </p>
+                            <div class="bg-white rounded p-2 text-xs">
+                                <strong>Use quando:</strong> Quer máxima qualidade/detalhe na área específica
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🔄 Inpainting em Múltiplas Passadas</h3>
+                <p class="text-gray-700 mb-6">
+                    Para edições complexas, trabalhe em etapas. Cada passada refina o resultado anterior,
+                    permitindo controle preciso sobre mudanças graduais.
+                </p>
+
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                            1
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Estrutura Base</h4>
+                        <p class="text-xs text-gray-600">
+                            Primeira passada: defina formas e posicionamento geral
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-purple-100 text-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                            2
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Refinamento</h4>
+                        <p class="text-xs text-gray-600">
+                            Segunda passada: ajuste detalhes e proporções
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-green-100 text-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                            3
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Textura & Luz</h4>
+                        <p class="text-xs text-gray-600">
+                            Terceira passada: texturas, iluminação e atmosfera
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-orange-100 text-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                            4
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Finalização</h4>
+                        <p class="text-xs text-gray-600">
+                            Última passada: pequenos ajustes e polish final
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🎭 Preservando Contexto</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">✅ Boas Práticas</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3 bg-green-50 p-3 rounded-lg">
+                                <span class="text-green-600 text-xl">✓</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Mantenha iluminação consistente</p>
+                                    <p class="text-xs text-gray-600">Descreva a luz no prompt: "mesma iluminação suave"</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-green-50 p-3 rounded-lg">
+                                <span class="text-green-600 text-xl">✓</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Respeite perspectiva</p>
+                                    <p class="text-xs text-gray-600">Elementos novos devem seguir o mesmo ponto de fuga</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-green-50 p-3 rounded-lg">
+                                <span class="text-green-600 text-xl">✓</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Combine estilos artísticos</p>
+                                    <p class="text-xs text-gray-600">Mencione o estilo da imagem original no prompt</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-green-50 p-3 rounded-lg">
+                                <span class="text-green-600 text-xl">✓</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Use referências da cena</p>
+                                    <p class="text-xs text-gray-600">Mencione cores, texturas presentes na imagem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-3">❌ Evite</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3 bg-red-50 p-3 rounded-lg">
+                                <span class="text-red-600 text-xl">✗</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Mudanças radicais de estilo</p>
+                                    <p class="text-xs text-gray-600">Não mude de fotografia para cartoon na mesma imagem</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-red-50 p-3 rounded-lg">
+                                <span class="text-red-600 text-xl">✗</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Ignorar escala de objetos</p>
+                                    <p class="text-xs text-gray-600">Elementos novos devem ter proporção realista</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-red-50 p-3 rounded-lg">
+                                <span class="text-red-600 text-xl">✗</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Iluminação incompatível</p>
+                                    <p class="text-xs text-gray-600">Não adicione sombras em direção oposta à cena</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-red-50 p-3 rounded-lg">
+                                <span class="text-red-600 text-xl">✗</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Máscaras sem contexto</p>
+                                    <p class="text-xs text-gray-600">Sempre deixe área visível ao redor da máscara</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Workflow Profissional -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    5
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Workflow Profissional</h2>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 mb-6 border border-blue-200">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">📋 Checklist: Antes de Começar</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg p-5 shadow-sm">
+                        <h4 class="font-semibold text-blue-900 mb-3">🎯 Planejamento</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Defina claramente o objetivo da edição</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Analise a iluminação e perspectiva da imagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Identifique o estilo artístico a manter</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Faça backup da imagem original</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-5 shadow-sm">
+                        <h4 class="font-semibold text-blue-900 mb-3">🛠️ Preparação</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Verifique a resolução adequada da imagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Prepare o prompt descritivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Escolha a ferramenta de máscara apropriada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span>Configure parâmetros iniciais (denoising, etc)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">⚙️ Processo Passo a Passo</h3>
+
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-6 py-3 bg-blue-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+                            <h4 class="font-semibold text-blue-900">Análise da Imagem Base</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Estude cores dominantes, direção da luz, estilo artístico, elementos principais.
+                            Anote características que devem ser preservadas.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6 py-3 bg-purple-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+                            <h4 class="font-semibold text-purple-900">Criação da Máscara</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Desenhe a máscara com precisão, deixando margem de contexto. Use feathering nas bordas
+                            para transições suaves. Revise antes de prosseguir.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 pl-6 py-3 bg-green-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+                            <h4 class="font-semibold text-green-900">Elaboração do Prompt</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Descreva o que deseja na área mascarada. Mencione estilo, iluminação e contexto.
+                            Use termos da imagem original para manter coesão.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 pl-6 py-3 bg-orange-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">4</span>
+                            <h4 class="font-semibold text-orange-900">Ajuste de Parâmetros</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Configure denoising strength (comece com 0.5), inpaint area, e outros ajustes.
+                            Para primeira tentativa, use valores moderados.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-indigo-500 pl-6 py-3 bg-indigo-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">5</span>
+                            <h4 class="font-semibold text-indigo-900">Geração e Avaliação</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Gere múltiplas variações (batch). Compare resultados, identifique o melhor.
+                            Analise se precisa ajustar máscara, prompt ou parâmetros.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-pink-500 pl-6 py-3 bg-pink-50 rounded-r-lg">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">6</span>
+                            <h4 class="font-semibold text-pink-900">Refinamento Iterativo</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 ml-11">
+                            Use o melhor resultado como base para nova passada. Ajuste detalhes específicos
+                            com máscaras menores e denoising mais baixo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">💾 Organização de Arquivos</h3>
+                    <div class="space-y-3 text-sm text-gray-700">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-medium mb-1">📁 Estrutura Recomendada:</p>
+                            <code class="text-xs block bg-white p-2 rounded mt-2">
+                                projeto/<br>
+                                ├── original.png<br>
+                                ├── mask_v1.png<br>
+                                ├── inpaint_test1.png<br>
+                                ├── inpaint_test2.png<br>
+                                └── final.png
+                            </code>
+                        </div>
+                        <p class="text-xs text-gray-600">
+                            Mantenha versões intermediárias para poder voltar e experimentar variações.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">📝 Documentação</h3>
+                    <div class="space-y-3 text-sm text-gray-700">
+                        <p>Anote configurações que funcionaram bem:</p>
+                        <ul class="space-y-2 text-xs">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">•</span>
+                                <span>Prompts efetivos para cada tipo de edição</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">•</span>
+                                <span>Valores de denoising que deram bons resultados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">•</span>
+                                <span>Técnicas de máscara específicas para diferentes objetos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">•</span>
+                                <span>Número de iterações necessárias</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: Exemplos Práticos -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                    6
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Exemplos Práticos</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 p-4 text-white">
+                        <h3 class="text-lg font-bold">🗑️ Exemplo 1: Remoção de Objeto</h3>
+                        <p class="text-sm text-red-100">Remover pessoa do fundo de uma paisagem</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🎯 Objetivo:</h4>
+                                <p class="text-gray-700">Remover um turista que apareceu em foto de paisagem</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🖌️ Máscara:</h4>
+                                <p class="text-gray-700">Contorne a pessoa com margem de 15-20 pixels ao redor</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">📝 Prompt:</h4>
+                                <code class="block bg-gray-100 p-3 rounded text-xs">
+                                    "mountain landscape, clear sky, natural scenery without people"
+                                </code>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">⚙️ Configurações:</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Denoising: 0.7-0.8 (alta criatividade)</li>
+                                    <li>• Inpaint Area: Whole Picture</li>
+                                    <li>• Mask Blur: 4-6 pixels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-4 text-white">
+                        <h3 class="text-lg font-bold">🔄 Exemplo 2: Substituição de Elemento</h3>
+                        <p class="text-sm text-blue-100">Trocar cor de roupa em retrato</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🎯 Objetivo:</h4>
+                                <p class="text-gray-700">Mudar camisa azul para camisa vermelha em retrato</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🖌️ Máscara:</h4>
+                                <p class="text-gray-700">Selecione apenas a camisa, evitando pele e rosto</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">📝 Prompt:</h4>
+                                <code class="block bg-gray-100 p-3 rounded text-xs">
+                                    "red t-shirt, same fabric texture, same lighting and wrinkles"
+                                </code>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">⚙️ Configurações:</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Denoising: 0.4-0.5 (preservar textura)</li>
+                                    <li>• Inpaint Area: Only Masked</li>
+                                    <li>• Mask Blur: 2-3 pixels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-500 p-4 text-white">
+                        <h3 class="text-lg font-bold">➕ Exemplo 3: Adição de Elemento</h3>
+                        <p class="text-sm text-green-100">Adicionar objeto decorativo em ambiente</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🎯 Objetivo:</h4>
+                                <p class="text-gray-700">Adicionar vaso com flores em mesa vazia</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🖌️ Máscara:</h4>
+                                <p class="text-gray-700">Marque área onde ficará o vaso, incluindo sombra esperada</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">📝 Prompt:</h4>
+                                <code class="block bg-gray-100 p-3 rounded text-xs">
+                                    "ceramic vase with colorful flowers on wooden table, soft shadow, natural indoor lighting"
+                                </code>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">⚙️ Configurações:</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Denoising: 0.6-0.7</li>
+                                    <li>• Inpaint Area: Whole Picture</li>
+                                    <li>• Mask Blur: 3-4 pixels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 text-white">
+                        <h3 class="text-lg font-bold">🖼️ Exemplo 4: Outpainting Panorâmico</h3>
+                        <p class="text-sm text-purple-100">Expandir paisagem para formato widescreen</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🎯 Objetivo:</h4>
+                                <p class="text-gray-700">Transformar foto 1:1 em panorama 16:9</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">🖌️ Abordagem:</h4>
+                                <p class="text-gray-700">Expandir horizontalmente em duas etapas (esquerda, depois direita)</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">📝 Prompt:</h4>
+                                <code class="block bg-gray-100 p-3 rounded text-xs">
+                                    "continuation of the landscape, more mountains and trees, same golden hour lighting, natural scenery"
+                                </code>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">⚙️ Configurações:</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Denoising: 0.5-0.6 por etapa</li>
+                                    <li>• Overlap: 15-20% entre etapas</li>
+                                    <li>• Inpaint Area: Whole Picture</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8 border border-yellow-200">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">🎓 Casos de Uso Profissionais</h3>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-lg p-5 border border-yellow-200">
+                        <div class="text-2xl mb-2">📸</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Fotografia</h4>
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li>• Remoção de elementos indesejados</li>
+                            <li>• Correção de exposição local</li>
+                            <li>• Extensão de fundos</li>
+                            <li>• Troca de céus</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-5 border border-yellow-200">
+                        <div class="text-2xl mb-2">🎨</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Design & Arte</h4>
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li>• Variações de conceito</li>
+                            <li>• Experimentação de cores</li>
+                            <li>• Adição de elementos decorativos</li>
+                            <li>• Criação de panoramas</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-5 border border-yellow-200">
+                        <div class="text-2xl mb-2">🛍️</div>
+                        <h4 class="font-semibold text-gray-900 mb-2">E-commerce</h4>
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li>• Troca de cores de produtos</li>
+                            <li>• Limpeza de fundos</li>
+                            <li>• Adição de contexto</li>
+                            <li>• Criação de mockups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumo Final -->
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 text-white mb-12">
+            <h2 class="text-2xl font-bold mb-4">🎯 Pontos-Chave do Módulo</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold mb-3 text-blue-100">✨ Inpainting</h3>
+                    <ul class="space-y-2 text-sm text-blue-50">
+                        <li>• Edita áreas específicas mantendo contexto</li>
+                        <li>• Máscaras precisas são essenciais</li>
+                        <li>• Denoising controla intensidade da mudança</li>
+                        <li>• Trabalhe em múltiplas passadas para complexidade</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3 text-blue-100">🖼️ Outpainting</h3>
+                    <ul class="space-y-2 text-sm text-blue-50">
+                        <li>• Expande imagens além dos limites originais</li>
+                        <li>• Expansão incremental dá mais controle</li>
+                        <li>• Mantenha coerência de iluminação e perspectiva</li>
+                        <li>• Ideal para mudar aspect ratio e criar panoramas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 p-4 bg-blue-700 bg-opacity-50 rounded-lg">
+                <p class="text-sm text-blue-50">
+                    <strong>Lembre-se:</strong> A chave para resultados profissionais está na combinação de
+                    máscaras precisas, prompts descritivos que respeitam o contexto, e iteração paciente.
+                    Não espere perfeição na primeira tentativa!
+                </p>
+            </div>
+        </div>
+
+        <!-- Navegação -->
+        <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+            <a href="modulo-2-6.html" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition group">
+                <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span>Módulo Anterior: Img2Img Avançado</span>
+            </a>
+            <a href="modulo-2-8.html" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition group">
+                <span>Próximo Módulo: ControlNet Basics</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">🍌 Nano Banana</h3>
+                    <p class="text-sm text-gray-400">
+                        Sua jornada completa em geração de imagens com IA.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Trilha 2</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="modulo-2-1.html" class="hover:text-white transition">Módulo 2.1</a></li>
+                        <li><a href="modulo-2-2.html" class="hover:text-white transition">Módulo 2.2</a></li>
+                        <li><a href="modulo-2-3.html" class="hover:text-white transition">Módulo 2.3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Comunidade</a></li>
+                        <li><a href="#" class="hover:text-white transition">Suporte</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Nano Banana. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

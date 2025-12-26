@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2.10 - Workflow de Produção | Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Menu Global -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="../../index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition">
+                        🍌 Nano Banana
+                    </a>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="../trilha1/modulo-1-1.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md">Trilha 1</a>
+                        <a href="modulo-2-1.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md font-medium">Trilha 2</a>
+                        <a href="../trilha3/modulo-3-1.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md">Trilha 3</a>
+                    </div>
+                </div>
+                <a href="../../index.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-home fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header do Módulo -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    MÓDULO 2.10 - PRODUÇÃO
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">⚡ Workflow de Produção</h1>
+            <p class="text-xl text-blue-100">Organize seu processo profissional de ponta a ponta</p>
+        </div>
+    </header>
+
+    <!-- Stats Banner -->
+    <div class="max-w-4xl mx-auto px-4 -mt-8 mb-8">
+        <div class="bg-white rounded-lg shadow-xl p-6 grid grid-cols-3 gap-4">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">~40 min</div>
+                <div class="text-gray-600 text-sm">Duração</div>
+            </div>
+            <div class="text-center border-l border-r border-gray-200">
+                <div class="text-3xl font-bold text-indigo-600">6 Etapas</div>
+                <div class="text-gray-600 text-sm">Conteúdo</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-purple-600">Escala Pro</div>
+                <div class="text-gray-600 text-sm">Nível</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-4xl mx-auto px-4 pb-16">
+        <!-- Introdução -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">📋 Visão Geral</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                Um workflow de produção bem estruturado é essencial para escalar suas operações e manter a qualidade consistente. Neste módulo, você aprenderá a criar um sistema profissional completo, desde a organização de arquivos até a entrega final para clientes.
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                <p class="text-blue-900">
+                    <strong>Objetivo:</strong> Implementar um workflow profissional que permita produzir em escala mantendo organização, qualidade e eficiência.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 1: Pipeline de Produção -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">1</div>
+                <h2 class="text-3xl font-bold text-gray-800">🔄 Pipeline de Produção</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Estrutura do Pipeline</h3>
+            <div class="bg-gray-50 p-6 rounded-lg mb-4">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Captação de Briefing</h4>
+                            <p class="text-gray-600 text-sm">Reunir todas as informações e requisitos do projeto</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Planejamento</h4>
+                            <p class="text-gray-600 text-sm">Definir estratégia, cronograma e recursos necessários</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Produção</h4>
+                            <p class="text-gray-600 text-sm">Executar o trabalho seguindo padrões e templates</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Revisão Interna</h4>
+                            <p class="text-gray-600 text-sm">Checklist de qualidade e ajustes finais</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">5</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Aprovação do Cliente</h4>
+                            <p class="text-gray-600 text-sm">Apresentação e coleta de feedback</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-1">6</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 mb-1">Entrega e Arquivo</h4>
+                            <p class="text-gray-600 text-sm">Exportação final, entrega e backup do projeto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Checklist de Produção</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-3 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i> Pré-Produção
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Briefing completo preenchido</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Referências e assets coletados</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Estrutura de pastas criada</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Template base selecionado</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-indigo-800 mb-3 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i> Pós-Produção
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Qualidade revisada (QC)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Formatos de entrega exportados</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Backup realizado</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                            <span>Documentação finalizada</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded mt-4">
+                <p class="text-yellow-900 text-sm">
+                    <strong>💡 Dica Pro:</strong> Use ferramentas de gerenciamento de projetos (Trello, Notion, Asana) para acompanhar cada etapa do pipeline e garantir que nada seja esquecido.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 2: Batch Processing -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">2</div>
+                <h2 class="text-3xl font-bold text-gray-800">⚙️ Batch Processing</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">O Que é Batch Processing?</h3>
+            <p class="text-gray-700 mb-4">
+                Batch processing é a técnica de processar múltiplos arquivos ou tarefas de uma só vez, economizando tempo e garantindo consistência. Essencial para produção em escala.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Técnicas de Batch Processing</h3>
+            <div class="space-y-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-layer-group text-blue-600 mr-2"></i> Exportação em Lote
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Exporte múltiplas composições ou variações de uma só vez usando a fila de renderização.
+                    </p>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Fluxo de Trabalho:</p>
+                        <ol class="text-sm text-gray-700 space-y-1 list-decimal list-inside">
+                            <li>Adicione todas as comps à Render Queue</li>
+                            <li>Configure Output Modules uniformemente</li>
+                            <li>Defina destinos de saída organizados</li>
+                            <li>Renderize tudo de uma vez (inclusive overnight)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-clone text-indigo-600 mr-2"></i> Duplicação Inteligente
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Crie variações rapidamente usando templates e substituição de conteúdo.
+                    </p>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Estratégias:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>
+                                <span>Use Essential Graphics para trocar textos em massa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>
+                                <span>Substitua footage usando Alt+Drag (macOS) ou Ctrl+Drag (Windows)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>
+                                <span>Utilize scripts para automação de tarefas repetitivas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-magic text-purple-600 mr-2"></i> Processamento de Imagens
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Prepare múltiplos assets de uma vez usando ferramentas externas.
+                    </p>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Ferramentas Recomendadas:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mr-2 mt-1 text-xs"></i>
+                                <span><strong>Photoshop Actions:</strong> Automação de edição de imagens</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mr-2 mt-1 text-xs"></i>
+                                <span><strong>Adobe Bridge:</strong> Renomear e organizar arquivos em lote</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-yellow-500 mr-2 mt-1 text-xs"></i>
+                                <span><strong>Bulk Rename Utility:</strong> Renomeação avançada em massa</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Scripts para Automação</h3>
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+                <p class="text-xs text-gray-400 mb-2">// Exemplo: Script para adicionar múltiplas comps à Render Queue</p>
+                <pre class="text-sm"><code>// Selecione as comps no Project Panel primeiro
+var selectedComps = app.project.selection;
+
+for (var i = 0; i < selectedComps.length; i++) {
+    if (selectedComps[i] instanceof CompItem) {
+        var renderItem = app.project.renderQueue.items.add(selectedComps[i]);
+
+        // Configure o output module
+        renderItem.outputModule(1).applyTemplate("H.264 - Match Render Settings");
+
+        // Defina o caminho de saída
+        var outputPath = "~/Desktop/Renders/" + selectedComps[i].name + ".mp4";
+        renderItem.outputModule(1).file = new File(outputPath);
+    }
+}</code></pre>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                <p class="text-blue-900 text-sm">
+                    <strong>⚡ Ganho de Eficiência:</strong> Batch processing pode reduzir o tempo de produção em até 70% para projetos com múltiplas variações.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 3: Organização de Arquivos -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">3</div>
+                <h2 class="text-3xl font-bold text-gray-800">📁 Organização de Arquivos</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Estrutura de Pastas Profissional</h3>
+            <p class="text-gray-700 mb-4">
+                Uma estrutura de pastas consistente facilita a navegação, colaboração e arquivamento de projetos.
+            </p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-4">
+                <div class="font-mono text-sm text-gray-800 space-y-1">
+                    <div>📁 <strong>PROJETO_CLIENTE_DATA/</strong></div>
+                    <div class="ml-4">├── 📁 <strong>01_BRIEFING/</strong></div>
+                    <div class="ml-8">│   ├── briefing.pdf</div>
+                    <div class="ml-8">│   └── referencias.pdf</div>
+                    <div class="ml-4">├── 📁 <strong>02_ASSETS/</strong></div>
+                    <div class="ml-8">│   ├── 📁 Images/</div>
+                    <div class="ml-8">│   ├── 📁 Videos/</div>
+                    <div class="ml-8">│   ├── 📁 Audio/</div>
+                    <div class="ml-8">│   └── 📁 Fonts/</div>
+                    <div class="ml-4">├── 📁 <strong>03_PROJETO/</strong></div>
+                    <div class="ml-8">│   ├── 📁 AE_Files/</div>
+                    <div class="ml-8">│   ├── 📁 PSD_Files/</div>
+                    <div class="ml-8">│   └── 📁 AI_Files/</div>
+                    <div class="ml-4">├── 📁 <strong>04_RENDERS/</strong></div>
+                    <div class="ml-8">│   ├── 📁 Preview/</div>
+                    <div class="ml-8">│   ├── 📁 Aprovacao/</div>
+                    <div class="ml-8">│   └── 📁 Final/</div>
+                    <div class="ml-4">├── 📁 <strong>05_ENTREGA/</strong></div>
+                    <div class="ml-8">│   ├── 📁 Master/</div>
+                    <div class="ml-8">│   └── 📁 Versoes/</div>
+                    <div class="ml-4">└── 📁 <strong>06_ARQUIVO/</strong></div>
+                    <div class="ml-8">    ├── projeto_collected.aep</div>
+                    <div class="ml-8">    └── documentacao.txt</div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Boas Práticas de Organização</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-3 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i> Faça
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-600 mr-2 mt-1"></i>
+                            <span>Use numeração para ordem lógica (01, 02, 03...)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-600 mr-2 mt-1"></i>
+                            <span>Mantenha nomes descritivos e concisos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-600 mr-2 mt-1"></i>
+                            <span>Separe assets por tipo e função</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-600 mr-2 mt-1"></i>
+                            <span>Delete arquivos não utilizados regularmente</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-red-50 to-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-800 mb-3 flex items-center">
+                        <i class="fas fa-times-circle mr-2"></i> Evite
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-600 mr-2 mt-1"></i>
+                            <span>Caracteres especiais (use apenas _ ou -)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-600 mr-2 mt-1"></i>
+                            <span>Espaços em nomes de arquivos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-600 mr-2 mt-1"></i>
+                            <span>Acumular versões antigas sem organização</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-600 mr-2 mt-1"></i>
+                            <span>Misturar projetos diferentes na mesma pasta</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Organização no After Effects</h3>
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <h4 class="font-semibold text-gray-800 mb-3">Project Panel Organizado:</h4>
+                <div class="space-y-2 text-sm text-gray-700">
+                    <div class="flex items-center p-2 bg-white rounded">
+                        <i class="fas fa-folder text-yellow-600 mr-2"></i>
+                        <span><strong>01_COMPS</strong> - Todas as composições principais</span>
+                    </div>
+                    <div class="flex items-center p-2 bg-white rounded">
+                        <i class="fas fa-folder text-yellow-600 mr-2"></i>
+                        <span><strong>02_PRECOMPS</strong> - Pré-composições e elementos</span>
+                    </div>
+                    <div class="flex items-center p-2 bg-white rounded">
+                        <i class="fas fa-folder text-yellow-600 mr-2"></i>
+                        <span><strong>03_FOOTAGE</strong> - Todo o footage importado</span>
+                    </div>
+                    <div class="flex items-center p-2 bg-white rounded">
+                        <i class="fas fa-folder text-yellow-600 mr-2"></i>
+                        <span><strong>04_SOLIDS</strong> - Solids e camadas de ajuste</span>
+                    </div>
+                    <div class="flex items-center p-2 bg-white rounded">
+                        <i class="fas fa-folder text-yellow-600 mr-2"></i>
+                        <span><strong>05_REFERENCES</strong> - Referências e guias</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded">
+                <p class="text-yellow-900 text-sm">
+                    <strong>💡 Dica Pro:</strong> Use cores (Label Colors) para categorizar itens no Project Panel: verde para aprovado, amarelo para em revisão, vermelho para descartado.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 4: Naming Conventions -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">4</div>
+                <h2 class="text-3xl font-bold text-gray-800">🏷️ Naming Conventions</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Por Que Naming Conventions Importam?</h3>
+            <p class="text-gray-700 mb-4">
+                Nomes consistentes facilitam a busca, evitam confusão em equipes e tornam o projeto escalável. Um bom sistema de nomes é como um mapa que guia você pelo projeto.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Sistema de Nomenclatura Profissional</h3>
+            <div class="space-y-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-folder-open text-blue-600 mr-2"></i> Projetos e Pastas
+                    </h4>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Formato: AAAAMMDD_CLIENTE_PROJETO_VERSAO</p>
+                        <div class="space-y-1 text-sm text-gray-700 font-mono">
+                            <div>20250126_AcmeCorp_Logo_Animation_v01</div>
+                            <div>20250126_BrandX_Social_Media_Package_v02</div>
+                            <div>20250126_TechCo_Explainer_Video_Final</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-film text-indigo-600 mr-2"></i> Composições
+                    </h4>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Formato: TIPO_Descricao_Dimensao_Duracao</p>
+                        <div class="space-y-1 text-sm text-gray-700 font-mono">
+                            <div>COMP_Main_1920x1080_30s</div>
+                            <div>PRECOMP_Title_Card_1920x1080</div>
+                            <div>PRECOMP_Lower_Third_Animated</div>
+                            <div>COMP_Instagram_Story_1080x1920_15s</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-layer-group text-purple-600 mr-2"></i> Layers e Assets
+                    </h4>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Use prefixos descritivos:</p>
+                        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-700">
+                            <div class="font-mono">TXT_Titulo_Principal</div>
+                            <div class="font-mono">IMG_Logo_Cliente</div>
+                            <div class="font-mono">VID_Background_Loop</div>
+                            <div class="font-mono">AUD_Music_Main</div>
+                            <div class="font-mono">SHP_Circle_Mask</div>
+                            <div class="font-mono">ADJ_Color_Correction</div>
+                            <div class="font-mono">NULL_Controller_Master</div>
+                            <div class="font-mono">CAM_Camera_Main</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-file-export text-green-600 mr-2"></i> Arquivos de Saída
+                    </h4>
+                    <div class="bg-white p-3 rounded border border-gray-200">
+                        <p class="text-xs text-gray-500 mb-2">Formato: CLIENTE_PROJETO_VERSAO_FORMATO_RESOLUCAO</p>
+                        <div class="space-y-1 text-sm text-gray-700 font-mono">
+                            <div>AcmeCorp_Logo_v01_ProRes_1920x1080.mov</div>
+                            <div>BrandX_Social_v02_H264_1080x1080.mp4</div>
+                            <div>TechCo_Explainer_Final_H264_3840x2160.mp4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Controle de Versões</h3>
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <h4 class="font-semibold text-gray-800 mb-3">Sistema de Versionamento:</h4>
+                <div class="space-y-3 text-sm text-gray-700">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded px-2 py-1 text-xs font-bold mr-3 mt-0.5">v01-v09</div>
+                        <div>
+                            <strong>Trabalho Inicial:</strong> Primeiras iterações e testes
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded px-2 py-1 text-xs font-bold mr-3 mt-0.5">v10-v19</div>
+                        <div>
+                            <strong>Revisões do Cliente:</strong> Ajustes baseados em feedback
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-purple-600 text-white rounded px-2 py-1 text-xs font-bold mr-3 mt-0.5">v20+</div>
+                        <div>
+                            <strong>Ajustes Finais:</strong> Pequenas correções pré-entrega
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded px-2 py-1 text-xs font-bold mr-3 mt-0.5">FINAL</div>
+                        <div>
+                            <strong>Versão Aprovada:</strong> Arquivo master para entrega e arquivo
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                <p class="text-blue-900 text-sm">
+                    <strong>📝 Regra de Ouro:</strong> Nunca use "final", "final2", "final_final". Use versionamento numérico até aprovar, então salve como "FINAL" oficialmente.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 5: Backup e Versionamento -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">5</div>
+                <h2 class="text-3xl font-bold text-gray-800">💾 Backup e Versionamento</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Estratégia 3-2-1 de Backup</h3>
+            <p class="text-gray-700 mb-4">
+                A regra 3-2-1 é o padrão profissional para garantir a segurança dos seus projetos: 3 cópias, 2 mídias diferentes, 1 off-site.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Cópias Totais</h4>
+                    <p class="text-sm text-gray-600">Original + 2 backups</p>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">2</div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Tipos de Mídia</h4>
+                    <p class="text-sm text-gray-600">HD + Nuvem/HD Externo</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">1</div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Cópia Off-Site</h4>
+                    <p class="text-sm text-gray-600">Cloud Storage</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Implementação Prática</h3>
+            <div class="space-y-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-desktop text-blue-600 mr-2"></i> Cópia 1: HD Local
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-2">Seu disco de trabalho principal. Use SSD para melhor performance.</p>
+                    <div class="bg-white p-3 rounded border border-gray-200 text-sm text-gray-700">
+                        <strong>Vantagem:</strong> Acesso rápido e direto durante o trabalho<br>
+                        <strong>Limitação:</strong> Vulnerável a falhas de hardware
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-hdd text-indigo-600 mr-2"></i> Cópia 2: HD Externo
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-2">Backup local em mídia removível. Use Time Machine (Mac) ou Backup and Restore (Windows).</p>
+                    <div class="bg-white p-3 rounded border border-gray-200 text-sm text-gray-700">
+                        <strong>Frequência:</strong> Diária ou ao final de cada projeto<br>
+                        <strong>Recomendação:</strong> HDs de 2TB+ para projetos de vídeo
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-cloud text-purple-600 mr-2"></i> Cópia 3: Cloud Storage
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-2">Backup off-site para proteção contra desastres. Essencial para segurança total.</p>
+                    <div class="bg-white p-3 rounded border border-gray-200 text-sm text-gray-700">
+                        <strong>Opções:</strong>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>Google Drive:</strong> 15GB grátis, planos pagos acessíveis</li>
+                            <li>• <strong>Dropbox:</strong> Sincronização automática eficiente</li>
+                            <li>• <strong>Adobe Creative Cloud:</strong> 100GB incluído na assinatura</li>
+                            <li>• <strong>Backblaze:</strong> Backup ilimitado por US$7/mês</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Arquivamento de Projetos</h3>
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <h4 class="font-semibold text-gray-800 mb-3">Processo de Arquivamento:</h4>
+                <ol class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">1</div>
+                        <div>
+                            <strong>Collect Files:</strong> Use File → Dependencies → Collect Files para reunir todos os assets
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">2</div>
+                        <div>
+                            <strong>Reduce Project:</strong> Remova itens não utilizados para diminuir o tamanho
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">3</div>
+                        <div>
+                            <strong>Exportar Renders:</strong> Salve todas as versões finais em qualidade máxima
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">4</div>
+                        <div>
+                            <strong>Documentação:</strong> Crie um README.txt com informações do projeto, cliente, data, specs
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">5</div>
+                        <div>
+                            <strong>Compressão:</strong> Comprima em arquivo .zip ou .rar para facilitar armazenamento
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">6</div>
+                        <div>
+                            <strong>Upload:</strong> Envie para cloud storage e marque como arquivado
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded">
+                <p class="text-red-900 text-sm">
+                    <strong>⚠️ Atenção:</strong> Não confie apenas em um método de backup. Discos falham, contas podem ser hackeadas, arquivos podem corromper. A redundância é essencial.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 6: Workflow para Clientes -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">6</div>
+                <h2 class="text-3xl font-bold text-gray-800">🤝 Workflow para Clientes</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Comunicação Profissional</h3>
+            <p class="text-gray-700 mb-4">
+                Um workflow profissional não termina na produção. A forma como você se comunica e entrega para o cliente é tão importante quanto a qualidade do trabalho.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Etapas de Interação com Cliente</h3>
+            <div class="space-y-4 mb-4">
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-600">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-handshake text-blue-600 mr-2"></i> 1. Briefing Inicial
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Capture todos os requisitos e expectativas do projeto.
+                    </p>
+                    <div class="bg-white p-3 rounded">
+                        <p class="text-xs text-gray-500 mb-2">Perguntas Essenciais:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Qual é o objetivo principal deste projeto?</li>
+                            <li>• Quem é o público-alvo?</li>
+                            <li>• Quais são as dimensões e formatos de entrega necessários?</li>
+                            <li>• Existe alguma referência visual ou estilo preferido?</li>
+                            <li>• Qual é o prazo e o orçamento?</li>
+                            <li>• Quantas rodadas de revisão estão incluídas?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-indigo-600">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-paint-brush text-indigo-600 mr-2"></i> 2. Apresentação de Conceito
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Mostre ideias iniciais antes de investir tempo em produção completa.
+                    </p>
+                    <div class="bg-white p-3 rounded">
+                        <p class="text-xs text-gray-500 mb-2">Formatos de Apresentação:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Styleframes:</strong> Quadros-chave mostrando visual e direção de arte</li>
+                            <li>• <strong>Animatic:</strong> Preview simples de timing e movimento</li>
+                            <li>• <strong>Mood Board:</strong> Coleção de referências visuais</li>
+                            <li>• <strong>Documento de Conceito:</strong> Explicação escrita da abordagem</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-purple-600">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-eye text-purple-600 mr-2"></i> 3. Apresentação de Preview
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Envie versões para aprovação em qualidade web com watermark se necessário.
+                    </p>
+                    <div class="bg-white p-3 rounded">
+                        <p class="text-xs text-gray-500 mb-2">Boas Práticas:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Use plataformas de review como Frame.io ou Vimeo Review</li>
+                            <li>• Adicione timecode para facilitar feedback específico</li>
+                            <li>• Forneça formulário estruturado para coleta de feedback</li>
+                            <li>• Defina prazo para resposta do cliente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-green-600">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i> 4. Revisões e Ajustes
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Gerencie rodadas de revisão de forma clara e organizada.
+                    </p>
+                    <div class="bg-white p-3 rounded">
+                        <p class="text-xs text-gray-500 mb-2">Sistema de Gerenciamento:</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Consolide todos os feedbacks antes de começar revisões</li>
+                            <li>• Comunique claramente quais mudanças foram feitas em cada versão</li>
+                            <li>• Mantenha registro de todas as alterações solicitadas</li>
+                            <li>• Estabeleça limite de revisões no contrato (ex: 2 rodadas incluídas)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-600">
+                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-truck text-yellow-600 mr-2"></i> 5. Entrega Final
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Entregue todos os arquivos de forma profissional e organizada.
+                    </p>
+                    <div class="bg-white p-3 rounded">
+                        <p class="text-xs text-gray-500 mb-2">Pacote de Entrega Completo:</p>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <div class="flex items-start">
+                                <i class="fas fa-file-video text-blue-600 mr-2 mt-1"></i>
+                                <span><strong>Master Files:</strong> Vídeos em qualidade máxima (ProRes, DNxHD)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-file-video text-indigo-600 mr-2 mt-1"></i>
+                                <span><strong>Versões Web:</strong> H.264 otimizado para diferentes plataformas</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-file-audio text-purple-600 mr-2 mt-1"></i>
+                                <span><strong>Áudio Separado:</strong> Se solicitado, áudio em .wav ou .aiff</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-folder text-yellow-600 mr-2 mt-1"></i>
+                                <span><strong>Project Files:</strong> Arquivos do After Effects (opcional, cobrado extra)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-file-alt text-gray-600 mr-2 mt-1"></i>
+                                <span><strong>Documentação:</strong> Specs técnicas e guia de uso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Plataformas de Entrega</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-3">Para Arquivos Grandes:</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud-upload-alt text-blue-600 mr-2"></i>
+                            <span><strong>WeTransfer:</strong> Até 2GB grátis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud-upload-alt text-indigo-600 mr-2"></i>
+                            <span><strong>Google Drive:</strong> Links compartilháveis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud-upload-alt text-purple-600 mr-2"></i>
+                            <span><strong>Dropbox:</strong> Sincronização automática</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-purple-800 mb-3">Para Review e Aprovação:</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-video text-purple-600 mr-2"></i>
+                            <span><strong>Frame.io:</strong> Review profissional</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-video text-pink-600 mr-2"></i>
+                            <span><strong>Vimeo Review:</strong> Comentários com timecode</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-video text-red-600 mr-2"></i>
+                            <span><strong>YouTube (Unlisted):</strong> Preview rápido</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Template de Email de Entrega</h3>
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <div class="bg-white p-4 rounded border border-gray-200 text-sm text-gray-700 font-mono">
+                    <p class="mb-2"><strong>Assunto:</strong> Entrega Final - [Nome do Projeto]</p>
+                    <p class="mb-4 text-xs text-gray-500">---</p>
+                    <p class="mb-2">Olá [Nome do Cliente],</p>
+                    <p class="mb-4">Segue a entrega final do projeto [Nome do Projeto].</p>
+                    <p class="mb-2"><strong>Arquivos inclusos:</strong></p>
+                    <ul class="mb-4 ml-4 space-y-1">
+                        <li>• Master File (ProRes 422 HQ, 1920x1080)</li>
+                        <li>• Versão Web (H.264, 1920x1080)</li>
+                        <li>• Versão Instagram (H.264, 1080x1080)</li>
+                        <li>• Documentação técnica</li>
+                    </ul>
+                    <p class="mb-4">Link para download: [LINK]<br>
+                    Validade do link: 30 dias</p>
+                    <p class="mb-2">Os arquivos estão prontos para uso imediato. Por favor, confirme o recebimento.</p>
+                    <p class="mb-4">Foi um prazer trabalhar neste projeto! Qualquer dúvida, estou à disposição.</p>
+                    <p>Abraços,<br>[Seu Nome]</p>
+                </div>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded">
+                <p class="text-green-900 text-sm">
+                    <strong>🎯 Pós-Entrega:</strong> Envie um email de follow-up após 1-2 semanas pedindo feedback sobre o trabalho. Isso fortalece o relacionamento e pode gerar novos projetos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Resumo e Próximos Passos -->
+        <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-4">🎯 Resumo do Módulo</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Você Aprendeu:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Estruturar pipeline de produção completo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Implementar batch processing para escalar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Organizar arquivos profissionalmente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Aplicar naming conventions consistentes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Proteger projetos com backup 3-2-1</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mr-2 mt-1"></i>
+                            <span>Gerenciar workflow com clientes</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Aplicação Prática:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-2 mt-1"></i>
+                            <span>Crie sua estrutura de pastas padrão</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-2 mt-1"></i>
+                            <span>Defina seu sistema de nomenclatura</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-2 mt-1"></i>
+                            <span>Configure seu sistema de backup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-2 mt-1"></i>
+                            <span>Prepare templates de comunicação com clientes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-2 mt-1"></i>
+                            <span>Documente seu processo completo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação -->
+        <nav class="flex justify-between items-center bg-white rounded-lg shadow-md p-6">
+            <a href="modulo-2-9.html" class="flex items-center text-blue-600 hover:text-blue-700 font-semibold transition">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <div class="text-left">
+                    <div class="text-xs text-gray-500">Anterior</div>
+                    <div>Módulo 2.9: Templates Profissionais</div>
+                </div>
+            </a>
+            <a href="modulo-2-11.html" class="flex items-center text-blue-600 hover:text-blue-700 font-semibold transition">
+                <div class="text-right">
+                    <div class="text-xs text-gray-500">Próximo</div>
+                    <div>Módulo 2.11</div>
+                </div>
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4 mt-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-300">🍌 Nano Banana - Curso de Motion Design</p>
+            <p class="text-gray-500 text-sm mt-2">Transformando iniciantes em profissionais</p>
+        </div>
+    </footer>
+</body>
+</html>

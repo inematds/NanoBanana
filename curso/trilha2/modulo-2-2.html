@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.2 Anatomia Profunda do Prompt | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 2.2 - MASTERY
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🔬 Anatomia Profunda do Prompt
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Desmonte e domine a estrutura de prompts profissionais: elementos, ordem, peso e técnicas avançadas de construção.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">~35</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">6</div>
+        <div class="text-xs text-neutral-400">Conceitos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">PRO</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Blocos de Construção -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🧱</span>
+          <div>
+            <h2 class="text-2xl font-bold text-blue-400">Blocos de Construção: Os 8 Elementos</h2>
+            <p class="text-neutral-400">A anatomia de um prompt profissional</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Todo prompt avançado é construído a partir de <strong class="text-blue-400">8 elementos fundamentais</strong>. Compreender cada um e sua função permite criar prompts precisos e controlados.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">1. Sujeito Principal</h4>
+            <p class="text-sm text-neutral-300 mb-2">O foco central da imagem</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "a cyberpunk samurai"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">2. Ação/Pose</h4>
+            <p class="text-sm text-neutral-300 mb-2">O que o sujeito está fazendo</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "standing in fighting stance"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">3. Ambiente/Cenário</h4>
+            <p class="text-sm text-neutral-300 mb-2">Onde a cena acontece</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "in a neon-lit Tokyo street"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">4. Iluminação</h4>
+            <p class="text-sm text-neutral-300 mb-2">Tipo e qualidade da luz</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "dramatic rim lighting, neon glow"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">5. Estilo Artístico</h4>
+            <p class="text-sm text-neutral-300 mb-2">Referência visual/artística</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "digital art, cyberpunk style"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">6. Composição</h4>
+            <p class="text-sm text-neutral-300 mb-2">Enquadramento e perspectiva</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "medium shot, rule of thirds"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">7. Qualidade Técnica</h4>
+            <p class="text-sm text-neutral-300 mb-2">Resolução e detalhes</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "highly detailed, 8K, sharp focus"
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-4 rounded-xl">
+            <h4 class="font-bold text-blue-400 mb-2">8. Atmosfera/Mood</h4>
+            <p class="text-sm text-neutral-300 mb-2">Emoção e clima visual</p>
+            <div class="bg-dark-800/50 p-2 rounded font-mono text-xs text-emerald-400">
+              "dark atmosphere, mysterious"
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30">
+          <h4 class="font-bold text-cyan-400 mb-3">💡 Prompt Completo Exemplo</h4>
+          <div class="bg-dark-800/50 p-4 rounded font-mono text-sm text-neutral-300">
+            <span class="text-yellow-400">"a cyberpunk samurai</span> <span class="text-neutral-500">(1)</span><br>
+            <span class="text-yellow-400">standing in fighting stance</span> <span class="text-neutral-500">(2)</span><br>
+            <span class="text-yellow-400">in a neon-lit Tokyo street</span> <span class="text-neutral-500">(3)</span>, <br>
+            <span class="text-yellow-400">dramatic rim lighting, neon glow</span> <span class="text-neutral-500">(4)</span>, <br>
+            <span class="text-yellow-400">digital art, cyberpunk style</span> <span class="text-neutral-500">(5)</span>, <br>
+            <span class="text-yellow-400">medium shot, rule of thirds</span> <span class="text-neutral-500">(6)</span>, <br>
+            <span class="text-yellow-400">highly detailed, 8K</span> <span class="text-neutral-500">(7)</span>, <br>
+            <span class="text-yellow-400">dark atmosphere, mysterious</span> <span class="text-neutral-500">(8)"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Ordem das Palavras -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📊</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Ordem das Palavras: Primazia Importa</h2>
+            <p class="text-neutral-400">Por que a sequência muda tudo</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          No processamento de prompts, as <strong class="text-orange-400">primeiras palavras têm mais peso</strong> do que as últimas. Isso ocorre devido ao mecanismo de atenção e à forma como os tokens são processados sequencialmente.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">⚖️ Hierarquia de Influência</h3>
+
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <div class="w-full bg-dark-600 rounded-full h-8 relative overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-900 h-8 rounded-full flex items-center px-4" style="width: 100%">
+                  <span class="text-xs font-bold text-white">Posição 1-3: Peso Máximo (100%)</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-full bg-dark-600 rounded-full h-8 relative overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-500 to-emerald-700 h-8 rounded-full flex items-center px-4" style="width: 75%">
+                  <span class="text-xs font-bold text-white">Posição 4-10: Peso Alto (75%)</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-full bg-dark-600 rounded-full h-8 relative overflow-hidden">
+                <div class="bg-gradient-to-r from-yellow-500 to-yellow-700 h-8 rounded-full flex items-center px-4" style="width: 50%">
+                  <span class="text-xs font-bold text-white">Posição 11-30: Peso Médio (50%)</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-full bg-dark-600 rounded-full h-8 relative overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-700 h-8 rounded-full flex items-center px-4" style="width: 25%">
+                  <span class="text-xs font-bold text-white">Posição 31+: Peso Baixo (25%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-4">❌ Ordem Ruim</h4>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs mb-3">
+              <span class="text-neutral-400">"highly detailed, 8K, sharp focus, beautiful lighting, masterpiece, <span class="text-red-400">a dragon flying over mountains</span>"</span>
+            </div>
+            <p class="text-sm text-neutral-400">Sujeito principal aparece tarde demais!</p>
+          </div>
+
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-4">✓ Ordem Ideal</h4>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs mb-3">
+              <span class="text-emerald-400">"a dragon flying over mountains</span><span class="text-neutral-400">, beautiful lighting, highly detailed, 8K, sharp focus, masterpiece"</span>
+            </div>
+            <p class="text-sm text-neutral-400">Sujeito em destaque, modificadores depois!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Peso e Ênfase -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💪</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Peso e Ênfase: Controle Fino</h2>
+            <p class="text-neutral-400">Técnicas para enfatizar elementos específicos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Além da ordem, existem técnicas específicas para <strong class="text-purple-400">aumentar o peso</strong> de certos elementos no seu prompt.
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-purple-400 mb-3">1. Repetição Estratégica</h4>
+            <p class="text-sm text-neutral-300 mb-3">Repetir conceitos importantes aumenta seu peso natural.</p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs text-neutral-500 mb-1">Normal:</div>
+                <div class="font-mono text-xs text-neutral-400">"a fiery explosion"</div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded border border-emerald-500/30">
+                <div class="text-xs text-emerald-500 mb-1">Enfatizado:</div>
+                <div class="font-mono text-xs text-emerald-400">"a fiery explosion, fire, flames, intense heat"</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-purple-400 mb-3">2. Posição Privilegiada</h4>
+            <p class="text-sm text-neutral-300 mb-3">Colocar no início OU repetir no final.</p>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="font-mono text-xs">
+                <span class="text-yellow-400">"magical glowing crystals</span><span class="text-neutral-400">, fantasy cave, mysterious atmosphere, </span><span class="text-yellow-400">glowing magical crystals</span><span class="text-neutral-400">"</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-purple-400 mb-3">3. Keywords de Reforço</h4>
+            <p class="text-sm text-neutral-300 mb-3">Adicionar adjetivos que reforçam a ideia principal.</p>
+            <div class="space-y-2">
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs">
+                <span class="text-blue-400">Base:</span> <span class="text-neutral-400">"dark forest"</span>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs">
+                <span class="text-emerald-400">Reforçado:</span> <span class="text-neutral-400">"dark ominous forest, shadowy, mysterious, gloomy atmosphere"</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-purple-400 mb-3">4. Sintaxe de Peso (Atenção)</h4>
+            <p class="text-sm text-neutral-300 mb-3">Alguns modelos suportam sintaxe especial para peso.</p>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="font-mono text-xs text-neutral-400">
+                "(dragon:1.3)" - aumenta peso em 30%<br>
+                "(background:0.7)" - diminui peso em 30%<br>
+                "((very important))" - parênteses duplos = +20% peso
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">⚠️ Cuidado com Over-Emphasis</h4>
+          <p class="text-neutral-300">
+            Enfatizar demais pode criar resultados saturados ou distorcidos. Use com moderação e teste os resultados!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Modificadores de Intensidade -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔥</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Modificadores de Intensidade</h2>
+            <p class="text-neutral-400">Controlando a intensidade dos conceitos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Modificadores de intensidade são palavras que <strong class="text-orange-400">amplificam ou suavizam</strong> outros conceitos no prompt.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-3 text-center">Baixa Intensidade</h4>
+            <div class="space-y-2 text-sm">
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">slightly</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">subtle</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">soft</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">gentle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/30">
+            <h4 class="font-bold text-blue-400 mb-3 text-center">Média Intensidade</h4>
+            <div class="space-y-2 text-sm">
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">very</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">quite</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">highly</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">intense</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-red-900/20 p-4 rounded-xl border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-3 text-center">Alta Intensidade</h4>
+            <div class="space-y-2 text-sm">
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">extremely</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">ultra</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">hyper</span>
+              </div>
+              <div class="bg-dark-800/50 p-2 rounded text-center">
+                <span class="text-neutral-300">maximum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📈 Comparação Prática</h3>
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-xs text-emerald-400 mb-1">Sutil:</div>
+              <div class="font-mono text-sm text-neutral-300">"slightly glowing magical aura"</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-xs text-blue-400 mb-1">Moderado:</div>
+              <div class="font-mono text-sm text-neutral-300">"very bright glowing magical aura"</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-xs text-red-400 mb-1">Intenso:</div>
+              <div class="font-mono text-sm text-neutral-300">"extremely radiant ultra-bright glowing magical aura"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Conectores e Estrutura -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-cyan-900/30 to-dark-800 rounded-2xl p-8 border border-cyan-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔗</span>
+          <div>
+            <h2 class="text-2xl font-bold text-cyan-400">Conectores e Estrutura</h2>
+            <p class="text-neutral-400">Pontuação e organização do prompt</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          A <strong class="text-cyan-400">pontuação</strong> e a estrutura do texto influenciam como a IA interpreta e agrupa conceitos.
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-cyan-400 mb-3">1. Vírgulas (,)</h4>
+            <p class="text-sm text-neutral-300 mb-3">Separam conceitos independentes de mesmo nível.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-sm text-neutral-400">
+              "a wizard, medieval clothing, holding staff, glowing eyes"
+            </div>
+            <p class="text-xs text-neutral-500 mt-2">Cada elemento é tratado separadamente</p>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-cyan-400 mb-3">2. Pontos (.) ou Quebras</h4>
+            <p class="text-sm text-neutral-300 mb-3">Criam separação forte entre grupos de conceitos.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-sm text-neutral-400">
+              "a futuristic city. rain falling. neon lights everywhere."
+            </div>
+            <p class="text-xs text-neutral-500 mt-2">Cada frase é processada como bloco separado</p>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-cyan-400 mb-3">3. Parênteses ()</h4>
+            <p class="text-sm text-neutral-300 mb-3">Agrupam modificadores ou aumentam atenção.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-sm text-neutral-400">
+              "a dragon (massive, ancient, powerful), breathing fire"
+            </div>
+            <p class="text-xs text-neutral-500 mt-2">Conceitos dentro de () são tratados como grupo</p>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-cyan-400 mb-3">4. Pipes (|) ou AND</h4>
+            <p class="text-sm text-neutral-300 mb-3">Em alguns modelos, alternam entre opções.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-sm text-neutral-400">
+              "sunset | sunrise" - escolhe um aleatoriamente
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💡 Exemplo de Estrutura Profissional</h4>
+          <div class="bg-dark-800/50 p-4 rounded font-mono text-sm">
+            <span class="text-yellow-400">"a cosmic nebula</span><span class="text-neutral-400">, </span><br>
+            <span class="text-neutral-400">(</span><span class="text-purple-400">swirling purple and blue gases, countless stars</span><span class="text-neutral-400">), </span><br>
+            <span class="text-emerald-400">deep space background</span><span class="text-neutral-400">. </span><br>
+            <span class="text-cyan-400">ultra high resolution, NASA Hubble style, photorealistic</span><span class="text-neutral-400">"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Prompt Templates -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📋</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Prompt Templates: Fórmulas Prontas</h2>
+            <p class="text-neutral-400">Templates profissionais para diferentes tipos de imagem</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Use estes <strong class="text-emerald-400">templates testados</strong> como ponto de partida e adapte para suas necessidades.
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-2">🎨 Template: Arte Digital</h4>
+            <div class="bg-dark-800/50 p-4 rounded font-mono text-xs text-neutral-300 mb-3">
+              "[SUJEITO], [AÇÃO/POSE], <br>
+              [ESTILO] style digital art, <br>
+              [ILUMINAÇÃO], [CORES dominantes], <br>
+              by [ARTISTA], trending on ArtStation, <br>
+              highly detailed, 8K, masterpiece"
+            </div>
+            <details class="text-sm">
+              <summary class="text-blue-400 cursor-pointer mb-2">Ver exemplo preenchido</summary>
+              <div class="bg-dark-900/50 p-3 rounded font-mono text-xs text-emerald-400">
+                "a celestial goddess, floating in cosmic space, fantasy art style digital art, ethereal glow lighting, purple and gold tones, by Ross Tran, trending on ArtStation, highly detailed, 8K, masterpiece"
+              </div>
+            </details>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-2">📸 Template: Fotorrealismo</h4>
+            <div class="bg-dark-800/50 p-4 rounded font-mono text-xs text-neutral-300 mb-3">
+              "photograph of [SUJEITO], [AMBIENTE], <br>
+              [TIPO DE FOTO] shot, [ILUMINAÇÃO], <br>
+              shot on [CÂMERA], [LENTE], <br>
+              depth of field, photorealistic, 4K"
+            </div>
+            <details class="text-sm">
+              <summary class="text-blue-400 cursor-pointer mb-2">Ver exemplo preenchido</summary>
+              <div class="bg-dark-900/50 p-3 rounded font-mono text-xs text-emerald-400">
+                "photograph of a mountain lion in snow, winter forest background, wildlife shot, golden hour lighting, shot on Canon EOS R5, 70-200mm lens, shallow depth of field, photorealistic, 4K"
+              </div>
+            </details>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-2">🏞️ Template: Paisagem Conceitual</h4>
+            <div class="bg-dark-800/50 p-4 rounded font-mono text-xs text-neutral-300 mb-3">
+              "[TIPO DE PAISAGEM], [ELEMENTOS PRINCIPAIS], <br>
+              [ATMOSFERA], [PERÍODO DO DIA], <br>
+              [ESTILO], cinematic composition, <br>
+              wide angle, epic scale, highly detailed"
+            </div>
+            <details class="text-sm">
+              <summary class="text-blue-400 cursor-pointer mb-2">Ver exemplo preenchido</summary>
+              <div class="bg-dark-900/50 p-3 rounded font-mono text-xs text-emerald-400">
+                "alien planet landscape, massive crystal formations and bioluminescent plants, mysterious atmosphere, twilight, sci-fi concept art style, cinematic composition, wide angle, epic scale, highly detailed"
+              </div>
+            </details>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-2">👤 Template: Retrato de Personagem</h4>
+            <div class="bg-dark-800/50 p-4 rounded font-mono text-xs text-neutral-300 mb-3">
+              "[TIPO DE PERSONAGEM], [CARACTERÍSTICAS FÍSICAS], <br>
+              [ROUPA/ARMADURA], [EXPRESSÃO], <br>
+              [ENQUADRAMENTO], [ILUMINAÇÃO], <br>
+              [ESTILO], highly detailed face, 8K portrait"
+            </div>
+            <details class="text-sm">
+              <summary class="text-blue-400 cursor-pointer mb-2">Ver exemplo preenchido</summary>
+              <div class="bg-dark-900/50 p-3 rounded font-mono text-xs text-emerald-400">
+                "a cyberpunk hacker, neon blue hair and cybernetic implants, tactical jacket with glowing circuits, confident smirk, close-up portrait, dramatic side lighting with neon accents, digital art style, highly detailed face, 8K portrait"
+              </div>
+            </details>
+          </div>
+
+          <div class="bg-dark-700/50 p-6 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-2">🎬 Template: Cena Cinematográfica</h4>
+            <div class="bg-dark-800/50 p-4 rounded font-mono text-xs text-neutral-300 mb-3">
+              "[CENA/AÇÃO], [PERSONAGENS envolvidos], <br>
+              [AMBIENTE detalhado], cinematic lighting, <br>
+              [MOOD/ATMOSFERA], [ÂNGULO DE CÂMERA], <br>
+              film still, directed by [DIRETOR style], <br>
+              anamorphic lens, cinematic color grading"
+            </div>
+            <details class="text-sm">
+              <summary class="text-blue-400 cursor-pointer mb-2">Ver exemplo preenchido</summary>
+              <div class="bg-dark-900/50 p-3 rounded font-mono text-xs text-emerald-400">
+                "epic space battle, fleet of starships engaged in combat, nebula-filled deep space environment, cinematic lighting with explosions and laser fire, tense dramatic atmosphere, wide establishing shot, film still, directed by Denis Villeneuve style, anamorphic lens, cinematic color grading"
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30 mt-6">
+          <h4 class="font-bold text-purple-400 mb-3">🎯 Dica Pro: Personalize os Templates</h4>
+          <p class="text-neutral-300">
+            Estes templates são pontos de partida. Experimente combiná-los, adicionar elementos únicos e ajustar para seu estilo. A melhor fórmula é a que você desenvolve através da prática!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-blue-500/10 rounded-2xl p-8 border border-blue-500/30">
+        <h2 class="text-2xl font-bold text-blue-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Os 8 elementos de prompts profissionais</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Primeiras palavras têm mais peso</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Técnicas de ênfase e repetição</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Modificadores de intensidade (very, ultra, hyper)</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Pontuação e estrutura do prompt</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Templates profissionais prontos para usar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Aprenda a criar variações controladas e evoluir suas imagens!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-2-1.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 2.1</span>
+            </a>
+            <a href="modulo-2-3.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white rounded-lg font-bold hover:bg-blue-400 transition-colors">
+              <span>Módulo 2.3</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Prompt Engineering Research, Stable Diffusion Documentation, OpenAI Best Practices
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 2.2: Anatomia Profunda do Prompt
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Estrutura JSON - Nano Banana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'banana': {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen transition-colors duration-300">
+
+    <!-- Menu Global -->
+    <nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="../../index.html" class="flex items-center space-x-2 group">
+                        <span class="text-3xl group-hover:scale-110 transition-transform">🍌</span>
+                        <span class="font-bold text-xl bg-gradient-to-r from-banana-500 to-banana-600 bg-clip-text text-transparent">
+                            Nano Banana
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Links de Navegação -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="../trilha1/index.html" class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
+                        Trilha 1
+                    </a>
+                    <a href="index.html" class="px-4 py-2 rounded-lg bg-blue-500/20 text-blue-700 dark:text-blue-300 font-medium border border-blue-500/30 transition-all duration-200">
+                        Trilha 2
+                    </a>
+                    <a href="../trilha3/index.html" class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-200">
+                        Trilha 3
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="ml-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-200">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header do Módulo -->
+    <header class="relative overflow-hidden bg-gradient-to-r from-blue-900/30 to-blue-800/20 dark:from-blue-900/50 dark:to-blue-800/30 border-b border-blue-500/20">
+        <div class="absolute inset-0 bg-grid-white/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-500 text-white shadow-lg shadow-blue-500/50">
+                    MÓDULO 2.4 - AVANÇADO
+                </span>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+                    ← Voltar para Trilha 2
+                </a>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                🔧 A Estrutura JSON
+            </h1>
+
+            <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+                Domine a linguagem de comunicação com APIs de IA. Aprenda a estruturar requisições JSON para DALL-E 3, Midjourney, Stable Diffusion e outras ferramentas avançadas.
+            </p>
+        </div>
+    </header>
+
+    <!-- Stats Banner -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl font-bold text-blue-500">~45 min</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Duração</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl font-bold text-blue-500">5</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Conceitos</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl font-bold text-blue-500">100%</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">JSON Completo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Seção 1: O que é JSON para IA -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                    <h2 class="text-3xl font-bold text-white flex items-center">
+                        <span class="mr-3">📋</span>
+                        1. O que é JSON para IA
+                    </h2>
+                </div>
+                <div class="p-8">
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                            <strong>JSON (JavaScript Object Notation)</strong> é o formato padrão para comunicação com APIs de IA. É uma linguagem leve e legível que estrutura dados em pares chave-valor, permitindo enviar instruções complexas para modelos de geração de imagem.
+                        </p>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                            <h3 class="text-xl font-bold text-blue-700 dark:text-blue-300 mb-3 flex items-center">
+                                <span class="mr-2">💡</span>
+                                Por que JSON?
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li><strong>✓ Estrutura clara:</strong> Organiza parâmetros de forma hierárquica</li>
+                                <li><strong>✓ Legibilidade:</strong> Fácil de ler e escrever para humanos e máquinas</li>
+                                <li><strong>✓ Universalidade:</strong> Suportado por todas as principais APIs de IA</li>
+                                <li><strong>✓ Flexibilidade:</strong> Permite parâmetros opcionais e aninhados</li>
+                                <li><strong>✓ Validação:</strong> Detecta erros de sintaxe automaticamente</li>
+                            </ul>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-3">APIs que usam JSON</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li>🎨 <strong>DALL-E 3</strong> (OpenAI)</li>
+                                    <li>🖼️ <strong>Midjourney API</strong></li>
+                                    <li>⚡ <strong>Stable Diffusion API</strong></li>
+                                    <li>🎭 <strong>Leonardo.ai API</strong></li>
+                                    <li>🌟 <strong>Replicate API</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-3">Onde você verá JSON</h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li>📡 <strong>Requisições HTTP</strong> (POST/GET)</li>
+                                    <li>📄 <strong>Documentação de APIs</strong></li>
+                                    <li>⚙️ <strong>Configurações</strong> de ferramentas</li>
+                                    <li>🔄 <strong>Respostas</strong> de servidores</li>
+                                    <li>💾 <strong>Arquivos de config</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Estrutura Básica -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                    <h2 class="text-3xl font-bold text-white flex items-center">
+                        <span class="mr-3">🏗️</span>
+                        2. Estrutura Básica do JSON
+                    </h2>
+                </div>
+                <div class="p-8">
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Anatomia de um JSON</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                                <span class="text-gray-400 text-sm font-mono">exemplo-basico.json</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "prompt": "a red apple on a wooden table",
+  "model": "dall-e-3",
+  "size": "1024x1024",
+  "quality": "standard",
+  "n": 1
+}</code></pre>
+                        </div>
+
+                        <div class="grid gap-4 mb-8">
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-xl border border-blue-200 dark:border-blue-700">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">🔑</span>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Chaves (Keys)</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded text-blue-600 dark:text-blue-400">"prompt"</code>,
+                                            <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded text-blue-600 dark:text-blue-400">"model"</code>,
+                                            <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded text-blue-600 dark:text-blue-400">"size"</code> - sempre entre aspas duplas
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-5 rounded-xl border border-green-200 dark:border-green-700">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">💎</span>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Valores (Values)</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            Podem ser: strings <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">"texto"</code>,
+                                            números <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">1</code>,
+                                            booleanos <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">true/false</code>,
+                                            arrays <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">[...]</code>,
+                                            objetos <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">{...}</code>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-5 rounded-xl border border-purple-200 dark:border-purple-700">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">⚙️</span>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Sintaxe</h4>
+                                        <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                            Pares separados por <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">,</code> (vírgula),
+                                            chave e valor ligados por <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">:</code> (dois-pontos)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Tipos de Dados</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                                <span class="text-gray-400 text-sm font-mono">tipos-de-dados.json</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  // String (texto entre aspas duplas)
+  "prompt": "professional photo of a cat",
+
+  // Número inteiro
+  "n": 1,
+
+  // Número decimal
+  "temperature": 0.7,
+
+  // Booleano (verdadeiro/falso)
+  "hd": true,
+
+  // Array (lista de valores)
+  "sizes": ["256x256", "512x512", "1024x1024"],
+
+  // Objeto aninhado
+  "style": {
+    "preset": "cinematic",
+    "lighting": "dramatic"
+  },
+
+  // Null (valor nulo/vazio)
+  "user_id": null
+}</code></pre>
+                        </div>
+
+                        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-r-lg">
+                            <h3 class="text-xl font-bold text-red-700 dark:text-red-300 mb-3 flex items-center">
+                                <span class="mr-2">⚠️</span>
+                                Regras de Sintaxe Importantes
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>❌ <strong>NÃO use vírgula</strong> após o último item</li>
+                                <li>❌ <strong>NÃO use aspas simples</strong> - sempre aspas duplas <code>"assim"</code></li>
+                                <li>❌ <strong>NÃO use comentários</strong> em JSON real (apenas para documentação)</li>
+                                <li>✓ <strong>USE aspas duplas</strong> em todas as chaves e valores de texto</li>
+                                <li>✓ <strong>USE vírgulas</strong> entre pares, mas não no último</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Parâmetros Principais -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                    <h2 class="text-3xl font-bold text-white flex items-center">
+                        <span class="mr-3">⚡</span>
+                        3. Parâmetros Principais para APIs de IA
+                    </h2>
+                </div>
+                <div class="p-8">
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">DALL-E 3 (OpenAI)</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                                <span class="text-gray-400 text-sm font-mono">dalle3-exemplo.json</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "model": "dall-e-3",
+  "prompt": "A futuristic cityscape at sunset with flying cars",
+  "n": 1,
+  "size": "1024x1024",
+  "quality": "hd",
+  "style": "vivid"
+}</code></pre>
+                        </div>
+
+                        <div class="grid gap-4 mb-8">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">📝</span>
+                                    <code class="text-blue-600 dark:text-blue-400">prompt</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                    <strong>Tipo:</strong> String | <strong>Obrigatório:</strong> Sim
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Descrição textual da imagem desejada. Máximo 4000 caracteres para DALL-E 3.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">📐</span>
+                                    <code class="text-blue-600 dark:text-blue-400">size</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                    <strong>Tipo:</strong> String | <strong>Valores:</strong> <code>"1024x1024"</code>, <code>"1792x1024"</code>, <code>"1024x1792"</code>
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Dimensões da imagem gerada. Quadrada, horizontal ou vertical.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">💎</span>
+                                    <code class="text-blue-600 dark:text-blue-400">quality</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                    <strong>Tipo:</strong> String | <strong>Valores:</strong> <code>"standard"</code>, <code>"hd"</code>
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <code>"hd"</code> cria imagens com maior detalhamento (custo maior).
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">🎨</span>
+                                    <code class="text-blue-600 dark:text-blue-400">style</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                                    <strong>Tipo:</strong> String | <strong>Valores:</strong> <code>"vivid"</code>, <code>"natural"</code>
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <code>"vivid"</code> = cores saturadas e dramáticas | <code>"natural"</code> = mais realista e sutil.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Stable Diffusion API</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                                <span class="text-gray-400 text-sm font-mono">stable-diffusion-exemplo.json</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "key": "YOUR_API_KEY",
+  "prompt": "beautiful landscape with mountains, sunset, 8k, detailed",
+  "negative_prompt": "blurry, low quality, distorted",
+  "width": 512,
+  "height": 512,
+  "samples": 1,
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "seed": null,
+  "scheduler": "DDPMScheduler",
+  "safety_checker": "yes"
+}</code></pre>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3">
+                                    <code class="text-blue-600 dark:text-blue-400">negative_prompt</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    O que você NÃO quer na imagem. Essencial para evitar artefatos indesejados.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3">
+                                    <code class="text-blue-600 dark:text-blue-400">num_inference_steps</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Número de passos de refinamento. Mais passos = maior qualidade (20-50 é comum).
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3">
+                                    <code class="text-blue-600 dark:text-blue-400">guidance_scale</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Quão próximo seguir o prompt. Valores: 1-20 (7-12 recomendado). Maior = mais fiel ao prompt.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3">
+                                    <code class="text-blue-600 dark:text-blue-400">seed</code>
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    Número para reproduzir resultados. Use o mesmo seed + prompt = mesma imagem.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Midjourney API (via Replicate)</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                                <span class="text-gray-400 text-sm font-mono">midjourney-exemplo.json</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "version": "model-version-id",
+  "input": {
+    "prompt": "cyberpunk city street, neon lights, rain --ar 16:9 --v 6 --style raw",
+    "aspect_ratio": "16:9",
+    "output_quality": 90,
+    "process_mode": "fast"
+  }
+}</code></pre>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                            <h3 class="text-xl font-bold text-blue-700 dark:text-blue-300 mb-3 flex items-center">
+                                <span class="mr-2">💡</span>
+                                Dica Pro: Parâmetros no Prompt
+                            </h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-3">
+                                Midjourney permite parâmetros diretamente no prompt:
+                            </p>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li><code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">--ar 16:9</code> - Aspect ratio (proporção)</li>
+                                <li><code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">--v 6</code> - Versão do modelo</li>
+                                <li><code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">--style raw</code> - Estilo artístico</li>
+                                <li><code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">--q 2</code> - Qualidade (1 ou 2)</li>
+                                <li><code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">--chaos 50</code> - Variação (0-100)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Exemplos Práticos -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                    <h2 class="text-3xl font-bold text-white flex items-center">
+                        <span class="mr-3">🚀</span>
+                        4. Exemplos Práticos Completos
+                    </h2>
+                </div>
+                <div class="p-8">
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Exemplo 1: Fotografia de Produto</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
+                                <span class="text-gray-400 text-sm font-mono">produto-profissional.json</span>
+                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">DALL-E 3</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "model": "dall-e-3",
+  "prompt": "Professional product photography of a luxury watch on a marble surface, studio lighting, shallow depth of field, reflections, commercial photography style, high-end advertising, 8k resolution",
+  "size": "1792x1024",
+  "quality": "hd",
+  "style": "natural",
+  "n": 1
+}</code></pre>
+                        </div>
+
+                        <div class="bg-green-50 dark:bg-green-900/20 p-5 rounded-xl border border-green-200 dark:border-green-700 mb-8">
+                            <h4 class="font-bold text-green-700 dark:text-green-300 mb-2">Por que funciona:</h4>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li>✓ Formato horizontal (1792x1024) ideal para produto</li>
+                                <li>✓ Qualidade HD para detalhes precisos</li>
+                                <li>✓ Style "natural" para fotografia realista</li>
+                                <li>✓ Prompt específico sobre iluminação e estilo</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Exemplo 2: Arte Conceitual Fantasy</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
+                                <span class="text-gray-400 text-sm font-mono">arte-fantasy.json</span>
+                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">Stable Diffusion</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "key": "YOUR_API_KEY",
+  "prompt": "epic fantasy dragon flying over ancient castle, dramatic sunset, volumetric lighting, concept art style, highly detailed, trending on artstation, by Greg Rutkowski, 8k",
+  "negative_prompt": "blurry, low quality, bad anatomy, deformed, ugly, text, watermark, signature",
+  "width": 768,
+  "height": 512,
+  "samples": 4,
+  "num_inference_steps": 50,
+  "guidance_scale": 9.0,
+  "seed": 42,
+  "scheduler": "EulerAncestralDiscreteScheduler",
+  "model_id": "sd-xl-base-1.0"
+}</code></pre>
+                        </div>
+
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-5 rounded-xl border border-purple-200 dark:border-purple-700 mb-8">
+                            <h4 class="font-bold text-purple-700 dark:text-purple-300 mb-2">Técnicas aplicadas:</h4>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li>✓ Negative prompt detalhado para evitar artefatos</li>
+                                <li>✓ 4 samples para variações</li>
+                                <li>✓ 50 steps para alta qualidade</li>
+                                <li>✓ Guidance scale 9.0 para seguir bem o prompt</li>
+                                <li>✓ Seed fixo (42) para reproduzibilidade</li>
+                                <li>✓ Referências a artistas conhecidos</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Exemplo 3: Retrato Fotorrealista</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
+                                <span class="text-gray-400 text-sm font-mono">retrato-realista.json</span>
+                                <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Leonardo.ai API</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "apiKey": "YOUR_API_KEY",
+  "modelId": "leonardo-diffusion-xl",
+  "prompt": "portrait of a 30 year old woman, professional headshot, natural lighting from window, soft smile, business casual attire, blurred office background, shot with Canon 5D Mark IV, 85mm f/1.8",
+  "negative_prompt": "cartoon, anime, painting, illustration, 3d render, unrealistic, multiple people, cropped",
+  "num_images": 1,
+  "width": 1024,
+  "height": 1536,
+  "guidance_scale": 7,
+  "num_inference_steps": 40,
+  "photoReal": true,
+  "photoRealStrength": 0.55,
+  "presetStyle": "CINEMATIC"
+}</code></pre>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-xl border border-blue-200 dark:border-blue-700 mb-8">
+                            <h4 class="font-bold text-blue-700 dark:text-blue-300 mb-2">Parâmetros específicos do Leonardo:</h4>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li>✓ <code class="bg-white dark:bg-gray-800 px-1.5 py-0.5 rounded">photoReal: true</code> - Ativa modo fotorrealista</li>
+                                <li>✓ <code class="bg-white dark:bg-gray-800 px-1.5 py-0.5 rounded">photoRealStrength</code> - Intensidade do realismo (0-1)</li>
+                                <li>✓ <code class="bg-white dark:bg-gray-800 px-1.5 py-0.5 rounded">presetStyle</code> - Preset visual (CINEMATIC, CREATIVE, etc.)</li>
+                                <li>✓ Formato vertical (1024x1536) ideal para retratos</li>
+                                <li>✓ Referência a equipamento fotográfico para realismo</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Exemplo 4: Composição Complexa (Objeto Aninhado)</h3>
+
+                        <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                            <div class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
+                                <span class="text-gray-400 text-sm font-mono">composicao-avancada.json</span>
+                                <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded">API Genérica</span>
+                            </div>
+                            <pre class="p-6 overflow-x-auto"><code class="text-sm text-gray-100">{
+  "generation": {
+    "prompt": "sci-fi space station interior, futuristic control room",
+    "negative_prompt": "blurry, low quality",
+    "dimensions": {
+      "width": 1024,
+      "height": 1024
+    },
+    "quality": {
+      "steps": 50,
+      "guidance": 8.0,
+      "sampler": "DPM++ 2M Karras"
+    },
+    "variations": {
+      "count": 2,
+      "seed": null
+    },
+    "post_processing": {
+      "upscale": true,
+      "upscale_factor": 2,
+      "face_enhance": false
+    }
+  },
+  "metadata": {
+    "user_id": "user_123",
+    "project": "sci-fi-concept-art",
+    "timestamp": "2025-12-26T10:30:00Z"
+  }
+}</code></pre>
+                        </div>
+
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-xl border border-orange-200 dark:border-orange-700">
+                            <h4 class="font-bold text-orange-700 dark:text-orange-300 mb-2">Estrutura aninhada:</h4>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                Este exemplo mostra como organizar parâmetros em objetos aninhados para melhor organização:
+                            </p>
+                            <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                                <li>• <strong>generation</strong> - Parâmetros de geração da imagem</li>
+                                <li>• <strong>dimensions</strong> - Agrupamento de largura/altura</li>
+                                <li>• <strong>quality</strong> - Configurações de qualidade</li>
+                                <li>• <strong>variations</strong> - Controle de variações</li>
+                                <li>• <strong>post_processing</strong> - Processamento posterior</li>
+                                <li>• <strong>metadata</strong> - Informações de rastreamento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Debugging Common Issues -->
+        <section class="mb-16">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-400 p-6">
+                    <h2 class="text-3xl font-bold text-white flex items-center">
+                        <span class="mr-3">🐛</span>
+                        5. Debugging: Erros Comuns e Soluções
+                    </h2>
+                </div>
+                <div class="p-8">
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Erros de Sintaxe</h3>
+
+                        <div class="space-y-6 mb-8">
+                            <!-- Erro 1 -->
+                            <div class="border border-red-200 dark:border-red-800 rounded-xl overflow-hidden">
+                                <div class="bg-red-50 dark:bg-red-900/20 p-4 border-b border-red-200 dark:border-red-800">
+                                    <h4 class="font-bold text-red-700 dark:text-red-300 flex items-center">
+                                        <span class="mr-2">❌</span>
+                                        Erro: Vírgula no último item
+                                    </h4>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-0 divide-x divide-red-200 dark:divide-red-800">
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-red-400 mb-2">ERRADO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  "prompt": "a cat",
+  "size": "1024x1024",
+  "n": 1,  ← ERRO: vírgula extra
+}</code></pre>
+                                    </div>
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-green-400 mb-2">CORRETO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  "prompt": "a cat",
+  "size": "1024x1024",
+  "n": 1
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Erro 2 -->
+                            <div class="border border-red-200 dark:border-red-800 rounded-xl overflow-hidden">
+                                <div class="bg-red-50 dark:bg-red-900/20 p-4 border-b border-red-200 dark:border-red-800">
+                                    <h4 class="font-bold text-red-700 dark:text-red-300 flex items-center">
+                                        <span class="mr-2">❌</span>
+                                        Erro: Aspas simples
+                                    </h4>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-0 divide-x divide-red-200 dark:divide-red-800">
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-red-400 mb-2">ERRADO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  'prompt': 'a beautiful sunset'
+}</code></pre>
+                                    </div>
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-green-400 mb-2">CORRETO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  "prompt": "a beautiful sunset"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Erro 3 -->
+                            <div class="border border-red-200 dark:border-red-800 rounded-xl overflow-hidden">
+                                <div class="bg-red-50 dark:bg-red-900/20 p-4 border-b border-red-200 dark:border-red-800">
+                                    <h4 class="font-bold text-red-700 dark:text-red-300 flex items-center">
+                                        <span class="mr-2">❌</span>
+                                        Erro: Chaves sem aspas
+                                    </h4>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-0 divide-x divide-red-200 dark:divide-red-800">
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-red-400 mb-2">ERRADO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  prompt: "a red car",
+  size: "1024x1024"
+}</code></pre>
+                                    </div>
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-green-400 mb-2">CORRETO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  "prompt": "a red car",
+  "size": "1024x1024"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Erro 4 -->
+                            <div class="border border-red-200 dark:border-red-800 rounded-xl overflow-hidden">
+                                <div class="bg-red-50 dark:bg-red-900/20 p-4 border-b border-red-200 dark:border-red-800">
+                                    <h4 class="font-bold text-red-700 dark:text-red-300 flex items-center">
+                                        <span class="mr-2">❌</span>
+                                        Erro: Comentários em JSON
+                                    </h4>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-0 divide-x divide-red-200 dark:divide-red-800">
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-red-400 mb-2">ERRADO (JSON real)</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  // Este é um comentário
+  "prompt": "a dog"
+}</code></pre>
+                                    </div>
+                                    <div class="bg-gray-900 p-4">
+                                        <div class="text-xs text-green-400 mb-2">CORRETO</div>
+                                        <pre class="text-sm text-gray-100"><code>{
+  "prompt": "a dog"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Erros de API</h3>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-5 rounded-r-lg">
+                                <h4 class="font-bold text-yellow-700 dark:text-yellow-300 mb-2 flex items-center">
+                                    <span class="mr-2">⚠️</span>
+                                    Error 400: Bad Request
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    <strong>Causa:</strong> Parâmetros inválidos ou ausentes.
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <strong>Solução:</strong> Verifique se todos os parâmetros obrigatórios estão presentes e com valores válidos.
+                                </p>
+                            </div>
+
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-5 rounded-r-lg">
+                                <h4 class="font-bold text-yellow-700 dark:text-yellow-300 mb-2 flex items-center">
+                                    <span class="mr-2">⚠️</span>
+                                    Error 401: Unauthorized
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    <strong>Causa:</strong> API key inválida ou ausente.
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <strong>Solução:</strong> Verifique se a chave da API está correta e ativa. Formato: <code class="bg-white dark:bg-gray-800 px-2 py-1 rounded">"key": "sk-..."</code>
+                                </p>
+                            </div>
+
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-5 rounded-r-lg">
+                                <h4 class="font-bold text-yellow-700 dark:text-yellow-300 mb-2 flex items-center">
+                                    <span class="mr-2">⚠️</span>
+                                    Error 429: Rate Limit Exceeded
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    <strong>Causa:</strong> Muitas requisições em pouco tempo.
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <strong>Solução:</strong> Implemente delays entre requisições ou aguarde reset do limite.
+                                </p>
+                            </div>
+
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-5 rounded-r-lg">
+                                <h4 class="font-bold text-yellow-700 dark:text-yellow-300 mb-2 flex items-center">
+                                    <span class="mr-2">⚠️</span>
+                                    Error 500: Internal Server Error
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    <strong>Causa:</strong> Problema no servidor da API.
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                                    <strong>Solução:</strong> Aguarde e tente novamente. Se persistir, verifique status da API.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ferramentas de Validação</h3>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 rounded-xl border border-blue-200 dark:border-blue-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">🔍</span>
+                                    JSONLint.com
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    Validador online que mostra exatamente onde está o erro de sintaxe.
+                                </p>
+                                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg text-xs font-mono text-gray-600 dark:text-gray-400">
+                                    https://jsonlint.com
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 rounded-xl border border-green-200 dark:border-green-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">💻</span>
+                                    VS Code Extension
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    O editor VS Code tem validação JSON nativa com autocomplete.
+                                </p>
+                                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg text-xs font-mono text-gray-600 dark:text-gray-400">
+                                    JSON Tools (extensão)
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 rounded-xl border border-purple-200 dark:border-purple-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">🐍</span>
+                                    Python json.loads()
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    Use Python para testar se o JSON é válido:
+                                </p>
+                                <div class="bg-gray-900 p-3 rounded-lg">
+                                    <pre class="text-xs text-gray-100"><code>import json
+data = json.loads('{"key": "value"}')</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-6 rounded-xl border border-orange-200 dark:border-orange-700">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                                    <span class="mr-2">🌐</span>
+                                    Browser DevTools
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                                    Console do navegador valida JSON automaticamente:
+                                </p>
+                                <div class="bg-gray-900 p-3 rounded-lg">
+                                    <pre class="text-xs text-gray-100"><code>JSON.parse('{"key": "value"}')</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+                            <h3 class="text-xl font-bold text-green-700 dark:text-green-300 mb-3 flex items-center">
+                                <span class="mr-2">✅</span>
+                                Checklist de Debug
+                            </h3>
+                            <ol class="space-y-2 text-gray-700 dark:text-gray-300 list-decimal list-inside">
+                                <li>Todas as chaves estão entre aspas duplas?</li>
+                                <li>Todos os valores de texto estão entre aspas duplas?</li>
+                                <li>Não há vírgula após o último item de cada objeto/array?</li>
+                                <li>Os colchetes <code>{}</code> e <code>[]</code> estão balanceados?</li>
+                                <li>Não há comentários no JSON final?</li>
+                                <li>A API key está correta e ativa?</li>
+                                <li>Os nomes dos parâmetros correspondem à documentação da API?</li>
+                                <li>Os valores estão no tipo correto (string, número, booleano)?</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checklist Final -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-blue-900/30 to-blue-800/20 dark:from-blue-900/50 dark:to-blue-800/30 rounded-2xl shadow-xl overflow-hidden border border-blue-500/30">
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <span class="mr-3">✅</span>
+                        Checklist de Conclusão
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Entendo o que é JSON e por que é usado em APIs de IA</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Conheço a estrutura básica: chaves, valores e tipos de dados</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Sei usar parâmetros principais do DALL-E 3</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Entendo parâmetros do Stable Diffusion (negative_prompt, steps, etc)</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Consigo criar JSONs para diferentes casos de uso</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Sei identificar e corrigir erros comuns de sintaxe</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Conheço ferramentas de validação JSON</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-5 h-5 text-blue-500 rounded focus:ring-blue-500">
+                            <span class="text-gray-700 dark:text-gray-300">Entendo erros de API e como resolvê-los</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegação -->
+        <nav class="flex justify-between items-center">
+            <a href="modulo-2-3.html" class="group flex items-center space-x-2 px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                <svg class="w-5 h-5 text-blue-500 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <div class="text-left">
+                    <div class="text-xs text-gray-500 dark:text-gray-400">Anterior</div>
+                    <div class="font-semibold text-gray-900 dark:text-white">Módulo 2.3</div>
+                </div>
+            </a>
+
+            <a href="modulo-2-5.html" class="group flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-400 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div class="text-right">
+                    <div class="text-xs text-blue-100">Próximo</div>
+                    <div class="font-semibold text-white">Módulo 2.5</div>
+                </div>
+                <svg class="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 mt-20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-600 dark:text-gray-400">
+                <p class="mb-2">🍌 <strong>Nano Banana</strong> - Geração de Imagens com IA</p>
+                <p class="text-sm">Trilha 2: APIs e Automação Avançada</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Carregar tema salvo
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            html.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Smooth scroll para anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Salvar progresso do checklist
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox, index) => {
+            const savedState = localStorage.getItem(`module-2-4-checkbox-${index}`);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(`module-2-4-checkbox-${index}`, this.checked);
+            });
+        });
+    </script>
+
+</body>
+</html>

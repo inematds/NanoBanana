@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.1 Nano Banana vs Nano Banana Pro | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 2.1 - NANO BANANA MASTERY
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        ⚖️ Nano Banana vs Nano Banana Pro
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Comparativo completo entre as duas versões: qual escolher para cada situação e quando vale pagar pelo Pro.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">~30</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">5</div>
+        <div class="text-xs text-neutral-400">Conceitos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">2</div>
+        <div class="text-xs text-neutral-400">Versões</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Visão Geral -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔍</span>
+          <div>
+            <h2 class="text-2xl font-bold text-blue-400">Visão Geral das Duas Versões</h2>
+            <p class="text-neutral-400">Conheça as tecnologias por trás de cada modelo</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+            <div class="flex items-center mb-4">
+              <span class="text-3xl mr-3">🍌</span>
+              <h3 class="text-xl font-bold text-emerald-400">Nano Banana</h3>
+            </div>
+            <p class="text-sm text-neutral-300 mb-4">
+              Baseado no <strong class="text-emerald-400">Gemini 2.5 Flash Image</strong>, focado em velocidade e custo-benefício.
+            </p>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Rápido e econômico</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Ideal para iterações e testes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Ótimo para redes sociais</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-center mb-4">
+              <span class="text-3xl mr-3">🍌</span>
+              <h3 class="text-xl font-bold text-purple-400">Nano Banana Pro</h3>
+            </div>
+            <p class="text-sm text-neutral-300 mb-4">
+              Baseado no <strong class="text-purple-400">Gemini 3 Pro Image</strong>, focado em qualidade máxima e recursos avançados.
+            </p>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Qualidade profissional</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Texto preciso multilíngue</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Alta resolução (2K-4K)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30">
+          <h4 class="font-bold text-cyan-400 mb-3">💡 A Escolha Certa</h4>
+          <p class="text-neutral-300">
+            Não existe "melhor" versão — existe a versão <strong>certa para cada situação</strong>. Use o Nano Banana para explorar ideias rapidamente, e o Pro quando precisar de qualidade final ou texto em imagens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Comparativo de Especificações -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📊</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Comparativo de Especificações</h2>
+            <p class="text-neutral-400">Lado a lado: todos os detalhes técnicos</p>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 px-4 text-neutral-300">Recurso</th>
+                <th class="text-center py-3 px-4 text-emerald-400">Nano Banana</th>
+                <th class="text-center py-3 px-4 text-purple-400">Nano Banana Pro</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Modelo Base</td>
+                <td class="py-3 px-4 text-center">Gemini 2.5 Flash Image</td>
+                <td class="py-3 px-4 text-center">Gemini 3 Pro Image</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Resolução Máxima</td>
+                <td class="py-3 px-4 text-center">1K (~1 megapixel)</td>
+                <td class="py-3 px-4 text-center">2K-4K (~8 megapixels)</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Imagens de Referência</td>
+                <td class="py-3 px-4 text-center">Até 5 imagens</td>
+                <td class="py-3 px-4 text-center">Até 14 imagens</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Tokens de Entrada</td>
+                <td class="py-3 px-4 text-center">~1,000 tokens</td>
+                <td class="py-3 px-4 text-center">~8,000 tokens</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Velocidade de Geração</td>
+                <td class="py-3 px-4 text-center text-emerald-400 font-bold">~10 segundos</td>
+                <td class="py-3 px-4 text-center">~30-60 segundos</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Texto em Imagens</td>
+                <td class="py-3 px-4 text-center text-orange-400">Limitado</td>
+                <td class="py-3 px-4 text-center text-purple-400 font-bold">Excelente</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-4 font-semibold">Custo por Imagem</td>
+                <td class="py-3 px-4 text-center text-emerald-400 font-bold">Econômico</td>
+                <td class="py-3 px-4 text-center">3-5x mais caro</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-semibold">Melhor Para</td>
+                <td class="py-3 px-4 text-center">Iteração rápida</td>
+                <td class="py-3 px-4 text-center">Qualidade final</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-6 bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">📈 Diferença de Resolução na Prática</h4>
+          <p class="text-neutral-300 mb-3">
+            A diferença de resolução é significativa:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <div class="text-emerald-400 font-bold mb-2">Nano Banana (1K)</div>
+              <p class="text-neutral-400">1024x1024 pixels = ~1MP</p>
+              <p class="text-neutral-400">Ideal para web e redes sociais</p>
+            </div>
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <div class="text-purple-400 font-bold mb-2">Nano Banana Pro (4K)</div>
+              <p class="text-neutral-400">4096x4096 pixels = ~16MP</p>
+              <p class="text-neutral-400">Ideal para impressão e comercial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Qualidade de Imagem -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Qualidade de Imagem</h2>
+            <p class="text-neutral-400">Diferenças visuais, detalhes e texturas</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Ambas as versões geram imagens impressionantes, mas o <strong class="text-purple-400">Pro</strong> se destaca em detalhes finos e texturas complexas.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-emerald-400 mb-4">🍌 Nano Banana</h3>
+            <ul class="space-y-3 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <div>
+                  <strong>Boa qualidade geral</strong>
+                  <p class="text-neutral-400 text-xs">Cores vibrantes, composição sólida</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">~</span>
+                <div>
+                  <strong>Detalhes finos limitados</strong>
+                  <p class="text-neutral-400 text-xs">Texturas podem parecer suavizadas</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">~</span>
+                <div>
+                  <strong>Ruído em áreas escuras</strong>
+                  <p class="text-neutral-400 text-xs">Pode ter artefatos em sombras</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-purple-400 mb-4">🍌 Nano Banana Pro</h3>
+            <ul class="space-y-3 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <div>
+                  <strong>Detalhes ultra-finos</strong>
+                  <p class="text-neutral-400 text-xs">Texturas de pele, tecido, natureza</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <div>
+                  <strong>Gradientes suaves</strong>
+                  <p class="text-neutral-400 text-xs">Transições de cor mais naturais</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <div>
+                  <strong>Menos artefatos</strong>
+                  <p class="text-neutral-400 text-xs">Processamento mais limpo</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">⚠️ A Diferença é Sutil em Pequenas Resoluções</h4>
+          <p class="text-neutral-300">
+            Se você vai usar a imagem apenas em redes sociais (Instagram, Twitter), a diferença visual entre as duas versões será <strong>mínima</strong>. A vantagem do Pro aparece quando você dá zoom ou imprime em alta resolução.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Texto em Imagens -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">✍️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Texto em Imagens</h2>
+            <p class="text-neutral-400">Onde o Pro realmente brilha</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Esta é a <strong class="text-purple-400">maior diferença</strong> entre as duas versões. O Nano Banana Pro tem capacidade muito superior para renderizar texto legível e preciso.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+            <div class="flex items-center mb-4">
+              <span class="text-2xl mr-2">🍌</span>
+              <h3 class="text-lg font-bold text-red-400">Nano Banana</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Texto frequentemente ilegível ou distorcido</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Letras embaralhadas ou símbolos estranhos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Problemas com acentuação e caracteres especiais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">~</span>
+                <span>Pode funcionar para textos MUITO simples</span>
+              </li>
+            </ul>
+            <div class="mt-4 bg-dark-700/50 p-3 rounded text-xs text-neutral-400 font-mono">
+              Prompt: "Store sign that says 'COFFEE'"<br>
+              Resultado: "CÖFFIE" ou "C0FF3E" (erros comuns)
+            </div>
+          </div>
+
+          <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-center mb-4">
+              <span class="text-2xl mr-2">🍌</span>
+              <h3 class="text-lg font-bold text-purple-400">Nano Banana Pro</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Texto preciso e legível</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Suporte multilíngue (português, japonês, árabe...)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Acentuação correta</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">✓</span>
+                <span>Fontes variadas e estilizadas</span>
+              </li>
+            </ul>
+            <div class="mt-4 bg-dark-700/50 p-3 rounded text-xs text-neutral-400 font-mono">
+              Prompt: "Neon sign saying 'Café Brasileiro'"<br>
+              Resultado: "Café Brasileiro" (correto!)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30">
+          <h4 class="font-bold text-purple-400 mb-3">🎯 Use Cases para Texto</h4>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-neutral-100 mb-1">Cartazes e Posters</div>
+              <div class="text-neutral-400">Texto grande e legível</div>
+            </div>
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-neutral-100 mb-1">Placas e Sinalizações</div>
+              <div class="text-neutral-400">Letreiros de lojas, avisos</div>
+            </div>
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-neutral-100 mb-1">Capas de Livros</div>
+              <div class="text-neutral-400">Títulos e subtítulos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Quando Usar Cada Um -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-cyan-900/30 to-dark-800 rounded-2xl p-8 border border-cyan-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎯</span>
+          <div>
+            <h2 class="text-2xl font-bold text-cyan-400">Quando Usar Cada Versão</h2>
+            <p class="text-neutral-400">Cenários práticos do dia a dia</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+            <h3 class="text-xl font-bold text-emerald-400 mb-4">🍌 Use o Nano Banana quando:</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Explorando ideias</strong>
+                    <p class="text-neutral-400 text-xs">Gerando 10-20 variações rapidamente</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Redes sociais</strong>
+                    <p class="text-neutral-400 text-xs">Instagram, Twitter, Facebook stories</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Conceitos e rascunhos</strong>
+                    <p class="text-neutral-400 text-xs">Apresentações iniciais para clientes</p>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Volumes grandes</strong>
+                    <p class="text-neutral-400 text-xs">Quando precisa gerar muitas imagens</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Budget limitado</strong>
+                    <p class="text-neutral-400 text-xs">Projetos com restrições financeiras</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Velocidade é prioridade</strong>
+                    <p class="text-neutral-400 text-xs">Conteúdo para hoje/agora</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+            <h3 class="text-xl font-bold text-purple-400 mb-4">🍌 Use o Nano Banana Pro quando:</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Uso comercial</strong>
+                    <p class="text-neutral-400 text-xs">Campanhas publicitárias, branding</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Texto é essencial</strong>
+                    <p class="text-neutral-400 text-xs">Posters, placas, capas de livros</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Impressão física</strong>
+                    <p class="text-neutral-400 text-xs">Qualquer mídia impressa em alta qualidade</p>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Detalhes complexos</strong>
+                    <p class="text-neutral-400 text-xs">Texturas, padrões intrincados</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Entrega final</strong>
+                    <p class="text-neutral-400 text-xs">Versão que vai para o cliente</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-purple-400 mr-2">✓</span>
+                  <div>
+                    <strong class="text-neutral-100">Múltiplas referências</strong>
+                    <p class="text-neutral-400 text-xs">Precisa de mais de 5 imagens como input</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💡 Workflow Híbrido Recomendado</h4>
+          <div class="space-y-3 text-sm text-neutral-300">
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0">1</div>
+              <div>
+                <strong class="text-neutral-100">Exploração</strong> - Use Nano Banana para testar 10-20 prompts diferentes (~5 minutos)
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0">2</div>
+              <div>
+                <strong class="text-neutral-100">Refinamento</strong> - Escolha os 2-3 melhores resultados e itere mais
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0">3</div>
+              <div>
+                <strong class="text-neutral-100">Finalização</strong> - Gere a versão final com Nano Banana Pro usando o prompt otimizado
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Custo-Benefício -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💰</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Análise de Custo-Benefício</h2>
+            <p class="text-neutral-400">Quando vale pagar pelo Pro</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O Nano Banana Pro custa aproximadamente <strong class="text-orange-400">3-5x mais</strong> por imagem. Mas em muitos casos, esse investimento se paga.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+            <div class="text-center mb-4">
+              <div class="text-3xl font-bold text-emerald-400">$</div>
+              <div class="text-sm text-neutral-400">Nano Banana</div>
+            </div>
+            <div class="text-center text-xs text-neutral-300">
+              <p class="mb-2">Exemplo de custo:</p>
+              <p class="text-emerald-400 font-bold">100 imagens = ~$5-10</p>
+            </div>
+          </div>
+
+          <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+            <div class="text-center mb-4">
+              <div class="text-3xl font-bold text-purple-400">$$$</div>
+              <div class="text-sm text-neutral-400">Nano Banana Pro</div>
+            </div>
+            <div class="text-center text-xs text-neutral-300">
+              <p class="mb-2">Exemplo de custo:</p>
+              <p class="text-purple-400 font-bold">100 imagens = ~$25-50</p>
+            </div>
+          </div>
+
+          <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+            <div class="text-center mb-4">
+              <div class="text-3xl font-bold text-blue-400">$$</div>
+              <div class="text-sm text-neutral-400">Híbrido</div>
+            </div>
+            <div class="text-center text-xs text-neutral-300">
+              <p class="mb-2">90 testes + 10 finais:</p>
+              <p class="text-blue-400 font-bold">~$10-15 total</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-3">✓ Vale usar Nano Banana</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li>→ Conteúdo para redes sociais (a diferença visual é imperceptível)</li>
+              <li>→ Prototipagem e testes de conceito</li>
+              <li>→ Projetos com budget apertado</li>
+              <li>→ Volume alto de imagens necessárias</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-3">✓ Vale investir no Pro</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li>→ Campanha publicitária comercial (ROI alto)</li>
+              <li>→ Qualquer coisa com texto escrito</li>
+              <li>→ Impressão física ou billboard</li>
+              <li>→ Cliente pagando por qualidade premium</li>
+              <li>→ Portfolio profissional</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">⚡ Regra de Ouro</h4>
+          <p class="text-neutral-300">
+            Se a imagem vai gerar receita (venda, campanha paga, cliente) ou se <strong>precisa de texto</strong>, use o Pro. Se é para consumo próprio, aprendizado ou redes sociais, o Nano Banana padrão é perfeito.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-blue-500/10 rounded-2xl p-8 border border-blue-500/30">
+        <h2 class="text-2xl font-bold text-blue-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Diferenças técnicas entre as versões</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Pro tem 8x mais resolução (4K vs 1K)</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Texto preciso é exclusivo do Pro</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Quando usar cada versão</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Workflow híbrido (explorar + finalizar)</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Análise de custo-benefício</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Aprenda técnicas avançadas de edição com imagens de referência!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="../trilha1/modulo-1-3.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Voltar Trilha 1</span>
+            </a>
+            <a href="modulo-2-2.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-dark-900 rounded-lg font-bold hover:bg-blue-400 transition-colors">
+              <span>Módulo 2.2</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Google Gemini Documentation, Imagen 3 Technical Report
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 2.1: Nano Banana vs Nano Banana Pro
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
