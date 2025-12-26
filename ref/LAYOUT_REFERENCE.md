@@ -90,9 +90,10 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 | `emerald-400/500` | Sucesso, positivo, "fazer" |
 | `red-400/500` | Erro, alerta, "não fazer" |
 | `blue-400/500` | Informação, dados |
-| `yellow-400/500` | Aviso, atenção |
+| `yellow-400/500` | Aviso, atenção, logo Nano Banana |
 | `purple-400/500` | Especial, premium |
 | `cyan-400/500` | Tech, inovação |
+| `sky-400/500` | Links externos (INEMA.CLUB) |
 | `pink-400/500` | Beleza, feminino |
 | `orange-400/500` | Energia, urgência |
 | `amber-400/500` | Destaque suave |
@@ -103,17 +104,21 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 
 ### 3.1 Navigation Global (Sticky Top)
 
-O menu global aparece em **todas as páginas** com logo, links para trilhas e toggle de tema:
+O menu global aparece em **todas as páginas** com logo, link INEMA.CLUB, links para trilhas e toggle de tema:
 
 ```html
 <!-- Navigation Global -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-14">
-      <!-- Logo -->
+      <!-- Logo + INEMA.CLUB -->
       <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
         <span class="text-2xl">🍌</span>
         <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+      </a>
+      <span class="text-neutral-500 hidden sm:inline mx-2">|</span>
+      <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+        INEMA.CLUB
       </a>
 
       <!-- Trilhas + Theme Toggle -->
@@ -145,8 +150,9 @@ O menu global aparece em **todas as páginas** com logo, links para trilhas e to
 - Altura: `h-14` (56px)
 - Background: `bg-dark-900/95 backdrop-blur-sm`
 - Logo: 🍌 Nano Banana (yellow-400)
+- **INEMA.CLUB**: Link externo em sky-400 (azul claro), separado por `|`, abre em nova aba
 - Trilha ativa: fundo e borda coloridos
-- Responsivo: texto compacto em mobile
+- Responsivo: texto compacto em mobile (INEMA.CLUB e separador ocultos)
 
 ### 3.2 Header do Módulo
 ```html
