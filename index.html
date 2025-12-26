@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supercurso Nano Banana | Engenharia de Prompts para IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+    .track-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .track-card:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center space-x-2">
+          <span class="text-2xl">🍌</span>
+          <span class="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Nano Banana</span>
+        </a>
+        <div class="flex items-center space-x-4">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-yellow-600 via-orange-600 to-purple-700 py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold mb-6">
+        CURSO COMPLETO 2025
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-bold mb-6">
+        🍌 Supercurso Nano Banana
+      </h1>
+      <p class="text-xl sm:text-2xl mb-4 text-white/90 max-w-3xl mx-auto">
+        Domine a Engenharia de Prompts para Geração de Imagens e Vídeos com IA
+      </p>
+      <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+        Do primeiro prompt ao seu curta-metragem. 3 trilhas progressivas para dominar Nano Banana, Nano Banana Pro e Veo 3.1.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#trilhas" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+          Ver Trilhas
+        </a>
+        <a href="curso/trilha1/index.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
+          Começar Agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">37</div>
+          <div class="text-sm text-neutral-400">Módulos</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">25-31h</div>
+          <div class="text-sm text-neutral-400">de Conteúdo</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">3</div>
+          <div class="text-sm text-neutral-400">Projetos Práticos</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">100%</div>
+          <div class="text-sm text-neutral-400">Gratuito</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Sobre o Curso -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">O que você vai aprender</h2>
+        <p class="text-neutral-400 max-w-2xl mx-auto">
+          Um curso completo que te leva do zero absoluto até criar vídeos cinematográficos com IA. Cada trilha constrói sobre a anterior.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="text-4xl mb-4">🎨</div>
+          <h3 class="font-bold text-lg mb-2">Fundamentos Visuais</h3>
+          <p class="text-sm text-neutral-400">
+            Composição, iluminação, estilos artísticos e a linguagem que os modelos de IA entendem.
+          </p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="text-4xl mb-4">🛠️</div>
+          <h3 class="font-bold text-lg mb-2">Controle Avançado</h3>
+          <p class="text-sm text-neutral-400">
+            JSON estruturado, seeds, img2img, inpainting e técnicas profissionais de hiper-realismo.
+          </p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="text-4xl mb-4">🎬</div>
+          <h3 class="font-bold text-lg mb-2">Produção de Vídeo</h3>
+          <p class="text-sm text-neutral-400">
+            Veo 3.1, Google Flow, cinematografia com IA e workflow de produção de curtas-metragens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trilhas -->
+    <section id="trilhas" class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Escolha sua Trilha</h2>
+        <p class="text-neutral-400 max-w-2xl mx-auto">
+          3 trilhas progressivas. Comece pelos fundamentos e avance até produção de filmes com IA.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Trilha 1 -->
+        <a href="curso/trilha1/index.html" class="track-card bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border-2 border-emerald-500/30 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-4xl">🎯</span>
+            <span class="px-3 py-1 bg-emerald-500 text-dark-900 text-xs font-bold rounded-full">INICIANTE</span>
+          </div>
+          <h3 class="text-2xl font-bold text-emerald-400 mb-2">Trilha 1</h3>
+          <h4 class="text-lg font-semibold text-neutral-100 mb-4">Fundamentos</h4>
+          <p class="text-sm text-neutral-300 mb-6">
+            Conceitos essenciais de geração de imagens, composição, estilos artísticos e seu primeiro prompt profissional.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-neutral-400">10 módulos</span>
+            <span class="text-neutral-400">~5-6h</span>
+          </div>
+          <div class="mt-4 pt-4 border-t border-emerald-500/20">
+            <div class="flex items-center text-emerald-400 font-semibold">
+              <span>Começar</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Trilha 2 -->
+        <div class="track-card bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border-2 border-blue-500/30 opacity-60 cursor-not-allowed">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-4xl">📚</span>
+            <span class="px-3 py-1 bg-blue-500/50 text-white text-xs font-bold rounded-full">INTERMEDIÁRIO</span>
+          </div>
+          <h3 class="text-2xl font-bold text-blue-400 mb-2">Trilha 2</h3>
+          <h4 class="text-lg font-semibold text-neutral-100 mb-4">Nano Banana Mastery</h4>
+          <p class="text-sm text-neutral-300 mb-6">
+            Domínio completo do Nano Banana Pro: JSON, seeds, hiper-realismo, pós-processamento e workflow profissional.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-neutral-400">12 módulos</span>
+            <span class="text-neutral-400">~8-10h</span>
+          </div>
+          <div class="mt-4 pt-4 border-t border-blue-500/20">
+            <div class="flex items-center text-neutral-500 font-semibold">
+              <span>Em breve</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trilha 3 -->
+        <div class="track-card bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border-2 border-purple-500/30 opacity-60 cursor-not-allowed">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-4xl">🎬</span>
+            <span class="px-3 py-1 bg-purple-500/50 text-white text-xs font-bold rounded-full">AVANÇADO</span>
+          </div>
+          <h3 class="text-2xl font-bold text-purple-400 mb-2">Trilha 3</h3>
+          <h4 class="text-lg font-semibold text-neutral-100 mb-4">Filmmaking com IA</h4>
+          <p class="text-sm text-neutral-300 mb-6">
+            Veo 3.1, Google Flow, produção de vídeos, cinematografia com IA e criação de curtas-metragens completos.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-neutral-400">15 módulos</span>
+            <span class="text-neutral-400">~12-15h</span>
+          </div>
+          <div class="mt-4 pt-4 border-t border-purple-500/20">
+            <div class="flex items-center text-neutral-500 font-semibold">
+              <span>Em breve</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pré-requisitos -->
+    <section class="mb-16">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📋</span>
+          <div>
+            <h2 class="text-2xl font-bold">Pré-requisitos</h2>
+            <p class="text-neutral-400">O que você precisa para começar</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold text-emerald-400 mb-3">✓ Obrigatório</h3>
+            <ul class="space-y-2 text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Conta Google (para acessar o Gemini)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Navegador moderno (Chrome, Firefox, Edge)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Vontade de experimentar e aprender</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-blue-400 mb-3">⚡ Recomendado</h3>
+            <ul class="space-y-2 text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">▶</span>
+                <span>Noções básicas de fotografia (composição, luz)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">▶</span>
+                <span>Inglês básico (prompts funcionam melhor em inglês)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">▶</span>
+                <span>Google AI Pro/Ultra para Trilhas 2 e 3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section>
+      <div class="bg-gradient-to-br from-yellow-600/20 to-orange-600/20 rounded-2xl p-8 border border-yellow-500/30 text-center">
+        <h2 class="text-3xl font-bold mb-4">🚀 Pronto para começar?</h2>
+        <p class="text-neutral-300 mb-8 max-w-xl mx-auto">
+          A Trilha 1 está disponível agora. Comece pelos fundamentos e construa uma base sólida para criar imagens incríveis com IA.
+        </p>
+        <a href="curso/trilha1/index.html" class="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-dark-900 rounded-lg font-bold text-lg hover:from-yellow-400 hover:to-orange-400 transition-all">
+          <span>Começar Trilha 1</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center space-x-2 mb-4">
+        <span class="text-2xl">🍌</span>
+        <span class="text-xl font-bold text-neutral-300">Supercurso Nano Banana</span>
+      </div>
+      <p class="text-neutral-500 text-sm mb-4">
+        Engenharia de Prompts para Geração de Imagens e Vídeos com IA
+      </p>
+      <p class="text-neutral-600 text-xs">
+        2025 - Conteúdo gratuito e open source
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
