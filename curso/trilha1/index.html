@@ -26,14 +26,68 @@
     html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
     html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
     html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .border-dark-700 { border-color: #e2e8f0 !important; }
     html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-200 { color: #334155 !important; }
     html:not(.dark) .text-neutral-300 { color: #475569 !important; }
     html:not(.dark) .text-neutral-400 { color: #64748b !important; }
-    .module-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
     }
-    .module-card:hover {
-      transform: translateY(-4px);
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #1f2937;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+    }
+    html:not(.dark) .modal-content {
+      background-color: #ffffff;
+    }
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #374151;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    html:not(.dark) .modal-header {
+      border-bottom-color: #e2e8f0;
+    }
+    .modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      max-height: calc(90vh - 80px);
+    }
+    .close-modal {
+      color: #9ca3af;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .close-modal:hover {
+      color: #ef4444;
     }
   </style>
 </head>
@@ -100,230 +154,260 @@
       </div>
     </div>
 
-    <!-- Intro Section -->
-    <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30 mb-12">
-      <div class="flex items-start mb-6">
-        <span class="text-4xl mr-4">🚀</span>
-        <div>
-          <h2 class="text-2xl font-bold text-emerald-400">O que você vai aprender</h2>
-          <p class="text-neutral-400">Sua jornada para dominar a criação de imagens com IA começa aqui</p>
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-dark-700/50 rounded-xl p-4">
-          <h3 class="font-bold text-neutral-100 mb-2">📖 Conceitos Fundamentais</h3>
-          <p class="text-sm text-neutral-300">Entenda como os modelos de IA interpretam texto e geram imagens, do básico ao avançado.</p>
-        </div>
-        <div class="bg-dark-700/50 rounded-xl p-4">
-          <h3 class="font-bold text-neutral-100 mb-2">🎨 Estilos Artísticos</h3>
-          <p class="text-sm text-neutral-300">Explore 12+ estilos visuais: fotorrealismo, anime, cyberpunk, fantasy e muito mais.</p>
-        </div>
-        <div class="bg-dark-700/50 rounded-xl p-4">
-          <h3 class="font-bold text-neutral-100 mb-2">📷 Linguagem Fotográfica</h3>
-          <p class="text-sm text-neutral-300">Domine composição, iluminação, ângulos e técnicas de câmera para prompts profissionais.</p>
-        </div>
-        <div class="bg-dark-700/50 rounded-xl p-4">
-          <h3 class="font-bold text-neutral-100 mb-2">✨ Projeto Prático</h3>
-          <p class="text-sm text-neutral-300">Crie sua primeira série de 5 imagens coesas aplicando tudo que aprendeu.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modules Grid -->
-    <h2 class="text-2xl font-bold mb-6 flex items-center">
-      <span class="text-emerald-400 mr-2">📚</span>
-      Módulos da Trilha
-    </h2>
-
-    <div class="grid gap-4 mb-12">
+    <!-- Modules -->
+    <div class="space-y-6">
 
       <!-- Módulo 1.1 -->
-      <a href="modulo-1-1.html" class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5">
-        <div class="flex items-center justify-between">
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold mr-4">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
               1.1
             </div>
             <div>
-              <h3 class="font-bold text-neutral-100">O que é Geração de Imagens com IA</h3>
-              <p class="text-sm text-neutral-400">História, conceitos e como tudo funciona</p>
+              <h2 class="text-xl font-bold text-neutral-100">O que é Geração de Imagens com IA</h2>
+              <p class="text-sm text-neutral-400">História, conceitos e como tudo funciona • ~30 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-xs text-neutral-500">~30 min</span>
-            <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
+        </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📖 A Revolução Visual do Século XXI
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Como a IA transformou a criação de imagens e por que isso importa para você.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Democratização da arte, impacto nos profissionais criativos, números da revolução.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📅 Timeline: De DeepDream ao Nano Banana
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> A evolução da tecnologia de 2015 até 2025.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Marcos:</strong> DeepDream, Prisma, DALL-E, Stable Diffusion, Midjourney, Nano Banana.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ⚙️ Como Funciona: Modelos de Difusão
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O processo de geração explicado de forma simples.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Ruído, interpretação do prompt, remoção gradual, imagem final.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎭 A Analogia: Diretor e Artista
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> A mentalidade correta para trabalhar com IA generativa.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Você dirige, a IA executa. Comunicação clara é tudo.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🍌 Nano Banana vs Nano Banana Pro
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> As duas versões da ferramenta e quando usar cada uma.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Resolução, imagens de referência, texto, controles criativos.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚀 Por que Aprender Isso Agora
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-2 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> A importância de dominar essa habilidade em 2025.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Vantagem competitiva, aplicações práticas, futuro da criatividade.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
+        <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-1')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="modulo-1-1.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
+            <span>Ver Completo</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
-          </div>
+          </a>
         </div>
-      </a>
+      </div>
 
-      <!-- Módulo 1.2 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.2 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.2
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Como os Modelos de IA "Veem"</h3>
-              <p class="text-sm text-neutral-500">Espaço latente, embeddings e processamento</p>
+              <h2 class="text-xl font-bold text-neutral-400">Como os Modelos de IA "Veem"</h2>
+              <p class="text-sm text-neutral-500">Espaço latente, embeddings e processamento • ~25 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Espaço Latente, Embeddings de Texto, Tokenização, Atenção e Pesos, Processo de Denoising, CLIP e Conexão Texto-Imagem</p>
       </div>
 
-      <!-- Módulo 1.3 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.3 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.3
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Seu Primeiro Prompt</h3>
-              <p class="text-sm text-neutral-500">Do básico à primeira imagem gerada</p>
+              <h2 class="text-xl font-bold text-neutral-400">Seu Primeiro Prompt</h2>
+              <p class="text-sm text-neutral-500">Do básico à primeira imagem gerada • ~30 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Acessando o Gemini, Interface Básica, Primeiro Prompt Simples, Analisando o Resultado, Iteração Básica, Salvando e Exportando</p>
       </div>
 
-      <!-- Módulo 1.4 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.4 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.4
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">A Fórmula do Prompt Perfeito</h3>
-              <p class="text-sm text-neutral-500">Sujeito + Ação + Contexto + Estilo + Iluminação</p>
+              <h2 class="text-xl font-bold text-neutral-400">A Fórmula do Prompt Perfeito</h2>
+              <p class="text-sm text-neutral-500">Sujeito + Ação + Contexto + Estilo + Iluminação • ~35 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Sujeito, Ação, Ambiente, Composição, Estilo, Iluminação, Detalhes Técnicos, Montando o Prompt Completo</p>
       </div>
 
-      <!-- Módulo 1.5 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.5 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.5
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Linguagem de Fotografia</h3>
-              <p class="text-sm text-neutral-500">Shots, ângulos, lentes e composição</p>
+              <h2 class="text-xl font-bold text-neutral-400">Linguagem de Fotografia</h2>
+              <p class="text-sm text-neutral-500">Shots, ângulos, lentes e composição • ~40 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Tipos de Shot, Ângulos de Câmera, Lentes e Distância Focal, Rule of Thirds, Golden Ratio, Profundidade de Campo, Leading Lines</p>
       </div>
 
-      <!-- Módulo 1.6 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.6 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.6
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">O Poder da Iluminação</h3>
-              <p class="text-sm text-neutral-500">Golden hour, chiaroscuro, rim light e mais</p>
+              <h2 class="text-xl font-bold text-neutral-400">O Poder da Iluminação</h2>
+              <p class="text-sm text-neutral-500">Golden hour, chiaroscuro, rim light e mais • ~35 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Luz Natural vs Artificial, Golden Hour e Blue Hour, Chiaroscuro, Rim Light, Volumetric Lighting, Neon e Luz Colorida, Studio Lighting</p>
       </div>
 
-      <!-- Módulo 1.7 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.7 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.7
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Estilos Artísticos Essenciais</h3>
-              <p class="text-sm text-neutral-500">12+ estilos: fotorrealismo, anime, cyberpunk...</p>
+              <h2 class="text-xl font-bold text-neutral-400">Estilos Artísticos Essenciais</h2>
+              <p class="text-sm text-neutral-500">12+ estilos: fotorrealismo, anime, cyberpunk... • ~45 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Fotorrealismo, Hiper-realismo, Anime/Manga, Cyberpunk, Fantasy, Pixel Art, Pintura Digital, Oil Painting, Watercolor, Art Nouveau, Minimalismo, 3D Render</p>
       </div>
 
-      <!-- Módulo 1.8 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.8 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.8
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Aspect Ratios e Composição</h3>
-              <p class="text-sm text-neutral-500">Proporções 3:2, 4:3, 16:9 e quando usar cada uma</p>
+              <h2 class="text-xl font-bold text-neutral-400">Aspect Ratios e Composição</h2>
+              <p class="text-sm text-neutral-500">Proporções 3:2, 4:3, 16:9 e quando usar cada uma • ~25 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Aspect Ratios Comuns, Quadrado (1:1), Retrato (9:16), Paisagem (16:9), Cinematográfico (21:9), Composição e Proporção, Uso por Plataforma</p>
       </div>
 
-      <!-- Módulo 1.9 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.9 (Em breve) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
               1.9
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Prompts Negativos</h3>
-              <p class="text-sm text-neutral-500">O que excluir e como evitar artefatos</p>
+              <h2 class="text-xl font-bold text-neutral-400">Prompts Negativos</h2>
+              <p class="text-sm text-neutral-500">O que excluir e como evitar artefatos • ~30 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-dark-700 text-neutral-500 text-xs rounded">Em breve</span>
-          </div>
+          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: O que são Prompts Negativos, Artefatos Comuns, Lista de Termos Negativos, Mãos e Anatomia, Texto Indesejado, Qualidade e Estilo, Quando Usar</p>
       </div>
 
-      <!-- Módulo 1.10 -->
-      <div class="module-card bg-dark-800 rounded-xl p-6 border border-dark-600 opacity-60">
-        <div class="flex items-center justify-between">
+      <!-- Módulo 1.10 (Projeto) -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold mr-4">
+            <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 font-bold text-lg mr-4">
               1.10
             </div>
             <div>
-              <h3 class="font-bold text-neutral-400">Projeto Prático: Sua Primeira Série</h3>
-              <p class="text-sm text-neutral-500">Crie 5 imagens coesas aplicando tudo</p>
+              <h2 class="text-xl font-bold text-neutral-400">Projeto Prático: Sua Primeira Série</h2>
+              <p class="text-sm text-neutral-500">Crie 5 imagens coesas aplicando tudo • ~60 min</p>
             </div>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded font-semibold">Projeto</span>
-          </div>
+          <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">Projeto</span>
         </div>
+        <p class="text-sm text-neutral-500 mb-4">Tópicos: Escolhendo um Tema, Definindo o Estilo, Criando um Moodboard, Escrevendo os Prompts, Gerando as Imagens, Curadoria e Seleção, Apresentação Final</p>
       </div>
 
     </div>
 
     <!-- CTA Section -->
-    <div class="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30 text-center">
+    <div class="mt-12 bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30 text-center">
       <h2 class="text-2xl font-bold text-emerald-400 mb-4">🎯 Pronto para começar?</h2>
       <p class="text-neutral-300 mb-6 max-w-xl mx-auto">
         Comece pelo primeiro módulo e avance no seu ritmo. Cada módulo constrói sobre o anterior, preparando você para criar imagens incríveis com IA.
@@ -337,6 +421,399 @@
     </div>
 
   </main>
+
+  <!-- Modal 1.1 - Conteúdo Completo -->
+  <div id="modal-1-1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.1 - FUNDAMENTOS</span>
+          <h2 class="text-2xl font-bold text-neutral-100">🤖 O que é Geração de Imagens com IA</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-1')">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Intro -->
+        <div class="mb-8">
+          <p class="text-lg text-neutral-200 mb-4">
+            Entenda a revolução que está transformando a criação visual: de onde viemos, onde estamos e para onde vamos.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">~30</div>
+              <div class="text-xs text-neutral-400">Minutos</div>
+            </div>
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">4</div>
+              <div class="text-xs text-neutral-400">Conceitos</div>
+            </div>
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">2015→</div>
+              <div class="text-xs text-neutral-400">Timeline</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1: A Revolução Visual -->
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-700 rounded-xl p-6 mb-6 border border-emerald-500/30">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🎨</span>
+            <div>
+              <h3 class="text-xl font-bold text-emerald-400">A Revolução Visual do Século XXI</h3>
+              <p class="text-sm text-neutral-400">Uma mudança de paradigma na criação de imagens</p>
+            </div>
+          </div>
+
+          <p class="text-neutral-300 mb-4">
+            Pela primeira vez na história, qualquer pessoa pode criar imagens de qualidade profissional usando apenas palavras. Não é exagero dizer que estamos vivendo uma das maiores revoluções criativas desde a invenção da fotografia.
+          </p>
+
+          <div class="bg-dark-800/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-bold text-neutral-100 mb-3">📊 O Impacto em Números</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex items-center">
+                <span class="text-emerald-400 text-xl font-bold mr-2">275M+</span>
+                <span class="text-neutral-300 text-sm">vídeos gerados no Google Flow em 5 meses</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-emerald-400 text-xl font-bold mr-2">2025</span>
+                <span class="text-neutral-300 text-sm">ano em que IA atingiu "momento GPT-3" para vídeo</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-emerald-400 text-xl font-bold mr-2">4K</span>
+                <span class="text-neutral-300 text-sm">resolução máxima do Nano Banana Pro</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-emerald-400 text-xl font-bold mr-2">~10s</span>
+                <span class="text-neutral-300 text-sm">tempo para gerar uma imagem de alta qualidade</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+            <h4 class="font-bold text-cyan-400 mb-2">💡 Por que isso importa para você</h4>
+            <p class="text-sm text-neutral-300">
+              Dominar a geração de imagens com IA não é mais um diferencial — é uma habilidade essencial. Designers, marketers, criadores de conteúdo e até desenvolvedores estão usando essas ferramentas diariamente. Quem entende como "conversar" com a IA tem uma vantagem competitiva enorme.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 2: A Linha do Tempo -->
+        <div class="bg-dark-700 rounded-xl p-6 mb-6 border border-dark-600">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">📅</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100">A Evolução: De DeepDream ao Nano Banana</h3>
+              <p class="text-sm text-neutral-400">Uma jornada de 10 anos de inovação</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- 2015 -->
+            <div class="flex items-start">
+              <div class="w-16 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 font-bold mr-3 flex-shrink-0 text-sm">
+                2015
+              </div>
+              <div>
+                <h4 class="font-bold text-purple-400 text-sm">DeepDream do Google</h4>
+                <p class="text-xs text-neutral-300">
+                  O Google lança o DeepDream, que "sonha" imagens psicodélicas e virais. É o primeiro vislumbre do potencial da IA para arte.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2016 -->
+            <div class="flex items-start">
+              <div class="w-16 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold mr-3 flex-shrink-0 text-sm">
+                2016
+              </div>
+              <div>
+                <h4 class="font-bold text-blue-400 text-sm">Prisma e Style Transfer</h4>
+                <p class="text-xs text-neutral-300">
+                  O app Prisma populariza o "style transfer" — transformar fotos em pinturas no estilo de Van Gogh ou Picasso.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="flex items-start">
+              <div class="w-16 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400 font-bold mr-3 flex-shrink-0 text-sm">
+                2021
+              </div>
+              <div>
+                <h4 class="font-bold text-orange-400 text-sm">DALL-E e a Era dos Transformers</h4>
+                <p class="text-xs text-neutral-300">
+                  A OpenAI lança o DALL-E, combinando modelos de linguagem com geração de imagens. Pela primeira vez, você pode descrever uma cena em texto e a IA cria uma imagem original.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="flex items-start">
+              <div class="w-16 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center text-pink-400 font-bold mr-3 flex-shrink-0 text-sm">
+                2022
+              </div>
+              <div>
+                <h4 class="font-bold text-pink-400 text-sm">Stable Diffusion e Midjourney</h4>
+                <p class="text-xs text-neutral-300">
+                  Stable Diffusion é lançado como open-source, democratizando a tecnologia. Midjourney conquista artistas com qualidade impressionante.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2025 -->
+            <div class="flex items-start">
+              <div class="w-16 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-sm">
+                2025
+              </div>
+              <div>
+                <h4 class="font-bold text-emerald-400 text-sm">Nano Banana e a Era Multimodal</h4>
+                <p class="text-xs text-neutral-300">
+                  O Google lança o <strong>Gemini 2.5 Flash Image</strong> (codinome: Nano Banana) — um modelo que entende contexto, edita imagens e trabalha nativamente com o Gemini. Logo depois, o <strong>Nano Banana Pro</strong> eleva a qualidade para 4K.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 bg-emerald-900/20 p-3 rounded-lg border border-emerald-500/30">
+            <p class="text-sm text-emerald-300">
+              <strong>Onde estamos hoje:</strong> Os modelos atuais não apenas geram imagens — eles entendem conceitos, mantêm consistência entre múltiplas imagens, renderizam texto com precisão e até geram vídeos com áudio sincronizado.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 3: Como Funciona -->
+        <div class="bg-dark-700 rounded-xl p-6 mb-6 border border-dark-600">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">⚙️</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100">Como a IA Gera Imagens (Versão Simples)</h3>
+              <p class="text-sm text-neutral-400">Entendendo o básico sem precisar de PhD</p>
+            </div>
+          </div>
+
+          <p class="text-neutral-300 mb-4 text-sm">
+            Você não precisa entender matemática avançada para usar essas ferramentas, mas ter uma noção de como funcionam vai te ajudar a escrever prompts melhores.
+          </p>
+
+          <!-- O Processo -->
+          <div class="bg-dark-800/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-bold text-neutral-100 mb-3">🔄 O Processo de Geração (Modelos de Difusão)</h4>
+
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-sm">
+                  1
+                </div>
+                <div>
+                  <h5 class="font-bold text-neutral-100 text-sm">Começa com Ruído</h5>
+                  <p class="text-xs text-neutral-300">A IA começa com uma imagem de "estática de TV" — ruído aleatório puro, como granulação de uma foto antiga.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-sm">
+                  2
+                </div>
+                <div>
+                  <h5 class="font-bold text-neutral-100 text-sm">Interpreta seu Prompt</h5>
+                  <p class="text-xs text-neutral-300">Seu texto é convertido em uma representação matemática que a IA entende. Cada palavra influencia diferentes aspectos da imagem.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-sm">
+                  3
+                </div>
+                <div>
+                  <h5 class="font-bold text-neutral-100 text-sm">Remove o Ruído Gradualmente</h5>
+                  <p class="text-xs text-neutral-300">Em dezenas de passos, a IA "limpa" o ruído guiada pelo seu prompt, revelando a imagem final como uma escultura emergindo do mármore.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-sm">
+                  4
+                </div>
+                <div>
+                  <h5 class="font-bold text-neutral-100 text-sm">Entrega a Imagem Final</h5>
+                  <p class="text-xs text-neutral-300">O resultado é uma imagem completamente nova, nunca antes vista, que corresponde à sua descrição.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analogia -->
+          <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+            <h4 class="font-bold text-yellow-400 mb-2">🎭 Analogia: O Diretor e o Artista</h4>
+            <p class="text-sm text-neutral-300">
+              Pense assim: você é o <strong>diretor</strong> de um filme, e a IA é um <strong>artista incrivelmente talentoso</strong> que pode desenhar qualquer coisa — mas que só fala uma língua diferente. Seu trabalho é aprender a se comunicar claramente com esse artista. Quanto mais específico e claro você for, mais o resultado vai corresponder à sua visão.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 4: Nano Banana -->
+        <div class="bg-gradient-to-br from-yellow-900/20 to-dark-700 rounded-xl p-6 mb-6 border border-yellow-500/30">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🍌</span>
+            <div>
+              <h3 class="text-xl font-bold text-yellow-400">O que é o Nano Banana</h3>
+              <p class="text-sm text-neutral-400">A ferramenta que você vai dominar neste curso</p>
+            </div>
+          </div>
+
+          <p class="text-neutral-300 mb-4 text-sm">
+            <strong>Nano Banana</strong> é o codinome dado pela comunidade ao modelo de geração de imagens do Google, lançado como <strong>Gemini 2.5 Flash Image</strong> em agosto de 2025. Ele trabalha nativamente com o Gemini, permitindo conversas iterativas para refinar suas imagens.
+          </p>
+
+          <!-- Comparativo -->
+          <div class="bg-dark-800/50 rounded-lg p-4 mb-4">
+            <h4 class="text-lg font-bold text-neutral-100 mb-3">📊 Nano Banana vs Nano Banana Pro</h4>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="border-b border-dark-600">
+                    <th class="text-left py-2 px-2 text-neutral-400">Característica</th>
+                    <th class="text-left py-2 px-2 text-yellow-400">Nano Banana</th>
+                    <th class="text-left py-2 px-2 text-purple-400">Nano Banana Pro</th>
+                  </tr>
+                </thead>
+                <tbody class="text-neutral-300">
+                  <tr class="border-b border-dark-700">
+                    <td class="py-2 px-2 font-semibold">Motor</td>
+                    <td class="py-2 px-2">Gemini 2.5 Flash Image</td>
+                    <td class="py-2 px-2">Gemini 3 Pro Image</td>
+                  </tr>
+                  <tr class="border-b border-dark-700">
+                    <td class="py-2 px-2 font-semibold">Resolução</td>
+                    <td class="py-2 px-2">Até 1K (~1 MP)</td>
+                    <td class="py-2 px-2">2K–4K (~8 MP)</td>
+                  </tr>
+                  <tr class="border-b border-dark-700">
+                    <td class="py-2 px-2 font-semibold">Imagens de Referência</td>
+                    <td class="py-2 px-2">Até 5</td>
+                    <td class="py-2 px-2">Até 14</td>
+                  </tr>
+                  <tr class="border-b border-dark-700">
+                    <td class="py-2 px-2 font-semibold">Texto em Imagens</td>
+                    <td class="py-2 px-2">Limitado</td>
+                    <td class="py-2 px-2">Preciso e multilíngue</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-2 font-semibold">Ideal Para</td>
+                    <td class="py-2 px-2">Edições rápidas, redes sociais</td>
+                    <td class="py-2 px-2">Marketing, design profissional</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h4 class="font-bold text-emerald-400 mb-3 text-sm">✓ Vantagens do Nano Banana</h4>
+              <ul class="space-y-1 text-neutral-300 text-xs">
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <span>Conversacional: refine imagens via chat</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <span>Gratuito no plano básico do Gemini</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <span>Rápido: ~10 segundos por imagem</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <span>Edição de imagens existentes</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">✓</span>
+                  <span>Integração nativa com Gemini</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-3 text-sm">🚀 Quando Usar o Pro</h4>
+              <ul class="space-y-1 text-neutral-300 text-xs">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">▶</span>
+                  <span>Precisa de resolução 4K para impressão</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">▶</span>
+                  <span>Texto preciso em imagens (logos, cartazes)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">▶</span>
+                  <span>Múltiplas imagens de referência</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">▶</span>
+                  <span>Consistência de personagens</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">▶</span>
+                  <span>Trabalhos comerciais e publicitários</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo / Checklist -->
+        <div class="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
+          <h3 class="text-xl font-bold text-emerald-400 mb-4 text-center">✅ O que você aprendeu neste módulo</h3>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="space-y-2">
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">A geração de imagens com IA é uma revolução criativa</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">Evolução: DeepDream → DALL-E → Nano Banana</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">Modelos de difusão: do ruído à imagem</span>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">Você é o diretor, a IA é o artista</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">Nano Banana: rápido e conversacional</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span class="text-neutral-300 text-sm">Nano Banana Pro: 4K e controle avançado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fontes -->
+          <div class="text-center">
+            <p class="text-xs text-neutral-500">
+              Fontes: <a href="https://blog.google/technology/ai/google-flow-veo-ai-filmmaking-tool/" class="text-emerald-500 hover:underline" target="_blank">Google Blog</a>,
+              <a href="https://minimaxir.com/2025/11/nano-banana-prompts/" class="text-emerald-500 hover:underline" target="_blank">Max Woolf</a>,
+              <a href="https://www.glbgpt.com/hub/nano-banana-vs-nano-banana-pro/" class="text-emerald-500 hover:underline" target="_blank">GlobalGPT</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
@@ -371,6 +848,64 @@
       } else {
         document.documentElement.classList.add('dark');
         localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+    // Topic accordion
+    document.addEventListener('click', function(e) {
+      const topicButton = e.target.closest('.topic-button');
+      if (topicButton) {
+        const topicItem = topicButton.closest('.topic-item');
+        const explanation = topicItem.querySelector('.topic-explanation');
+        const arrow = topicButton.querySelector('span:first-child');
+
+        if (explanation) {
+          // Close other topics in the same module
+          const moduleCard = topicItem.closest('.module-card');
+          moduleCard.querySelectorAll('.topic-explanation').forEach(exp => {
+            if (exp !== explanation) {
+              exp.classList.add('hidden');
+              const otherArrow = exp.closest('.topic-item').querySelector('.topic-button span:first-child');
+              if (otherArrow) otherArrow.textContent = '▸';
+            }
+          });
+
+          // Toggle current
+          explanation.classList.toggle('hidden');
+          arrow.textContent = explanation.classList.contains('hidden') ? '▸' : '▾';
+        }
+      }
+    });
+
+    // Modal functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const activeModals = document.querySelectorAll('.modal.active');
+        activeModals.forEach(modal => {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        });
       }
     });
   </script>
