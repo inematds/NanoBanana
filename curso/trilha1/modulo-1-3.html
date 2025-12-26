@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3 Seu Primeiro Prompt | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.3 - FUNDAMENTOS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        📝 Seu Primeiro Prompt
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Chegou a hora! Neste módulo você vai criar sua primeira imagem com IA. Aprenda a estrutura básica de um prompt e comece a experimentar.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~20</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">4</div>
+        <div class="text-xs text-neutral-400">Conceitos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">PRÁTICO</div>
+        <div class="text-xs text-neutral-400">Exercício guiado</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Acessando o Gemini -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🚀</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Acessando o Gemini</h2>
+            <p class="text-neutral-400">Seu primeiro passo no mundo da IA generativa</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O <strong class="text-emerald-400">Gemini</strong> é a plataforma do Google para geração de imagens com IA. Vamos começar criando sua primeira imagem!
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🔑 Passo a Passo de Acesso</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Abra o Navegador</h4>
+                <p class="text-sm text-neutral-300">Acesse <a href="https://gemini.google.com" target="_blank" class="text-emerald-400 underline hover:text-emerald-300">gemini.google.com</a> em qualquer navegador (Chrome, Firefox, Safari, etc.)</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Faça Login</h4>
+                <p class="text-sm text-neutral-300">Use sua conta Google para fazer login. Se não tiver uma conta, é gratuito criar!</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Localize a Caixa de Texto</h4>
+                <p class="text-sm text-neutral-300">Na parte inferior da tela, você verá uma caixa de texto com a mensagem "Digite um prompt aqui" ou similar.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Pronto para Começar!</h4>
+                <p class="text-sm text-neutral-300">É aqui que a mágica acontece. Digite seu prompt e pressione Enter ou clique no botão de enviar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💡 Dica: Interface Simples</h4>
+          <p class="text-neutral-300">
+            A interface do Gemini é intencionalmente minimalista. Não se preocupe com botões ou configurações por enquanto — basta digitar e criar!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Anatomia do Prompt Básico -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔬</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Anatomia do Prompt Básico</h2>
+            <p class="text-neutral-400">A estrutura fundamental de um bom prompt</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Todo prompt eficaz segue uma estrutura simples. Para começar, vamos usar a fórmula básica:
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📐 Fórmula Básica</h3>
+
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30 mb-4">
+            <div class="text-center font-mono text-lg text-emerald-400">
+              [Sujeito] + [Descrição] + [Contexto]
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-2">1. Sujeito</h4>
+              <p class="text-sm text-neutral-300 mb-2">O QUE você quer gerar</p>
+              <p class="text-xs text-neutral-400 italic">Exemplo: "um gato", "uma montanha", "um robô"</p>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-2">2. Descrição</h4>
+              <p class="text-sm text-neutral-300 mb-2">COMO é o sujeito</p>
+              <p class="text-xs text-neutral-400 italic">Exemplo: "laranja e peludo", "coberta de neve", "futurista"</p>
+            </div>
+            <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+              <h4 class="font-bold text-cyan-400 mb-2">3. Contexto</h4>
+              <p class="text-sm text-neutral-300 mb-2">ONDE está / O QUE faz</p>
+              <p class="text-xs text-neutral-400 italic">Exemplo: "dormindo na janela", "ao pôr do sol", "voando no espaço"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-3">✓ Exemplo Completo</h4>
+          <div class="bg-dark-800/50 p-4 rounded-lg font-mono text-sm">
+            <div class="mb-2 text-neutral-400">Prompt completo:</div>
+            <div class="text-emerald-400">
+              "um gato laranja dormindo em uma janela ensolarada"
+            </div>
+            <div class="mt-3 text-xs space-y-1">
+              <div><span class="text-purple-400">Sujeito:</span> <span class="text-neutral-300">um gato laranja</span></div>
+              <div><span class="text-blue-400">Descrição:</span> <span class="text-neutral-300">dormindo</span></div>
+              <div><span class="text-cyan-400">Contexto:</span> <span class="text-neutral-300">em uma janela ensolarada</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Seu Primeiro Prompt -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-yellow-900/30 to-dark-800 rounded-2xl p-8 border border-yellow-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-2xl font-bold text-yellow-400">Seu Primeiro Prompt: Exercício Guiado</h2>
+            <p class="text-neutral-400">Vamos criar sua primeira imagem juntos!</p>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🐱 Exercício: O Gato na Janela</h3>
+
+          <p class="text-neutral-300 mb-4">
+            Vamos começar com um exemplo clássico e acolhedor. Siga estes passos:
+          </p>
+
+          <div class="space-y-4">
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <div class="font-bold text-yellow-400 mb-2">PASSO 1: Copie este prompt</div>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-sm text-emerald-400">
+                um gato laranja dormindo em uma janela ensolarada
+              </div>
+            </div>
+
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <div class="font-bold text-yellow-400 mb-2">PASSO 2: Cole no Gemini</div>
+              <p class="text-sm text-neutral-300">Abra gemini.google.com e cole o prompt na caixa de texto.</p>
+            </div>
+
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <div class="font-bold text-yellow-400 mb-2">PASSO 3: Pressione Enter</div>
+              <p class="text-sm text-neutral-300">Aguarde alguns segundos enquanto a IA processa seu pedido.</p>
+            </div>
+
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <div class="font-bold text-yellow-400 mb-2">PASSO 4: Observe o Resultado</div>
+              <p class="text-sm text-neutral-300">Você verá uma ou mais imagens geradas. Analise: o gato está laranja? Está dormindo? Há uma janela com luz?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-3">🎉 Parabéns!</h4>
+          <p class="text-neutral-300">
+            Você acabou de criar sua primeira imagem com IA! Isso é apenas o começo. Cada prompt é uma nova possibilidade de criação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Experimentando Variações -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Experimentando Variações</h2>
+            <p class="text-neutral-400">Modificando o prompt para resultados diferentes</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Agora que você criou sua primeira imagem, vamos explorar como pequenas mudanças no prompt geram resultados completamente diferentes.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🎯 Experimente Estas Variações</h3>
+
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="font-bold text-purple-400 mb-2">Variação 1: Mudando a Cor</div>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-2">
+                um gato <span class="text-purple-400 font-bold">preto</span> dormindo em uma janela ensolarada
+              </div>
+              <p class="text-xs text-neutral-400">Troque "laranja" por outra cor: preto, branco, cinza, malhado...</p>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="font-bold text-blue-400 mb-2">Variação 2: Mudando a Ação</div>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-2">
+                um gato laranja <span class="text-blue-400 font-bold">brincando</span> em uma janela ensolarada
+              </div>
+              <p class="text-xs text-neutral-400">Experimente: olhando para fora, se espreguiçando, sentado...</p>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="font-bold text-cyan-400 mb-2">Variação 3: Mudando o Cenário</div>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-2">
+                um gato laranja dormindo <span class="text-cyan-400 font-bold">em um sofá aconchegante</span>
+              </div>
+              <p class="text-xs text-neutral-400">Explore outros lugares: em uma caixa, no jardim, em uma almofada...</p>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="font-bold text-emerald-400 mb-2">Variação 4: Combinando Mudanças</div>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-2">
+                um gato <span class="text-purple-400 font-bold">branco</span> <span class="text-blue-400 font-bold">olhando para fora</span> de <span class="text-cyan-400 font-bold">uma janela à noite com luzes da cidade</span>
+              </div>
+              <p class="text-xs text-neutral-400">Combine múltiplas mudanças para resultados únicos!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-3">✓ Dica: Seja Específico</h4>
+            <p class="text-neutral-300 text-sm">
+              Quanto mais específico você for, mais controle terá sobre o resultado. Compare "gato" vs "gato persa de pelo longo".
+            </p>
+          </div>
+          <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+            <h4 class="font-bold text-blue-400 mb-3">💡 Dica: Teste e Aprenda</h4>
+            <p class="text-neutral-300 text-sm">
+              Não existe prompt "perfeito" na primeira tentativa. Experimente, observe os resultados e refine!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Dicas para Iniciantes -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💎</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">5 Dicas Essenciais para Iniciantes</h2>
+            <p class="text-neutral-400">Seu guia rápido para melhores resultados</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start">
+              <span class="text-3xl mr-4">1️⃣</span>
+              <div>
+                <h3 class="text-xl font-bold text-neutral-100 mb-2">Comece Simples, Depois Adicione Detalhes</h3>
+                <p class="text-neutral-300 mb-3">
+                  Não tente criar o prompt perfeito de primeira. Comece com algo básico e vá adicionando elementos aos poucos.
+                </p>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-red-900/20 p-3 rounded border border-red-500/30">
+                    <div class="text-xs font-bold text-red-400 mb-1">✗ Muito complexo:</div>
+                    <div class="text-xs text-neutral-300 font-mono">"um gato persa fotorealista com olhos verdes em uma janela vitoriana ao pôr do sol com reflexos dourados e plantas ao redor"</div>
+                  </div>
+                  <div class="bg-emerald-900/20 p-3 rounded border border-emerald-500/30">
+                    <div class="text-xs font-bold text-emerald-400 mb-1">✓ Evolução natural:</div>
+                    <div class="text-xs text-neutral-300 font-mono">
+                      1. "um gato na janela"<br>
+                      2. "um gato persa na janela"<br>
+                      3. "um gato persa na janela ao pôr do sol"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start">
+              <span class="text-3xl mr-4">2️⃣</span>
+              <div>
+                <h3 class="text-xl font-bold text-neutral-100 mb-2">Use Palavras-Chave Visuais</h3>
+                <p class="text-neutral-300 mb-3">
+                  Pense em adjetivos que descrevem COMO as coisas aparecem visualmente, não conceitos abstratos.
+                </p>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-red-900/20 p-3 rounded border border-red-500/30">
+                    <div class="text-xs font-bold text-red-400 mb-2">✗ Abstrato demais:</div>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• "um dia feliz"</li>
+                      <li>• "uma cena pacífica"</li>
+                      <li>• "algo bonito"</li>
+                    </ul>
+                  </div>
+                  <div class="bg-emerald-900/20 p-3 rounded border border-emerald-500/30">
+                    <div class="text-xs font-bold text-emerald-400 mb-2">✓ Visualmente descritivo:</div>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• "céu azul e ensolarado"</li>
+                      <li>• "jardim tranquilo com flores"</li>
+                      <li>• "cores vibrantes e detalhadas"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start">
+              <span class="text-3xl mr-4">3️⃣</span>
+              <div>
+                <h3 class="text-xl font-bold text-neutral-100 mb-2">Ordem Importa: Mais Importante Primeiro</h3>
+                <p class="text-neutral-300 mb-3">
+                  Coloque os elementos mais importantes no início do prompt. A IA dá mais atenção às primeiras palavras.
+                </p>
+                <div class="bg-dark-800/50 p-4 rounded">
+                  <div class="mb-2">
+                    <div class="text-sm font-bold text-emerald-400">Se o GATO é importante:</div>
+                    <div class="text-sm text-neutral-300 font-mono mt-1">"um gato laranja em uma janela com flores"</div>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold text-blue-400">Se as FLORES são importantes:</div>
+                    <div class="text-sm text-neutral-300 font-mono mt-1">"flores coloridas em uma janela com um gato laranja"</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start">
+              <span class="text-3xl mr-4">4️⃣</span>
+              <div>
+                <h3 class="text-xl font-bold text-neutral-100 mb-2">Evite Negações (Use o Positivo)</h3>
+                <p class="text-neutral-300 mb-3">
+                  Em vez de dizer o que você NÃO quer, descreva o que você QUER. A IA nem sempre entende "não".
+                </p>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-red-900/20 p-3 rounded border border-red-500/30">
+                    <div class="text-xs font-bold text-red-400 mb-1">✗ Usando negação:</div>
+                    <div class="text-xs text-neutral-300 font-mono">"um gato que não está correndo"</div>
+                  </div>
+                  <div class="bg-emerald-900/20 p-3 rounded border border-emerald-500/30">
+                    <div class="text-xs font-bold text-emerald-400 mb-1">✓ Descrevendo o positivo:</div>
+                    <div class="text-xs text-neutral-300 font-mono">"um gato dormindo tranquilamente"</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start">
+              <span class="text-3xl mr-4">5️⃣</span>
+              <div>
+                <h3 class="text-xl font-bold text-neutral-100 mb-2">Gere Múltiplas Vezes e Compare</h3>
+                <p class="text-neutral-300 mb-3">
+                  A IA tem um componente de aleatoriedade. O mesmo prompt pode gerar resultados diferentes. Experimente várias vezes!
+                </p>
+                <div class="bg-cyan-900/20 p-4 rounded border border-cyan-500/30">
+                  <p class="text-sm text-neutral-300">
+                    <strong class="text-cyan-400">Técnica:</strong> Gere 3-4 imagens com o mesmo prompt. Escolha a melhor e observe o que funcionou. Use essas observações para refinar o próximo prompt.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Box de Comparação: Bom vs Ruim -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <h2 class="text-2xl font-bold text-center text-neutral-100 mb-6">⚖️ Prompts: Bons vs Ruins</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
+            <div class="text-center mb-4">
+              <span class="text-4xl">❌</span>
+              <h3 class="text-xl font-bold text-red-400 mt-2">Prompts Ruins</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"gato"</div>
+                <div class="text-xs text-neutral-400">Muito vago, sem detalhes</div>
+              </div>
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"faça algo legal com um gato"</div>
+                <div class="text-xs text-neutral-400">Conceito abstrato, não visual</div>
+              </div>
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"um gato que não está molhado nem sujo na rua"</div>
+                <div class="text-xs text-neutral-400">Muitas negações, confuso</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <div class="text-center mb-4">
+              <span class="text-4xl">✅</span>
+              <h3 class="text-xl font-bold text-emerald-400 mt-2">Prompts Bons</h3>
+            </div>
+            <div class="space-y-3">
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"um gato laranja dormindo"</div>
+                <div class="text-xs text-neutral-400">Claro, específico, visual</div>
+              </div>
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"um gato laranja brincando com uma bola de lã"</div>
+                <div class="text-xs text-neutral-400">Ação clara, cena descritiva</div>
+              </div>
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="font-mono text-sm text-neutral-300 mb-1">"um gato branco limpo sentado em um jardim ensolarado"</div>
+                <div class="text-xs text-neutral-400">Positivo, detalhado, coerente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Como acessar e usar o Gemini</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Estrutura básica: [Sujeito] + [Descrição] + [Contexto]</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Criou sua primeira imagem!</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Como modificar prompts para variações</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">5 dicas essenciais para iniciantes</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Diferença entre prompts bons e ruins</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Aprenda técnicas avançadas para criar prompts ainda mais eficazes!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-1-2.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 1.2</span>
+            </a>
+            <a href="modulo-1-4.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+              <span>Módulo 1.4</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Google Gemini Documentation, Prompt Engineering Best Practices
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 1.3: Seu Primeiro Prompt
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

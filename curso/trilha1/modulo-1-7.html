@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.7 Estilos Artísticos Essenciais | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.7 - FUNDAMENTOS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🎨 Estilos Artísticos Essenciais
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Domine os 12 estilos mais poderosos da geração de imagens: do fotorrealismo ao pixel art, cada um com suas keywords mágicas.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~45</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">12</div>
+        <div class="text-xs text-neutral-400">Estilos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">VISUAL</div>
+        <div class="text-xs text-neutral-400">Foco prático</div>
+      </div>
+    </div>
+
+    <!-- Section 0: Por que Estilos Importam -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎭</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Por que Estilos Importam</h2>
+            <p class="text-neutral-400">O mesmo prompt, 12 universos diferentes</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos artísticos são o <strong class="text-emerald-400">multiplicador de impacto</strong> dos seus prompts. A mesma cena — "dragon on a mountain" — pode se tornar uma foto realista, um desenho anime, um quadro renascentista ou um sprite de videogame retro. Tudo depende das <strong>keywords de estilo</strong> que você usa.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🔄 Experimento Mental</h3>
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <p class="text-sm text-neutral-300 mb-2"><strong class="text-emerald-400">Prompt base:</strong> "a cat sitting on a windowsill"</p>
+              <div class="grid grid-cols-2 gap-3 mt-3 text-xs">
+                <div class="bg-blue-900/20 p-2 rounded border border-blue-500/30">
+                  <strong class="text-blue-400">+ "hyperrealistic photo"</strong>
+                  <p class="text-neutral-400 mt-1">→ Foto de revista</p>
+                </div>
+                <div class="bg-pink-900/20 p-2 rounded border border-pink-500/30">
+                  <strong class="text-pink-400">+ "Studio Ghibli style"</strong>
+                  <p class="text-neutral-400 mt-1">→ Cena de anime</p>
+                </div>
+                <div class="bg-purple-900/20 p-2 rounded border border-purple-500/30">
+                  <strong class="text-purple-400">+ "oil painting"</strong>
+                  <p class="text-neutral-400 mt-1">→ Obra clássica</p>
+                </div>
+                <div class="bg-orange-900/20 p-2 rounded border border-orange-500/30">
+                  <strong class="text-orange-400">+ "pixel art, 16-bit"</strong>
+                  <p class="text-neutral-400 mt-1">→ Sprite de jogo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30 mt-6">
+          <h4 class="font-bold text-cyan-400 mb-3">💡 Regra de Ouro</h4>
+          <p class="text-neutral-300">
+            <strong>Sempre defina um estilo.</strong> Se você não especificar, a IA vai escolher por você — e pode não ser o que você quer. Estilos são tão importantes quanto o assunto principal!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Fotorrealismo -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📸</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">1. Fotorrealismo</h2>
+            <p class="text-neutral-400">Imagens indistinguíveis de fotos reais</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O estilo <strong class="text-blue-400">fotorrealista</strong> cria imagens que parecem fotografias profissionais. Ideal para retratos, produtos, arquitetura e cenas naturais.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">hyperrealistic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Ultra-realista, detalhes extremos</p>
+            </div>
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">photorealistic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Realismo fotográfico padrão</p>
+            </div>
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">8K UHD</strong>
+              <p class="text-xs text-neutral-400 mt-1">Alta resolução, nitidez</p>
+            </div>
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">DSLR quality</strong>
+              <p class="text-xs text-neutral-400 mt-1">Qualidade de câmera profissional</p>
+            </div>
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">professional photography</strong>
+              <p class="text-xs text-neutral-400 mt-1">Composição e luz profissional</p>
+            </div>
+            <div class="bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <strong class="text-blue-400 text-sm">RAW photo</strong>
+              <p class="text-xs text-neutral-400 mt-1">Sem filtros, aspecto natural</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "portrait of a woman, hyperrealistic, 8K UHD, professional photography, natural lighting"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Anime/Manga -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-pink-900/30 to-dark-800 rounded-2xl p-8 border border-pink-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎌</span>
+          <div>
+            <h2 class="text-2xl font-bold text-pink-400">2. Anime/Manga</h2>
+            <p class="text-neutral-400">Estilo japonês de animação e quadrinhos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O estilo <strong class="text-pink-400">anime</strong> é um dos mais populares em geração de imagens. Caracterizado por olhos grandes, cores vibrantes e linhas limpas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">anime style</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo anime genérico</p>
+            </div>
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">Studio Ghibli</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo Miyazaki, cores suaves</p>
+            </div>
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">manga illustration</strong>
+              <p class="text-xs text-neutral-400 mt-1">Preto e branco, quadrinhos</p>
+            </div>
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">cel shading</strong>
+              <p class="text-xs text-neutral-400 mt-1">Sombreamento plano típico de anime</p>
+            </div>
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">Makoto Shinkai style</strong>
+              <p class="text-xs text-neutral-400 mt-1">Cenários detalhados, lighting dramático</p>
+            </div>
+            <div class="bg-pink-900/20 p-3 rounded border border-pink-500/30">
+              <strong class="text-pink-400 text-sm">kawaii</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo fofo e adorável</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "magical girl, anime style, Studio Ghibli, cel shading, vibrant colors"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Ilustração Digital -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🖌️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">3. Ilustração Digital</h2>
+            <p class="text-neutral-400">Arte digital moderna e concept art</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilo versátil usado em <strong class="text-purple-400">concept art</strong>, ilustrações de livros e arte de jogos. Combina pintura tradicional com ferramentas digitais.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">digital art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Arte digital genérica</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">concept art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Design de personagens/ambientes</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">digital painting</strong>
+              <p class="text-xs text-neutral-400 mt-1">Pintura digital expressiva</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">artstation trending</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo popular no ArtStation</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">matte painting</strong>
+              <p class="text-xs text-neutral-400 mt-1">Cenários épicos, cinematográficos</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <strong class="text-purple-400 text-sm">character design</strong>
+              <p class="text-xs text-neutral-400 mt-1">Foco em design de personagens</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "fantasy warrior, concept art, digital painting, artstation trending, dramatic lighting"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Pintura Clássica -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🖼️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-amber-400">4. Pintura Clássica</h2>
+            <p class="text-neutral-400">Técnicas tradicionais de pintura</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos que imitam <strong class="text-amber-400">técnicas tradicionais</strong> de pintura: óleo, aquarela, impressionismo e outras correntes artísticas clássicas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">oil painting</strong>
+              <p class="text-xs text-neutral-400 mt-1">Pintura a óleo clássica</p>
+            </div>
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">watercolor</strong>
+              <p class="text-xs text-neutral-400 mt-1">Aquarela suave e translúcida</p>
+            </div>
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">impressionist</strong>
+              <p class="text-xs text-neutral-400 mt-1">Pinceladas soltas, luz e cor</p>
+            </div>
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">renaissance painting</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo renascentista</p>
+            </div>
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">baroque</strong>
+              <p class="text-xs text-neutral-400 mt-1">Dramático, contraste forte</p>
+            </div>
+            <div class="bg-amber-900/20 p-3 rounded border border-amber-500/30">
+              <strong class="text-amber-400 text-sm">by Rembrandt</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo de mestre específico</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "portrait of a nobleman, oil painting, baroque style, dramatic lighting, by Rembrandt"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 3D/CGI -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎬</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">5. 3D/CGI</h2>
+            <p class="text-neutral-400">Renderizações 3D e gráficos computadorizados</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos que imitam <strong class="text-cyan-400">renderizações 3D</strong> profissionais, como as usadas em animações da Pixar ou visualizações arquitetônicas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">3D render</strong>
+              <p class="text-xs text-neutral-400 mt-1">Renderização 3D genérica</p>
+            </div>
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">CGI</strong>
+              <p class="text-xs text-neutral-400 mt-1">Computer Generated Imagery</p>
+            </div>
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">Pixar style</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo animação Pixar/Disney</p>
+            </div>
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">Unreal Engine</strong>
+              <p class="text-xs text-neutral-400 mt-1">Qualidade de motor de jogo</p>
+            </div>
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">Octane render</strong>
+              <p class="text-xs text-neutral-400 mt-1">Renderizador realista</p>
+            </div>
+            <div class="bg-cyan-900/20 p-3 rounded border border-cyan-500/30">
+              <strong class="text-cyan-400 text-sm">ray tracing</strong>
+              <p class="text-xs text-neutral-400 mt-1">Reflexos e iluminação realistas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "cute robot character, 3D render, Pixar style, Octane render, soft lighting"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Pixel Art e Retro -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-orange-900/30 to-dark-800 rounded-2xl p-8 border border-orange-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🕹️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-orange-400">6. Pixel Art e Retro</h2>
+            <p class="text-neutral-400">Estética de videogames clássicos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O estilo <strong class="text-orange-400">pixel art</strong> recria a estética nostálgica dos videogames dos anos 80 e 90, com resolução limitada e paleta de cores restrita.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">pixel art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Arte pixelada genérica</p>
+            </div>
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">8-bit</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo NES/Game Boy</p>
+            </div>
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">16-bit</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo Super Nintendo/Mega Drive</p>
+            </div>
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">retro gaming</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estética de jogos clássicos</p>
+            </div>
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">vaporwave</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estética retro-futurista anos 80</p>
+            </div>
+            <div class="bg-orange-900/20 p-3 rounded border border-orange-500/30">
+              <strong class="text-orange-400 text-sm">low poly</strong>
+              <p class="text-xs text-neutral-400 mt-1">Poligonização mínima, PS1 style</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "fantasy castle, pixel art, 16-bit style, retro gaming, vibrant colors"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Cyberpunk e Sci-Fi -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🌆</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">7. Cyberpunk e Sci-Fi</h2>
+            <p class="text-neutral-400">Futuro neon e ficção científica</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilo que evoca <strong class="text-fuchsia-400">futuros distópicos</strong>, cidades neon, tecnologia avançada e atmosferas sci-fi. Muito popular para ambientes urbanos futuristas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">cyberpunk</strong>
+              <p class="text-xs text-neutral-400 mt-1">Futuro distópico, neon</p>
+            </div>
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">neon noir</strong>
+              <p class="text-xs text-neutral-400 mt-1">Film noir + luzes neon</p>
+            </div>
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">synthwave</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estética anos 80 futurista</p>
+            </div>
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">futuristic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Tecnologia avançada</p>
+            </div>
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">sci-fi</strong>
+              <p class="text-xs text-neutral-400 mt-1">Ficção científica genérica</p>
+            </div>
+            <div class="bg-fuchsia-900/20 p-3 rounded border border-fuchsia-500/30">
+              <strong class="text-fuchsia-400 text-sm">blade runner aesthetic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo Blade Runner específico</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "cyberpunk city street, neon lights, rain, synthwave, futuristic, night scene"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Fantasy e Medieval -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-indigo-900/30 to-dark-800 rounded-2xl p-8 border border-indigo-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🗡️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-indigo-400">8. Fantasy e Medieval</h2>
+            <p class="text-neutral-400">Épico, mágico e medieval</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilo que evoca <strong class="text-indigo-400">mundos fantásticos</strong>, castelos medievais, dragões, magia e aventuras épicas. Perfeito para cenários de RPG e narrativas heroicas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">fantasy art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Arte fantástica genérica</p>
+            </div>
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">epic fantasy</strong>
+              <p class="text-xs text-neutral-400 mt-1">Fantasia épica, grandiosa</p>
+            </div>
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">medieval</strong>
+              <p class="text-xs text-neutral-400 mt-1">Ambientação medieval</p>
+            </div>
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">sword and sorcery</strong>
+              <p class="text-xs text-neutral-400 mt-1">Espadas e magia</p>
+            </div>
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">dungeons and dragons</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo D&D clássico</p>
+            </div>
+            <div class="bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+              <strong class="text-indigo-400 text-sm">by Frank Frazetta</strong>
+              <p class="text-xs text-neutral-400 mt-1">Mestre da fantasy art</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "dragon knight, epic fantasy, medieval castle, sword and sorcery, dramatic sky"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Cartoon/Comic -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💭</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">9. Cartoon/Comic</h2>
+            <p class="text-neutral-400">Desenhos animados e quadrinhos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos que imitam <strong class="text-yellow-400">desenhos animados</strong> ocidentais e histórias em quadrinhos, desde Disney até Marvel Comics.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">comic book style</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo quadrinhos</p>
+            </div>
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">cartoon</strong>
+              <p class="text-xs text-neutral-400 mt-1">Desenho animado genérico</p>
+            </div>
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">Disney style</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo clássico Disney</p>
+            </div>
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">vector art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Arte vetorial limpa</p>
+            </div>
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">pop art</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo Andy Warhol, cores vibrantes</p>
+            </div>
+            <div class="bg-yellow-900/20 p-3 rounded border border-yellow-500/30">
+              <strong class="text-yellow-400 text-sm">comic panel</strong>
+              <p class="text-xs text-neutral-400 mt-1">Layout de página de quadrinhos</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "superhero character, comic book style, bold outlines, vibrant colors, dynamic pose"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Minimalista e Abstrato -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-slate-700/30 to-dark-800 rounded-2xl p-8 border border-slate-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⬜</span>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-300">10. Minimalista e Abstrato</h2>
+            <p class="text-neutral-400">Simplicidade e formas geométricas</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos que valorizam a <strong class="text-slate-300">simplicidade</strong>, formas geométricas, paletas limitadas e composições limpas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">minimalist</strong>
+              <p class="text-xs text-neutral-400 mt-1">Minimalismo, menos é mais</p>
+            </div>
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">abstract</strong>
+              <p class="text-xs text-neutral-400 mt-1">Arte abstrata</p>
+            </div>
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">geometric</strong>
+              <p class="text-xs text-neutral-400 mt-1">Formas geométricas</p>
+            </div>
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">flat design</strong>
+              <p class="text-xs text-neutral-400 mt-1">Design plano, sem profundidade</p>
+            </div>
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">bauhaus</strong>
+              <p class="text-xs text-neutral-400 mt-1">Estilo Bauhaus, funcional</p>
+            </div>
+            <div class="bg-slate-700/20 p-3 rounded border border-slate-500/30">
+              <strong class="text-slate-300 text-sm">monochromatic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Paleta monocromática</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "mountain landscape, minimalist, geometric shapes, flat design, limited color palette"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Estilos de Época -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🏛️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">11. Estilos de Época</h2>
+            <p class="text-neutral-400">Art Nouveau, Art Deco e movimentos históricos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Estilos que evocam <strong class="text-rose-400">movimentos artísticos históricos</strong> específicos, cada um com suas características visuais únicas.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔑 Keywords Poderosas</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">art deco</strong>
+              <p class="text-xs text-neutral-400 mt-1">Anos 20-30, linhas geométricas</p>
+            </div>
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">art nouveau</strong>
+              <p class="text-xs text-neutral-400 mt-1">Curvas orgânicas, natureza</p>
+            </div>
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">baroque</strong>
+              <p class="text-xs text-neutral-400 mt-1">Barroco, ornamentado</p>
+            </div>
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">gothic</strong>
+              <p class="text-xs text-neutral-400 mt-1">Gótico, escuro, ornamental</p>
+            </div>
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">victorian</strong>
+              <p class="text-xs text-neutral-400 mt-1">Era vitoriana, detalhado</p>
+            </div>
+            <div class="bg-rose-900/20 p-3 rounded border border-rose-500/30">
+              <strong class="text-rose-400 text-sm">steampunk</strong>
+              <p class="text-xs text-neutral-400 mt-1">Vitoriano + tecnologia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-4 rounded-xl border border-emerald-500/30">
+          <p class="text-sm text-neutral-300">
+            <strong class="text-emerald-400">Exemplo:</strong> "elegant woman, art nouveau style, flowing curves, ornate details, vintage poster"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: Combinando Estilos -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-violet-900/30 to-dark-800 rounded-2xl p-8 border border-violet-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-2xl font-bold text-violet-400">Combinando Estilos: A Arte da Fusão</h2>
+            <p class="text-neutral-400">Criando visuais únicos misturando estilos</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          A verdadeira maestria vem de <strong class="text-violet-400">combinar estilos</strong> diferentes. Você não precisa escolher apenas um — experimente fusões criativas!
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔥 Combinações Poderosas</h3>
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-violet-500/30">
+              <div class="flex items-start">
+                <span class="text-violet-400 text-2xl mr-3">1</span>
+                <div>
+                  <p class="text-sm text-neutral-300 mb-1"><strong class="text-violet-400">Fotorrealismo + Cyberpunk</strong></p>
+                  <p class="text-xs text-neutral-400">"hyperrealistic, cyberpunk city, neon lights, 8K UHD"</p>
+                  <p class="text-xs text-emerald-400 mt-1">→ Cidades futuristas com qualidade fotográfica</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-violet-500/30">
+              <div class="flex items-start">
+                <span class="text-violet-400 text-2xl mr-3">2</span>
+                <div>
+                  <p class="text-sm text-neutral-300 mb-1"><strong class="text-violet-400">Anime + Art Nouveau</strong></p>
+                  <p class="text-xs text-neutral-400">"anime style, art nouveau, flowing lines, ornate details"</p>
+                  <p class="text-xs text-emerald-400 mt-1">→ Personagens anime com estética decorativa</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-violet-500/30">
+              <div class="flex items-start">
+                <span class="text-violet-400 text-2xl mr-3">3</span>
+                <div>
+                  <p class="text-sm text-neutral-300 mb-1"><strong class="text-violet-400">Pixel Art + Cyberpunk</strong></p>
+                  <p class="text-xs text-neutral-400">"pixel art, 16-bit, cyberpunk city, neon"</p>
+                  <p class="text-xs text-emerald-400 mt-1">→ Jogos retro com tema futurista</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-violet-500/30">
+              <div class="flex items-start">
+                <span class="text-violet-400 text-2xl mr-3">4</span>
+                <div>
+                  <p class="text-sm text-neutral-300 mb-1"><strong class="text-violet-400">3D Render + Medieval Fantasy</strong></p>
+                  <p class="text-xs text-neutral-400">"3D render, Octane render, medieval castle, epic fantasy"</p>
+                  <p class="text-xs text-emerald-400 mt-1">→ Cenários fantásticos com qualidade CGI</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-violet-500/30">
+              <div class="flex items-start">
+                <span class="text-violet-400 text-2xl mr-3">5</span>
+                <div>
+                  <p class="text-sm text-neutral-300 mb-1"><strong class="text-violet-400">Watercolor + Minimalista</strong></p>
+                  <p class="text-xs text-neutral-400">"watercolor painting, minimalist, soft colors, simple composition"</p>
+                  <p class="text-xs text-emerald-400 mt-1">→ Arte suave e contemplativa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">⚠️ Cuidado com Conflitos</h4>
+          <p class="text-neutral-300 mb-3">
+            Alguns estilos não combinam bem. Evite:
+          </p>
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span class="text-neutral-300">"hyperrealistic pixel art" (contraditório)</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span class="text-neutral-300">"minimalist baroque" (opostos)</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span class="text-neutral-300">"watercolor 3D render" (incompatível)</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span class="text-neutral-300">"photorealistic cartoon" (contraditório)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Fotorrealismo: hyperrealistic, 8K UHD</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Anime/Manga: Studio Ghibli, cel shading</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Ilustração Digital: concept art, artstation</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Pintura Clássica: oil painting, watercolor</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">3D/CGI: Pixar style, Octane render</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Pixel Art: 8-bit, 16-bit, retro gaming</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Cyberpunk: neon noir, synthwave</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Fantasy: epic fantasy, sword and sorcery</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Cartoon: comic book style, Disney</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Minimalista: flat design, geometric</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Época: art deco, art nouveau, steampunk</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Combinação de estilos para resultados únicos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Organize seus prompts com frameworks profissionais!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-1-6.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 1.6</span>
+            </a>
+            <a href="modulo-1-8.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+              <span>Módulo 1.8</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Midjourney Style Guide, Stable Diffusion Prompt Database, ArtStation Trending Styles
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 1.7: Estilos Artísticos Essenciais
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

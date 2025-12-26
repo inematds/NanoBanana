@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.5 Linguagem de Fotografia | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.5 - FUNDAMENTOS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        📷 Linguagem de Fotografia
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Domine os termos técnicos de fotografia que a IA entende perfeitamente. Fale como um profissional e obtenha resultados cinematográficos.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~40</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">5</div>
+        <div class="text-xs text-neutral-400">Conceitos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">FOTOGRAFIA</div>
+        <div class="text-xs text-neutral-400">Linguagem</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Tipos de Shot -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎬</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Tipos de Shot: Enquadramento é Tudo</h2>
+            <p class="text-neutral-400">A distância entre câmera e sujeito define a narrativa</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O <strong class="text-emerald-400">tipo de shot</strong> determina quanto do sujeito aparece no quadro e cria impacto emocional. Esses termos vêm diretamente do cinema e a IA os entende com perfeição.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">📸 Close-up</h4>
+            <p class="text-sm text-neutral-300 mb-3">Rosto completo ou objeto de perto. Intimidade e emoção.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              close-up portrait of a woman
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">🎯 Extreme Close-up</h4>
+            <p class="text-sm text-neutral-300 mb-3">Detalhe extremo: olho, boca, textura. Máxima dramaticidade.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              extreme close-up of an eye
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">👤 Medium Shot</h4>
+            <p class="text-sm text-neutral-300 mb-3">Da cintura para cima. Equilíbrio entre contexto e expressão.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              medium shot of a businessman
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">🧍 Full Body</h4>
+            <p class="text-sm text-neutral-300 mb-3">Corpo inteiro visível. Mostra postura e ambiente.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              full body shot of a dancer
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">🌄 Wide Shot</h4>
+            <p class="text-sm text-neutral-300 mb-3">Cena ampla. Sujeito no contexto do ambiente.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              wide shot of a castle in mountains
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-emerald-400 mb-3">🖼️ Portrait</h4>
+            <p class="text-sm text-neutral-300 mb-3">Retrato clássico. Foco no rosto e expressão.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              portrait of an elderly man
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30">
+          <h4 class="font-bold text-cyan-400 mb-3">💡 Dica Pro</h4>
+          <p class="text-neutral-300">
+            Combine tipos de shot com emoções: <code class="bg-dark-800/50 px-2 py-1 rounded text-emerald-400">"close-up portrait, melancholic expression"</code> gera resultados muito mais poderosos que apenas <code class="bg-dark-800/50 px-2 py-1 rounded text-neutral-400">"sad person"</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Ângulos de Câmera -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📐</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Ângulos de Câmera: Perspectiva é Poder</h2>
+            <p class="text-neutral-400">A posição da câmera muda completamente a narrativa</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          O <strong class="text-blue-400">ângulo da câmera</strong> afeta como percebemos o sujeito. Ângulos baixos transmitem poder, ângulos altos criam vulnerabilidade.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">👁️ Eye Level</h4>
+            <p class="text-sm text-neutral-300 mb-3">Altura dos olhos. Neutro e natural.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              eye level shot, portrait
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">⬆️ Low Angle</h4>
+            <p class="text-sm text-neutral-300 mb-3">Câmera olhando para cima. Sujeito poderoso, heroico.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              low angle shot of a superhero
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">⬇️ High Angle</h4>
+            <p class="text-sm text-neutral-300 mb-3">Câmera olhando para baixo. Sujeito vulnerável, pequeno.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              high angle shot of a child
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">🦅 Bird's Eye View</h4>
+            <p class="text-sm text-neutral-300 mb-3">Vista de cima, 90°. Visão aérea dramática.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              bird's eye view of a city street
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">↗️ Dutch Angle</h4>
+            <p class="text-sm text-neutral-300 mb-3">Câmera inclinada. Tensão, desequilíbrio, caos.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              dutch angle, thriller scene
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-blue-400 mb-3">👀 POV (Point of View)</h4>
+            <p class="text-sm text-neutral-300 mb-3">Primeira pessoa. Vemos pelos olhos do personagem.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-blue-300">
+              POV shot looking down at hands
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30">
+          <h4 class="font-bold text-purple-400 mb-3">🎭 Impacto Psicológico</h4>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-emerald-400 font-bold mb-1">Low Angle</div>
+              <div class="text-neutral-400">Poder, dominância, heroísmo</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-orange-400 font-bold mb-1">High Angle</div>
+              <div class="text-neutral-400">Vulnerabilidade, fragilidade</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-red-400 font-bold mb-1">Dutch Angle</div>
+              <div class="text-neutral-400">Tensão, perigo, instabilidade</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Tipos de Lente -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔍</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Tipos de Lente: A Alma da Fotografia</h2>
+            <p class="text-neutral-400">Distância focal define compressão e perspectiva</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          A <strong class="text-purple-400">lente</strong> não só controla o zoom, mas também a <em>distorção de perspectiva</em> e a <em>profundidade de campo</em>. A IA entende números exatos como 35mm, 50mm, 85mm.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-purple-400 mb-3">📐 35mm</h4>
+            <p class="text-sm text-neutral-300 mb-3">Grande angular leve. Documentário, street photography.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+              35mm lens, street photography
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5 border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-3">🎯 50mm</h4>
+            <p class="text-sm text-neutral-300 mb-3">Perspectiva natural, igual ao olho humano. Versátil.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300">
+              50mm lens, natural perspective
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-purple-400 mb-3">👤 85mm Portrait</h4>
+            <p class="text-sm text-neutral-300 mb-3">Lente clássica de retrato. Compressão suave, bokeh lindo.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+              85mm portrait lens, shallow DoF
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-purple-400 mb-3">🔭 Telephoto Lens</h4>
+            <p class="text-sm text-neutral-300 mb-3">200mm+. Compressão extrema, isola sujeito.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+              telephoto lens, compressed perspective
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-purple-400 mb-3">🐟 Fisheye Lens</h4>
+            <p class="text-sm text-neutral-300 mb-3">Ultra grande-angular. Distorção esférica dramática.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+              fisheye lens, distorted perspective
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-purple-400 mb-3">🔬 Macro Lens</h4>
+            <p class="text-sm text-neutral-300 mb-3">Detalhes microscópicos. Insetos, texturas, joias.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+              macro lens, extreme detail
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">📊 Guia Rápido de Lentes</h4>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between bg-dark-800/50 p-2 rounded">
+              <span class="text-neutral-300">14-24mm</span>
+              <span class="text-neutral-400">Ultra wide, paisagens épicas</span>
+            </div>
+            <div class="flex justify-between bg-dark-800/50 p-2 rounded">
+              <span class="text-neutral-300">35mm</span>
+              <span class="text-neutral-400">Storytelling, contexto</span>
+            </div>
+            <div class="flex justify-between bg-dark-800/50 p-2 rounded border border-emerald-500/30">
+              <span class="text-emerald-400 font-bold">50mm</span>
+              <span class="text-emerald-400 font-bold">Perspectiva natural ✓</span>
+            </div>
+            <div class="flex justify-between bg-dark-800/50 p-2 rounded">
+              <span class="text-neutral-300">85mm</span>
+              <span class="text-neutral-400">Retratos profissionais</span>
+            </div>
+            <div class="flex justify-between bg-dark-800/50 p-2 rounded">
+              <span class="text-neutral-300">200mm+</span>
+              <span class="text-neutral-400">Wildlife, compressão</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Composição Fotográfica -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🖼️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Composição: A Arte de Organizar o Quadro</h2>
+            <p class="text-neutral-400">Regras visuais que guiam o olhar</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          <strong class="text-orange-400">Composição</strong> é como os elementos estão organizados no quadro. A IA foi treinada em milhões de fotos bem compostas e entende essas regras clássicas.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">⚡ Rule of Thirds</h4>
+            <p class="text-sm text-neutral-300 mb-3">Divide o quadro em 9 partes. Sujeito nas interseções.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              rule of thirds composition
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">🌀 Golden Ratio</h4>
+            <p class="text-sm text-neutral-300 mb-3">Proporção divina (1.618). Harmonia matemática.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              golden ratio composition
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">➡️ Leading Lines</h4>
+            <p class="text-sm text-neutral-300 mb-3">Linhas guiam o olhar até o sujeito principal.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              leading lines to subject
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">🚪 Framing</h4>
+            <p class="text-sm text-neutral-300 mb-3">Moldura natural (porta, janela) foca atenção.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              framed through doorway
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">🔄 Symmetry</h4>
+            <p class="text-sm text-neutral-300 mb-3">Equilíbrio perfeito. Harmonia visual.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              symmetrical composition
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-xl p-5">
+            <h4 class="font-bold text-orange-400 mb-3">⚖️ Negative Space</h4>
+            <p class="text-sm text-neutral-300 mb-3">Espaço vazio estratégico. Minimalismo poderoso.</p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-orange-300">
+              negative space, minimalist
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">🎨 Combinando Regras</h4>
+          <p class="text-neutral-300 mb-3">As melhores fotos combinam múltiplas técnicas:</p>
+          <div class="bg-dark-800/50 p-4 rounded font-mono text-sm text-blue-300">
+            "portrait, rule of thirds, leading lines, golden hour lighting, shallow DoF"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Profundidade de Campo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-cyan-900/30 to-dark-800 rounded-2xl p-8 border border-cyan-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🌫️</span>
+          <div>
+            <h2 class="text-2xl font-bold text-cyan-400">Profundidade de Campo: Controle do Foco</h2>
+            <p class="text-neutral-400">O que está nítido e o que está desfocado</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          <strong class="text-cyan-400">Profundidade de campo (DoF)</strong> é a distância entre o ponto mais próximo e o mais distante que aparecem nítidos. Controlar o desfoque é uma das ferramentas mais poderosas da fotografia.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30">
+            <h4 class="font-bold text-cyan-400 mb-4">🎯 Shallow DoF (Bokeh)</h4>
+            <p class="text-sm text-neutral-300 mb-4">
+              <strong>Profundidade rasa.</strong> Sujeito nítido, fundo completamente desfocado. Cria isolamento e elegância.
+            </p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-cyan-300 mb-3">
+              shallow depth of field, bokeh
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-cyan-300 mb-3">
+              f/1.4, creamy bokeh
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center text-neutral-400">
+                <span class="text-cyan-400 mr-2">✓</span>
+                <span>Perfeito para retratos</span>
+              </div>
+              <div class="flex items-center text-neutral-400">
+                <span class="text-cyan-400 mr-2">✓</span>
+                <span>Isola sujeito do fundo</span>
+              </div>
+              <div class="flex items-center text-neutral-400">
+                <span class="text-cyan-400 mr-2">✓</span>
+                <span>Bokeh = desfoque estético</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-4">🏔️ Deep DoF</h4>
+            <p class="text-sm text-neutral-300 mb-4">
+              <strong>Profundidade ampla.</strong> Tudo em foco, do primeiro plano ao horizonte. Usado em paisagens.
+            </p>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300 mb-3">
+              deep depth of field
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-300 mb-3">
+              f/16, everything in focus
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center text-neutral-400">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Paisagens épicas</span>
+              </div>
+              <div class="flex items-center text-neutral-400">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Arquitetura detalhada</span>
+              </div>
+              <div class="flex items-center text-neutral-400">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Fotos de grupo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔢 Termos Técnicos de Abertura</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-cyan-400 font-bold mb-1">f/1.4 - f/2.8</div>
+              <div class="text-neutral-400">Bokeh intenso, retratos</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-yellow-400 font-bold mb-1">f/4 - f/5.6</div>
+              <div class="text-neutral-400">Balanceado, versátil</div>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded">
+              <div class="text-emerald-400 font-bold mb-1">f/8 - f/16</div>
+              <div class="text-neutral-400">Tudo em foco, paisagens</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30">
+          <h4 class="font-bold text-purple-400 mb-3">📚 Focus Stacking</h4>
+          <p class="text-neutral-300">
+            Técnica avançada onde múltiplas fotos com focos diferentes são combinadas para criar profundidade de campo impossível. Útil em macro e produto.
+          </p>
+          <div class="mt-3 bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-300">
+            focus stacking, extreme detail
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Tabela de Referência Rápida -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-yellow-900/30 to-dark-800 rounded-2xl p-8 border border-yellow-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📋</span>
+          <div>
+            <h2 class="text-2xl font-bold text-yellow-400">Tabela de Referência Rápida</h2>
+            <p class="text-neutral-400">Copie e cole direto no prompt</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <!-- Coluna 1 -->
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-emerald-400 font-bold mb-2 text-sm">📷 SHOTS</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>close-up portrait</div>
+                <div>extreme close-up</div>
+                <div>medium shot</div>
+                <div>full body shot</div>
+                <div>wide shot</div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-blue-400 font-bold mb-2 text-sm">📐 ÂNGULOS</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>eye level shot</div>
+                <div>low angle shot</div>
+                <div>high angle shot</div>
+                <div>bird's eye view</div>
+                <div>dutch angle</div>
+                <div>POV shot</div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-purple-400 font-bold mb-2 text-sm">🔍 LENTES</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>35mm lens</div>
+                <div>50mm lens</div>
+                <div>85mm portrait lens</div>
+                <div>telephoto lens</div>
+                <div>fisheye lens</div>
+                <div>macro lens</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2 -->
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-orange-400 font-bold mb-2 text-sm">🖼️ COMPOSIÇÃO</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>rule of thirds</div>
+                <div>golden ratio composition</div>
+                <div>leading lines</div>
+                <div>framed composition</div>
+                <div>symmetrical</div>
+                <div>negative space</div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-cyan-400 font-bold mb-2 text-sm">🌫️ PROFUNDIDADE</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>shallow depth of field</div>
+                <div>bokeh, f/1.4</div>
+                <div>creamy bokeh background</div>
+                <div>deep depth of field</div>
+                <div>f/16, everything in focus</div>
+                <div>focus stacking</div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <h4 class="text-pink-400 font-bold mb-2 text-sm">✨ COMBOS PODEROSOS</h4>
+              <div class="space-y-1 text-xs text-neutral-300 font-mono">
+                <div>85mm, f/1.4, bokeh</div>
+                <div>low angle, dramatic</div>
+                <div>bird's eye view, symmetry</div>
+                <div>35mm, rule of thirds</div>
+                <div>macro, extreme detail</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-yellow-400 mb-4">🔥 Prompt Exemplo Completo</h3>
+          <div class="bg-dark-800/80 p-4 rounded-lg font-mono text-sm text-emerald-300 leading-relaxed">
+            portrait of a woman, close-up shot, eye level, 85mm portrait lens, f/1.4, shallow depth of field, creamy bokeh background, rule of thirds composition, golden hour lighting, cinematic, highly detailed
+          </div>
+          <p class="text-xs text-neutral-400 mt-3">
+            Este prompt combina 8 técnicas fotográficas em um único comando, gerando resultados profissionais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-emerald-500/10 rounded-2xl p-8 border border-emerald-500/30">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Tipos de shot: close-up, wide, full body</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Ângulos: low, high, bird's eye, dutch</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Lentes: 35mm, 50mm, 85mm, macro</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Composição: rule of thirds, golden ratio</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Profundidade: shallow DoF, bokeh, deep DoF</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-emerald-400 mr-3">✓</span>
+              <span class="text-neutral-300">Combinações poderosas de termos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Aprenda a iluminar suas cenas como um diretor de fotografia!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-1-4.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 1.4</span>
+            </a>
+            <a href="modulo-1-6.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+              <span>Módulo 1.6</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Cinematography Handbook, Photography Composition Guide, Professional Camera Lens Guide
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 1.5: Linguagem de Fotografia
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.10 Projeto Prático: Sua Primeira Série | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.10 - FUNDAMENTOS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🎉 Projeto Prático: Sua Primeira Série
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Chegou a hora! Crie uma série de 5 imagens coesas que contam uma história ou exploram um tema. Este é o projeto final da Trilha 1.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~60</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">5</div>
+        <div class="text-xs text-neutral-400">Imagens</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">PROJETO</div>
+        <div class="text-xs text-neutral-400">FINAL</div>
+      </div>
+    </div>
+
+    <!-- Section 1: O Desafio -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎯</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">O Desafio</h2>
+            <p class="text-neutral-400">Crie sua primeira série coesa de imagens</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Neste projeto final, você vai aplicar tudo que aprendeu na Trilha 1 para criar uma <strong class="text-emerald-400">série de 5 imagens</strong> que funcionam juntas. Não são imagens aleatórias — são imagens que compartilham um tema, estilo ou narrativa.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">✨ Objetivos do Projeto</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <p class="text-sm text-emerald-400 font-bold mb-2">Consistência Visual</p>
+              <p class="text-xs text-neutral-300">Todas as 5 imagens devem ter um "DNA" visual em comum: mesmo estilo, paleta de cores ou composição.</p>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <p class="text-sm text-emerald-400 font-bold mb-2">Narrativa ou Tema</p>
+              <p class="text-xs text-neutral-300">As imagens devem contar uma história ou explorar um conceito — não apenas 5 imagens bonitas aleatórias.</p>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <p class="text-sm text-emerald-400 font-bold mb-2">Controle Técnico</p>
+              <p class="text-xs text-neutral-300">Demonstre domínio dos conceitos: anatomia de prompt, parâmetros, iteração e refinamento.</p>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <p class="text-sm text-emerald-400 font-bold mb-2">Processo Documentado</p>
+              <p class="text-xs text-neutral-300">Acompanhe suas decisões e iterações — isso vai ajudar você a evoluir como artista.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">⏱️ Tempo Estimado</h4>
+          <p class="text-neutral-300">
+            Reserve <strong>60 minutos</strong> para este projeto. Isso inclui planejamento (10 min), geração (40 min) e seleção final (10 min). Não tenha pressa — qualidade é mais importante que velocidade!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Escolhendo seu Tema -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Escolhendo seu Tema</h2>
+            <p class="text-neutral-400">A fundação da sua série</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Um bom tema é específico o suficiente para dar direção, mas aberto o bastante para permitir criatividade. Aqui estão algumas sugestões testadas e aprovadas:
+        </p>
+
+        <!-- Sugestões de Temas -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-gradient-to-br from-blue-900/30 to-dark-700 p-5 rounded-xl border border-blue-500/30">
+            <h4 class="font-bold text-blue-400 mb-2">🌍 Temas Narrativos</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                <span><strong>Jornada do Herói:</strong> 5 momentos de uma aventura</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                <span><strong>Um Dia na Vida:</strong> manhã, tarde, noite de um personagem</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                <span><strong>Transformação:</strong> antes → durante → depois de um evento</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                <span><strong>Viagem no Tempo:</strong> mesmo lugar em épocas diferentes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-900/30 to-dark-700 p-5 rounded-xl border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-2">🎨 Temas Conceituais</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                <span><strong>Quatro Estações:</strong> inverno, primavera, verão, outono + bonus</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                <span><strong>Espectro Emocional:</strong> alegria, tristeza, raiva, medo, paz</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                <span><strong>Elementos:</strong> fogo, água, terra, ar, éter</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                <span><strong>Arquitetura Mundial:</strong> 5 estilos arquitetônicos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-cyan-900/30 to-dark-700 p-5 rounded-xl border border-cyan-500/30">
+            <h4 class="font-bold text-cyan-400 mb-2">🌌 Temas Fantásticos</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span><strong>Raças de Fantasia:</strong> elfos, anões, orcs, etc.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span><strong>Sistemas de Magia:</strong> diferentes escolas de feitiçaria</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span><strong>Biomas Alienígenas:</strong> planetas imaginários</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-400 mr-2">•</span>
+                <span><strong>Criaturas Mitológicas:</strong> dragões, fênix, krakens...</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-orange-900/30 to-dark-700 p-5 rounded-xl border border-orange-500/30">
+            <h4 class="font-bold text-orange-400 mb-2">🎭 Temas Estilísticos</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                <span><strong>Décadas:</strong> anos 50, 60, 70, 80, 90</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                <span><strong>Movimentos Artísticos:</strong> impressionismo, cubismo, surrealismo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                <span><strong>Cores Dominantes:</strong> vermelho, azul, verde, amarelo, roxo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                <span><strong>Perspectivas:</strong> close-up, médio, wide, aéreo, macro</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-3">✅ Checklist para seu Tema</h4>
+          <div class="space-y-2 text-neutral-300 text-sm">
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Seu tema permite 5 variações distintas mas relacionadas?</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Você consegue visualizar mentalmente como manter consistência visual?</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>O tema te empolga e motiva a dedicar 60 minutos nele?</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Planejando a Série -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📐</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Planejando a Série</h2>
+            <p class="text-neutral-400">Como manter consistência visual</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          A diferença entre 5 imagens aleatórias e uma <strong>série coesa</strong> está no planejamento. Você precisa decidir o que permanece <strong class="text-purple-400">constante</strong> e o que <strong class="text-cyan-400">varia</strong>.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🎨 Elementos de Consistência</h3>
+
+          <div class="space-y-4">
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-2">1. Estilo Artístico (SEMPRE consistente)</h4>
+              <p class="text-sm text-neutral-300 mb-3">Escolha UM estilo e mantenha em todas as imagens:</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-dark-800/50 p-2 rounded">digital art, highly detailed</div>
+                <div class="bg-dark-800/50 p-2 rounded">oil painting, impressionist style</div>
+                <div class="bg-dark-800/50 p-2 rounded">3D render, octane, cinematic</div>
+                <div class="bg-dark-800/50 p-2 rounded">anime style, studio ghibli</div>
+              </div>
+            </div>
+
+            <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+              <h4 class="font-bold text-cyan-400 mb-2">2. Paleta de Cores (Fortemente consistente)</h4>
+              <p class="text-sm text-neutral-300 mb-3">Defina uma paleta dominante:</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-dark-800/50 p-2 rounded">warm color palette, golden hour</div>
+                <div class="bg-dark-800/50 p-2 rounded">cool blue tones, moonlight</div>
+                <div class="bg-dark-800/50 p-2 rounded">vibrant neon colors, cyberpunk</div>
+                <div class="bg-dark-800/50 p-2 rounded">muted earth tones, natural</div>
+              </div>
+            </div>
+
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h4 class="font-bold text-emerald-400 mb-2">3. Composição (Pode variar)</h4>
+              <p class="text-sm text-neutral-300 mb-3">Você pode mudar o enquadramento, mas mantenha uma "assinatura":</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-dark-800/50 p-2 rounded">centered composition sempre</div>
+                <div class="bg-dark-800/50 p-2 rounded">rule of thirds em todas</div>
+                <div class="bg-dark-800/50 p-2 rounded">mesmo aspect ratio 16:9</div>
+                <div class="bg-dark-800/50 p-2 rounded">profundidade de campo similar</div>
+              </div>
+            </div>
+
+            <div class="bg-orange-900/20 p-4 rounded-lg border border-orange-500/30">
+              <h4 class="font-bold text-orange-400 mb-2">4. Iluminação (Consistente ou evolutiva)</h4>
+              <p class="text-sm text-neutral-300 mb-3">Escolha se a luz é fixa ou evolui com a narrativa:</p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-dark-800/50 p-2 rounded">dramatic lighting sempre</div>
+                <div class="bg-dark-800/50 p-2 rounded">do amanhecer ao anoitecer</div>
+                <div class="bg-dark-800/50 p-2 rounded">soft diffused light todas</div>
+                <div class="bg-dark-800/50 p-2 rounded">de claro a escuro gradualmente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💡 Template de Planejamento</h4>
+          <div class="bg-dark-800/50 p-4 rounded font-mono text-sm text-neutral-300 space-y-1">
+            <p><strong class="text-purple-400">Tema:</strong> _________________________</p>
+            <p><strong class="text-purple-400">Estilo Base:</strong> _________________________</p>
+            <p><strong class="text-purple-400">Paleta de Cores:</strong> _________________________</p>
+            <p><strong class="text-purple-400">Composição:</strong> _________________________</p>
+            <p><strong class="text-purple-400">Iluminação:</strong> _________________________</p>
+            <br>
+            <p><strong class="text-cyan-400">Imagem 1:</strong> _________________________</p>
+            <p><strong class="text-cyan-400">Imagem 2:</strong> _________________________</p>
+            <p><strong class="text-cyan-400">Imagem 3:</strong> _________________________</p>
+            <p><strong class="text-cyan-400">Imagem 4:</strong> _________________________</p>
+            <p><strong class="text-cyan-400">Imagem 5:</strong> _________________________</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Template de Prompt -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📝</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Template de Prompt</h2>
+            <p class="text-neutral-400">Estrutura base para sua série</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Crie um <strong class="text-emerald-400">template de prompt</strong> que você vai adaptar para cada imagem. Isso garante consistência automática enquanto permite variação no assunto principal.
+        </p>
+
+        <!-- Estrutura do Template -->
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔧 Anatomia do Template</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                1
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-100 mb-1">Parte FIXA (nunca muda)</h4>
+                <p class="text-sm text-neutral-300 mb-2">Estilo, qualidade, paleta de cores, iluminação base</p>
+                <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-emerald-400">
+                  digital art, highly detailed, vibrant colors, dramatic lighting
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                2
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-100 mb-1">Parte VARIÁVEL (muda a cada imagem)</h4>
+                <p class="text-sm text-neutral-300 mb-2">O assunto específico de cada imagem da série</p>
+                <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-cyan-400">
+                  [VARIÁVEL: ex. "a warrior in snowy mountains", "a mage in desert ruins", etc.]
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                3
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-100 mb-1">Parte TÉCNICA (fixa ou leve variação)</h4>
+                <p class="text-sm text-neutral-300 mb-2">Qualificadores técnicos e artistas</p>
+                <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-purple-400">
+                  trending on artstation, 8k, unreal engine, by greg rutkowski
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplos Práticos -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📋 Exemplos de Templates Prontos</h3>
+
+          <div class="space-y-4">
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-700 p-4 rounded-xl border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-2">Fantasia Épica</h4>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-neutral-300">
+                <span class="text-emerald-400">epic fantasy art, highly detailed, dramatic lighting, vibrant colors,</span>
+                <span class="text-cyan-400"> [VARIÁVEL] </span>
+                <span class="text-purple-400">, trending on artstation, by greg rutkowski</span>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-900/20 to-dark-700 p-4 rounded-xl border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-2">Sci-Fi Cyberpunk</h4>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-neutral-300">
+                <span class="text-emerald-400">cyberpunk style, neon lights, dark atmosphere, cinematic,</span>
+                <span class="text-cyan-400"> [VARIÁVEL] </span>
+                <span class="text-purple-400">, octane render, 8k, unreal engine</span>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-900/20 to-dark-700 p-4 rounded-xl border border-orange-500/30">
+              <h4 class="font-bold text-orange-400 mb-2">Natureza Serena</h4>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-neutral-300">
+                <span class="text-emerald-400">beautiful nature photography, golden hour lighting, soft colors, peaceful,</span>
+                <span class="text-cyan-400"> [VARIÁVEL] </span>
+                <span class="text-purple-400">, national geographic, professional photo</span>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-cyan-900/20 to-dark-700 p-4 rounded-xl border border-cyan-500/30">
+              <h4 class="font-bold text-cyan-400 mb-2">Ilustração Infantil</h4>
+              <div class="bg-dark-800/50 p-3 rounded font-mono text-xs text-neutral-300">
+                <span class="text-emerald-400">children's book illustration, whimsical, colorful, soft shading,</span>
+                <span class="text-cyan-400"> [VARIÁVEL] </span>
+                <span class="text-purple-400">, by mary blair, pixar style</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h4 class="font-bold text-yellow-400 mb-3">✏️ Crie Seu Template Agora</h4>
+          <p class="text-neutral-300 mb-3">
+            Antes de gerar qualquer imagem, escreva seu template completo. Isso vai economizar tempo e garantir consistência:
+          </p>
+          <div class="bg-dark-800/50 p-4 rounded">
+            <p class="text-sm text-neutral-400 mb-2">Meu template de prompt:</p>
+            <div class="bg-dark-700 p-3 rounded font-mono text-xs text-neutral-300 min-h-[60px] border border-dark-600">
+              [Escreva seu template aqui...]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Criando as 5 Imagens -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🚀</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Criando as 5 Imagens</h2>
+            <p class="text-neutral-400">Passo a passo com checklist</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Agora é hora de criar! Siga este processo para cada uma das 5 imagens, garantindo qualidade e consistência.
+        </p>
+
+        <!-- Processo para cada imagem -->
+        <div class="space-y-6 mb-6">
+          <!-- Imagem 1 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-emerald-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-emerald-400">Imagem 1 de 5</h3>
+              <span class="text-sm text-neutral-400">~12 minutos</span>
+            </div>
+
+            <div class="space-y-3">
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+                <span class="text-sm text-neutral-300">Adaptei meu template para o primeiro assunto/variação</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+                <span class="text-sm text-neutral-300">Gerei 3-4 variações com seed diferentes</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+                <span class="text-sm text-neutral-300">Selecionei a melhor versão (composição + tema)</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+                <span class="text-sm text-neutral-300">Salvei o prompt final e parâmetros usados</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+                <span class="text-sm text-neutral-300">Esta imagem define o "padrão visual" da série</span>
+              </label>
+            </div>
+
+            <div class="mt-4 bg-blue-900/20 p-3 rounded border border-blue-500/30">
+              <p class="text-sm text-blue-400"><strong>💡 Dica:</strong> A primeira imagem é sua "âncora" visual. As próximas devem ter o mesmo "feeling" que esta!</p>
+            </div>
+          </div>
+
+          <!-- Imagens 2-4 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-cyan-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-cyan-400">Imagens 2, 3 e 4 de 5</h3>
+              <span class="text-sm text-neutral-400">~8 min cada = ~24 min total</span>
+            </div>
+
+            <p class="text-sm text-neutral-300 mb-4">Repita este processo para as imagens 2, 3 e 4:</p>
+
+            <div class="space-y-3">
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-cyan-500 rounded focus:ring-cyan-500">
+                <span class="text-sm text-neutral-300">Mudei APENAS a parte variável do template</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-cyan-500 rounded focus:ring-cyan-500">
+                <span class="text-sm text-neutral-300">Mantive os mesmos parâmetros da Imagem 1 (CFG, steps, etc.)</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-cyan-500 rounded focus:ring-cyan-500">
+                <span class="text-sm text-neutral-300">Comparei com a Imagem 1 para garantir consistência</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-cyan-500 rounded focus:ring-cyan-500">
+                <span class="text-sm text-neutral-300">Gerei 2-3 variações de cada (velocidade aumenta agora!)</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-cyan-500 rounded focus:ring-cyan-500">
+                <span class="text-sm text-neutral-300">Salvei as 3 melhores versões (total de 4 imagens até agora)</span>
+              </label>
+            </div>
+
+            <div class="mt-4 bg-purple-900/20 p-3 rounded border border-purple-500/30">
+              <p class="text-sm text-purple-400"><strong>⚡ Velocidade:</strong> Você já tem o template rodando — agora é produção em série! Foque em manter a qualidade consistente.</p>
+            </div>
+          </div>
+
+          <!-- Imagem 5 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-yellow-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-yellow-400">Imagem 5 de 5 (Grande Finale)</h3>
+              <span class="text-sm text-neutral-400">~12 minutos</span>
+            </div>
+
+            <p class="text-sm text-neutral-300 mb-4">A última imagem merece atenção especial — é a conclusão da sua série!</p>
+
+            <div class="space-y-3">
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-yellow-500 rounded focus:ring-yellow-500">
+                <span class="text-sm text-neutral-300">Escolhi o assunto/variação mais impactante para o final</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-yellow-500 rounded focus:ring-yellow-500">
+                <span class="text-sm text-neutral-300">Se narrativa, essa imagem fecha a história com chave de ouro</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-yellow-500 rounded focus:ring-yellow-500">
+                <span class="text-sm text-neutral-300">Gerei 4-5 variações para ter certeza do melhor resultado</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-yellow-500 rounded focus:ring-yellow-500">
+                <span class="text-sm text-neutral-300">Comparei todas as 5 imagens juntas para verificar coesão</span>
+              </label>
+              <label class="flex items-start cursor-pointer hover:bg-dark-800/30 p-2 rounded transition-colors">
+                <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-yellow-500 rounded focus:ring-yellow-500">
+                <span class="text-sm text-neutral-300">Série completa! As 5 imagens funcionam como um conjunto</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-3">🚨 Sinais de Alerta</h4>
+          <p class="text-neutral-300 mb-3">Se você notar esses problemas, pause e corrija:</p>
+          <ul class="space-y-2 text-sm text-neutral-300">
+            <li class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span><strong>Estilos inconsistentes:</strong> Uma imagem parece pintura, outra fotografia — revise seu template</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span><strong>Cores destoantes:</strong> Uma é quente, outra fria sem motivo — reforce a paleta no prompt</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span><strong>Narrativa perdida:</strong> Você esqueceu o tema — volte ao planejamento</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-2">✗</span>
+              <span><strong>Pressa excessiva:</strong> Gerando sem avaliar — qualidade > quantidade</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Refinando e Selecionando -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💎</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Refinando e Selecionando</h2>
+            <p class="text-neutral-400">Como escolher as melhores versões</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Você provavelmente gerou 15-20 imagens no total. Agora precisa escolher as <strong class="text-emerald-400">5 definitivas</strong> que compõem sua série.
+        </p>
+
+        <!-- Critérios de Seleção -->
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🎯 Critérios de Seleção</h3>
+
+          <div class="space-y-4">
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-2">1. Consistência Visual (Peso: 40%)</h4>
+              <ul class="space-y-1 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-purple-400 mr-2">•</span>
+                  <span>Todas as 5 parecem pertencer à mesma coleção?</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-400 mr-2">•</span>
+                  <span>Estilo, cores e iluminação são harmoniosos?</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-400 mr-2">•</span>
+                  <span>Alguém olhando rapidamente veria que é uma série?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+              <h4 class="font-bold text-cyan-400 mb-2">2. Qualidade Individual (Peso: 30%)</h4>
+              <ul class="space-y-1 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-cyan-400 mr-2">•</span>
+                  <span>Cada imagem é tecnicamente boa? (composição, foco, detalhes)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-400 mr-2">•</span>
+                  <span>Evite imagens com erros óbvios (mãos estranhas, faces distorcidas)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-400 mr-2">•</span>
+                  <span>Cada imagem poderia funcionar sozinha?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h4 class="font-bold text-emerald-400 mb-2">3. Narrativa/Tema (Peso: 20%)</h4>
+              <ul class="space-y-1 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>As 5 imagens juntas contam a história que você planejou?</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>A progressão faz sentido? (se aplicável)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>O tema é evidente ao ver a série completa?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-orange-900/20 p-4 rounded-lg border border-orange-500/30">
+              <h4 class="font-bold text-orange-400 mb-2">4. Variedade (Peso: 10%)</h4>
+              <ul class="space-y-1 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-orange-400 mr-2">•</span>
+                  <span>Há variedade suficiente para manter interesse visual?</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-400 mr-2">•</span>
+                  <span>As imagens não são repetitivas demais?</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-400 mr-2">•</span>
+                  <span>Cada imagem traz algo novo sem quebrar a consistência?</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Processo de Seleção -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📊 Processo de Seleção Final</h3>
+
+          <div class="space-y-3">
+            <div class="flex items-start bg-dark-700/50 p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Visualize Todas Juntas</h4>
+                <p class="text-sm text-neutral-300">Coloque todas as imagens lado a lado (ou em grid). A série deve ter identidade visual clara.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start bg-dark-700/50 p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Elimine os Outliers</h4>
+                <p class="text-sm text-neutral-300">Se uma imagem destoa muito (cores erradas, estilo diferente), substitua por outra variação.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start bg-dark-700/50 p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                3
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Teste a Ordem</h4>
+                <p class="text-sm text-neutral-300">Se narrativa, organize na ordem certa. Se temática, experimente ordens que criem ritmo visual.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start bg-dark-700/50 p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                4
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Descanse e Revise</h4>
+                <p class="text-sm text-neutral-300">Se possível, dê uma pausa de 5 minutos e olhe novamente com olhos frescos. Você vai notar detalhes que perdeu.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start bg-dark-700/50 p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0 text-sm">
+                5
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Finalize a Série</h4>
+                <p class="text-sm text-neutral-300">Confirme as 5 definitivas, salve com nomes claros (serie_1.png, serie_2.png, etc.) e documente seus prompts!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-3">✅ Checklist de Seleção Final</h4>
+          <div class="space-y-2 text-neutral-300 text-sm">
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Todas as 5 imagens têm consistência visual clara</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Cada imagem individual é de alta qualidade (sem erros grosseiros)</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>A narrativa ou tema está claro ao ver a série completa</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Há variedade suficiente sem perder coesão</span>
+            </label>
+            <label class="flex items-start cursor-pointer hover:bg-dark-700/30 p-2 rounded transition-colors">
+              <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500">
+              <span>Estou orgulhoso desta série e confiante para compartilhar</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Apresentando sua Série -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-cyan-900/30 to-dark-800 rounded-2xl p-8 border border-cyan-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-2xl font-bold text-cyan-400">Apresentando sua Série</h2>
+            <p class="text-neutral-400">Dicas para compartilhar seu trabalho</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          Você criou algo incrível! Agora vamos garantir que sua série seja apresentada da melhor forma possível.
+        </p>
+
+        <!-- Formatos de Apresentação -->
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📱 Formatos de Apresentação</h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+              <h4 class="font-bold text-cyan-400 mb-2">Grid 5 em 1</h4>
+              <p class="text-sm text-neutral-300 mb-2">Coloque as 5 imagens em um único grid (1x5 ou 2+3).</p>
+              <p class="text-xs text-neutral-400">Melhor para: Instagram carrossel, portfolio, impressão</p>
+            </div>
+
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-2">Sequência Individual</h4>
+              <p class="text-sm text-neutral-300 mb-2">Poste uma imagem por vez, numeradas (1/5, 2/5...).</p>
+              <p class="text-xs text-neutral-400">Melhor para: Twitter/X threads, stories, narrativas</p>
+            </div>
+
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h4 class="font-bold text-emerald-400 mb-2">Apresentação com Contexto</h4>
+              <p class="text-sm text-neutral-300 mb-2">Cada imagem acompanhada de descrição/prompt.</p>
+              <p class="text-xs text-neutral-400">Melhor para: Behance, ArtStation, portfólios profissionais</p>
+            </div>
+
+            <div class="bg-orange-900/20 p-4 rounded-lg border border-orange-500/30">
+              <h4 class="font-bold text-orange-400 mb-2">Vídeo/GIF de Transição</h4>
+              <p class="text-sm text-neutral-300 mb-2">Crie transições suaves entre as 5 imagens.</p>
+              <p class="text-xs text-neutral-400">Melhor para: Reels, TikTok, apresentações dinâmicas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- O que incluir -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">✍️ O que Incluir na Descrição</h3>
+
+          <div class="space-y-3">
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <h4 class="font-bold text-emerald-400 mb-2">1. Título da Série</h4>
+              <p class="text-sm text-neutral-300">Dê um nome significativo à série. Exemplos:</p>
+              <div class="mt-2 space-y-1 text-xs text-neutral-400">
+                <p>• "As Quatro Estações: Uma Jornada Visual"</p>
+                <p>• "Guardiões Elementais: Fogo, Água, Terra, Ar e Espírito"</p>
+                <p>• "Cyberpunk Chronicles: 5 Cidades do Futuro"</p>
+              </div>
+            </div>
+
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <h4 class="font-bold text-cyan-400 mb-2">2. Conceito/Tema</h4>
+              <p class="text-sm text-neutral-300">Explique brevemente o que conecta as imagens:</p>
+              <div class="mt-2 bg-dark-800/50 p-3 rounded text-xs text-neutral-400 italic">
+                "Esta série explora a jornada de transformação através dos elementos naturais, cada imagem representando um estágio de evolução pessoal."
+              </div>
+            </div>
+
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <h4 class="font-bold text-purple-400 mb-2">3. Processo Técnico (Opcional)</h4>
+              <p class="text-sm text-neutral-300">Compartilhe seu template base, modelo usado, tempo gasto:</p>
+              <div class="mt-2 bg-dark-800/50 p-3 rounded text-xs text-neutral-400">
+                <p>• Modelo: Nano Banana v2.0</p>
+                <p>• Estilo: Digital art, cinematic lighting</p>
+                <p>• Tempo total: ~60 minutos</p>
+                <p>• Imagens geradas: 18 (5 selecionadas)</p>
+              </div>
+            </div>
+
+            <div class="bg-dark-700/50 p-4 rounded-lg">
+              <h4 class="font-bold text-orange-400 mb-2">4. Agradecimentos/Tags</h4>
+              <p class="text-sm text-neutral-300">Dê crédito e facilite descoberta:</p>
+              <div class="mt-2 text-xs text-neutral-400">
+                #AIart #NanoBanana #ImageSeries #DigitalArt #ConceptArt
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💬 Exemplo de Post Completo</h4>
+          <div class="bg-dark-800/50 p-4 rounded text-sm text-neutral-300 space-y-2">
+            <p class="font-bold text-cyan-400">🎨 "Guardiões dos Elementos" - Série IA (1-5)</p>
+            <p>Acabei de completar minha primeira série coesa de arte gerada por IA! 🎉</p>
+            <p>Cada imagem representa um guardião de um elemento natural: Fogo, Água, Terra, Ar e Espírito. Mantive consistência visual através de paleta de cores quente, estilo épico de fantasia e composição centrada.</p>
+            <p>⚙️ Técnico:<br>
+            • Modelo: Nano Banana<br>
+            • Tempo: ~60 minutos<br>
+            • 18 gerações → 5 finais</p>
+            <p class="text-neutral-400">#AIart #NanoBanana #FantasyArt #ElementalGuardians #AIImageSeries</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Box de Parabéns -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-yellow-900/30 via-emerald-900/30 to-dark-800 rounded-2xl p-8 border-2 border-emerald-500/50">
+        <div class="text-center mb-6">
+          <span class="text-6xl mb-4 block">🎉</span>
+          <h2 class="text-3xl font-bold text-emerald-400 mb-3">Parabéns! Você Concluiu a Trilha 1!</h2>
+          <p class="text-xl text-neutral-300">Fundamentos completos - você agora domina os princípios essenciais de AI Art</p>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4 text-center">🏆 Habilidades Conquistadas</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Anatomia de prompts profissionais</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Controle de parâmetros técnicos</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Processo iterativo de refinamento</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Criação de séries coesas</span>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Entendimento do espaço latente</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Uso estratégico de seeds</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Composição e storytelling visual</span>
+              </div>
+              <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+                <span class="text-emerald-400 mr-3 text-xl">✓</span>
+                <span class="text-neutral-300">Templates de prompt reutilizáveis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 p-6 rounded-xl border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-3 text-center">📈 Seu Progresso</h4>
+          <div class="text-center mb-4">
+            <div class="text-5xl font-bold text-emerald-400">33%</div>
+            <div class="text-neutral-400">do Supercurso Nano Banana completo</div>
+          </div>
+          <div class="w-full bg-dark-600 rounded-full h-4">
+            <div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-4 rounded-full" style="width: 33%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA para Trilha 2 -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="text-center mb-6">
+          <span class="text-5xl mb-4 block">🚀</span>
+          <h2 class="text-3xl font-bold text-blue-400 mb-3">Próxima Etapa: Trilha 2 - Técnicas Avançadas</h2>
+          <p class="text-lg text-neutral-300 mb-6">
+            Você dominou os fundamentos. Agora é hora de elevar seu jogo com técnicas profissionais!
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-dark-700/50 p-5 rounded-xl border border-blue-500/30 text-center">
+            <div class="text-3xl mb-2">🎭</div>
+            <h4 class="font-bold text-blue-400 mb-1">Estilos Artísticos</h4>
+            <p class="text-sm text-neutral-400">Domine fotorrealismo, fantasia, sci-fi e mais</p>
+          </div>
+          <div class="bg-dark-700/50 p-5 rounded-xl border border-blue-500/30 text-center">
+            <div class="text-3xl mb-2">🎨</div>
+            <h4 class="font-bold text-blue-400 mb-1">Composição Avançada</h4>
+            <p class="text-sm text-neutral-400">Regras de ouro, profundidade e direção do olhar</p>
+          </div>
+          <div class="bg-dark-700/50 p-5 rounded-xl border border-blue-500/30 text-center">
+            <div class="text-3xl mb-2">💡</div>
+            <h4 class="font-bold text-blue-400 mb-1">Iluminação Profissional</h4>
+            <p class="text-sm text-neutral-400">Controle de luz como um cinematografista</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="../trilha2/" class="inline-flex items-center space-x-3 px-8 py-4 bg-blue-500 text-white rounded-lg font-bold text-lg hover:bg-blue-400 transition-colors shadow-lg">
+            <span>Começar Trilha 2</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <p class="text-sm text-neutral-500 mt-3">Ou descanse um pouco e volte depois - você merece!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação entre módulos -->
+    <div class="text-center mb-8">
+      <div class="flex justify-center space-x-4">
+        <a href="modulo-1-9.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span>Módulo 1.9</span>
+        </a>
+        <a href="./" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+          <span>Voltar ao Índice da Trilha 1</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Projeto Final da Trilha 1 - Fundamentos do Supercurso Nano Banana
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 1.10: Projeto Prático: Sua Primeira Série
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
