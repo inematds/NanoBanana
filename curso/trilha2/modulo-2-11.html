@@ -1,1000 +1,799 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 2.11 - Tendências e Cases Virais 2025 | Nano Banana</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.11 Tendências e Cases Virais 2025 | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
         }
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
-        }
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .trend-card {
-            transition: all 0.3s ease;
-        }
-        .trend-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-        }
-    </style>
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-white to-blue-50 min-h-screen">
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
 
-    <!-- Menu Global -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-blue-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
-                    <span class="text-3xl">🍌</span>
-                    <span class="font-bold text-xl text-gray-800">Nano Banana</span>
-                </div>
-                <div class="hidden md:flex space-x-1">
-                    <a href="../trilha1/modulo-1-1.html" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition">Trilha 1</a>
-                    <a href="modulo-2-1.html" class="px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold">Trilha 2</a>
-                    <a href="../trilha3/modulo-3-1.html" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition">Trilha 3</a>
-                </div>
-                <a href="../../index.html" class="text-blue-600 hover:text-blue-800 font-medium transition">← Voltar ao Início</a>
-            </div>
-        </div>
-    </nav>
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
 
-    <!-- Header do Módulo -->
-    <header class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-16 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-10"></div>
-        <div class="absolute top-10 right-10 text-9xl opacity-20 float-animation">🚀</div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="inline-block bg-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4 pulse-glow">
-                MÓDULO 2.11 - TENDÊNCIAS
-            </div>
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">🚀 Tendências e Cases Virais 2025</h1>
-            <p class="text-xl text-blue-100 max-w-3xl">Descubra o que está funcionando agora no mundo da IA generativa, os estilos que estão viralizando e para onde o mercado está caminhando</p>
-        </div>
-    </header>
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
 
-    <!-- Stats Banner -->
-    <div class="bg-white border-b-4 border-blue-200 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg">
-                    <span class="text-3xl">⏱️</span>
-                    <div>
-                        <p class="text-sm text-gray-600 font-medium">Duração</p>
-                        <p class="text-2xl font-bold text-blue-600">~30 minutos</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg">
-                    <span class="text-3xl">📈</span>
-                    <div>
-                        <p class="text-sm text-gray-600 font-medium">Conteúdo</p>
-                        <p class="text-2xl font-bold text-blue-600">5 Trends</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg">
-                    <span class="text-3xl">🔮</span>
-                    <div>
-                        <p class="text-sm text-gray-600 font-medium">Foco</p>
-                        <p class="text-2xl font-bold text-blue-600">Futuro da IA</p>
-                    </div>
-                </div>
-            </div>
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 2.11 - TENDÊNCIAS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🚀 Tendências e Cases Virais 2025
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Descubra o que está funcionando agora no mundo da IA generativa, os estilos que estão viralizando e para onde o mercado está caminhando.
+      </p>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">~30</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">5</div>
+        <div class="text-xs text-neutral-400">Trends</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">Futuro</div>
+        <div class="text-xs text-neutral-400">da IA</div>
+      </div>
+    </div>
 
-        <!-- Introdução -->
-        <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-500">
-            <div class="flex items-start space-x-4 mb-6">
-                <span class="text-5xl">🌊</span>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">A Onda da IA Generativa em 2025</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Estamos vivendo um momento histórico onde a IA generativa deixou de ser novidade para se tornar ferramenta essencial. Em 2025, a velocidade de inovação acelerou ainda mais, com novos modelos, técnicas e aplicações surgindo constantemente. Este módulo é seu guia para entender o que está acontecendo AGORA no mercado.
-                    </p>
-                </div>
-            </div>
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <p class="text-gray-800 font-semibold mb-2">💡 Por que isso importa?</p>
-                <p class="text-gray-700">Conhecer as tendências não é apenas sobre estar "na moda" - é sobre entender quais técnicas e estilos geram mais engajamento, quais nichos estão menos saturados e onde investir seu tempo para obter os melhores resultados.</p>
-            </div>
-        </section>
-
-        <!-- Seção 1: O Estado da Arte em 2025 -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">🎯</span>
-                <h2 class="text-4xl font-bold gradient-text mb-4">1. O Estado da Arte em 2025</h2>
-                <p class="text-xl text-gray-600">Onde estamos agora e como chegamos aqui</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500 trend-card">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🤖</span>
-                        Modelos Multimodais Dominantes
-                    </h3>
-                    <p class="text-gray-700 mb-4">
-                        GPT-4, Claude 3, Gemini Ultra e outros modelos multimodais se tornaram o padrão. A capacidade de trabalhar simultaneamente com texto, imagem, vídeo e áudio abriu possibilidades infinitas.
-                    </p>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="text-sm font-semibold text-blue-800 mb-2">Principais características:</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ Compreensão contextual profunda</li>
-                            <li>✓ Integração imagem + texto fluida</li>
-                            <li>✓ Raciocínio complexo e criativo</li>
-                            <li>✓ Geração de vídeo em tempo real</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500 trend-card">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="text-3xl mr-3">⚡</span>
-                        Democratização Total
-                    </h3>
-                    <p class="text-gray-700 mb-4">
-                        O que antes exigia conhecimento técnico avançado agora está disponível para qualquer pessoa. Interfaces intuitivas, modelos gratuitos e comunidades ativas tornaram a IA acessível.
-                    </p>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="text-sm font-semibold text-blue-800 mb-2">Mudanças principais:</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ Ferramentas no-code para todos</li>
-                            <li>✓ APIs simples e baratas</li>
-                            <li>✓ Tutoriais e comunidades enormes</li>
-                            <li>✓ Smartphones com IA local</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500 trend-card">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🎨</span>
-                        Qualidade Fotorrealista Padrão
-                    </h3>
-                    <p class="text-gray-700 mb-4">
-                        Imagens geradas por IA atingiram um nível de realismo impressionante. Distinguir fotos reais de IA se tornou um desafio até para especialistas.
-                    </p>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="text-sm font-semibold text-blue-800 mb-2">Tecnologias-chave:</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ DALL-E 3 e Midjourney v6+</li>
-                            <li>✓ Stable Diffusion XL refinado</li>
-                            <li>✓ Controle preciso de poses/ângulos</li>
-                            <li>✓ Consistência de personagens</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500 trend-card">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🎬</span>
-                        Vídeo: A Nova Fronteira
-                    </h3>
-                    <p class="text-gray-700 mb-4">
-                        Sora, Runway Gen-3, Pika Labs e outros tornaram a geração de vídeo por IA uma realidade comercial. Criadores estão produzindo curtas, comerciais e conteúdo viral.
-                    </p>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="text-sm font-semibold text-blue-800 mb-2">Capacidades atuais:</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ Vídeos de até 60 segundos</li>
-                            <li>✓ Movimento realista e físicas corretas</li>
-                            <li>✓ Edição e extensão de vídeos</li>
-                            <li>✓ Integração com workflow profissional</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl shadow-xl p-8">
-                <h3 class="text-2xl font-bold mb-4 flex items-center">
-                    <span class="text-3xl mr-3">📊</span>
-                    Dados do Mercado em 2025
-                </h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-4xl font-bold mb-2">150B+</p>
-                        <p class="text-blue-100">Imagens geradas por IA por dia globalmente</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-4xl font-bold mb-2">85%</p>
-                        <p class="text-blue-100">Dos criativos usam IA em seu workflow</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-4xl font-bold mb-2">$200B</p>
-                        <p class="text-blue-100">Valor estimado do mercado de conteúdo IA</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 2: Estilos Virais do Momento -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">🔥</span>
-                <h2 class="text-4xl font-bold gradient-text mb-4">2. Estilos Virais do Momento</h2>
-                <p class="text-xl text-gray-600">O que está explodindo nas redes sociais</p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-500 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🎭</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Hyper-Surrealism (Surrealismo Hiper-realista)</h3>
-                        </div>
-                        <span class="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">🔥 VIRAL</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Combinação de elementos fotorrealistas com situações impossíveis ou absurdas. Gera alto engajamento por criar estranheza e fascínio.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">Exemplos populares:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Animais gigantes em cenários urbanos</li>
-                                <li>• Objetos do cotidiano em escalas impossíveis</li>
-                                <li>• Fusões criativas (metade X, metade Y)</li>
-                                <li>• Físicas impossíveis renderizadas realisticamente</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">Prompts efetivos:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• "photorealistic surreal [concept]"</li>
-                                <li>• "impossible architecture, hyper detailed"</li>
-                                <li>• "dreamlike scene, realistic lighting"</li>
-                                <li>• "absurdist photography, 8k quality"</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-orange-500 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">✨</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Ethereal Glow (Brilho Etéreo)</h3>
-                        </div>
-                        <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">📈 EM ALTA</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Imagens com iluminação suave, cores pastéis, partículas brilhantes e atmosfera mágica. Muito popular em conteúdo lifestyle, beleza e fantasia.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">Características-chave:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Soft lighting com bokeh</li>
-                                <li>• Paleta de cores pastel ou dourada</li>
-                                <li>• Partículas de luz flutuantes</li>
-                                <li>• Atmosfera sonhadora e calma</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">Onde funciona melhor:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Instagram e Pinterest</li>
-                                <li>• Conteúdo de bem-estar e meditação</li>
-                                <li>• Produtos de beleza e skincare</li>
-                                <li>• Arte digital para impressão</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-yellow-500 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🎮</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Isometric 3D Worlds (Mundos 3D Isométricos)</h3>
-                        </div>
-                        <span class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold">⭐ TRENDING</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Cenários detalhados em perspectiva isométrica, lembrando videogames ou dioramas. Perfeito para storytelling visual e conteúdo educativo.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">Aplicações populares:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Infográficos e visualização de dados</li>
-                                <li>• Concept art para games</li>
-                                <li>• Ilustrações para educação</li>
-                                <li>• Assets para design de produtos</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">Dicas de prompt:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• "isometric view, detailed diorama"</li>
-                                <li>• "low poly 3D, vibrant colors"</li>
-                                <li>• "game asset style, clean geometry"</li>
-                                <li>• "cute isometric [subject], pastel"</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-500 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🎞️</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Vintage Film Aesthetic (Estética de Filme Vintage)</h3>
-                        </div>
-                        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">💚 POPULAR</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Imagens com aparência de filmes antigos, incluindo grãos, cores saturadas e imperfeições. Nostalgia + qualidade = engajamento alto.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">Variações em alta:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Anos 70/80s cinematográfico</li>
-                                <li>• Polaroid e câmeras instantâneas</li>
-                                <li>• Super 8 e VHS estético</li>
-                                <li>• Filme Kodak e Fujifilm vintage</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">Termos técnicos úteis:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• "shot on Kodak Portra 400"</li>
-                                <li>• "film grain, warm tones"</li>
-                                <li>• "analog photography aesthetic"</li>
-                                <li>• "cinematic 70s color grading"</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-purple-500 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🌌</span>
-                            <h3 class="text-2xl font-bold text-gray-800">Cosmic & Space Art (Arte Cósmica)</h3>
-                        </div>
-                        <span class="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold">🚀 CRESCENDO</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Cenários espaciais, nebulosas, planetas alienígenas e temas astronômicos. Combina ciência com fantasia de forma visualmente impressionante.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">Temas quentes:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Planetas habitáveis ficcionais</li>
-                                <li>• Astronautas em situações artísticas</li>
-                                <li>• Nebulosas e galáxias coloridas</li>
-                                <li>• Estruturas megafuturistas no espaço</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">Nichos lucrativos:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Wallpapers e posters</li>
-                                <li>• NFTs e arte digital</li>
-                                <li>• Capas de livros sci-fi</li>
-                                <li>• Conteúdo educativo de astronomia</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 3: Cases de Sucesso -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">💎</span>
-                <h2 class="text-4xl font-bold gradient-text mb-4">3. Cases de Sucesso Inspiradores</h2>
-                <p class="text-xl text-gray-600">Criadores que estão fazendo acontecer</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl shadow-xl p-8 trend-card">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6 backdrop-blur">
-                        <span class="text-4xl">📱</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">@AIArtDaily - Instagram</h3>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 backdrop-blur">
-                        <p class="text-sm font-semibold mb-2">ESTATÍSTICAS:</p>
-                        <p class="text-xl font-bold">2.8M seguidores • 150K+ likes por post</p>
-                    </div>
-                    <p class="mb-4 leading-relaxed">
-                        Conta dedicada a compartilhar arte IA diariamente. Cresceu de 0 a milhões em 18 meses postando consistentemente imagens de alta qualidade em estilos variados.
-                    </p>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="font-semibold mb-2">🔑 Estratégias-chave:</p>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Consistência: 3 posts por dia, sempre</li>
-                            <li>• Curadoria: Apenas imagens excepcionais</li>
-                            <li>• Educação: Captions explicando técnicas</li>
-                            <li>• Comunidade: Responde comentários ativamente</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl shadow-xl p-8 trend-card">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6 backdrop-blur">
-                        <span class="text-4xl">🎨</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">StudioXYZ - Etsy & Print-on-Demand</h3>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 backdrop-blur">
-                        <p class="text-sm font-semibold mb-2">FATURAMENTO:</p>
-                        <p class="text-xl font-bold">$45K/mês com produtos IA</p>
-                    </div>
-                    <p class="mb-4 leading-relaxed">
-                        Loja focada em posters, prints e produtos decorativos criados 100% com IA. Identificou nichos pouco explorados e dominou categorias específicas.
-                    </p>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="font-semibold mb-2">🔑 Fatores de sucesso:</p>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Nicho específico: Arte botânica minimalista</li>
-                            <li>• SEO otimizado em títulos e tags</li>
-                            <li>• Mockups profissionais das artes</li>
-                            <li>• Coleções temáticas coordenadas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl shadow-xl p-8 trend-card">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6 backdrop-blur">
-                        <span class="text-4xl">🎬</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">AI Cinema Shorts - TikTok/YouTube</h3>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 backdrop-blur">
-                        <p class="text-sm font-semibold mb-2">AUDIÊNCIA:</p>
-                        <p class="text-xl font-bold">5.2M seguidores • 80M+ views/mês</p>
-                    </div>
-                    <p class="mb-4 leading-relaxed">
-                        Canal que cria curtas-metragens narrativos usando apenas IA (imagens + vídeo + voz). Pioneiro em storytelling completamente gerado por IA.
-                    </p>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="font-semibold mb-2">🔑 Diferencial competitivo:</p>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Narrativas emocionantes em 60-90s</li>
-                            <li>• Qualidade cinematográfica consistente</li>
-                            <li>• Série com personagens recorrentes</li>
-                            <li>• Música e áudio profissional (também IA)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl shadow-xl p-8 trend-card">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6 backdrop-blur">
-                        <span class="text-4xl">📚</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">PromptGenius - Curso & Comunidade</h3>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 backdrop-blur">
-                        <p class="text-sm font-semibold mb-2">RECEITA:</p>
-                        <p class="text-xl font-bold">$120K em 6 meses (curso único)</p>
-                    </div>
-                    <p class="mb-4 leading-relaxed">
-                        Criador que transformou sua expertise em prompting em um curso completo. Construiu autoridade compartilhando dicas gratuitas antes de lançar produto pago.
-                    </p>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="font-semibold mb-2">🔑 Modelo de negócio:</p>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Conteúdo gratuito de alto valor (YouTube/IG)</li>
-                            <li>• Lista de email com templates grátis</li>
-                            <li>• Curso premium ($297) com suporte</li>
-                            <li>• Comunidade Discord ativa e engajada</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-500">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                    <span class="text-3xl mr-3">🎓</span>
-                    Lições dos Cases de Sucesso
-                </h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <p class="font-bold text-blue-800 mb-2 text-lg">1. Consistência Vence</p>
-                        <p class="text-gray-700 text-sm">Todos os cases postam/produzem regularmente. Não existe sucesso sem consistência no longo prazo.</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <p class="font-bold text-blue-800 mb-2 text-lg">2. Nicho é Poder</p>
-                        <p class="text-gray-700 text-sm">Ser específico (arte botânica, sci-fi cinema) gera mais resultado que tentar agradar a todos.</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <p class="font-bold text-blue-800 mb-2 text-lg">3. Qualidade > Quantidade</p>
-                        <p class="text-gray-700 text-sm">Melhor postar 1 imagem excepcional por dia do que 10 medianas. Curadoria importa.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 4: Niches em Alta -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">🎯</span>
-                <h2 class="text-4xl font-bold gradient-text mb-4">4. Niches em Alta para 2025</h2>
-                <p class="text-xl text-gray-600">Oportunidades menos saturadas com alto potencial</p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="bg-white rounded-xl shadow-lg p-8 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🏠</span>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Design de Interiores & Arquitetura IA</h3>
-                                <p class="text-sm text-gray-600">Saturação: Baixa • Demanda: Alta • Monetização: Excelente</p>
-                            </div>
-                        </div>
-                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">OPORTUNIDADE</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Profissionais e entusiastas buscam visualizações rápidas de projetos. IA permite criar renders fotorrealistas em minutos.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">💰 Modelos de monetização:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Serviço de visualização ($50-200/projeto)</li>
-                                <li>• Templates de ambientes (Gumroad/Etsy)</li>
-                                <li>• Curso de IA para arquitetos</li>
-                                <li>• Parceria com construtoras/imobiliárias</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">🛠️ Ferramentas ideais:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Midjourney (renders realistas)</li>
-                                <li>• Stable Diffusion + ControlNet (precisão)</li>
-                                <li>• Specialized models para interiores</li>
-                                <li>• Photoshop + IA generativa (refinamento)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">👶</span>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Produtos Infantis Personalizados</h3>
-                                <p class="text-sm text-gray-600">Saturação: Baixa • Demanda: Muito Alta • Monetização: Ótima</p>
-                            </div>
-                        </div>
-                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">OPORTUNIDADE</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Pais adoram produtos personalizados para filhos. IA permite criar ilustrações únicas que transformam crianças em personagens.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">💰 Produtos lucrativos:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Livros personalizados (criança como herói)</li>
-                                <li>• Posters e quadros para quarto</li>
-                                <li>• Capas de cadernos e agendas</li>
-                                <li>• Convites de aniversário customizados</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">📈 Estratégia de crescimento:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Instagram com exemplos do produto</li>
-                                <li>• Parcerias com influenciadoras mães</li>
-                                <li>• Loja Shopify com automação</li>
-                                <li>• Pricing premium ($40-80 por item)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🧘</span>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Conteúdo para Meditação & Bem-Estar</h3>
-                                <p class="text-sm text-gray-600">Saturação: Média • Demanda: Crescendo • Monetização: Boa</p>
-                            </div>
-                        </div>
-                        <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">CRESCENDO</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Mercado de wellness explodiu pós-pandemia. Visuais calmos e música ambiente gerados por IA têm grande apelo.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">💰 Oportunidades:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Vídeos de meditação para YouTube/Spotify</li>
-                                <li>• Wallpapers calmos (app de assinatura)</li>
-                                <li>• Cards motivacionais diários</li>
-                                <li>• Mandalas e arte para colorir (PDF)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">🎨 Estilo visual ideal:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Cores suaves e pastéis</li>
-                                <li>• Natureza (água, céu, plantas)</li>
-                                <li>• Minimalismo e espaço negativo</li>
-                                <li>• Padrões geométricos harmônicos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">📖</span>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Capas de Livros & Editoração</h3>
-                                <p class="text-sm text-gray-600">Saturação: Baixa • Demanda: Constante • Monetização: Excelente</p>
-                            </div>
-                        </div>
-                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">OPORTUNIDADE</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Autores independentes precisam de capas profissionais por preços acessíveis. IA democratizou a criação de arte editorial.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">💰 Modelo de serviço:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Pacotes de capas ($100-300 cada)</li>
-                                <li>• Assinatura para editoras ($500/mês)</li>
-                                <li>• Templates pré-feitos ($20-40)</li>
-                                <li>• Curso de criação de capas com IA</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">🎯 Gêneros lucrativos:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Romance/fantasia (maior volume)</li>
-                                <li>• Thriller/suspense (alta demanda)</li>
-                                <li>• Ficção científica (visual único)</li>
-                                <li>• Auto-ajuda/negócios (minimalista)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 trend-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-4xl">🎲</span>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Assets para Games & RPG</h3>
-                                <p class="text-sm text-gray-600">Saturação: Baixa • Demanda: Alta • Monetização: Muito Boa</p>
-                            </div>
-                        </div>
-                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">OPORTUNIDADE</span>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Desenvolvedores indie e mestres de RPG buscam assets de qualidade. IA permite criar coleções consistentes rapidamente.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="font-semibold text-gray-800 mb-2">💰 Produtos vendáveis:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Packs de personagens/criaturas</li>
-                                <li>• Tilesets e cenários isométricos</li>
-                                <li>• Portraits para fichas de RPG</li>
-                                <li>• UI elements e ícones temáticos</li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-800 mb-2">🏪 Onde vender:</p>
-                            <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Unity Asset Store</li>
-                                <li>• Itch.io (comunidade indie forte)</li>
-                                <li>• ArtStation Marketplace</li>
-                                <li>• Patreon (coleções mensais)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl shadow-xl p-8">
-                <h3 class="text-2xl font-bold mb-4 flex items-center">
-                    <span class="text-3xl mr-3">💡</span>
-                    Como Escolher Seu Nicho
-                </h3>
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-2xl font-bold mb-2">1</p>
-                        <p class="text-sm">Identifique suas paixões e conhecimentos existentes</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-2xl font-bold mb-2">2</p>
-                        <p class="text-sm">Pesquise demanda (Google Trends, redes sociais)</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-2xl font-bold mb-2">3</p>
-                        <p class="text-sm">Avalie concorrência (menos é melhor no início)</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur">
-                        <p class="text-2xl font-bold mb-2">4</p>
-                        <p class="text-sm">Teste com conteúdo gratuito antes de investir pesado</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 5: Previsões para o Futuro -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">🔮</span>
-                <h2 class="text-4xl font-bold gradient-text mb-4">5. Previsões para o Futuro</h2>
-                <p class="text-xl text-gray-600">O que esperar nos próximos 12-24 meses</p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">🎬</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Vídeo IA se Tornará Mainstream</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> Até final de 2025, vídeos gerados por IA serão indistinguíveis de filmagens reais. Criadores individuais produzirão comerciais, curtas e até longas-metragens completos.
-                            </p>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <p class="font-semibold text-blue-800 mb-2">📊 Impactos esperados:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• Democratização total da produção audiovisual</li>
-                                    <li>• Explosão de conteúdo em plataformas de vídeo</li>
-                                    <li>• Novos formatos narrativos impossíveis antes</li>
-                                    <li>• Barreira de entrada para cinema quase zero</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-purple-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">🎮</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Personalização em Massa</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> Consumidores esperarão personalização total. De roupas a decoração, tudo poderá ser customizado com IA antes da produção.
-                            </p>
-                            <div class="bg-purple-50 p-4 rounded-lg">
-                                <p class="font-semibold text-purple-800 mb-2">📊 Oportunidades:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• Serviços de design personalizado sob demanda</li>
-                                    <li>• Plataformas de co-criação (cliente + IA)</li>
-                                    <li>• Print-on-demand 100% customizado</li>
-                                    <li>• "Provador virtual" para tudo</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">🧠</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">IA como Co-Criador, Não Ferramenta</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> A relação com IA mudará de "usar uma ferramenta" para "colaborar com um parceiro criativo". Assistentes IA aprenderão seu estilo e preferências.
-                            </p>
-                            <div class="bg-green-50 p-4 rounded-lg">
-                                <p class="font-semibold text-green-800 mb-2">📊 Mudanças no workflow:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• IA sugerindo ideias proativamente</li>
-                                    <li>• Memória de projetos e contexto longo</li>
-                                    <li>• Adaptação ao estilo único de cada criador</li>
-                                    <li>• Feedback bidirecional constante</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-orange-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">⚖️</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Regulamentação e Autenticidade</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> Governos e plataformas implementarão regras para identificar conteúdo IA. Selos de "criado por humano" ganharão valor premium.
-                            </p>
-                            <div class="bg-orange-50 p-4 rounded-lg">
-                                <p class="font-semibold text-orange-800 mb-2">📊 Prepare-se para:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• Watermarks obrigatórios em conteúdo IA</li>
-                                    <li>• Nicho de "arte 100% humana" valorizado</li>
-                                    <li>• Verificação de autenticidade em marketplaces</li>
-                                    <li>• Transparência como diferencial competitivo</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">🌐</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">IA Local e Descentralizada</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> Modelos rodando localmente em dispositivos pessoais se tornarão comuns. Privacidade e controle total sobre o processo criativo.
-                            </p>
-                            <div class="bg-red-50 p-4 rounded-lg">
-                                <p class="font-semibold text-red-800 mb-2">📊 Vantagens emergentes:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• Sem custos recorrentes de API</li>
-                                    <li>• Total privacidade dos prompts/dados</li>
-                                    <li>• Customização profunda de modelos</li>
-                                    <li>• Velocidade sem depender de internet</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-indigo-500">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">💼</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Profissões Emergentes</h3>
-                            <p class="text-gray-700 mb-4">
-                                <strong>Previsão:</strong> Novas carreiras surgirão focadas em IA criativa. Prompt engineer, curador de IA, diretor de IA e mais.
-                            </p>
-                            <div class="bg-indigo-50 p-4 rounded-lg">
-                                <p class="font-semibold text-indigo-800 mb-2">📊 Carreiras do futuro:</p>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• AI Art Director (direção criativa com IA)</li>
-                                    <li>• Synthetic Data Artist (criação de datasets)</li>
-                                    <li>• AI Ethics Consultant (uso responsável)</li>
-                                    <li>• AI Content Strategist (planejamento)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl shadow-xl p-8">
-                <h3 class="text-2xl font-bold mb-6 flex items-center">
-                    <span class="text-3xl mr-3">🚀</span>
-                    Como se Preparar para o Futuro
-                </h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
-                        <p class="font-bold text-lg mb-3">📚 Aprendizado Contínuo</p>
-                        <p class="text-sm">O campo muda rápido. Dedique tempo semanal para testar novos modelos, técnicas e acompanhar releases.</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
-                        <p class="font-bold text-lg mb-3">🌱 Experimente Cedo</p>
-                        <p class="text-sm">Seja early adopter de novas ferramentas. Quem domina primeiro ganha vantagem competitiva significativa.</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
-                        <p class="font-bold text-lg mb-3">🤝 Construa Comunidade</p>
-                        <p class="text-sm">Conecte-se com outros criadores. Compartilhe descobertas, colabore e cresça junto com a comunidade.</p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
-                        <p class="font-bold text-lg mb-3">💡 Foque em Criatividade</p>
-                        <p class="text-sm">IA é ferramenta. Sua visão criativa, curadoria e storytelling são insubstituíveis. Desenvolva isso.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Resumo Final -->
-        <section class="mb-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl shadow-2xl p-10">
-            <h2 class="text-3xl font-bold mb-6 flex items-center">
-                <span class="text-4xl mr-3">✅</span>
-                Resumo do Módulo
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-100">O que você aprendeu:</h3>
-                    <ul class="space-y-2 text-blue-50">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>O estado atual da IA generativa em 2025 e principais tecnologias</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>5 estilos virais que estão dominando as redes sociais</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Cases reais de sucesso e suas estratégias</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Nichos pouco explorados com alto potencial de monetização</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Previsões e tendências para os próximos anos</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-100">Próximos passos:</h3>
-                    <ul class="space-y-2 text-blue-50">
-                        <li class="flex items-start">
-                            <span class="mr-2">1.</span>
-                            <span>Escolha 1-2 estilos virais e pratique criá-los</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">2.</span>
-                            <span>Identifique um nicho que combine com suas paixões</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">3.</span>
-                            <span>Estude os cases de sucesso e adapte estratégias</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">4.</span>
-                            <span>Teste criar conteúdo nos formatos que estão crescendo</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">5.</span>
-                            <span>Mantenha-se atualizado seguindo comunidades e lançamentos</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Navegação Entre Módulos -->
-    <nav class="bg-white border-t-4 border-blue-200 shadow-lg mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="grid md:grid-cols-2 gap-6">
-                <a href="modulo-2-10.html" class="group bg-gradient-to-r from-blue-50 to-white border-2 border-blue-200 rounded-xl p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="flex items-center text-blue-600 mb-2">
-                        <span class="text-2xl mr-2">←</span>
-                        <span class="font-semibold">Módulo Anterior</span>
-                    </div>
-                    <p class="text-gray-800 font-bold text-lg">2.10 - Criando Personagens Consistentes</p>
-                </a>
-                <a href="modulo-2-12.html" class="group bg-gradient-to-r from-white to-blue-50 border-2 border-blue-200 rounded-xl p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <div class="flex items-center justify-end text-blue-600 mb-2">
-                        <span class="font-semibold">Próximo Módulo</span>
-                        <span class="text-2xl ml-2">→</span>
-                    </div>
-                    <p class="text-gray-800 font-bold text-lg text-right">2.12 - Projeto Final da Trilha 2</p>
-                </a>
-            </div>
+    <!-- Section 1: O Estado da Arte em 2025 -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎯</span>
+          <div>
+            <h2 class="text-2xl font-bold text-blue-400">O Estado da Arte em 2025</h2>
+            <p class="text-neutral-400">Onde estamos agora e como chegamos aqui</p>
+          </div>
         </div>
-    </nav>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white mt-16 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-2xl mb-2">🍌 Nano Banana</p>
-            <p class="text-gray-400">Trilha 2 - Dominando a Geração de Imagens • Módulo 2.11</p>
-            <p class="text-gray-500 text-sm mt-4">Continue aprendendo e explorando as possibilidades da IA!</p>
+        <p class="text-neutral-300 mb-6">
+          Estamos vivendo um momento histórico onde a IA generativa deixou de ser novidade para se tornar <strong class="text-blue-400">ferramenta essencial</strong>. Em 2025, a velocidade de inovação acelerou ainda mais, com novos modelos, técnicas e aplicações surgindo constantemente.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🤖 Modelos Multimodais Dominantes</h3>
+
+          <p class="text-neutral-300 mb-4">
+            GPT-4, Claude 3, Gemini Ultra e outros modelos multimodais se tornaram o padrão. A capacidade de trabalhar simultaneamente com texto, imagem, vídeo e áudio abriu possibilidades infinitas.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <h4 class="font-bold text-blue-400 mb-2">Principais características:</h4>
+              <ul class="text-sm text-neutral-300 space-y-1">
+                <li>• Compreensão contextual profunda</li>
+                <li>• Integração imagem + texto fluida</li>
+                <li>• Raciocínio complexo e criativo</li>
+                <li>• Geração de vídeo em tempo real</li>
+              </ul>
+            </div>
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <h4 class="font-bold text-blue-400 mb-2">Democratização total:</h4>
+              <ul class="text-sm text-neutral-300 space-y-1">
+                <li>• Ferramentas no-code para todos</li>
+                <li>• APIs simples e baratas</li>
+                <li>• Comunidades enormes</li>
+                <li>• Smartphones com IA local</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+            <h4 class="font-bold text-blue-400 mb-3">📊 Dados do Mercado em 2025</h4>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-400">150B+</div>
+                <div class="text-xs text-neutral-400">Imagens/dia</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-400">85%</div>
+                <div class="text-xs text-neutral-400">Criativos usam IA</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-400">$200B</div>
+                <div class="text-xs text-neutral-400">Valor mercado</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-purple-900/20 p-6 rounded-xl border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-3">🎨 Qualidade Fotorrealista Padrão</h4>
+            <p class="text-neutral-300 text-sm mb-3">
+              Imagens geradas por IA atingiram um nível de realismo impressionante. Distinguir fotos reais de IA se tornou um desafio até para especialistas.
+            </p>
+            <div class="text-xs text-neutral-400">
+              • DALL-E 3 e Midjourney v6+<br>
+              • Stable Diffusion XL refinado<br>
+              • Consistência de personagens
+            </div>
+          </div>
+          <div class="bg-cyan-900/20 p-6 rounded-xl border border-cyan-500/30">
+            <h4 class="font-bold text-cyan-400 mb-3">🎬 Vídeo: A Nova Fronteira</h4>
+            <p class="text-neutral-300 text-sm mb-3">
+              Sora, Runway Gen-3, Pika Labs e outros tornaram a geração de vídeo por IA uma realidade comercial. Criadores estão produzindo curtas e comerciais virais.
+            </p>
+            <div class="text-xs text-neutral-400">
+              • Vídeos de até 60 segundos<br>
+              • Movimento realista<br>
+              • Workflow profissional
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Estilos Virais do Momento -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔥</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Estilos Virais do Momento</h2>
+            <p class="text-neutral-400">O que está explodindo nas redes sociais</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Estilo 1 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">🎭</span>
+                <h3 class="text-xl font-bold text-neutral-100">Hyper-Surrealism</h3>
+              </div>
+              <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">VIRAL</span>
+            </div>
+            <p class="text-neutral-300 mb-4 text-sm">
+              Combinação de elementos fotorrealistas com situações impossíveis ou absurdas. Gera alto engajamento por criar estranheza e fascínio.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-neutral-300 mb-2">Exemplos populares:</div>
+                <div class="text-xs text-neutral-400">
+                  • Animais gigantes em cenários urbanos<br>
+                  • Objetos em escalas impossíveis<br>
+                  • Físicas impossíveis renderizadas
+                </div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-blue-400 mb-2">Prompts efetivos:</div>
+                <div class="text-xs text-neutral-400 font-mono">
+                  "photorealistic surreal [concept]"<br>
+                  "impossible architecture, detailed"<br>
+                  "dreamlike scene, realistic"
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estilo 2 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">✨</span>
+                <h3 class="text-xl font-bold text-neutral-100">Ethereal Glow (Brilho Etéreo)</h3>
+              </div>
+              <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">EM ALTA</span>
+            </div>
+            <p class="text-neutral-300 mb-4 text-sm">
+              Imagens com iluminação suave, cores pastéis, partículas brilhantes e atmosfera mágica. Muito popular em conteúdo lifestyle, beleza e fantasia.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-neutral-300 mb-2">Características-chave:</div>
+                <div class="text-xs text-neutral-400">
+                  • Soft lighting com bokeh<br>
+                  • Paleta pastel ou dourada<br>
+                  • Partículas de luz flutuantes
+                </div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-blue-400 mb-2">Onde funciona melhor:</div>
+                <div class="text-xs text-neutral-400">
+                  • Instagram e Pinterest<br>
+                  • Conteúdo bem-estar<br>
+                  • Produtos de beleza
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estilo 3 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">🎮</span>
+                <h3 class="text-xl font-bold text-neutral-100">Isometric 3D Worlds</h3>
+              </div>
+              <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold">TRENDING</span>
+            </div>
+            <p class="text-neutral-300 mb-4 text-sm">
+              Cenários detalhados em perspectiva isométrica, lembrando videogames ou dioramas. Perfeito para storytelling visual e conteúdo educativo.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-neutral-300 mb-2">Aplicações populares:</div>
+                <div class="text-xs text-neutral-400">
+                  • Infográficos e dados<br>
+                  • Concept art para games<br>
+                  • Ilustrações educativas
+                </div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-blue-400 mb-2">Dicas de prompt:</div>
+                <div class="text-xs text-neutral-400 font-mono">
+                  "isometric view, detailed diorama"<br>
+                  "low poly 3D, vibrant colors"<br>
+                  "cute isometric [subject]"
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estilo 4 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">🎞️</span>
+                <h3 class="text-xl font-bold text-neutral-100">Vintage Film Aesthetic</h3>
+              </div>
+              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">POPULAR</span>
+            </div>
+            <p class="text-neutral-300 mb-4 text-sm">
+              Imagens com aparência de filmes antigos, incluindo grãos, cores saturadas e imperfeições. Nostalgia + qualidade = engajamento alto.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-neutral-300 mb-2">Variações em alta:</div>
+                <div class="text-xs text-neutral-400">
+                  • Anos 70/80s cinematográfico<br>
+                  • Polaroid e instantâneas<br>
+                  • Super 8 e VHS estético
+                </div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-blue-400 mb-2">Termos técnicos úteis:</div>
+                <div class="text-xs text-neutral-400 font-mono">
+                  "shot on Kodak Portra 400"<br>
+                  "film grain, warm tones"<br>
+                  "analog photography aesthetic"
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estilo 5 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">🌌</span>
+                <h3 class="text-xl font-bold text-neutral-100">Cosmic & Space Art</h3>
+              </div>
+              <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">CRESCENDO</span>
+            </div>
+            <p class="text-neutral-300 mb-4 text-sm">
+              Cenários espaciais, nebulosas, planetas alienígenas e temas astronômicos. Combina ciência com fantasia de forma visualmente impressionante.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-neutral-300 mb-2">Temas quentes:</div>
+                <div class="text-xs text-neutral-400">
+                  • Planetas habitáveis ficcionais<br>
+                  • Astronautas em situações artísticas<br>
+                  • Nebulosas coloridas
+                </div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded">
+                <div class="text-xs font-bold text-blue-400 mb-2">Nichos lucrativos:</div>
+                <div class="text-xs text-neutral-400">
+                  • Wallpapers e posters<br>
+                  • NFTs e arte digital<br>
+                  • Capas de livros sci-fi
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Cases de Sucesso -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💎</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Cases de Sucesso Inspiradores</h2>
+            <p class="text-neutral-400">Criadores que estão fazendo acontecer</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Case 1 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-3xl">📱</span>
+                <h3 class="text-xl font-bold text-neutral-100 mt-2">@AIArtDaily - Instagram</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-sm text-neutral-400">Seguidores</div>
+                <div class="text-2xl font-bold text-purple-400">2.8M</div>
+              </div>
+            </div>
+            <p class="text-neutral-300 text-sm mb-4">
+              Conta dedicada a compartilhar arte IA diariamente. Cresceu de 0 a milhões em 18 meses postando consistentemente imagens de alta qualidade em estilos variados.
+            </p>
+            <div class="bg-dark-800/50 p-4 rounded">
+              <div class="font-bold text-purple-400 mb-2 text-sm">Estratégias-chave:</div>
+              <div class="text-xs text-neutral-400 space-y-1">
+                <div>• Consistência: 3 posts por dia, sempre</div>
+                <div>• Curadoria: Apenas imagens excepcionais</div>
+                <div>• Educação: Captions explicando técnicas</div>
+                <div>• Comunidade: Responde comentários ativamente</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-3xl">🎨</span>
+                <h3 class="text-xl font-bold text-neutral-100 mt-2">StudioXYZ - Etsy & POD</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-sm text-neutral-400">Faturamento</div>
+                <div class="text-2xl font-bold text-purple-400">$45K/mês</div>
+              </div>
+            </div>
+            <p class="text-neutral-300 text-sm mb-4">
+              Loja focada em posters, prints e produtos decorativos criados 100% com IA. Identificou nichos pouco explorados e dominou categorias específicas.
+            </p>
+            <div class="bg-dark-800/50 p-4 rounded">
+              <div class="font-bold text-purple-400 mb-2 text-sm">Fatores de sucesso:</div>
+              <div class="text-xs text-neutral-400 space-y-1">
+                <div>• Nicho específico: Arte botânica minimalista</div>
+                <div>• SEO otimizado em títulos e tags</div>
+                <div>• Mockups profissionais das artes</div>
+                <div>• Coleções temáticas coordenadas</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-purple-500/30">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-3xl">🎬</span>
+                <h3 class="text-xl font-bold text-neutral-100 mt-2">AI Cinema Shorts - TikTok</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-sm text-neutral-400">Seguidores</div>
+                <div class="text-2xl font-bold text-purple-400">5.2M</div>
+              </div>
+            </div>
+            <p class="text-neutral-300 text-sm mb-4">
+              Canal que cria curtas-metragens narrativos usando apenas IA (imagens + vídeo + voz). Pioneiro em storytelling completamente gerado por IA.
+            </p>
+            <div class="bg-dark-800/50 p-4 rounded">
+              <div class="font-bold text-purple-400 mb-2 text-sm">Diferencial competitivo:</div>
+              <div class="text-xs text-neutral-400 space-y-1">
+                <div>• Narrativas emocionantes em 60-90s</div>
+                <div>• Qualidade cinematográfica consistente</div>
+                <div>• Série com personagens recorrentes</div>
+                <div>• Música e áudio profissional (também IA)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">🎓 Lições dos Cases de Sucesso</h4>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="text-sm">
+              <div class="font-bold text-neutral-100 mb-1">1. Consistência Vence</div>
+              <div class="text-xs text-neutral-400">Todos os cases postam regularmente. Não existe sucesso sem consistência.</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-bold text-neutral-100 mb-1">2. Nicho é Poder</div>
+              <div class="text-xs text-neutral-400">Ser específico gera mais resultado que tentar agradar a todos.</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-bold text-neutral-100 mb-1">3. Qualidade > Quantidade</div>
+              <div class="text-xs text-neutral-400">Melhor 1 imagem excepcional por dia do que 10 medianas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Niches em Alta -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎯</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Niches em Alta para 2025</h2>
+            <p class="text-neutral-400">Oportunidades menos saturadas com alto potencial</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Niche 1 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">🏠</span>
+                <div>
+                  <h3 class="text-lg font-bold text-neutral-100">Design de Interiores & Arquitetura IA</h3>
+                  <div class="text-xs text-neutral-400">Saturação: Baixa • Demanda: Alta • Monetização: Excelente</div>
+                </div>
+              </div>
+              <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">OPORTUNIDADE</span>
+            </div>
+            <p class="text-neutral-300 text-sm mb-3">
+              Profissionais e entusiastas buscam visualizações rápidas de projetos. IA permite criar renders fotorrealistas em minutos.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-neutral-300 mb-1">Modelos de monetização:</div>
+                <div class="text-neutral-400">• Serviço de visualização ($50-200/projeto)<br>• Templates de ambientes<br>• Curso de IA para arquitetos</div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-blue-400 mb-1">Ferramentas ideais:</div>
+                <div class="text-neutral-400">• Midjourney (renders realistas)<br>• Stable Diffusion + ControlNet<br>• Photoshop + IA generativa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Niche 2 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">👶</span>
+                <div>
+                  <h3 class="text-lg font-bold text-neutral-100">Produtos Infantis Personalizados</h3>
+                  <div class="text-xs text-neutral-400">Saturação: Baixa • Demanda: Muito Alta • Monetização: Ótima</div>
+                </div>
+              </div>
+              <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">OPORTUNIDADE</span>
+            </div>
+            <p class="text-neutral-300 text-sm mb-3">
+              Pais adoram produtos personalizados para filhos. IA permite criar ilustrações únicas que transformam crianças em personagens.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-neutral-300 mb-1">Produtos lucrativos:</div>
+                <div class="text-neutral-400">• Livros personalizados<br>• Posters e quadros<br>• Convites de aniversário</div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-blue-400 mb-1">Estratégia de crescimento:</div>
+                <div class="text-neutral-400">• Instagram com exemplos<br>• Parcerias com influenciadoras mães<br>• Pricing premium ($40-80)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Niche 3 -->
+          <div class="bg-dark-700/50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-3xl">📖</span>
+                <div>
+                  <h3 class="text-lg font-bold text-neutral-100">Capas de Livros & Editoração</h3>
+                  <div class="text-xs text-neutral-400">Saturação: Baixa • Demanda: Constante • Monetização: Excelente</div>
+                </div>
+              </div>
+              <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">OPORTUNIDADE</span>
+            </div>
+            <p class="text-neutral-300 text-sm mb-3">
+              Autores independentes precisam de capas profissionais por preços acessíveis. IA democratizou a criação de arte editorial.
+            </p>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-neutral-300 mb-1">Modelo de serviço:</div>
+                <div class="text-neutral-400">• Pacotes de capas ($100-300)<br>• Assinatura para editoras<br>• Templates pré-feitos ($20-40)</div>
+              </div>
+              <div class="bg-dark-800/50 p-3 rounded text-xs">
+                <div class="font-bold text-blue-400 mb-1">Gêneros lucrativos:</div>
+                <div class="text-neutral-400">• Romance/fantasia (maior volume)<br>• Thriller/suspense<br>• Ficção científica</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Previsões para o Futuro -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-cyan-900/30 to-dark-800 rounded-2xl p-8 border border-cyan-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔮</span>
+          <div>
+            <h2 class="text-2xl font-bold text-cyan-400">Previsões para o Futuro</h2>
+            <p class="text-neutral-400">O que esperar nos próximos 12-24 meses</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Previsão 1 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-cyan-500/30">
+            <div class="flex items-start space-x-3">
+              <span class="text-3xl">🎬</span>
+              <div>
+                <h3 class="text-lg font-bold text-neutral-100 mb-2">Vídeo IA se Tornará Mainstream</h3>
+                <p class="text-neutral-300 text-sm mb-3">
+                  Até final de 2025, vídeos gerados por IA serão indistinguíveis de filmagens reais. Criadores individuais produzirão comerciais, curtas e até longas-metragens completos.
+                </p>
+                <div class="bg-dark-800/50 p-3 rounded text-xs">
+                  <div class="font-bold text-cyan-400 mb-1">Impactos esperados:</div>
+                  <div class="text-neutral-400">
+                    • Democratização total da produção audiovisual<br>
+                    • Novos formatos narrativos impossíveis antes<br>
+                    • Barreira de entrada para cinema quase zero
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previsão 2 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-cyan-500/30">
+            <div class="flex items-start space-x-3">
+              <span class="text-3xl">🎮</span>
+              <div>
+                <h3 class="text-lg font-bold text-neutral-100 mb-2">Personalização em Massa</h3>
+                <p class="text-neutral-300 text-sm mb-3">
+                  Consumidores esperarão personalização total. De roupas a decoração, tudo poderá ser customizado com IA antes da produção.
+                </p>
+                <div class="bg-dark-800/50 p-3 rounded text-xs">
+                  <div class="font-bold text-cyan-400 mb-1">Oportunidades:</div>
+                  <div class="text-neutral-400">
+                    • Serviços de design personalizado sob demanda<br>
+                    • Plataformas de co-criação (cliente + IA)<br>
+                    • Print-on-demand 100% customizado
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previsão 3 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-cyan-500/30">
+            <div class="flex items-start space-x-3">
+              <span class="text-3xl">🧠</span>
+              <div>
+                <h3 class="text-lg font-bold text-neutral-100 mb-2">IA como Co-Criador, Não Ferramenta</h3>
+                <p class="text-neutral-300 text-sm mb-3">
+                  A relação com IA mudará de "usar uma ferramenta" para "colaborar com um parceiro criativo". Assistentes IA aprenderão seu estilo e preferências.
+                </p>
+                <div class="bg-dark-800/50 p-3 rounded text-xs">
+                  <div class="font-bold text-cyan-400 mb-1">Mudanças no workflow:</div>
+                  <div class="text-neutral-400">
+                    • IA sugerindo ideias proativamente<br>
+                    • Memória de projetos e contexto longo<br>
+                    • Adaptação ao estilo único de cada criador
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previsão 4 -->
+          <div class="bg-dark-700/50 rounded-xl p-6 border border-cyan-500/30">
+            <div class="flex items-start space-x-3">
+              <span class="text-3xl">💼</span>
+              <div>
+                <h3 class="text-lg font-bold text-neutral-100 mb-2">Profissões Emergentes</h3>
+                <p class="text-neutral-300 text-sm mb-3">
+                  Novas carreiras surgirão focadas em IA criativa. Prompt engineer, curador de IA, diretor de IA e mais.
+                </p>
+                <div class="bg-dark-800/50 p-3 rounded text-xs">
+                  <div class="font-bold text-cyan-400 mb-1">Carreiras do futuro:</div>
+                  <div class="text-neutral-400">
+                    • AI Art Director (direção criativa com IA)<br>
+                    • Synthetic Data Artist (criação de datasets)<br>
+                    • AI Content Strategist (planejamento)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">🚀 Como se Preparar para o Futuro</h4>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div class="font-bold text-neutral-100 mb-1">1. Aprendizado Contínuo</div>
+              <div class="text-xs text-neutral-400">Dedique tempo semanal para testar novos modelos e técnicas.</div>
+            </div>
+            <div>
+              <div class="font-bold text-neutral-100 mb-1">2. Experimente Cedo</div>
+              <div class="text-xs text-neutral-400">Seja early adopter. Quem domina primeiro ganha vantagem.</div>
+            </div>
+            <div>
+              <div class="font-bold text-neutral-100 mb-1">3. Construa Comunidade</div>
+              <div class="text-xs text-neutral-400">Conecte-se com outros criadores. Compartilhe e cresça junto.</div>
+            </div>
+            <div>
+              <div class="font-bold text-neutral-100 mb-1">4. Foque em Criatividade</div>
+              <div class="text-xs text-neutral-400">IA é ferramenta. Sua visão criativa é insubstituível.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-blue-500/10 rounded-2xl p-8 border border-blue-500/30">
+        <h2 class="text-2xl font-bold text-blue-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">O estado atual da IA generativa em 2025</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">5 estilos virais dominando as redes sociais</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Cases reais de sucesso e suas estratégias</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Nichos pouco explorados com alto potencial</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Previsões e tendências para o futuro</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Como se preparar para as mudanças</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Aplique tudo que aprendeu no Projeto Final da Trilha 2!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-2-10.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 2.10</span>
+            </a>
+            <a href="modulo-2-12.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-dark-900 rounded-lg font-bold hover:bg-blue-400 transition-colors">
+              <span>Módulo 2.12</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: AI Trends 2025, Midjourney Community Reports, Social Media Engagement Data
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 2.11: Tendências e Cases Virais 2025
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
 
 </body>
 </html>

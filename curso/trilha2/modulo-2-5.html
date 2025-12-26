@@ -1,709 +1,743 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 2.5 - Seeds e Consistência | Nano Banana</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.5 Seeds e Consistência | Supercurso Nano Banana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
         }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-2px);
-        }
-
-        .code-block {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(59, 130, 246, 0.1) 100%);
-            border-left: 4px solid #3b82f6;
-        }
-
-        .example-card {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-    </style>
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 text-gray-100 min-h-screen">
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
 
-    <!-- Navigation -->
-    <nav class="bg-slate-900/50 backdrop-blur-sm border-b border-blue-500/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-8">
-                    <a href="../../index.html" class="text-2xl font-bold gradient-text hover-lift">
-                        🍌 Nano Banana
-                    </a>
-                    <div class="hidden md:flex space-x-4">
-                        <a href="../trilha1/index.html" class="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition">
-                            Trilha 1
-                        </a>
-                        <a href="index.html" class="bg-blue-500/20 text-blue-400 px-3 py-2 rounded-md text-sm font-medium border border-blue-500/30">
-                            Trilha 2
-                        </a>
-                        <a href="../trilha3/index.html" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">
-                            Trilha 3
-                        </a>
-                    </div>
-                </div>
-                <a href="index.html" class="text-sm text-blue-400 hover:text-blue-300 transition">
-                    ← Voltar para Trilha 2
-                </a>
-            </div>
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+          <span class="text-2xl">🍌</span>
+          <span class="font-bold text-lg hidden sm:inline">Nano Banana</span>
+        </a>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-900/30 via-blue-800/20 to-blue-900/30 border-b border-blue-500/20 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="inline-block bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
-                    MÓDULO 2.5 - TÉCNICO
-                </div>
-                <h1 class="text-5xl font-bold mb-4 gradient-text">
-                    🎲 Seeds e Consistência
-                </h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Domine o controle de aleatoriedade e aprenda a criar resultados reproduzíveis e séries coerentes de imagens
-                </p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Stats Banner -->
-    <div class="bg-gradient-to-r from-blue-900/20 to-transparent border-b border-blue-500/10 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
-                    <div class="text-3xl font-bold text-blue-400">~30 min</div>
-                    <div class="text-sm text-gray-400 mt-1">Duração Estimada</div>
-                </div>
-                <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
-                    <div class="text-3xl font-bold text-blue-400">4 Conceitos</div>
-                    <div class="text-sm text-gray-400 mt-1">Principais Tópicos</div>
-                </div>
-                <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
-                    <div class="text-3xl font-bold text-blue-400">Controle Total</div>
-                    <div class="text-sm text-gray-400 mt-1">Nível de Domínio</div>
-                </div>
-            </div>
-        </div>
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 2.5 - TÉCNICO
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🎲 Seeds e Consistência
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Domine o controle de aleatoriedade e aprenda a criar resultados reproduzíveis e séries coerentes de imagens com IA.
+      </p>
     </div>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">~30</div>
+        <div class="text-xs text-neutral-400">Minutos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">4</div>
+        <div class="text-xs text-neutral-400">Conceitos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">Controle Total</div>
+        <div class="text-xs text-neutral-400">Reprodutibilidade</div>
+      </div>
+    </div>
 
-        <!-- Introduction -->
-        <section class="mb-16">
-            <div class="bg-gradient-to-r from-blue-900/30 to-blue-800/20 rounded-xl p-8 border border-blue-500/30">
-                <h2 class="text-2xl font-bold mb-4 text-blue-400">🎯 Por Que Seeds São Importantes?</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Seeds (sementes) são números que controlam a aleatoriedade na geração de imagens. Eles permitem que você reproduza exatamente o mesmo resultado, crie variações controladas e mantenha consistência visual em séries de imagens.
-                </p>
-                <div class="grid md:grid-cols-3 gap-4 mt-6">
-                    <div class="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
-                        <div class="text-blue-400 font-semibold mb-2">🔄 Reproduzibilidade</div>
-                        <p class="text-sm text-gray-400">Recrie resultados exatos quando encontrar uma geração perfeita</p>
-                    </div>
-                    <div class="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
-                        <div class="text-blue-400 font-semibold mb-2">🎨 Consistência</div>
-                        <p class="text-sm text-gray-400">Mantenha elementos visuais coerentes em múltiplas gerações</p>
-                    </div>
-                    <div class="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
-                        <div class="text-blue-400 font-semibold mb-2">⚡ Experimentação</div>
-                        <p class="text-sm text-gray-400">Teste variações de prompts mantendo outros fatores constantes</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 1: Entendendo Seeds -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 gradient-text">1️⃣ Entendendo Seeds</h2>
-
-            <div class="space-y-6">
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🔢 O Que É Um Seed?</h3>
-                    <p class="text-gray-300 mb-4">
-                        Um seed é um número inteiro que inicializa o gerador de números aleatórios. É como uma "impressão digital" que determina todos os aspectos aleatórios da geração.
-                    </p>
-                    <div class="code-block rounded-lg p-4 mb-4">
-                        <p class="text-sm font-mono text-blue-200">
-                            <strong>Seed:</strong> 42<br>
-                            <strong>Resultado:</strong> Sempre a mesma composição, cores, detalhes<br><br>
-                            <strong>Seed:</strong> 123<br>
-                            <strong>Resultado:</strong> Composição completamente diferente
-                        </p>
-                    </div>
-                    <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                        <p class="text-sm text-gray-300">
-                            <strong class="text-blue-400">💡 Conceito-chave:</strong> O mesmo seed + mesmo prompt + mesmos parâmetros = resultado idêntico (na mesma versão do modelo)
-                        </p>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🎲 Como Seeds Funcionam</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-blue-400 mb-3">Sem Seed Fixo</h4>
-                            <ul class="space-y-2 text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Seed gerado aleatoriamente a cada vez</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Cada geração é completamente diferente</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Útil para exploração inicial</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Impossível reproduzir resultados exatos</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-blue-400 mb-3">Com Seed Fixo</h4>
-                            <ul class="space-y-2 text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Você define o número do seed</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Resultados idênticos quando repetido</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Perfeito para iterações controladas</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Facilita testes A/B de prompts</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">⚙️ Range de Seeds</h3>
-                    <p class="text-gray-300 mb-4">
-                        Seeds normalmente são números inteiros entre 0 e valores muito grandes (dependendo da plataforma):
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <div class="text-blue-400 font-semibold mb-2">Midjourney</div>
-                            <p class="text-sm text-gray-300">0 a 4.294.967.295</p>
-                            <p class="text-xs text-gray-400 mt-1">(32-bit unsigned int)</p>
-                        </div>
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <div class="text-blue-400 font-semibold mb-2">DALL-E</div>
-                            <p class="text-sm text-gray-300">Gerenciado internamente</p>
-                            <p class="text-xs text-gray-400 mt-1">(não controlável diretamente)</p>
-                        </div>
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <div class="text-blue-400 font-semibold mb-2">Stable Diffusion</div>
-                            <p class="text-sm text-gray-300">0 a 2^32 - 1</p>
-                            <p class="text-xs text-gray-400 mt-1">(controle total disponível)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Reprodutibilidade -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 gradient-text">2️⃣ Reprodutibilidade</h2>
-
-            <div class="space-y-6">
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🔄 Reproduzindo Resultados Perfeitos</h3>
-                    <p class="text-gray-300 mb-4">
-                        Quando você gera uma imagem excelente, o seed permite recriar aquele resultado exato:
-                    </p>
-                    <div class="bg-blue-900/30 p-6 rounded-lg border border-blue-500/20 mb-4">
-                        <h4 class="font-semibold text-blue-400 mb-3">📋 Workflow de Reprodução</h4>
-                        <ol class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">1</span>
-                                <div>
-                                    <strong class="text-blue-300">Gere imagens com seeds aleatórios</strong>
-                                    <p class="text-sm text-gray-400">Explore diferentes possibilidades</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">2</span>
-                                <div>
-                                    <strong class="text-blue-300">Identifique o resultado ideal</strong>
-                                    <p class="text-sm text-gray-400">Encontre a imagem que atende seus critérios</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">3</span>
-                                <div>
-                                    <strong class="text-blue-300">Anote o seed usado</strong>
-                                    <p class="text-sm text-gray-400">Geralmente visível nos metadados da imagem</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 text-sm">4</span>
-                                <div>
-                                    <strong class="text-blue-300">Use esse seed para reproduzir</strong>
-                                    <p class="text-sm text-gray-400">Mesmo prompt + mesmo seed = mesmo resultado</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🧪 Testes A/B com Seeds</h3>
-                    <p class="text-gray-300 mb-4">
-                        Seeds permitem testar variações de forma científica, mudando apenas uma variável por vez:
-                    </p>
-                    <div class="code-block rounded-lg p-4 mb-4">
-                        <p class="text-sm font-mono text-blue-200">
-                            <strong>Teste 1 - Seed fixo: 1234</strong><br>
-                            Prompt: "sunset over mountains, photorealistic"<br>
-                            Resultado: Composição A<br><br>
-
-                            <strong>Teste 2 - Mesmo seed: 1234</strong><br>
-                            Prompt: "sunset over mountains, oil painting style"<br>
-                            Resultado: Mesma composição A, mas estilo diferente<br><br>
-
-                            <strong>Conclusão:</strong> Você isolou o efeito da mudança de estilo
-                        </p>
-                    </div>
-                    <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                        <p class="text-sm text-gray-300">
-                            <strong class="text-blue-400">💡 Dica profissional:</strong> Mantenha um seed fixo enquanto ajusta seu prompt. Isso mostra exatamente como cada mudança afeta o resultado.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">⚠️ Limitações da Reprodutibilidade</h3>
-                    <div class="space-y-4">
-                        <div class="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/30">
-                            <h4 class="font-semibold text-yellow-400 mb-2">🔄 Atualizações de Modelo</h4>
-                            <p class="text-sm text-gray-300">
-                                Seeds podem não produzir resultados idênticos após atualizações do modelo de IA. Sempre especifique a versão do modelo se precisar de reprodutibilidade de longo prazo.
-                            </p>
-                        </div>
-                        <div class="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/30">
-                            <h4 class="font-semibold text-yellow-400 mb-2">⚙️ Parâmetros Completos</h4>
-                            <p class="text-sm text-gray-300">
-                                Para reprodução exata, você precisa manter TODOS os parâmetros iguais: seed, prompt, aspect ratio, stylize, chaos, model version, etc.
-                            </p>
-                        </div>
-                        <div class="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/30">
-                            <h4 class="font-semibold text-yellow-400 mb-2">🖥️ Diferenças de Plataforma</h4>
-                            <p class="text-sm text-gray-300">
-                                Um seed do Midjourney não funcionará no DALL-E, e vice-versa. Seeds são específicos de cada plataforma.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Séries Consistentes -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 gradient-text">3️⃣ Séries Consistentes</h2>
-
-            <div class="space-y-6">
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🎬 Criando Sequências de Imagens</h3>
-                    <p class="text-gray-300 mb-4">
-                        Seeds podem ajudar a manter consistência visual em séries de imagens relacionadas:
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <h4 class="font-semibold text-blue-400 mb-3">Método 1: Seed Base</h4>
-                            <div class="code-block rounded-lg p-3 text-sm font-mono text-blue-200 mb-3">
-                                Seed base: 1000<br>
-                                Imagem 1: seed 1000<br>
-                                Imagem 2: seed 1001<br>
-                                Imagem 3: seed 1002<br>
-                                Imagem 4: seed 1003
-                            </div>
-                            <p class="text-sm text-gray-400">
-                                Seeds sequenciais tendem a produzir variações mais sutis
-                            </p>
-                        </div>
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <h4 class="font-semibold text-blue-400 mb-3">Método 2: Seed Fixo + Variação</h4>
-                            <div class="code-block rounded-lg p-3 text-sm font-mono text-blue-200 mb-3">
-                                Seed fixo: 5555<br>
-                                Variação no prompt:<br>
-                                "character, morning"<br>
-                                "character, afternoon"<br>
-                                "character, evening"
-                            </div>
-                            <p class="text-sm text-gray-400">
-                                Mantém seed fixo, varia apenas o contexto
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🎨 Consistência de Personagem</h3>
-                    <p class="text-gray-300 mb-4">
-                        Um dos usos mais poderosos de seeds: manter o mesmo personagem em diferentes poses/situações:
-                    </p>
-                    <div class="bg-blue-900/30 p-6 rounded-lg border border-blue-500/20 mb-4">
-                        <h4 class="font-semibold text-blue-400 mb-3">📸 Exemplo Prático</h4>
-                        <div class="space-y-3">
-                            <div class="code-block rounded-lg p-3">
-                                <p class="text-sm font-mono text-blue-200">
-                                    <strong>Base (seed 7777):</strong><br>
-                                    "a female warrior with red hair and green eyes, full body, fantasy art"
-                                </p>
-                            </div>
-                            <div class="code-block rounded-lg p-3">
-                                <p class="text-sm font-mono text-blue-200">
-                                    <strong>Variação 1 (mesmo seed 7777):</strong><br>
-                                    "a female warrior with red hair and green eyes, close-up portrait, fantasy art"
-                                </p>
-                            </div>
-                            <div class="code-block rounded-lg p-3">
-                                <p class="text-sm font-mono text-blue-200">
-                                    <strong>Variação 2 (mesmo seed 7777):</strong><br>
-                                    "a female warrior with red hair and green eyes, in battle pose, fantasy art"
-                                </p>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mt-4">
-                            O seed ajuda a manter características faciais e estilo consistentes
-                        </p>
-                    </div>
-                    <div class="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/30">
-                        <p class="text-sm text-gray-300">
-                            <strong class="text-yellow-400">⚠️ Nota:</strong> Seeds sozinhos não garantem 100% de consistência de personagem. Para melhor resultado, combine com outras técnicas: descrições muito detalhadas, image prompting, ou ferramentas específicas de consistência.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🌈 Variações Controladas</h3>
-                    <p class="text-gray-300 mb-4">
-                        Use seeds para criar variações que mantêm a "essência" da imagem original:
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <h4 class="font-semibold text-blue-400 mb-2">Variação Mínima</h4>
-                            <p class="text-sm text-gray-300 mb-2">Seeds muito próximos</p>
-                            <div class="text-xs font-mono text-blue-200">
-                                1000 → 1001 → 1002
-                            </div>
-                            <p class="text-xs text-gray-400 mt-2">Mudanças sutis de composição</p>
-                        </div>
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <h4 class="font-semibold text-blue-400 mb-2">Variação Média</h4>
-                            <p class="text-sm text-gray-300 mb-2">Seeds espaçados</p>
-                            <div class="text-xs font-mono text-blue-200">
-                                1000 → 1100 → 1200
-                            </div>
-                            <p class="text-xs text-gray-400 mt-2">Composições relacionadas</p>
-                        </div>
-                        <div class="bg-blue-900/30 p-4 rounded-lg border border-blue-500/20">
-                            <h4 class="font-semibold text-blue-400 mb-2">Variação Alta</h4>
-                            <p class="text-sm text-gray-300 mb-2">Seeds aleatórios</p>
-                            <div class="text-xs font-mono text-blue-200">
-                                1000 → 5432 → 9876
-                            </div>
-                            <p class="text-xs text-gray-400 mt-2">Completamente diferentes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Casos de Uso -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 gradient-text">4️⃣ Casos de Uso</h2>
-
-            <div class="space-y-6">
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">💼 Aplicações Profissionais</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-blue-900/30 p-5 rounded-lg border border-blue-500/20">
-                            <div class="text-2xl mb-3">📚</div>
-                            <h4 class="font-semibold text-blue-400 mb-2">Livros e Publicações</h4>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Ilustrações consistentes ao longo de capítulos</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Personagens que aparecem múltiplas vezes</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Manter estilo visual coerente</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-900/30 p-5 rounded-lg border border-blue-500/20">
-                            <div class="text-2xl mb-3">🎮</div>
-                            <h4 class="font-semibold text-blue-400 mb-2">Conceito de Jogos</h4>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Variações de cenários com estilo unificado</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Diferentes ângulos do mesmo ambiente</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Concept art de personagens em várias poses</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-900/30 p-5 rounded-lg border border-blue-500/20">
-                            <div class="text-2xl mb-3">🎬</div>
-                            <h4 class="font-semibold text-blue-400 mb-2">Storyboards</h4>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Sequências de cenas com continuidade visual</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Mesmo personagem em diferentes momentos</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Manter paleta de cores consistente</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bg-blue-900/30 p-5 rounded-lg border border-blue-500/20">
-                            <div class="text-2xl mb-3">📱</div>
-                            <h4 class="font-semibold text-blue-400 mb-2">Marketing e Branding</h4>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Séries de posts para redes sociais</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Campanhas visuais com identidade unificada</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-blue-400 mr-2">•</span>
-                                    <span>Variações de um tema para A/B testing</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">🔬 Experimentação e Aprendizado</h3>
-                    <div class="bg-blue-900/30 p-6 rounded-lg border border-blue-500/20">
-                        <h4 class="font-semibold text-blue-400 mb-4">🧪 Casos de Uso para Estudo</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
-                                <div>
-                                    <strong class="text-blue-300">Testar Palavras-chave</strong>
-                                    <p class="text-sm text-gray-400">Use seed fixo para ver o impacto exato de adicionar/remover palavras do prompt</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
-                                <div>
-                                    <strong class="text-blue-300">Comparar Parâmetros</strong>
-                                    <p class="text-sm text-gray-400">Mantenha prompt e seed, mude apenas aspect ratio, stylize ou outros parâmetros</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
-                                <div>
-                                    <strong class="text-blue-300">Estudar Estilos Artísticos</strong>
-                                    <p class="text-sm text-gray-400">Mesmo seed, mesmo subject, diferentes referências de estilo para comparação direta</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
-                                <div>
-                                    <strong class="text-blue-300">Entender o Modelo</strong>
-                                    <p class="text-sm text-gray-400">Explore como diferentes seeds interpretam o mesmo prompt</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card rounded-xl p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-300">💡 Dicas de Workflow</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-blue-400 mb-3">✅ Melhores Práticas</h4>
-                            <ul class="space-y-2 text-gray-300 text-sm">
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2">✓</span>
-                                    <span>Documente seeds de imagens bem-sucedidas</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2">✓</span>
-                                    <span>Crie uma biblioteca de seeds favoritos</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2">✓</span>
-                                    <span>Use seeds sequenciais para séries</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2">✓</span>
-                                    <span>Anote versão do modelo junto com o seed</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2">✓</span>
-                                    <span>Teste múltiplos seeds antes de escolher</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-blue-400 mb-3">❌ Erros Comuns</h4>
-                            <ul class="space-y-2 text-gray-300 text-sm">
-                                <li class="flex items-start">
-                                    <span class="text-red-400 mr-2">✗</span>
-                                    <span>Esperar seeds idênticos entre plataformas</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-red-400 mr-2">✗</span>
-                                    <span>Não documentar outros parâmetros usados</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-red-400 mr-2">✗</span>
-                                    <span>Confiar apenas em seeds para consistência</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-red-400 mr-2">✗</span>
-                                    <span>Usar sempre os mesmos seeds (limite criativo)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-red-400 mr-2">✗</span>
-                                    <span>Ignorar que modelos evoluem e mudam</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Summary -->
-        <section class="mb-16">
-            <div class="bg-gradient-to-r from-blue-900/40 to-blue-800/30 rounded-xl p-8 border border-blue-500/30">
-                <h2 class="text-2xl font-bold mb-6 gradient-text">📚 Resumo do Módulo</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="font-semibold text-blue-400 mb-3">🎯 Principais Conceitos</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Seeds controlam a aleatoriedade na geração</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Mesmo seed = resultados reproduzíveis</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Seeds permitem testes A/B precisos</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Essencial para manter consistência visual</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-blue-400 mb-3">🚀 Próximos Passos</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Experimente gerar com seeds fixos</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Crie uma série de 3-5 imagens relacionadas</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Teste variações de prompt com mesmo seed</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-400 mr-2">•</span>
-                                <span>Documente seus seeds favoritos</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Navigation -->
-        <nav class="flex justify-between items-center pt-8 border-t border-blue-500/20">
-            <a href="modulo-2-4.html" class="group flex items-center space-x-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 px-6 py-3 rounded-lg transition border border-blue-500/30 hover-lift">
-                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <div class="text-left">
-                    <div class="text-xs text-blue-300">Anterior</div>
-                    <div class="font-semibold">Módulo 2.4</div>
-                </div>
-            </a>
-
-            <a href="index.html" class="text-blue-400 hover:text-blue-300 transition">
-                <div class="text-sm">📚 Índice da Trilha 2</div>
-            </a>
-
-            <a href="modulo-2-6.html" class="group flex items-center space-x-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 px-6 py-3 rounded-lg transition border border-blue-500/30 hover-lift">
-                <div class="text-right">
-                    <div class="text-xs text-blue-300">Próximo</div>
-                    <div class="font-semibold">Módulo 2.6</div>
-                </div>
-                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </a>
-        </nav>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900/50 border-t border-blue-500/20 mt-16 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <p>&copy; 2024 Nano Banana - Curso de IA Generativa. Todos os direitos reservados.</p>
-            <p class="mt-2 text-sm">Trilha 2: Dominando Ferramentas - Módulo 2.5</p>
+    <!-- Section 1: Entendendo Seeds -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔢</span>
+          <div>
+            <h2 class="text-2xl font-bold text-blue-400">Entendendo Seeds</h2>
+            <p class="text-neutral-400">O que são e como funcionam os números de semente</p>
+          </div>
         </div>
-    </footer>
+
+        <p class="text-neutral-300 mb-6">
+          Um <strong class="text-blue-400">seed</strong> (semente) é um número inteiro que controla a aleatoriedade na geração de imagens. É como uma "impressão digital" que determina todos os aspectos aleatórios da criação.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🎲 O Que É Um Seed?</h3>
+
+          <p class="text-neutral-300 mb-4">
+            Toda geração de imagens por IA envolve processos aleatórios. O seed é o número que inicializa esse sistema de aleatoriedade, garantindo que você possa:
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-2">🔄 Reproduzir</h4>
+              <p class="text-sm text-neutral-300">Recriar exatamente o mesmo resultado quando encontrar uma geração perfeita</p>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-2">🎨 Consistência</h4>
+              <p class="text-sm text-neutral-300">Manter elementos visuais coerentes em múltiplas gerações</p>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h4 class="font-bold text-blue-400 mb-2">⚡ Experimentar</h4>
+              <p class="text-sm text-neutral-300">Testar variações de prompts mantendo outros fatores constantes</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-800/50 p-4 rounded-lg font-mono text-sm mb-4">
+            <div class="mb-2 text-neutral-400">Conceito fundamental:</div>
+            <div class="text-blue-400">
+              Mesmo seed + mesmo prompt + mesmos parâmetros = resultado idêntico
+            </div>
+            <div class="mt-3 text-xs text-neutral-300">
+              (desde que use a mesma versão do modelo)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">⚙️ Como Seeds Funcionam</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <h4 class="font-bold text-neutral-100 mb-3">❌ Sem Seed Fixo</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-red-400 mr-2">•</span>
+                  <span>Seed gerado aleatoriamente a cada vez</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-400 mr-2">•</span>
+                  <span>Cada geração é completamente diferente</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-400 mr-2">•</span>
+                  <span>Útil para exploração inicial</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-400 mr-2">•</span>
+                  <span>Impossível reproduzir resultados exatos</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <h4 class="font-bold text-neutral-100 mb-3">✓ Com Seed Fixo</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>Você define o número do seed</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>Resultados idênticos quando repetido</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>Perfeito para iterações controladas</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-400 mr-2">•</span>
+                  <span>Facilita testes A/B de prompts</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 p-6 rounded-xl border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-3">💡 Range de Seeds por Plataforma</h4>
+          <p class="text-neutral-300 mb-4">Seeds normalmente são números inteiros entre 0 e valores muito grandes:</p>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-blue-400">Midjourney</div>
+              <div class="text-neutral-300">0 a 4.294.967.295</div>
+            </div>
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-blue-400">DALL-E</div>
+              <div class="text-neutral-300">Gerenciado internamente</div>
+            </div>
+            <div class="bg-dark-700/50 p-3 rounded">
+              <div class="font-bold text-blue-400">Stable Diffusion</div>
+              <div class="text-neutral-300">0 a 2^32 - 1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Reprodutibilidade -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Reprodutibilidade</h2>
+            <p class="text-neutral-400">Como recriar resultados perfeitos sempre que precisar</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 mb-6">
+          A capacidade de reproduzir resultados é um dos maiores poderes dos seeds. Quando você gera uma imagem excelente, o seed permite recriar aquele resultado exato.
+        </p>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">📋 Workflow de Reprodução</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Gere Imagens com Seeds Aleatórios</h4>
+                <p class="text-sm text-neutral-300">Explore diferentes possibilidades sem fixar o seed inicialmente</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Identifique o Resultado Ideal</h4>
+                <p class="text-sm text-neutral-300">Encontre a imagem que atende perfeitamente seus critérios</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Anote o Seed Usado</h4>
+                <p class="text-sm text-neutral-300">O seed geralmente está visível nos metadados da imagem ou nas informações de geração</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-4 flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-100">Use Esse Seed Para Reproduzir</h4>
+                <p class="text-sm text-neutral-300">Mesmo prompt + mesmo seed + mesmos parâmetros = mesmo resultado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🧪 Testes A/B com Seeds</h3>
+
+          <p class="text-neutral-300 mb-4">
+            Seeds permitem testar variações de forma científica, mudando apenas uma variável por vez:
+          </p>
+
+          <div class="bg-dark-800/50 p-4 rounded-lg font-mono text-sm mb-4">
+            <div class="text-emerald-400 mb-3"><strong>Teste 1 - Seed fixo: 1234</strong></div>
+            <div class="text-neutral-300 mb-1">Prompt: "sunset over mountains, photorealistic"</div>
+            <div class="text-neutral-400 mb-4">Resultado: Composição A</div>
+
+            <div class="text-emerald-400 mb-3"><strong>Teste 2 - Mesmo seed: 1234</strong></div>
+            <div class="text-neutral-300 mb-1">Prompt: "sunset over mountains, oil painting style"</div>
+            <div class="text-neutral-400 mb-4">Resultado: Mesma composição A, mas estilo diferente</div>
+
+            <div class="text-blue-400">✓ Conclusão: Você isolou exatamente o efeito da mudança de estilo</div>
+          </div>
+
+          <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+            <p class="text-sm text-neutral-300">
+              <strong class="text-blue-400">💡 Dica profissional:</strong> Mantenha um seed fixo enquanto ajusta seu prompt. Isso mostra exatamente como cada mudança afeta o resultado final.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-yellow-900/20 p-6 rounded-xl border border-yellow-500/30">
+          <h3 class="text-lg font-bold text-yellow-400 mb-4">⚠️ Limitações da Reprodutibilidade</h3>
+
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <span class="text-yellow-400 mr-3">•</span>
+              <div>
+                <strong class="text-neutral-100">Atualizações de Modelo:</strong>
+                <p class="text-sm text-neutral-300">Seeds podem não produzir resultados idênticos após atualizações do modelo. Sempre especifique a versão do modelo para reprodutibilidade de longo prazo.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-yellow-400 mr-3">•</span>
+              <div>
+                <strong class="text-neutral-100">Parâmetros Completos:</strong>
+                <p class="text-sm text-neutral-300">Para reprodução exata, você precisa manter TODOS os parâmetros iguais: seed, prompt, aspect ratio, stylize, chaos, model version, etc.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-yellow-400 mr-3">•</span>
+              <div>
+                <strong class="text-neutral-100">Diferenças de Plataforma:</strong>
+                <p class="text-sm text-neutral-300">Um seed do Midjourney não funcionará no DALL-E. Seeds são específicos de cada plataforma e modelo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Séries Consistentes -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎬</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Séries Consistentes</h2>
+            <p class="text-neutral-400">Criando sequências de imagens com continuidade visual</p>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">📸 Métodos Para Criar Séries</h3>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-3">Método 1: Seed Base</h4>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-3">
+                Seed base: 1000<br>
+                Imagem 1: seed 1000<br>
+                Imagem 2: seed 1001<br>
+                Imagem 3: seed 1002<br>
+                Imagem 4: seed 1003
+              </div>
+              <p class="text-sm text-neutral-400">Seeds sequenciais tendem a produzir variações mais sutis e relacionadas</p>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg border border-purple-500/30">
+              <h4 class="font-bold text-purple-400 mb-3">Método 2: Seed Fixo + Variação</h4>
+              <div class="bg-dark-700/50 p-3 rounded font-mono text-sm text-neutral-300 mb-3">
+                Seed fixo: 5555<br>
+                "character, morning"<br>
+                "character, afternoon"<br>
+                "character, evening"<br>
+                "character, night"
+              </div>
+              <p class="text-sm text-neutral-400">Mantém seed fixo, varia apenas o contexto no prompt</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-xl font-bold text-neutral-100 mb-4">🎨 Consistência de Personagem</h3>
+
+          <p class="text-neutral-300 mb-4">
+            Um dos usos mais poderosos: manter o mesmo personagem em diferentes poses e situações.
+          </p>
+
+          <div class="bg-dark-800/50 p-4 rounded-lg mb-4">
+            <h4 class="font-bold text-purple-400 mb-3">Exemplo Prático:</h4>
+
+            <div class="space-y-3">
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="text-xs text-neutral-400 mb-1">Base (seed 7777):</div>
+                <div class="font-mono text-sm text-neutral-300">"a female warrior with red hair and green eyes, full body, fantasy art"</div>
+              </div>
+
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="text-xs text-neutral-400 mb-1">Variação 1 (mesmo seed 7777):</div>
+                <div class="font-mono text-sm text-neutral-300">"a female warrior with red hair and green eyes, close-up portrait, fantasy art"</div>
+              </div>
+
+              <div class="bg-dark-700/50 p-3 rounded">
+                <div class="text-xs text-neutral-400 mb-1">Variação 2 (mesmo seed 7777):</div>
+                <div class="font-mono text-sm text-neutral-300">"a female warrior with red hair and green eyes, in battle pose, fantasy art"</div>
+              </div>
+            </div>
+
+            <p class="text-sm text-neutral-400 mt-4">
+              O seed ajuda a manter características faciais e estilo visual consistentes entre as gerações.
+            </p>
+          </div>
+
+          <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+            <p class="text-sm text-neutral-300">
+              <strong class="text-yellow-400">⚠️ Nota:</strong> Seeds sozinhos não garantem 100% de consistência de personagem. Para melhores resultados, combine com outras técnicas: descrições muito detalhadas, image prompting, ou ferramentas específicas de consistência.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-dark-800/50 p-4 rounded-lg border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-2">Variação Mínima</h4>
+            <p class="text-sm text-neutral-300 mb-2">Seeds muito próximos</p>
+            <div class="text-xs font-mono text-neutral-400">1000 → 1001 → 1002</div>
+            <p class="text-xs text-neutral-400 mt-2">Mudanças sutis de composição</p>
+          </div>
+
+          <div class="bg-dark-800/50 p-4 rounded-lg border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-2">Variação Média</h4>
+            <p class="text-sm text-neutral-300 mb-2">Seeds espaçados</p>
+            <div class="text-xs font-mono text-neutral-400">1000 → 1100 → 1200</div>
+            <p class="text-xs text-neutral-400 mt-2">Composições relacionadas</p>
+          </div>
+
+          <div class="bg-dark-800/50 p-4 rounded-lg border border-purple-500/30">
+            <h4 class="font-bold text-purple-400 mb-2">Variação Alta</h4>
+            <p class="text-sm text-neutral-300 mb-2">Seeds aleatórios</p>
+            <div class="text-xs font-mono text-neutral-400">1000 → 5432 → 9876</div>
+            <p class="text-xs text-neutral-400 mt-2">Completamente diferentes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Casos de Uso -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💼</span>
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-100">Casos de Uso</h2>
+            <p class="text-neutral-400">Aplicações práticas de seeds no mundo real</p>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🎯 Aplicações Profissionais</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-800/50 p-5 rounded-lg">
+              <div class="text-3xl mb-3">📚</div>
+              <h4 class="font-bold text-blue-400 mb-2">Livros e Publicações</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Ilustrações consistentes ao longo de capítulos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Personagens que aparecem múltiplas vezes</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Manter estilo visual coerente em toda publicação</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-dark-800/50 p-5 rounded-lg">
+              <div class="text-3xl mb-3">🎮</div>
+              <h4 class="font-bold text-blue-400 mb-2">Conceito de Jogos</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Variações de cenários com estilo unificado</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Diferentes ângulos do mesmo ambiente</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Concept art de personagens em várias poses</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-dark-800/50 p-5 rounded-lg">
+              <div class="text-3xl mb-3">🎬</div>
+              <h4 class="font-bold text-blue-400 mb-2">Storyboards</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Sequências de cenas com continuidade visual</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Mesmo personagem em diferentes momentos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Manter paleta de cores consistente em cenas</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-dark-800/50 p-5 rounded-lg">
+              <div class="text-3xl mb-3">📱</div>
+              <h4 class="font-bold text-blue-400 mb-2">Marketing e Branding</h4>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Séries de posts para redes sociais</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Campanhas visuais com identidade unificada</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-2">•</span>
+                  <span>Variações de um tema para A/B testing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-bold text-neutral-100 mb-4">🔬 Experimentação e Aprendizado</h3>
+
+          <div class="space-y-3">
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">1️⃣</span>
+                <div>
+                  <h4 class="font-bold text-neutral-100 mb-1">Testar Palavras-chave</h4>
+                  <p class="text-sm text-neutral-300">Use seed fixo para ver o impacto exato de adicionar ou remover palavras do prompt</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">2️⃣</span>
+                <div>
+                  <h4 class="font-bold text-neutral-100 mb-1">Comparar Parâmetros</h4>
+                  <p class="text-sm text-neutral-300">Mantenha prompt e seed, mude apenas aspect ratio, stylize ou outros parâmetros</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">3️⃣</span>
+                <div>
+                  <h4 class="font-bold text-neutral-100 mb-1">Estudar Estilos Artísticos</h4>
+                  <p class="text-sm text-neutral-300">Mesmo seed, mesmo subject, diferentes referências de estilo para comparação direta</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-dark-800/50 p-4 rounded-lg">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">4️⃣</span>
+                <div>
+                  <h4 class="font-bold text-neutral-100 mb-1">Entender o Modelo</h4>
+                  <p class="text-sm text-neutral-300">Explore como diferentes seeds interpretam o mesmo prompt e descubra padrões</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-3">✓ Melhores Práticas</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Documente seeds de imagens bem-sucedidas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Crie uma biblioteca de seeds favoritos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Use seeds sequenciais para séries</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Anote versão do modelo junto com o seed</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span>Teste múltiplos seeds antes de escolher</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-3">✗ Erros Comuns</h4>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Esperar seeds idênticos entre plataformas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Não documentar outros parâmetros usados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Confiar apenas em seeds para consistência</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Usar sempre os mesmos seeds (limite criativo)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">✗</span>
+                <span>Ignorar que modelos evoluem e mudam</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-blue-500/10 rounded-2xl p-8 border border-blue-500/30">
+        <h2 class="text-2xl font-bold text-blue-400 mb-6 text-center">✅ O que você aprendeu neste módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">O que são seeds e como funcionam</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Como reproduzir resultados perfeitos</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Realizar testes A/B com seeds fixos</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Criar séries consistentes de imagens</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Aplicações profissionais de seeds</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-blue-400 mr-3">✓</span>
+              <span class="text-neutral-300">Melhores práticas e erros a evitar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Próximo Módulo -->
+        <div class="text-center">
+          <p class="text-neutral-400 mb-4">Próximo: Continue dominando técnicas avançadas de geração de imagens!</p>
+          <div class="flex justify-center space-x-4">
+            <a href="modulo-2-4.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Módulo 2.4</span>
+            </a>
+            <a href="modulo-2-6.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-dark-900 rounded-lg font-bold hover:bg-blue-400 transition-colors">
+              <span>Módulo 2.6</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fontes -->
+    <div class="text-center">
+      <p class="text-xs text-neutral-500">
+        Baseado em: Midjourney Documentation, Stable Diffusion Best Practices, Seed Management Guides
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        Supercurso Nano Banana - Módulo 2.5: Seeds e Consistência
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme initialization
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
 
 </body>
 </html>
