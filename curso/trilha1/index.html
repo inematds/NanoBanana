@@ -257,21 +257,93 @@
         </div>
       </div>
 
-      <!-- Módulo 1.2 (Em breve) -->
-      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600 opacity-60">
+      <!-- Módulo 1.2 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
-            <div class="w-14 h-14 bg-dark-700 rounded-xl flex items-center justify-center text-neutral-500 font-bold text-lg mr-4">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
               1.2
             </div>
             <div>
-              <h2 class="text-xl font-bold text-neutral-400">Como os Modelos de IA "Veem"</h2>
-              <p class="text-sm text-neutral-500">Espaço latente, embeddings e processamento • ~25 min</p>
+              <h2 class="text-xl font-bold text-neutral-100">Como os Modelos de IA "Veem"</h2>
+              <p class="text-sm text-neutral-400">Espaço latente, embeddings e processamento • ~25 min</p>
             </div>
           </div>
-          <span class="px-3 py-1 bg-dark-700 text-neutral-500 text-xs font-semibold rounded-full">Em breve</span>
+          <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
-        <p class="text-sm text-neutral-500 mb-4">Tópicos: Espaço Latente, Embeddings de Texto, Tokenização, Atenção e Pesos, Processo de Denoising, CLIP e Conexão Texto-Imagem</p>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌌 O Espaço Latente
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Um espaço multidimensional onde cada ponto representa uma imagem possível — o universo invisível onde a IA navega.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Entender o espaço latente explica por que prompts similares geram imagens parecidas e como "navegar" para resultados diferentes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Coordenadas latentes, dimensões, proximidade semântica, navegação por palavras-chave.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔤 Embeddings e Tokenização
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O processo de converter suas palavras em vetores numéricos de ~768 dimensões que a IA consegue processar.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Saber que prompts são tokenizados explica o limite de ~77 tokens e por que palavras importantes devem vir primeiro.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Tokens, vetores, codificação de posição, limite de 77 tokens, ordem das palavras.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔗 CLIP: A Ponte Texto-Imagem
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O modelo da OpenAI treinado com 400M de pares texto-imagem que conecta o mundo das palavras ao mundo visual.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> O CLIP entende conceitos, não apenas palavras — você pode ser criativo com descrições e ele ainda entende.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Encoder de texto, encoder de imagem, espaço latente compartilhado, similaridade semântica.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ⚖️ Atenção e Pesos das Palavras
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O mecanismo que dá pesos diferentes para cada palavra — substantivos específicos pesam mais que artigos genéricos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Entender pesos ajuda a estruturar prompts eficientes, colocando palavras-chave no início.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Alto peso (estilos, substantivos), baixo peso (artigos, preposições), ordem importa.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔄 Processo de Denoising
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O processo iterativo de ~50 passos onde a IA remove ruído gradualmente até revelar a imagem final.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Entender o denoising explica por que mais passos = mais detalhes, e como o CFG Scale afeta o resultado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Ruído inicial, passos de denoising, CFG Scale (7-9 ideal), fidelidade ao prompt.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
+        <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-2')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="modulo-1-2.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
+            <span>Ver Completo</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Módulo 1.3 (Em breve) -->
@@ -814,6 +886,215 @@
               <a href="https://minimaxir.com/2025/11/nano-banana-prompts/" class="text-emerald-500 hover:underline" target="_blank">Max Woolf</a>,
               <a href="https://www.glbgpt.com/hub/nano-banana-vs-nano-banana-pro/" class="text-emerald-500 hover:underline" target="_blank">GlobalGPT</a>
             </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.2 - Conteúdo Completo -->
+  <div id="modal-1-2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.2 - FUNDAMENTOS</span>
+          <h2 class="text-2xl font-bold text-neutral-100">🧠 Como os Modelos de IA "Veem"</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-2')">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Intro -->
+        <div class="mb-8">
+          <p class="text-lg text-neutral-200 mb-4">
+            Entenda o que acontece por trás das cortinas: espaço latente, embeddings e como suas palavras se transformam em pixels.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">~25</div>
+              <div class="text-xs text-neutral-400">Minutos</div>
+            </div>
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">5</div>
+              <div class="text-xs text-neutral-400">Conceitos</div>
+            </div>
+            <div class="bg-dark-700 rounded-xl p-3 text-center border border-dark-600">
+              <div class="text-xl font-bold text-emerald-400">CLIP</div>
+              <div class="text-xs text-neutral-400">Modelo-chave</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1: Espaço Latente -->
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-700 rounded-xl p-6 mb-6 border border-emerald-500/30">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🌌</span>
+            <div>
+              <h3 class="text-xl font-bold text-emerald-400">O Espaço Latente</h3>
+              <p class="text-sm text-neutral-400">O universo invisível onde as imagens existem</p>
+            </div>
+          </div>
+          <p class="text-neutral-300 mb-4 text-sm">
+            Imagine um espaço multidimensional onde cada ponto representa uma imagem possível. Este é o <strong class="text-emerald-400">espaço latente</strong>. Quando você escreve um prompt, a IA navega por este espaço para encontrar o ponto que corresponde à sua descrição.
+          </p>
+          <div class="bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30">
+            <h4 class="font-bold text-cyan-400 mb-2 text-sm">💡 Na prática</h4>
+            <p class="text-xs text-neutral-300">
+              Prompts similares geram imagens parecidas porque estão "próximos" no espaço latente. Para resultados diferentes, use palavras-chave que "navegam" para regiões distantes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 2: Embeddings -->
+        <div class="bg-dark-700 rounded-xl p-6 mb-6 border border-dark-600">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🔤</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100">Embeddings e Tokenização</h3>
+              <p class="text-sm text-neutral-400">Como a IA entende seu prompt</p>
+            </div>
+          </div>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-start">
+              <div class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-xs">1</div>
+              <div>
+                <p class="text-sm text-neutral-300"><strong>Tokenização:</strong> Texto dividido em pedaços (tokens)</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-xs">2</div>
+              <div>
+                <p class="text-sm text-neutral-300"><strong>Embedding:</strong> Cada token vira vetor de ~768 números</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold mr-3 flex-shrink-0 text-xs">3</div>
+              <div>
+                <p class="text-sm text-neutral-300"><strong>Posição:</strong> A ordem das palavras é codificada</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+            <h4 class="font-bold text-yellow-400 mb-2 text-sm">⚠️ Limite de Tokens</h4>
+            <p class="text-xs text-neutral-300">
+              O Nano Banana tem limite de ~77 tokens. Prompts longos são cortados! Coloque palavras importantes no início.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 3: CLIP -->
+        <div class="bg-gradient-to-br from-purple-900/30 to-dark-700 rounded-xl p-6 mb-6 border border-purple-500/30">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🔗</span>
+            <div>
+              <h3 class="text-xl font-bold text-purple-400">CLIP: A Ponte Texto-Imagem</h3>
+              <p class="text-sm text-neutral-400">O modelo que conecta dois mundos</p>
+            </div>
+          </div>
+          <p class="text-neutral-300 mb-4 text-sm">
+            <strong class="text-purple-400">CLIP</strong> foi treinado com <strong>400 milhões de pares</strong> texto-imagem. Ele converte tanto texto quanto imagem para o mesmo espaço latente compartilhado.
+          </p>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-purple-900/20 p-3 rounded-lg border border-purple-500/30 text-center">
+              <p class="text-purple-400 font-bold text-sm">Encoder de Texto</p>
+              <p class="text-xs text-neutral-400">Prompt → Vetor</p>
+            </div>
+            <div class="bg-purple-900/20 p-3 rounded-lg border border-purple-500/30 text-center">
+              <p class="text-purple-400 font-bold text-sm">Encoder de Imagem</p>
+              <p class="text-xs text-neutral-400">Imagem → Vetor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Atenção e Pesos -->
+        <div class="bg-dark-700 rounded-xl p-6 mb-6 border border-dark-600">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">⚖️</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100">Atenção e Pesos</h3>
+              <p class="text-sm text-neutral-400">Nem todas as palavras são iguais</p>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h4 class="font-bold text-emerald-400 mb-2 text-sm">✓ Alto Peso</h4>
+              <ul class="text-xs text-neutral-300 space-y-1">
+                <li>• Substantivos específicos</li>
+                <li>• Estilos artísticos</li>
+                <li>• Qualificadores técnicos</li>
+              </ul>
+            </div>
+            <div class="bg-red-900/20 p-4 rounded-lg border border-red-500/30">
+              <h4 class="font-bold text-red-400 mb-2 text-sm">✗ Baixo Peso</h4>
+              <ul class="text-xs text-neutral-300 space-y-1">
+                <li>• Artigos (a, an, the)</li>
+                <li>• Preposições comuns</li>
+                <li>• Adjetivos genéricos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Denoising -->
+        <div class="bg-gradient-to-br from-cyan-900/30 to-dark-700 rounded-xl p-6 mb-6 border border-cyan-500/30">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🔄</span>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-400">Processo de Denoising</h3>
+              <p class="text-sm text-neutral-400">Do caos à obra-prima</p>
+            </div>
+          </div>
+          <p class="text-neutral-300 mb-4 text-sm">
+            A IA começa com ruído puro e, em ~50 passos, remove o ruído gradualmente guiada pelo seu prompt.
+          </p>
+          <div class="bg-dark-800/50 p-4 rounded-lg">
+            <h4 class="font-bold text-neutral-100 mb-2 text-sm">🎛️ CFG Scale</h4>
+            <div class="grid grid-cols-3 gap-2 text-xs text-center">
+              <div class="bg-dark-700 p-2 rounded">
+                <div class="text-purple-400 font-bold">1-5</div>
+                <div class="text-neutral-500">Criativo</div>
+              </div>
+              <div class="bg-dark-700 p-2 rounded border border-emerald-500/30">
+                <div class="text-emerald-400 font-bold">7-9</div>
+                <div class="text-neutral-400">Ideal ✓</div>
+              </div>
+              <div class="bg-dark-700 p-2 rounded">
+                <div class="text-orange-400 font-bold">12+</div>
+                <div class="text-neutral-500">Saturado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo -->
+        <div class="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
+          <h3 class="text-xl font-bold text-emerald-400 mb-4 text-center">✅ O que você aprendeu</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">Espaço latente: onde as imagens "vivem"</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">Embeddings convertem palavras em números</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">CLIP conecta texto e imagem</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">Atenção dá pesos diferentes às palavras</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">Denoising: do ruído à imagem</span>
+            </div>
+            <div class="flex items-center bg-dark-800/50 p-2 rounded-lg">
+              <span class="text-emerald-400 mr-2">✓</span>
+              <span class="text-neutral-300 text-sm">CFG Scale controla fidelidade ao prompt</span>
+            </div>
           </div>
         </div>
 
