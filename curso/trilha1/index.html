@@ -375,9 +375,74 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚀 Acessando o Gemini
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O Gemini é a plataforma do Google para geração de imagens com IA — seu portal para criar imagens incríveis.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Interface simples e intuitiva, perfeita para começar a experimentar sem complicações.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Acesso via gemini.google.com, login com conta Google, caixa de texto para prompts.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔬 Anatomia do Prompt Básico
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> A estrutura fundamental: [Sujeito] + [Descrição] + [Contexto] — o alicerce de todo bom prompt.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Seguir essa estrutura garante que a IA entenda exatamente o que você quer criar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Sujeito (o quê), Descrição (como), Contexto (onde/quando).</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎨 Exercício Guiado: O Gato na Janela
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Seu primeiro prompt prático — criar a imagem de um gato laranja dormindo em uma janela ensolarada.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Colocar a teoria em prática imediatamente consolida o aprendizado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Prompt: "um gato laranja dormindo em uma janela ensolarada".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔄 Experimentando Variações
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Modificar elementos do prompt (cor, ação, cenário) para gerar resultados completamente diferentes.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Aprender a iterar é fundamental — cada pequena mudança pode transformar o resultado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Mudar cor (preto), ação (brincando), cenário (sofá aconchegante).</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💎 5 Dicas Essenciais para Iniciantes
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Regras de ouro: comece simples, use palavras visuais, ordem importa, evite negações, gere múltiplas vezes.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Seguir essas dicas acelera drasticamente sua curva de aprendizado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Iteração progressiva, linguagem visual, palavras-chave primeiro.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-3')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-3.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -399,9 +464,74 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📐 A Fórmula Universal (6 Blocos)
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Os 6 blocos fundamentais: Sujeito, Ação/Pose, Contexto/Cenário, Composição, Estilo Visual, Iluminação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Quanto mais blocos você usar, mais controle terá sobre o resultado final.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Combine os blocos como LEGO — cada um adiciona uma camada de precisão.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              👤 Sujeito e Ação: O Coração do Prompt
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O protagonista da sua imagem (sujeito) e o que ele está fazendo (ação/pose).</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Sujeitos específicos e ações dinâmicas geram imagens muito mais impactantes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "a majestic lion" vs "an animal", verbos no gerúndio (-ing).</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌍 Contexto e Cenário
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Onde a cena acontece — o ambiente que envolve seu sujeito.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> O cenário define a atmosfera e conta parte da história visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "in a medieval castle", "on Mars", "during a thunderstorm".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎬 Composição e Enquadramento
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Como a câmera está posicionada — close-up, wide angle, perspectiva.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> A composição guia o olhar e cria impacto emocional diferente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Close-up, medium shot, wide angle, bird's eye view, centered.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎨 Estilo Visual e Iluminação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> O "look" da imagem (photorealistic, watercolor, 3D) e o tipo de luz.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Estilo e luz transformam completamente o mood e a qualidade visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Golden hour, dramatic lighting, soft diffused light, neon glow.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-4')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-4.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -423,9 +553,63 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📷 Tipos de Shot (Enquadramento)
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Extreme close-up, close-up, medium shot, full shot, wide shot, extreme wide shot.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Cada shot cria uma conexão emocional diferente com o espectador.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Close-up para emoção, wide shot para contexto, medium para equilíbrio.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎥 Ângulos de Câmera
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Eye level, low angle, high angle, bird's eye view, worm's eye view, dutch angle.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Ângulos transmitem poder, vulnerabilidade, tensão ou neutralidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Low angle = poder, high angle = vulnerabilidade, dutch = tensão.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔭 Distância Focal e Lentes
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Wide angle (24mm), standard (50mm), telephoto (85mm+), macro, fisheye.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Cada lente distorce e comprime a perspectiva de forma única.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> 35mm para street, 85mm para retratos, wide angle para paisagens.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📐 Regras de Composição
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Regra dos terços, simetria, linhas guia, espaço negativo, profundidade.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Composição bem feita guia o olhar e cria imagens mais impactantes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "rule of thirds", "centered composition", "leading lines".</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-5')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-5.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -447,9 +631,63 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌅 Iluminação Natural
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Golden hour, blue hour, midday sun, overcast, backlighting.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Luz natural cria atmosferas autênticas e emocionais.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "golden hour lighting", "blue hour", "soft overcast".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💡 Iluminação Artificial
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Studio lighting, neon lights, candlelight, streetlights, ring light.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Controle total sobre a atmosfera e mood da imagem.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "studio lighting", "neon-lit", "candlelit scene".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎭 Técnicas Dramáticas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Chiaroscuro, Rembrandt lighting, rim light, silhouette, high key, low key.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Técnicas clássicas que adicionam drama e profundidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "chiaroscuro lighting", "dramatic rim light", "silhouette".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌈 Cor e Temperatura da Luz
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Warm light, cool light, color gels, mixed lighting.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Temperatura afeta o mood — quente = acolhedor, frio = melancólico.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "warm golden light", "cold blue light", "teal and orange".</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-6')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-6.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -471,9 +709,63 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📸 Estilos Fotográficos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Photorealistic, editorial, documentary, fashion, portrait, landscape.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Base para imagens profissionais e comerciais.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Keywords:</strong> "photorealistic", "8K", "RAW photo", "DSLR", "35mm film".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎨 Estilos de Ilustração
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Digital art, concept art, watercolor, oil painting, sketch, comic book.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Perfeito para arte, jogos, livros e marketing criativo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Keywords:</strong> "digital painting", "concept art", "trending on Artstation".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌸 Estilos de Animação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Anime, Pixar/Disney 3D, Studio Ghibli, cartoon, cel-shaded.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Estilos populares para personagens e cenas estilizadas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Keywords:</strong> "anime style", "Pixar style", "Studio Ghibli", "cel shading".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌆 Estilos Temáticos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Cyberpunk, steampunk, fantasy, sci-fi, horror, retrofuturism.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Atmosferas únicas para projetos temáticos e criativos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Keywords:</strong> "cyberpunk city", "steampunk", "dark fantasy", "80s retrofuturism".</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-7')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-7.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -495,9 +787,52 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📐 Os Principais Aspect Ratios
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> 1:1 (quadrado), 4:3 (clássico), 16:9 (widescreen), 9:16 (vertical), 2.35:1 (cinema).</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Cada plataforma e uso tem seu aspect ratio ideal.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Instagram = 1:1/4:5, YouTube = 16:9, Stories/Reels = 9:16.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📱 Quando Usar Cada Proporção
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Guia de uso por plataforma e tipo de conteúdo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Usar o aspect ratio certo maximiza o impacto visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> Quadrado para produtos, vertical para mobile, wide para paisagens.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🖼️ Composição Avançada
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Regra dos terços, golden ratio, espaço negativo, leading lines.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Composição elevada transforma uma boa imagem em excelente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "centered composition", "rule of thirds", "negative space".</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-8')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-8.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -519,9 +854,52 @@
           </div>
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">Disponível</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚫 O que são Prompts Negativos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Instruções para excluir elementos indesejados da imagem.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Evitar artefatos, distorções e elementos que não combinam.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "without text", "no watermark", "avoid blurry".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              👤 Artefatos em Pessoas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Dedos extras, olhos assimétricos, mãos distorcidas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Anatomia é o maior desafio para IAs de imagem.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "correct anatomy", "natural hands", "symmetrical face".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🖼️ Problemas de Qualidade
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Blur, baixa resolução, noise, artefatos de compressão.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que:</strong> Qualidade profissional requer atenção a detalhes técnicos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos:</strong> "high quality", "sharp focus", "no blur", "detailed".</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-9')" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-9.html" class="flex items-center space-x-2 px-4 py-2 bg-emerald-500 text-dark-900 rounded-lg font-semibold hover:bg-emerald-400 transition-colors">
-            <span>Ver Módulo</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -543,9 +921,63 @@
           </div>
           <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">Projeto Final</span>
         </div>
+
+        <!-- Tópicos Expansíveis -->
+        <ul class="topics-list space-y-0.5 mb-4">
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-purple-400 mr-2">▸</span>
+              🎯 Objetivos do Projeto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">O que é:</strong> Criar uma série coesa de 5 imagens aplicando todos os conceitos aprendidos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">Por que:</strong> Consolidar o aprendizado através da prática integrada.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-purple-400">Conceitos:</strong> Consistência visual, narrativa, estilo unificado.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-purple-400 mr-2">▸</span>
+              📋 Briefing e Planejamento
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">O que é:</strong> Definir tema, estilo visual, paleta de cores e elementos consistentes.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">Por que:</strong> Planejamento é a chave para uma série profissional.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-purple-400">Conceitos:</strong> Escolher tema (natureza, fantasia, urbano), definir mood board.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-purple-400 mr-2">▸</span>
+              ✨ Criando as 5 Imagens
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">O que é:</strong> Aplicar fórmula + estilo + iluminação + composição para cada imagem.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">Por que:</strong> Cada imagem deve ser única mas pertencer à mesma família visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-purple-400">Conceitos:</strong> Base comum + variações de sujeito, ação e enquadramento.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-purple-400 mr-2">▸</span>
+              🏆 Revisão e Apresentação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">O que é:</strong> Avaliar consistência, qualidade e preparar apresentação final.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-purple-400">Por que:</strong> Apresentação profissional é parte do trabalho criativo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-purple-400">Conceitos:</strong> Checklist de qualidade, organização, exportação.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botões -->
         <div class="flex flex-wrap gap-3">
+          <button onclick="openModal('modal-1-10')" class="flex items-center space-x-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg font-semibold hover:bg-purple-500/30 transition-colors">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
           <a href="modulo-1-10.html" class="flex items-center space-x-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-400 transition-colors">
-            <span>Ver Projeto</span>
+            <span>Ver Completo</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -599,6 +1031,134 @@
       </div>
       <div class="modal-body">
         <iframe id="iframe-1-2" src="" title="Módulo 1.2"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.3 -->
+  <div id="modal-1-3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.3</span>
+          <h2 class="text-xl font-bold text-neutral-100">✍️ Seu Primeiro Prompt</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-3')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-3" src="" title="Módulo 1.3"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.4 -->
+  <div id="modal-1-4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.4</span>
+          <h2 class="text-xl font-bold text-neutral-100">🎯 A Fórmula do Prompt Perfeito</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-4')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-4" src="" title="Módulo 1.4"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.5 -->
+  <div id="modal-1-5" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.5</span>
+          <h2 class="text-xl font-bold text-neutral-100">📷 Linguagem de Fotografia</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-5')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-5" src="" title="Módulo 1.5"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.6 -->
+  <div id="modal-1-6" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.6</span>
+          <h2 class="text-xl font-bold text-neutral-100">💡 O Poder da Iluminação</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-6')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-6" src="" title="Módulo 1.6"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.7 -->
+  <div id="modal-1-7" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.7</span>
+          <h2 class="text-xl font-bold text-neutral-100">🎨 Estilos Artísticos Essenciais</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-7')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-7" src="" title="Módulo 1.7"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.8 -->
+  <div id="modal-1-8" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.8</span>
+          <h2 class="text-xl font-bold text-neutral-100">📐 Aspect Ratios e Composição</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-8')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-8" src="" title="Módulo 1.8"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.9 -->
+  <div id="modal-1-9" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.9</span>
+          <h2 class="text-xl font-bold text-neutral-100">🚫 Prompts Negativos</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-9')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-9" src="" title="Módulo 1.9"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1.10 -->
+  <div id="modal-1-10" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-semibold mb-2">MÓDULO 1.10</span>
+          <h2 class="text-xl font-bold text-neutral-100">🏆 Projeto Prático: Sua Primeira Série</h2>
+        </div>
+        <button class="close-modal" onclick="closeModal('modal-1-10')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-1-10" src="" title="Módulo 1.10"></iframe>
       </div>
     </div>
   </div>
@@ -668,7 +1228,15 @@
     // Modal functions - carrega página completa via iframe
     const modalPages = {
       'modal-1-1': 'modulo-1-1.html',
-      'modal-1-2': 'modulo-1-2.html'
+      'modal-1-2': 'modulo-1-2.html',
+      'modal-1-3': 'modulo-1-3.html',
+      'modal-1-4': 'modulo-1-4.html',
+      'modal-1-5': 'modulo-1-5.html',
+      'modal-1-6': 'modulo-1-6.html',
+      'modal-1-7': 'modulo-1-7.html',
+      'modal-1-8': 'modulo-1-8.html',
+      'modal-1-9': 'modulo-1-9.html',
+      'modal-1-10': 'modulo-1-10.html'
     };
 
     function openModal(modalId) {
