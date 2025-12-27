@@ -663,24 +663,117 @@ document.addEventListener('click', function(e) {
 
 ### 7. Modal
 
+> ⚠️ **OBRIGATÓRIO**: O modal DEVE carregar o conteúdo COMPLETO da página do módulo via fetch. Nunca usar conteúdo estático ou resumido.
+
+#### Princípio Fundamental
+
+O botão "Ver em Modal" deve exibir **exatamente o mesmo conteúdo** que a página "Ver Completo" (modulo-X-X.html). Isso garante consistência e evita duplicação de conteúdo.
+
 #### Estrutura Base do Modal
 
 ```html
-<div id="modal-exemplo" class="modal">
-  <div class="modal-content">
-    <!-- Header -->
-    <div class="modal-header dark:border-neutral-700">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">🌟 Título do Modal</h2>
-      <button class="close-modal">&times;</button>
-    </div>
-
-    <!-- Body -->
-    <div class="modal-body">
-      <!-- Conteúdo rico aqui -->
+<!-- Modal Container -->
+<div id="module-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+    <div class="relative bg-dark-800 rounded-2xl border border-dark-600 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="sticky top-0 bg-dark-800 border-b border-dark-600 px-6 py-4 flex justify-between items-center z-10">
+        <h2 id="modal-title" class="text-xl font-bold text-yellow-400"></h2>
+        <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors">
+          <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="modal-content" class="p-6"></div>
     </div>
   </div>
 </div>
 ```
+
+#### JavaScript - Carregar Conteúdo Completo via Fetch (OBRIGATÓRIO)
+
+```javascript
+// URLs dos módulos - mapeia número do módulo para arquivo HTML
+const moduleUrls = {
+  1: 'modulo-1-1.html',
+  2: 'modulo-1-2.html',
+  3: 'modulo-1-3.html',
+  // ... adicionar todos os módulos
+};
+
+// Open Modal - SEMPRE carrega conteúdo da página do módulo
+async function openModal(moduleNum) {
+  const modal = document.getElementById('module-modal');
+  const title = document.getElementById('modal-title');
+  const content = document.getElementById('modal-content');
+
+  // Mostra loading enquanto carrega
+  title.textContent = 'Carregando...';
+  content.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-2 border-yellow-400 border-t-transparent rounded-full mx-auto"></div></div>';
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  try {
+    // Fetch da página completa do módulo
+    const response = await fetch(moduleUrls[moduleNum]);
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+
+    // Extrai título do módulo
+    const moduleTitle = doc.querySelector('h1');
+    title.textContent = moduleTitle ? moduleTitle.textContent : `Módulo ${moduleNum}`;
+
+    // Extrai conteúdo principal
+    const mainContent = doc.querySelector('main');
+    if (mainContent) {
+      const clone = mainContent.cloneNode(true);
+      // Remove elementos desnecessários no modal
+      clone.querySelectorAll('nav, .navigation-buttons, footer').forEach(el => el.remove());
+      // Remove header duplicado
+      const header = clone.querySelector('.text-center.mb-8, .text-center.mb-12');
+      if (header) header.remove();
+
+      content.innerHTML = '';
+      content.appendChild(clone);
+    }
+  } catch (error) {
+    content.innerHTML = '<p class="text-red-400 text-center py-8">Erro ao carregar conteúdo. <a href="' + moduleUrls[moduleNum] + '" class="underline">Clique aqui para abrir a página completa.</a></p>';
+  }
+}
+
+// Close Modal
+function closeModal() {
+  document.getElementById('module-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+// Fechar com ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+```
+
+#### ❌ NÃO FAZER (Antipadrão)
+
+```javascript
+// ERRADO - Nunca usar conteúdo estático/resumido no modal
+const moduleData = {
+  1: {
+    title: "Módulo 1",
+    topics: document.querySelector('.topics-list') // Conteúdo resumido!
+  }
+};
+```
+
+#### ✅ SEMPRE FAZER
+
+- Carregar via `fetch()` a página completa do módulo
+- Mostrar loading spinner enquanto carrega
+- Extrair o `<main>` da página carregada
+- Remover elementos de navegação duplicados
+- Ter fallback com link direto em caso de erro
 
 **CSS do Modal (no <style>):**
 ```css
